@@ -413,6 +413,7 @@ export default function App() {
                 alt="FUERA team working on digital strategy"
                 className="w-full rounded-xl shadow-2xl object-cover"
                 style={{ aspectRatio: "4/3" }}
+                loading="lazy"
               />
               <div className="absolute -bottom-5 -left-5 bg-black border border-white/10 text-white p-5 rounded-lg shadow-xl">
                 <div className="text-3xl font-black" style={{ fontFamily: "'Poppins', sans-serif" }}>50+</div>
@@ -545,11 +546,17 @@ export default function App() {
                     className="service-3d-inner service-3d-face relative rounded-xl overflow-hidden border border-[rgba(255,255,255,0.09)] group"
                     style={{
                       minHeight: "268px",
-                      backgroundImage: `url(${s.img})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
+                      background: "#08080c",
                     }}
                   >
+                    {/* Lazy-loaded background image */}
+                    <img
+                      src={s.img}
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                      style={{ opacity: 0.32 }}
+                    />
                     {/* dark desaturating overlay — photo reads as texture */}
                     <div className="absolute inset-0" style={{ background: "rgba(8,8,12,0.68)" }} />
                     {/* red diagonal tint */}
@@ -560,8 +567,6 @@ export default function App() {
                     <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 65%)" }} />
                     {/* top shimmer */}
                     <div className="absolute top-0 inset-x-0 h-px" style={{ background: "linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.2) 50%, transparent 90%)" }} />
-                    {/* image zoom on hover via pseudo-scale — we handle via bg-size transition */}
-                    <div className="absolute inset-0 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${s.img})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.18 }} />
 
                     {/* content */}
                     <div className="relative z-10 flex flex-col gap-3 p-6 h-full">
@@ -1001,6 +1006,7 @@ export default function App() {
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format"
                   alt="FUERA digital agency workspace"
                   className="w-full rounded-sm object-cover shadow-sm"
+                  loading="lazy"
                 />
               </div>
             </div>
