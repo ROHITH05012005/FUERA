@@ -1,11 +1,11 @@
-# FUERA
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ROHITH05012005/FUERA)
 
-[![Deploy to Netlify](https://api.netlify.com/api/v1/badges/placeholder/deploy-button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ROHITH05012005/FUERA)
+# Clone company website
 
-This is the FUERA project, ready for deployment on Netlify.
+This is a code bundle for Clone company website. The original project is available at https://www.figma.com/design/CCRAGKoiqxR2EIE2aw2ql5/Clone-company-website.
 
-## How to Deploy
-Click the button above to deploy the site automatically to Netlify.
+## Running the code
 
-## Build
-The project uses Vite. Run `npm install` and `npm run build` locally.
+Run `npm i` to install the dependencies.
+
+Run `npm run dev` to start the development server.
