@@ -16,3 +16,8 @@ yarn-error.log*
 *.log
 
 create_repo.ps1
+
+# Local Netlify folder
+.netlify
+
+.vercel

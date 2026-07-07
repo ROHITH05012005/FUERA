@@ -1075,8 +1075,26 @@ export default function App() {
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
             <p>© {new Date().getFullYear()} FUERA. All Rights Reserved.</p>
             <div className="flex gap-4">
-              <button className="hover:text-white/70 transition-colors">Privacy Policy</button>
-              <button className="hover:text-white/70 transition-colors">Terms of Use</button>
+              <button
+                onClick={() =>
+                  alert(
+                    "Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this website will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties."
+                  )
+                }
+                className="hover:text-white/70 transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() =>
+                  alert(
+                    "Terms of Use:\n\nBy using this website, you agree to comply with and be bound by the terms and conditions of FUERA. All services provided are subject to our client service agreements."
+                  )
+                }
+                className="hover:text-white/70 transition-colors"
+              >
+                Terms of Use
+              </button>
             </div>
           </div>
         </div>
@@ -1178,7 +1196,18 @@ function EnquiryForm({ onSubmit, inline = false }: { onSubmit?: () => void; inli
         <input type="checkbox" id="privacy" checked={form.privacy} onChange={set("privacy")} required
           className="mt-0.5 w-4 h-4 accent-white" />
         <label htmlFor="privacy" className="text-xs text-muted-foreground">
-          I agree to the <span className="text-white underline cursor-pointer">Privacy Policy</span> and consent to FUERA contacting me.
+          I agree to the{" "}
+          <span
+            className="text-white underline cursor-pointer"
+            onClick={() =>
+              alert(
+                "Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this form will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties."
+              )
+            }
+          >
+            Privacy Policy
+          </span>{" "}
+          and consent to FUERA contacting me.
         </label>
       </div>
       <button type="submit"
