@@ -1,0 +1,231 @@
+import { motion } from "motion/react";
+import { useNavigate } from "react-router";
+import { ArrowLeft, ArrowRight, BarChart2, TrendingUp, Target, Star } from "lucide-react";
+import PageLayout from "../components/PageLayout";
+import { useState } from "react";
+
+const CASE_STUDIES = [
+  {
+    client: "RetailX",
+    industry: "E-Commerce",
+    service: "Meta Ads + Google SEO",
+    duration: "3 months",
+    color: "hsl(210, 70%, 50%)",
+    challenge: "RetailX had a website with strong product offerings but zero digital visibility. They were burning budget on print ads with no measurable ROI.",
+    solution: "We rebuilt their digital funnel from scratch — starting with a mobile-optimised website, followed by targeted Meta Ads campaigns and on-page Google SEO.",
+    results: [
+      { label: "Lead Increase", val: "3×" },
+      { label: "Ad ROI", val: "420%" },
+      { label: "Organic Traffic", val: "+180%" },
+      { label: "Cost Per Lead", val: "−52%" },
+    ],
+    quote: "Working with FUERA has been a game-changer for our retail brand. Their Google Ads strategy tripled our inbound enquiries within two months.",
+    author: "Rohan Mehta, RetailX Bangalore",
+  },
+  {
+    client: "HealthPro Clinics",
+    industry: "Healthcare",
+    service: "Website + Meta Ads",
+    duration: "2 months",
+    color: "hsl(150, 60%, 45%)",
+    challenge: "HealthPro struggled to get online appointments and relied entirely on walk-ins. Their old website had no SEO, no contact form, and was not mobile-friendly.",
+    solution: "FUERA built a fast, mobile-first clinic website with WhatsApp integration and an online booking form, then launched Meta Ads targeting local health-conscious users.",
+    results: [
+      { label: "Patient Enquiries", val: "2×" },
+      { label: "Online Bookings", val: "+240%" },
+      { label: "WhatsApp Leads/mo", val: "120+" },
+      { label: "Page Load Speed", val: "<1.5s" },
+    ],
+    quote: "FUERA built our website and ran our Meta Ads. The leads we get now are genuinely qualified. The team is transparent and truly invested in our growth.",
+    author: "Priya Sharma, HealthPro Clinics",
+  },
+  {
+    client: "EduTech Solutions",
+    industry: "Education",
+    service: "SEO + Social Media",
+    duration: "6 months",
+    color: "hsl(270, 60%, 55%)",
+    challenge: "EduTech had great courses but poor organic discovery. Competitors were ranking for every key term and their Instagram had stagnated at 2K followers.",
+    solution: "A comprehensive SEO audit and content strategy was executed alongside a social media calendar with Reels and carousels targeting aspiring students.",
+    results: [
+      { label: "Organic Traffic", val: "+200%" },
+      { label: "Instagram Followers", val: "2K → 11K" },
+      { label: "Course Enrolments", val: "3×" },
+      { label: "Keyword Rankings", val: "Top 5" },
+    ],
+    quote: "Since partnering with FUERA for SEO and social media, our organic traffic has doubled and our Instagram engagement is at an all-time high.",
+    author: "Arjun Nair, EduTech Solutions",
+  },
+  {
+    client: "BuildRight Real Estate",
+    industry: "Real Estate",
+    service: "Google Ads + Meta Ads",
+    duration: "4 months",
+    color: "hsl(30, 80%, 55%)",
+    challenge: "BuildRight was running ads with no targeting strategy — spending ₹80K/month with minimal qualified leads for their new residential project.",
+    solution: "FUERA restructured both Google Search campaigns and Meta lead-gen forms with precise geo-targeting, custom audiences, and A/B-tested creatives.",
+    results: [
+      { label: "Revenue Leads", val: "₹2Cr+" },
+      { label: "Qualified Leads/mo", val: "85+" },
+      { label: "Cost Per Lead", val: "−40%" },
+      { label: "Site Visits", val: "+310%" },
+    ],
+    quote: "The FUERA team's understanding of the real estate market and their data-driven approach delivered results we hadn't seen with any previous agency.",
+    author: "Suresh Kumar, BuildRight",
+  },
+  {
+    client: "ZuddhaHerbs",
+    industry: "Ayurveda / D2C",
+    service: "Full Funnel Strategy",
+    duration: "12 months",
+    color: "hsl(90, 55%, 40%)",
+    challenge: "ZuddhaHerbs had excellent Ayurvedic products but zero direct-to-consumer presence. All sales were through distributors with thin margins.",
+    solution: "FUERA built a D2C e-commerce website, ran Meta and Google Ads, created educational content reels, and set up a review management system.",
+    results: [
+      { label: "Revenue Impact", val: "₹50L+" },
+      { label: "D2C Orders", val: "8,000+" },
+      { label: "Instagram Reach", val: "500K+" },
+      { label: "Repeat Purchase Rate", val: "38%" },
+    ],
+    quote: "FUERA helped us go from a distributor-only brand to a thriving D2C business. The results in Year 1 exceeded everything we had hoped for.",
+    author: "Kavitha Rao, ZuddhaHerbs",
+  },
+  {
+    client: "FitLife Gym",
+    industry: "Fitness",
+    service: "Local SEO + Meta Ads",
+    duration: "45 days",
+    color: "hsl(0, 70%, 55%)",
+    challenge: "FitLife Gym was opening a second branch with no brand recognition in the new locality and needed fast, cost-efficient member acquisition.",
+    solution: "Local SEO, Google Business Profile optimisation, and a hyper-targeted Meta Ads campaign focused on a 5km radius around the new gym location.",
+    results: [
+      { label: "New Memberships", val: "2×" },
+      { label: "GBP Profile Views", val: "+400%" },
+      { label: "Walk-ins from Ads", val: "150+" },
+      { label: "Launch Cost", val: "Under Budget" },
+    ],
+    quote: "We hit our 3-month membership target in just 45 days. FUERA's local ad strategy was sharper than anything we'd tried before.",
+    author: "Rahul D., FitLife Gym",
+  },
+];
+
+export default function CaseStudiesPage() {
+  const navigate = useNavigate();
+  const [expanded, setExpanded] = useState<number | null>(0);
+
+  return (
+    <PageLayout>
+      {/* Hero */}
+      <section className="relative py-24 bg-[#070709] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 60%)" }} />
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <button onClick={() => navigate("/")}
+            className="flex items-center gap-2 text-white/50 hover:text-white text-sm mb-8 transition-colors"
+            style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <ArrowLeft size={16} /> Back to Home
+          </button>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              Proof of Work
+            </p>
+            <h1 className="text-white font-bold mb-5 leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
+              Case Studies
+            </h1>
+            <p className="text-white/55 max-w-2xl text-base leading-relaxed">
+              Deep dives into how FUERA's strategies have created real, measurable business growth for our clients across industries.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="py-20 bg-[#0d0d0f]">
+        <div className="max-w-5xl mx-auto px-5 md:px-10 space-y-6">
+          {CASE_STUDIES.map((cs, i) => (
+            <motion.div key={i}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
+              className="border border-white/8 rounded-xl bg-[#111115] overflow-hidden hover:border-white/20 transition-all">
+              {/* Header */}
+              <button className="w-full flex items-center justify-between gap-4 p-6 text-left group"
+                onClick={() => setExpanded(expanded === i ? null : i)}>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+                    style={{ background: `${cs.color}22`, border: `1.5px solid ${cs.color}55` }}>
+                    <BarChart2 size={18} style={{ color: cs.color }} />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-base" style={{ fontFamily: "'Poppins', sans-serif" }}>{cs.client}</p>
+                    <p className="text-white/40 text-xs mt-0.5">{cs.industry} · {cs.service} · {cs.duration}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 shrink-0">
+                  {cs.results.slice(0, 2).map(r => (
+                    <span key={r.label} className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 text-white/70 bg-white/5">
+                      <TrendingUp size={11} /> {r.val}
+                    </span>
+                  ))}
+                  <span className="text-white/40 text-sm">{expanded === i ? "▲" : "▼"}</span>
+                </div>
+              </button>
+
+              {/* Expanded */}
+              {expanded === i && (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}
+                  className="px-6 pb-8 border-t border-white/8">
+                  <div className="grid md:grid-cols-2 gap-8 mt-6">
+                    <div className="space-y-5">
+                      <div>
+                        <p className="text-white/40 text-xs uppercase tracking-widest font-bold mb-2">The Challenge</p>
+                        <p className="text-white/65 text-sm leading-relaxed">{cs.challenge}</p>
+                      </div>
+                      <div>
+                        <p className="text-white/40 text-xs uppercase tracking-widest font-bold mb-2">Our Solution</p>
+                        <p className="text-white/65 text-sm leading-relaxed">{cs.solution}</p>
+                      </div>
+                      {/* Quote */}
+                      <div className="border-l-2 border-white/20 pl-4 mt-4">
+                        <p className="text-white/50 text-sm italic leading-relaxed">"{cs.quote}"</p>
+                        <p className="text-white/30 text-xs mt-2">— {cs.author}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-white/40 text-xs uppercase tracking-widest font-bold mb-4">Key Results</p>
+                      <div className="grid grid-cols-2 gap-3">
+                        {cs.results.map(r => (
+                          <div key={r.label} className="bg-[#0d0d0f] border border-white/8 rounded-lg p-4">
+                            <div className="text-2xl font-black text-white mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: cs.color }}>{r.val}</div>
+                            <div className="text-xs text-white/40 uppercase tracking-wider">{r.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex gap-1 mt-5">
+                        {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="white" className="text-white" />)}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#111111]">
+        <div className="max-w-3xl mx-auto px-5 text-center">
+          <h2 className="text-white font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+            Want results like these?
+          </h2>
+          <p className="text-white/60 mb-8">Let's build your case study together. Get in touch for a free strategy call.</p>
+          <button onClick={() => navigate("/#contact")}
+            className="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5"
+            style={{ fontFamily: "'Poppins', sans-serif" }}>
+            Book a Free Call <ArrowRight size={16} />
+          </button>
+        </div>
+      </section>
+    </PageLayout>
+  );
+}

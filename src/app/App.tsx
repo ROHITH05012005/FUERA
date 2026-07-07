@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import {
   Menu, X, ChevronDown, ChevronUp, ArrowRight, Phone, Mail, MapPin,
   Instagram, Globe, Facebook, Linkedin, MessageCircle, Check,
@@ -124,10 +125,10 @@ const TESTIMONIALS = [
 ];
 
 const INSIGHTS = [
-  { icon: Users, title: "Clients", desc: "Our marketing and technology expertise has helped clients achieve consistent growth and strong online presence.", cta: "Know More" },
-  { icon: Award, title: "Case Studies", desc: "Detailed breakdowns of how our clients have scaled their business using FUERA's digital strategies.", cta: "Know More" },
-  { icon: Zap, title: "Careers", desc: "Join a forward-thinking team that values creativity, data, and impact. We are always looking for hungry talent.", cta: "Know More" },
-  { icon: Star, title: "Our Team", desc: "We value our people and strive to build a supportive, empowering culture that produces world-class work.", cta: "Know More" },
+  { icon: Users, title: "Clients", desc: "Our marketing and technology expertise has helped clients achieve consistent growth and strong online presence.", cta: "Know More", route: "/clients" },
+  { icon: Award, title: "Case Studies", desc: "Detailed breakdowns of how our clients have scaled their business using FUERA's digital strategies.", cta: "Know More", route: "/case-studies" },
+  { icon: Zap, title: "Careers", desc: "Join a forward-thinking team that values creativity, data, and impact. We are always looking for hungry talent.", cta: "Know More", route: "/careers" },
+  { icon: Star, title: "Our Team", desc: "We value our people and strive to build a supportive, empowering culture that produces world-class work.", cta: "Know More", route: "/team" },
 ];
 
 const FAQS = [
@@ -182,6 +183,7 @@ function OrangeBtn({ children, onClick, outline = false, sm = false }: any) {
 // ─── APP ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -272,7 +274,7 @@ export default function App() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
                         {item.children.map(c => (
-                          <button key={c} onClick={() => handleNav("#services")}
+                          <button key={c} onClick={() => { setServicesOpen(false); handleNav("#services"); }}
                             className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
                             style={{ fontFamily: "'Inter', sans-serif" }}>
                             {c}
@@ -907,14 +909,16 @@ export default function App() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {INSIGHTS.map(ins => (
-              <div key={ins.title} className="border border-border rounded-sm p-6 hover:shadow-md hover:border-white/40 transition-all group cursor-default">
+              <div key={ins.title}
+                className="border border-border rounded-sm p-6 hover:shadow-md hover:border-white/40 transition-all group cursor-pointer"
+                onClick={() => navigate(ins.route)}>
                 <div className="w-12 h-12 bg-[#1c1c20] group-hover:bg-[#111111] rounded-full flex items-center justify-center mb-4 transition-colors">
                   <ins.icon size={20} className="text-white group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-white font-semibold mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>{ins.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{ins.desc}</p>
-                <button onClick={() => setModalOpen(true)}
-                  className="text-xs font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all"
+                <button
+                  className="text-xs font-semibold text-white flex items-center gap-1 group-hover:gap-2 transition-all"
                   style={{ fontFamily: "'Poppins', sans-serif" }}>
                   {ins.cta} <ArrowRight size={12} />
                 </button>
@@ -1045,7 +1049,7 @@ export default function App() {
                 {SERVICES.map(s => (
                   <li key={s.label}>
                     <button onClick={() => scrollTo("#services")}
-                      className="text-white/60 hover:text-white text-sm transition-colors">{s.label}</button>
+                      className="text-white/60 hover:text-white text-sm transition-colors text-left">{s.label}</button>
                   </li>
                 ))}
               </ul>
@@ -1057,9 +1061,13 @@ export default function App() {
                 {NAV_ITEMS.filter(n => !n.children).map(n => (
                   <li key={n.label}>
                     <button onClick={() => scrollTo(n.href)}
-                      className="text-white/60 hover:text-white text-sm transition-colors">{n.label}</button>
+                      className="text-white/60 hover:text-white text-sm transition-colors text-left">{n.label}</button>
                   </li>
                 ))}
+                <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
+                <li><button onClick={() => navigate("/team")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Our Team</button></li>
+                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
+                <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
               </ul>
             </div>
             {/* Contact */}
