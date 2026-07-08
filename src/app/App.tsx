@@ -12,6 +12,9 @@ import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
+
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
+
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
 const NAV_ITEMS = [
@@ -274,7 +277,7 @@ export default function App() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
                         {item.children.map(c => (
-                          <button key={c} onClick={() => { setServicesOpen(false); handleNav("#services"); }}
+                          <button key={c} onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
                             className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
                             style={{ fontFamily: "'Inter', sans-serif" }}>
                             {c}
@@ -591,8 +594,8 @@ export default function App() {
                         {s.desc}
                       </p>
                       <button
-                        onClick={() => scrollTo("#contact")}
-                        className="text-xs font-semibold text-white flex items-center gap-1 mt-auto group-hover:gap-2 transition-all duration-300"
+                        onClick={() => navigate(`/services/${slugify(s.label)}`)}
+                        className="text-xs font-semibold text-white flex items-center gap-1 mt-auto group-hover:gap-2 transition-all duration-300 cursor-pointer"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         Explore More <ArrowRight size={12} />
@@ -1048,7 +1051,7 @@ export default function App() {
               <ul className="space-y-2">
                 {SERVICES.map(s => (
                   <li key={s.label}>
-                    <button onClick={() => scrollTo("#services")}
+                    <button onClick={() => navigate(`/services/${slugify(s.label)}`)}
                       className="text-white/60 hover:text-white text-sm transition-colors text-left">{s.label}</button>
                   </li>
                 ))}

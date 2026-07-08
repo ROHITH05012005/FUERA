@@ -15,6 +15,8 @@ const SERVICES_LIST = [
   "Branding", "Review Scanner", "Content Creation"
 ];
 
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
+
 function FueraLogo() {
   const navigate = useNavigate();
   return (
@@ -117,7 +119,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
                         {SERVICES_LIST.map(c => (
-                          <button key={c} onClick={() => goHome("#services")}
+                          <button key={c} onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
                             className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
                             style={{ fontFamily: "'Inter', sans-serif" }}>
                             {c}
@@ -208,7 +210,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
               <ul className="space-y-2">
                 {SERVICES_LIST.map(s => (
                   <li key={s}>
-                    <button onClick={() => goHome("#services")} className="text-white/60 hover:text-white text-sm transition-colors">{s}</button>
+                    <button onClick={() => navigate(`/services/${slugify(s)}`)} className="text-white/60 hover:text-white text-sm transition-colors text-left">{s}</button>
                   </li>
                 ))}
               </ul>

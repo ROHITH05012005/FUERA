@@ -1,267 +1,484 @@
-export interface ServiceDetail {
+import {
+  Code,
+  Share2,
+  Target,
+  Megaphone,
+  Search,
+  Palette,
+  ScanSearch,
+  Video,
+  Globe2,
+  Cpu,
+  Layers,
+  Zap,
+  TrendingUp,
+  Award,
+  Users,
+  Shield,
+  Clock,
+  Sparkles,
+  Smartphone,
+  Eye,
+  MessageSquare,
+  ThumbsUp,
+  Flame,
+  CheckCircle
+} from "lucide-react";
+
+export interface ServiceBenefit {
+  title: string;
+  description: string;
+  icon: any;
+}
+
+export interface ServiceProcessStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface ServiceInfo {
   id: string;
   title: string;
   subtitle: string;
   heroImage: string;
-  iconName: string;
-  description: string;
-  detailedOverview: string;
-  benefits: { title: string; desc: string; iconName: string }[];
-  process: { step: string; title: string; desc: string }[];
+  overview: string;
+  benefits: ServiceBenefit[];
+  process: ServiceProcessStep[];
   features: string[];
 }
 
-export const SERVICES_DATA: Record<string, ServiceDetail> = {
+export const SERVICES_DATA: Record<string, ServiceInfo> = {
   "website-development": {
     id: "website-development",
     title: "Website Development",
-    subtitle: "Premium, fast-loading, mobile-first websites built for conversion and brand trust.",
-    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Code",
-    description: "We build modern, responsive, and blazing-fast websites tailored to your business goals. By utilizing the latest technologies, we ensure your site is secure, SEO-friendly, and optimized for maximum conversions.",
-    detailedOverview: "Your website is the digital storefront of your business. We combine premium aesthetics, clean code, and user-centric design to create websites that don't just look great but also drive actions. Every site we build includes lifetime hosting on robust global CDN platforms like Netlify or Vercel, saving you from recurring monthly hosting bills.",
+    subtitle: "High-performance, custom-crafted web experiences engineered to convert traffic into loyal customers.",
+    heroImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1400&h=700&fit=crop&auto=format",
+    overview: "Your website is the digital storefront of your business. We don't just build websites; we design high-converting, lightning-fast digital solutions. Leveraging modern tech stacks (React, Vite, Next.js), we focus on responsive UI/UX design, sub-second load times, and clean semantic structures that search engines love.",
     benefits: [
-      { title: "Mobile-First Design", desc: "Optimized for all screen sizes so customers can browse easily on any device.", iconName: "Smartphone" },
-      { title: "Lightning Fast Speed", desc: "Built with Vite & React for sub-second loading times to reduce bounce rates.", iconName: "Zap" },
-      { title: "Free Lifetime Hosting", desc: "No recurring hosting bills—deployed on enterprise-grade static CDNs.", iconName: "Globe" }
+      {
+        title: "Custom UI/UX Design",
+        description: "Tailored to your brand style guide, ensuring a completely unique aesthetic that stands out.",
+        icon: Palette
+      },
+      {
+        title: "Speed Optimization",
+        description: "Sub-second load times using advanced caching, image optimization, and clean React code.",
+        icon: Zap
+      },
+      {
+        title: "SEO-Ready Architecture",
+        description: "Built-in meta tags, structured JSON-LD schema, and semantic HTML for instant ranking potential.",
+        icon: Search
+      }
     ],
     process: [
-      { step: "01", title: "Discovery & UX Strategy", desc: "We align on your goals, user personas, and map out the site architecture." },
-      { step: "02", title: "Premium Visual Design", desc: "We design a high-fidelity visual prototype tailored to your brand identity." },
-      { step: "03", title: "Blazing-Fast Development", desc: "Clean, performant React coding with SEO optimization baked in." },
-      { step: "04", title: "Launch & Support", desc: "Comprehensive testing, deployment, and free ongoing maintenance setup." }
+      {
+        step: "01",
+        title: "Wireframing & UX Design",
+        description: "We map out user flows and design high-fidelity interactive screens in Figma for your review."
+      },
+      {
+        step: "02",
+        title: "React/Next.js Engineering",
+        description: "We write clean, semantic TypeScript code to turn static mockups into interactive web apps."
+      },
+      {
+        step: "03",
+        title: "Launch & Support",
+        description: "We configure hosting on Vercel/Netlify, perform extensive browser testing, and go live."
+      }
     ],
     features: [
-      "Custom React/Vite development",
-      "Free SSL certificate & security setup",
-      "Interactive Enquiry forms",
-      "WhatsApp & social media integrations",
-      "Google Analytics & Tag Manager integration",
-      "Life-time hosting support"
+      "Responsive layout for Mobile, Tablet & Desktop",
+      "Interactive slider components & dynamic graphics",
+      "Form validation with secure spam protection",
+      "SSL Certificate setup & Domain mapping",
+      "Integration with analytics tools (Google Analytics, Hotjar)"
     ]
   },
   "social-media-marketing": {
     id: "social-media-marketing",
     title: "Social Media Marketing",
-    subtitle: "Grow your brand presence and turn followers into loyal customers.",
+    subtitle: "Organically grow your brand and build a passionate digital community around your products.",
     heroImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Share2",
-    description: "Increase brand awareness and build an active online community across Instagram, Facebook, and LinkedIn. We create scroll-stopping content and run targeted strategies to drive consistent engagement.",
-    detailedOverview: "Social media is where your customers hang out. Our team takes care of your complete social presence—from content strategy and graphic design to community management. We don't just post; we create a unique voice for your brand that builds trust and drives organic sales.",
+    overview: "Social media is where your customers discover, engage with, and review your brand. We design organic content strategies that position your company as an industry leader. By creating high-value Reels, interactive Stories, and cohesive grid feeds, we foster high engagement rates and turn followers into advocates.",
     benefits: [
-      { title: "Consistent Brand Voice", desc: "A unified, professional presence across all social media networks.", iconName: "Palette" },
-      { title: "High Engagement", desc: "Content designed specifically to trigger likes, comments, and shares.", iconName: "Heart" },
-      { title: "Targeted Audience Growth", desc: "Build a community of real, highly-interested potential buyers.", iconName: "Users" }
+      {
+        title: "Cohesive Feed Aesthetic",
+        description: "A customized visual theme for Instagram, LinkedIn, and Facebook that matches your brand guidelines.",
+        icon: Sparkles
+      },
+      {
+        title: "Reels & Video Strategy",
+        description: "Short-form vertical video strategies tailored to capture algorithmic attention and trends.",
+        icon: Video
+      },
+      {
+        title: "Daily Channel Management",
+        description: "Regular community engagement, replying to comments, and monitoring incoming direct messages.",
+        icon: MessageSquare
+      }
     ],
     process: [
-      { step: "01", title: "Competitor & Audience Analysis", desc: "We study your market to find what formats resonate most with your audience." },
-      { step: "02", title: "Content Calendar & Strategy", desc: "A weekly layout of reels, carousels, and single posts planned in advance." },
-      { step: "03", title: "Creative Production", desc: "Our designers and copywriters craft stunning visuals and compelling captions." },
-      { step: "04", title: "Publishing & Reporting", desc: "Posting at optimal times, engagement tracking, and monthly growth audits." }
+      {
+        step: "01",
+        title: "Brand & Competitor Audit",
+        description: "We analyze your current social media footprint and review what top competitors are doing successfully."
+      },
+      {
+        step: "02",
+        title: "Monthly Content Calendar",
+        description: "We plan out all creatives, carousels, video scripts, and copy captions 30 days in advance."
+      },
+      {
+        step: "03",
+        title: "Analytics & Iteration",
+        description: "We review monthly performance logs to see which formats drive the most reach and conversions."
+      }
     ],
     features: [
-      "Instagram, Facebook, & LinkedIn management",
-      "Custom brand aesthetic & templates",
-      "Engagement and comment moderation",
-      "Influencer collaboration outreach",
-      "Monthly growth & engagement reports",
-      "Hashtag and keyword optimization"
+      "Custom graphic templates designed in Figma",
+      "Hashtag research & trend alignment",
+      "Active story posting (polls, Q&A, behind-the-scenes)",
+      "LinkedIn thought leadership posts for founders",
+      "Comprehensive monthly performance review deck"
     ]
   },
   "performance-marketing": {
     id: "performance-marketing",
     title: "Performance Marketing",
-    subtitle: "Data-driven campaigns engineered to maximize your return on ad spend.",
+    subtitle: "Direct-response advertising campaigns optimized for high return on ad spend (ROAS) and sales.",
     heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Target",
-    description: "Scale your revenue with highly targeted, conversion-oriented campaigns. We track every single rupee spent, continuously optimizing for the lowest customer acquisition cost.",
-    detailedOverview: "Performance marketing is about measurable business results. We look beyond vanity metrics like clicks and impressions to focus on what actually matters: leads, sales, and ROI. Our marketing experts build and manage full-funnel advertising strategies tailored to your exact budget.",
+    overview: "Stop guessing if your marketing spend works. Our performance marketing framework is data-first, tracking every single dollar spent from impression to final check-out. We run cross-channel campaigns using advanced pixel attribution, split-testing creatives, and laser-targeted demographic lists to maximize your conversions.",
     benefits: [
-      { title: "Measurable ROI", desc: "Track every single rupee of advertising spend against direct revenue.", iconName: "BarChart2" },
-      { title: "Precise Targeting", desc: "Reach your ideal customers based on demographics, interests, and behavior.", iconName: "Crosshair" },
-      { title: "Continuous Optimization", desc: "Daily bid management and A/B testing to maximize results.", iconName: "Zap" }
+      {
+        title: "ROAS-Driven Approach",
+        description: "Every campaign is optimized for high return on ad spend and scaling what drives profit.",
+        icon: TrendingUp
+      },
+      {
+        title: "Continuous A/B Testing",
+        description: "We split test headlines, copy, videos, and layouts to constantly improve conversion rates.",
+        icon: Layers
+      },
+      {
+        title: "Demographic Precision",
+        description: "Advanced targeting to put your brand in front of ready-to-buy decision makers.",
+        icon: Target
+      }
     ],
     process: [
-      { step: "01", title: "Funnel Strategy", desc: "We map out your customer journey from initial hook to conversion." },
-      { step: "02", title: "Tracking Setup", desc: "Configuring Pixels, APIs, and GA4 to ensure data is tracked correctly." },
-      { step: "03", title: "Campaign Launch", desc: "Creating targeted ad sets and A/B testing multiple creatives." },
-      { step: "04", title: "Scaling & Optimization", desc: "Reallocating budget to top performers to scale your lead generation." }
+      {
+        step: "01",
+        title: "Funnel Strategy Formulation",
+        description: "We design multi-stage campaigns targeting Cold, Warm, and Hot audiences separately."
+      },
+      {
+        step: "02",
+        title: "Creative & Copy Rollout",
+        description: "We deploy multiple visual variants and copy angles to discover the best performer."
+      },
+      {
+        step: "03",
+        title: "Scale & Budget Shift",
+        description: "We aggressively scale successful ad-sets while turning off underperforming ones."
+      }
     ],
     features: [
-      "Cross-channel advertising strategies",
-      "Pixel, API, and tracking integration",
-      "Audience retargeting funnels",
-      "Creative and copy A/B testing",
-      "ROAS (Return on Ad Spend) optimization",
-      "Weekly analytics dashboards"
+      "Multi-channel tracking pixel integration",
+      "Dynamic retargeting setup (DABA/DPA)",
+      "Lead generation forms with CRM integrations",
+      "LTV & CAC calculations and dashboarding",
+      "Weekly performance logs and direct communications"
     ]
   },
   "meta-ads": {
     id: "meta-ads",
     title: "Meta Ads",
-    subtitle: "Generate high-quality leads on Facebook & Instagram at the lowest cost.",
+    subtitle: "Command attention across Instagram, Facebook, and Messenger with visual ads that sell.",
     heroImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Megaphone",
-    description: "Harness the power of Meta's advanced algorithm. We design ad copy, creatives, and landing pages that grab attention and turn social media scrolling into high-intent leads.",
-    detailedOverview: "Meta Ads are perfect for building desire and collecting leads directly. We configure custom Facebook and Instagram lead forms, dynamic product ads, and message-destination campaigns that connect you instantly with prospects via WhatsApp or Messenger.",
+    overview: "Meta's family of apps contains the world's most powerful audience mapping data. We help you capitalize on this through high-performing Instagram Reels ads, Facebook carousel placements, and conversion-optimized Messenger campaigns. Our team manages copy, creative, audience building, and scaling.",
     benefits: [
-      { title: "Attention-Grabbing Creatives", desc: "Video and static ads engineered to stop users from scrolling.", iconName: "Eye" },
-      { title: "Direct Lead Gen", desc: "In-app lead forms that pre-fill contact details for maximum conversion.", iconName: "FileText" },
-      { title: "Custom Retargeting", desc: "Re-engage users who visited your website or profile but didn't buy.", iconName: "RotateCcw" }
+      {
+        title: "Creative Concept Testing",
+        description: "We test multiple creator-style videos and static graphics to beat ad fatigue.",
+        icon: Video
+      },
+      {
+        title: "Custom & Lookalike Audiences",
+        description: "We build lookalikes of your past buyers and retarget landing page visitors.",
+        icon: Users
+      },
+      {
+        title: "CAPI & Pixel Optimization",
+        description: "Conversion API setup bypasses cookie limits for accurate event attribution.",
+        icon: Cpu
+      }
     ],
     process: [
-      { step: "01", title: "Audience Profiling", desc: "We define custom and lookalike audiences based on your best buyers." },
-      { step: "02", title: "Ad Copy & Design", desc: "We craft hook-heavy copy and scroll-stopping visual assets." },
-      { step: "03", title: "Campaign Architecture", desc: "Building clean TOFU, MOFU, and BOFU campaigns inside Ads Manager." },
-      { step: "04", title: "Optimization", desc: "Adjusting placements, budgets, and bid caps to maintain low CPL." }
+      {
+        step: "01",
+        title: "Asset Development",
+        description: "We write conversion-focused copy and design mobile-first video/graphic creatives."
+      },
+      {
+        step: "02",
+        title: "Meta Campaign Launch",
+        description: "We deploy CBO and ABO campaigns targeting carefully vetted interest groups."
+      },
+      {
+        step: "03",
+        title: "Frequency & Ad Fatigue Management",
+        description: "We cycle in new creatives as older ones start showing diminishing ROAS."
+      }
     ],
     features: [
-      "Facebook & Instagram Ads Manager setup",
-      "Custom CBO and ABO structure",
-      "Lead generation & catalog ads",
-      "Creative direction & copy writing",
-      "Lookalike and Custom Audience creation",
-      "Meta Pixel & Conversion API setup"
+      "Instagram Reels and Stories vertical placements",
+      "High-intent lead generation forms",
+      "Integration with Meta Commerce Catalog",
+      "Dynamic creative optimization (DCO) setup",
+      "Weekly analytics reporting"
     ]
   },
   "google-ads": {
     id: "google-ads",
     title: "Google Ads",
-    subtitle: "Put your business in front of buyers at the exact moment they search.",
+    subtitle: "Show up at the top of Search results right when high-intent buyers search for you.",
     heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&h=700&fit=crop&auto=format",
-    iconName: "BarChart2",
-    description: "Capture high-intent searches. We create Search, Display, and Performance Max campaigns that place your brand at the very top of Google results when users are ready to act.",
-    detailedOverview: "Unlike social media, users on Google are actively looking for solutions. Google Ads capture this high intent. We manage search keywords, build negative keyword lists, write high-converting ad copy, and optimize bidding strategies to ensure you only pay for highly qualified clicks.",
+    overview: "Google Ads allows you to intercept users with high buying intent. Unlike social media discovery, Google users are actively searching for a solution. We build search campaigns, Performance Max setup, and call-only campaigns targeting high-intent commercial keywords to ensure you win the click.",
     benefits: [
-      { title: "High-Intent Traffic", desc: "Reach customers who are actively searching for your service right now.", iconName: "Search" },
-      { title: "Top-of-Page Placement", desc: "Beat your competitors to the top spot on search result pages.", iconName: "ArrowUp" },
-      { title: "Pay-Per-Click", desc: "Maximize your budget—only pay when someone actually visits your site.", iconName: "DollarSign" }
+      {
+        title: "Intent-Based Bidding",
+        description: "We target commercial terms like 'hire digital agency' rather than generic queries.",
+        icon: Search
+      },
+      {
+        title: "Negative Keyword Control",
+        description: "Rigorous daily maintenance to filter out irrelevant searches and conserve budget.",
+        icon: Shield
+      },
+      {
+        title: "Ad Strength Optimization",
+        description: "Creating premium headlines, descriptions, and site extensions for higher CTR.",
+        icon: Zap
+      }
     ],
     process: [
-      { step: "01", title: "Keyword Research", desc: "Identifying high-volume, low-cost search terms with strong buying intent." },
-      { step: "02", title: "Ad Copy & Extensions", desc: "Drafting headlines and description lines that drive high CTR." },
-      { step: "03", title: "Smart Bidding Setup", desc: "Configuring Target CPA or Maximize Conversions to bid efficiently." },
-      { step: "04", title: "Negative Match Optimization", desc: "Adding search term exclusions to prevent wasted ad budget." }
+      {
+        step: "01",
+        title: "Search Term Research",
+        description: "We gather search volumes, competition rates, and average CPC estimates for your keywords."
+      },
+      {
+        step: "02",
+        title: "Campaign Configuration",
+        description: "We build structured ad groups, define match types, and set up conversion tracking."
+      },
+      {
+        step: "03",
+        title: "Bid Strategy Optimization",
+        description: "Transitioning campaigns from Max Clicks to Max Conversions as data accumulates."
+      }
     ],
     features: [
-      "Search, Display, & YouTube campaigns",
-      "In-depth keyword bidding & research",
-      "Negative keyword lists management",
-      "Ad extension optimizations",
-      "Smart Bidding (tCPA, tROAS) management",
-      "Conversion tracking configuration"
+      "Search, Display & Performance Max (PMax) setups",
+      "Local Map Pack ad campaigns for brick-and-mortars",
+      "Google Tag Manager (GTM) event setups",
+      "Sitelink, Callout, and Structured Snippet extensions",
+      "Detailed search query reports"
     ]
   },
   "google-seo": {
     id: "google-seo",
     title: "Google SEO",
-    subtitle: "Rank on the first page of Google and drive consistent free traffic.",
-    heroImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Search",
-    description: "Build long-term organic traffic. We optimize your website's content, technical structure, and Google Business Profile to rank higher in local and global searches.",
-    detailedOverview: "Paid ads stop when the budget runs out, but SEO delivers free, compounding traffic forever. We focus on search engine optimization that matters: auditing technical issues, optimizing landing page content, building local citations, and optimizing your Google Business Profile to make you stand out locally.",
+    subtitle: "Drive sustainable, organic traffic that compounds over time without active ad spend.",
+    heroImage: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1400&h=700&fit=crop&auto=format",
+    overview: "Search Engine Optimization is the ultimate digital asset. We help your business claim page-one rankings for keywords that drive actual commercial value. Our approach includes fixing technical crawl errors, optimizing your on-page copy, and earning links from authoritative websites.",
     benefits: [
-      { title: "Free Organic Traffic", desc: "Get consistent leads and visitors without paying for clicks.", iconName: "TrendingUp" },
-      { title: "Local Map Pack Ranking", desc: "Dominating local search results so nearby customers find you first.", iconName: "MapPin" },
-      { title: "Long-Term Authority", desc: "Establish your brand as an industry leader in Google's eyes.", iconName: "Award" }
+      {
+        title: "Compounding Traffic",
+        description: "Organic rankings keep driving visitors 24/7 without paying per click.",
+        icon: TrendingUp
+      },
+      {
+        title: "Enhanced Trust & Authority",
+        description: "Users inherently trust organic results more than paid advertisements.",
+        icon: Award
+      },
+      {
+        title: "Technical Site Health",
+        description: "Optimized XML sitemaps, robots.txt, schema, and page speeds for crawl bots.",
+        icon: Code
+      }
     ],
     process: [
-      { step: "01", title: "Technical SEO Audit", desc: "Fixing site speed, broken links, sitemaps, and mobile issues." },
-      { step: "02", title: "Keyword Mapping", desc: "Mapping out keywords to optimize title tags, headings, and copy." },
-      { step: "03", title: "Local Map Optimization", desc: "Optimizing your Google Business Profile (GBP) for local searches." },
-      { step: "04", title: "Authority & Backlinks", desc: "Building profile links and listings to grow domain trust." }
+      {
+        step: "01",
+        title: "Technical Audit & Clean",
+        description: "We run deep crawler diagnostics to fix indexing issues, 404s, and slow-loading assets."
+      },
+      {
+        step: "02",
+        title: "Keyword & Content Plan",
+        description: "We map out high-value informational and commercial content hubs to write."
+      },
+      {
+        step: "03",
+        title: "Link Building Outreach",
+        description: "We secure high-quality backlinks from trusted domains to build domain authority."
+      }
     ],
     features: [
-      "On-page content optimization",
-      "Google Business Profile (GBP) optimization",
-      "Technical SEO & Core Web Vitals audit",
-      "XML Sitemap and Robot.txt setup",
-      "Google Search Console integration",
-      "Monthly keyword ranking reports"
+      "Semantic keyword research & content mapping",
+      "On-page heading, image alt, and title optimization",
+      "Google Search Console & Analytics setup",
+      "Local SEO (Google Business Profile optimization)",
+      "Technical Schema markup creation"
     ]
   },
   "branding": {
     id: "branding",
-    title: "Branding & Identity",
-    subtitle: "Craft a memorable brand identity that builds credibility and trust.",
+    title: "Branding",
+    subtitle: "Build a premium, cohesive visual identity that commands authority and builds trust.",
     heroImage: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1400&h=700&fit=crop&auto=format",
-    iconName: "Palette",
-    description: "Stand out from the crowd. We design unique logos, curated color palettes, modern typography, and brand identity guidelines that tell your company's story.",
-    detailedOverview: "A brand is more than just a logo—it's how your business makes people feel. We translate your company's values, mission, and personality into cohesive visual assets. From social media templates to business cards and digital guidelines, we make your brand look premium and professional.",
+    overview: "A brand is more than a logo; it is the feeling and identity associated with your business. We design comprehensive visual ecosystems including typography, custom logo marks, cohesive color palettes, and detailed brand identity books to ensure your presence remains premium across web, print, and social channels.",
     benefits: [
-      { title: "Unique Visual Identity", desc: "Stand out with a look that is completely customized and memorable.", iconName: "Sparkles" },
-      { title: "Brand Consistency", desc: "Color palettes and guidelines that make your business look unified.", iconName: "Grid" },
-      { title: "Instant Credibility", desc: "A premium design that immediately gains customer trust.", iconName: "ShieldCheck" }
+      {
+        title: "Memorable Logo Identity",
+        description: "A custom logo symbol and wordmark designed to be highly recognizable.",
+        icon: Sparkles
+      },
+      {
+        title: "Comprehensive Style Guides",
+        description: "Rules for fonts, colors, imagery, and logo usage to ensure future consistency.",
+        icon: Layers
+      },
+      {
+        title: "Premium Visual Position",
+        description: "Visual assets that position your brand as a premium and trusted choice.",
+        icon: Eye
+      }
     ],
     process: [
-      { step: "01", title: "Brand Archetype & Discovery", desc: "Understanding your mission, audience, and defining the brand voice." },
-      { step: "02", title: "Logo Concepts", desc: "Drafting multiple logo iterations from sketches to clean vector graphics." },
-      { step: "03", title: "Color & Typography Setup", desc: "Curating typography pairings and harmonious color systems." },
-      { step: "04", title: "Brand Book & Guidelines", desc: "Compiling guidelines explaining font sizes, logo rules, and layouts." }
+      {
+        step: "01",
+        title: "Discovery & Identity Survey",
+        description: "We align on target personas, design tastes, core values, and industry competitor styles."
+      },
+      {
+        step: "02",
+        title: "Concept Presentations",
+        description: "We showcase multiple distinct creative logo concepts in real-world mockups."
+      },
+      {
+        step: "03",
+        title: "Collateral & Guidelines",
+        description: "We export final vector files, build the brand book, and design business cards/stationery."
+      }
     ],
     features: [
-      "Vector logo design (.AI, .PNG, .SVG)",
-      "Typography styling and font pairings",
-      "Harmonious brand color palettes",
-      "Social media post & story guidelines",
-      "Digital business card layouts",
-      "Brand style guide documentation"
+      "Custom vector logo packages (SVG, PNG, EPS)",
+      "Brand Color Palette definition (HEX, RGB, CMYK)",
+      "Typography selection and hierarchy guidance",
+      "Social Media brand kit (profile assets, headers)",
+      "Print-ready collateral design (business cards, letterheads)"
     ]
   },
   "review-scanner": {
     id: "review-scanner",
     title: "Review Scanner",
-    subtitle: "Protect your online reputation and boost organic sales with reviews.",
-    heroImage: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format",
-    iconName: "ScanSearch",
-    description: "Monitor and manage customer feedback across Google and social platforms. We help you collect positive reviews, scan for negative feedback, and maintain a stellar rating.",
-    detailedOverview: "Over 90% of customers check reviews before making a purchase. A single bad review can hurt conversions. Our Review Scanner monitors your online reputation in real-time, helping you respond to customer feedback quickly, address complaints, and collect five-star reviews.",
+    subtitle: "Automate five-star review acquisition, monitor reputation, and boost local map rank.",
+    heroImage: "https://images.unsplash.com/photo-1521791136368-1a8519007b51?w=1400&h=700&fit=crop&auto=format",
+    overview: "92% of customers read online reviews before choosing a service. Our proprietary Review Scanner simplifies reputation building. We set up automated feedback request campaigns via SMS & WhatsApp, helping you secure five-star Google reviews while catching negative feedback internally before it hits the web.",
     benefits: [
-      { title: "Reputation Protection", desc: "Get notified immediately when reviews are posted to handle complaints fast.", iconName: "Shield" },
-      { title: "Boost Google Rankings", desc: "More positive reviews signal Google to rank your local profile higher.", iconName: "ArrowUpRight" },
-      { title: "Increased Sales Conversion", desc: "Use 5-star reviews as testimonials to build immediate trust.", iconName: "ThumbsUp" }
+      {
+        title: "Automated Feedback Loops",
+        description: "Send automatic review prompts via WhatsApp/SMS after a sale or booking.",
+        icon: Clock
+      },
+      {
+        title: "Local Map Rankings Boost",
+        description: "Higher positive review volume signals Google to rank your map listing higher.",
+        icon: MapPin
+      },
+      {
+        title: "Reputation Shielding",
+        description: "Private feedback channel directs negative reviews internally for prompt resolution.",
+        icon: Shield
+      }
     ],
     process: [
-      { step: "01", title: "Setup Review Scanning", desc: "Linking your Google Profile, Facebook, and directory reviews." },
-      { step: "02", title: "Review Campaigns", desc: "Deploying automated SMS/WhatsApp flows to request client reviews." },
-      { step: "03", title: "Monitoring & Alerts", desc: "Receiving real-time alerts for any feedback that needs attention." },
-      { step: "04", title: "Response Strategy", desc: "Providing guidelines and responding to reviews to protect your score." }
+      {
+        step: "01",
+        title: "Platform Integration",
+        description: "We link your CRM or sales system to trigger the Review Scanner automation."
+      },
+      {
+        step: "02",
+        title: "Template Copywriting",
+        description: "We write highly converting, friendly request scripts for SMS and WhatsApp messages."
+      },
+      {
+        step: "03",
+        title: "Dashboard Setup",
+        description: "You receive a live dashboard to track review acquisition rates and response logs."
+      }
     ],
     features: [
-      "Multi-platform review monitoring",
-      "SMS & WhatsApp review request flows",
-      "Negative review alert systems",
-      "Google Business Review widgets",
-      "Automated response templates",
-      "Monthly reputation health reports"
+      "WhatsApp & SMS API campaign templates",
+      "Smart routing for positive vs negative feedback",
+      "Google Business Profile API integration",
+      "Real-time analytics rating dashboard",
+      "Printable QR code review stands for in-store checkout"
     ]
   },
   "content-creation": {
     id: "content-creation",
     title: "Content Creation",
-    subtitle: "Scroll-stopping reels, graphics, and copies engineered for conversions.",
-    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&h=700&fit=crop&auto=format",
-    iconName: "FileText",
-    description: "We craft ad creatives, reels, copywriting, and custom graphics that tell your brand's story and capture attention in busy social feeds.",
-    detailedOverview: "In a digital-first world, content is king. We combine high-quality scriptwriting, expert video editing, and modern graphic design to create content that doesn't just look pretty but actually converts viewers into leads.",
+    subtitle: "High-quality, viral-ready video, photo, and copywriting that tells your brand story.",
+    heroImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1400&h=700&fit=crop&auto=format",
+    overview: "In today's digital landscape, content is currency. We produce premium short-form videos, custom illustrations, high-conversion ad creatives, and search-optimized copy that captures eyes and converts clicks. From scripts to production, editing, and optimization, we handle the full production line.",
     benefits: [
-      { title: "Scroll-Stopping Hooks", desc: "Reels and ad creatives designed to hook viewers in the first 3 seconds.", iconName: "Zap" },
-      { title: "Professional Video Editing", desc: "Dynamic pacing, captions, and visual transitions that keep attention.", iconName: "Video" },
-      { title: "Copywriting That Converts", desc: "Persuasive captions and ad script copies that trigger actions.", iconName: "PenTool" }
+      {
+        title: "Viral Hook Video Editing",
+        description: "We edit short-form Reels & TikToks with engaging subtitles, effects, and pacing.",
+        icon: Video
+      },
+      {
+        title: "Direct-Response Copy",
+        description: "Persuasive text copy for landing pages, emails, and social ads that motivates action.",
+        icon: Flame
+      },
+      {
+        title: "High-End Custom Assets",
+        description: "Graphics and illustrations crafted by custom vector designers, not template editors.",
+        icon: Sparkles
+      }
     ],
     process: [
-      { step: "01", title: "Ideation & Scriptwriting", desc: "Brainstorming hooks, video angles, and writing scripts in detail." },
-      { step: "02", title: "Visual & Asset Creation", desc: "Filming support guidelines or creating graphic assets." },
-      { step: "03", title: "Professional Post-Editing", desc: "Applying modern transitions, sounds, and active captions." },
-      { step: "04", title: "Delivery & Testing", desc: "A/B testing copy formats to maximize social engagement." }
+      {
+        step: "01",
+        title: "Creative Briefing & Scripts",
+        description: "We map out visual storyboards, hooks, scripts, and production assets."
+      },
+      {
+        step: "02",
+        title: "Design & Post-Production",
+        description: "We film/design the visual elements, refine color grading, and format dimensions."
+      },
+      {
+        step: "03",
+        title: "SEO Copywriting Sync",
+        description: "Integrating high-ranking keywords into all social captions and blogs before publish."
+      }
     ],
     features: [
-      "Instagram Reels & TikTok edit layouts",
-      "Conversion copywriting for ad campaigns",
-      "Professional graphic post designs",
-      "Video script writing & hooks ideas",
-      "Custom brand typography assets",
-      "Multi-format export optimized for web"
+      "Reels & YouTube Shorts scriptwriting and editing",
+      "Custom vector illustrations & infographic design",
+      "High-conversion email newsletter copywriting",
+      "Ad creative design packs (Static, Carousel, Video)",
+      "SEO blog and long-form article writing"
     ]
   }
 };
