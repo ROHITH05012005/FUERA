@@ -89,14 +89,6 @@ const CLIENTS = [
   { name: "CoreTech", sub: "Engineering" },
 ];
 
-const TEAM = [
-  { name: "R. Akash",      role: "Founder & Managing Director",      initials: "RA", desc: "Visionary entrepreneur leading the company's strategy, innovation, and long-term growth initiatives." },
-  { name: "Niranjith M",   role: "Co-Founder",                       initials: "NM", desc: "Supports product development, operations, and business expansion while working closely with the leadership team." },
-  { name: "Rohith B",      role: "Chief Executive Officer (CEO)",     initials: "RB", desc: "Responsible for overall business operations, strategic execution, and organisational growth." },
-  { name: "Manya H. R.",   role: "Chief Financial Officer (CFO)",     initials: "MH", desc: "Leads financial planning, budgeting, investment strategy, and financial compliance." },
-  { name: "Deepthi",       role: "Chief Marketing Officer (CMO)",     initials: "D",  desc: "Drives brand strategy, digital marketing, customer acquisition, and market expansion." },
-];
-
 const DIFFERENTIATORS = [
   { icon: Globe2,  title: "Lifetime Hosting",         desc: "Every website we build comes with free lifetime hosting on Netlify or Vercel — no recurring server bills, ever." },
   { icon: Zap,     title: "Fast & Secure Websites",   desc: "SSL-secured, lightning-fast websites built with best-in-class performance so customers trust and stay on your site." },
@@ -131,7 +123,6 @@ const INSIGHTS = [
   { icon: Users, title: "Clients", desc: "Our marketing and technology expertise has helped clients achieve consistent growth and strong online presence.", cta: "Know More", route: "/clients" },
   { icon: Award, title: "Case Studies", desc: "Detailed breakdowns of how our clients have scaled their business using FUERA's digital strategies.", cta: "Know More", route: "/case-studies" },
   { icon: Zap, title: "Careers", desc: "Join a forward-thinking team that values creativity, data, and impact. We are always looking for hungry talent.", cta: "Know More", route: "/careers" },
-  { icon: Star, title: "Our Team", desc: "We value our people and strive to build a supportive, empowering culture that produces world-class work.", cta: "Know More", route: "/team" },
 ];
 
 const FAQS = [
@@ -430,66 +421,6 @@ export default function App() {
               </div>
             </div>
           </div>
-
-          {/* Leadership Team */}
-          <div>
-            <div className="text-center mb-12">
-              <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                The People Behind FUERA
-              </p>
-              <h2 className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-                Leadership Team
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-              {TEAM.map((member, i) => (
-                <div
-                  key={member.name}
-                  className="group flex flex-col items-center text-center p-5 rounded-xl bg-[#111114] border border-white/8 hover:border-white/20 hover:bg-[#161619] transition-all duration-300"
-                >
-                  {/* avatar circle */}
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
-                    style={{
-                      background: `linear-gradient(135deg, hsl(${i * 55 + 200}, 40%, 14%) 0%, hsl(${i * 55 + 230}, 45%, 20%) 100%)`,
-                      border: `2px solid hsl(${i * 55 + 200}, 40%, 28%)`,
-                      boxShadow: `0 0 20px hsl(${i * 55 + 200}, 45%, 12%)`,
-                    }}
-                  >
-                    <span
-                      className="text-lg font-bold"
-                      style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        color: `hsl(${i * 55 + 200}, 55%, 70%)`,
-                      }}
-                    >
-                      {member.initials}
-                    </span>
-                  </div>
-
-                  {/* name */}
-                  <p className="text-white font-semibold text-sm mb-1 leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    {member.name}
-                  </p>
-
-                  {/* role */}
-                  <p className="text-white/40 text-[10px] uppercase tracking-wider mb-3 leading-tight" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    {member.role}
-                  </p>
-
-                  {/* divider */}
-                  <div className="w-8 h-px bg-white/10 mb-3" />
-
-                  {/* description */}
-                  <p className="text-white/40 group-hover:text-white/60 text-[11px] leading-relaxed transition-colors duration-300">
-                    {member.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -1068,7 +999,6 @@ export default function App() {
                   </li>
                 ))}
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
-                <li><button onClick={() => navigate("/team")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Our Team</button></li>
                 <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
                 <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
               </ul>
