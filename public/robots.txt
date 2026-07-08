@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fuera.in.net/sitemap.xml

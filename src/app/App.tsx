@@ -938,7 +938,7 @@ export default function App() {
               <ContactRow icon={Mail} label="Email" value="fuera.solutions.23@gmail.com" href="mailto:fuera.solutions.23@gmail.com" />
               <ContactRow icon={MapPin} label="Address" value="Koramangala 5th Block, Bangalore – 560068" />
               <ContactRow icon={Instagram} label="Instagram" value="@fuera.official.23" href="https://instagram.com/fuera.official.23" />
-              <ContactRow icon={Globe} label="Website" value="www.fuera.netlify.app" href="https://fuera.netlify.app" />
+              <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://fuera.in.net" />
               <div className="pt-4">
                 <img
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format"
