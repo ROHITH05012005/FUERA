@@ -22,7 +22,8 @@ import {
   MessageSquare,
   ThumbsUp,
   Flame,
-  CheckCircle
+  CheckCircle,
+  MapPin
 } from "lucide-react";
 
 export interface ServiceBenefit {
