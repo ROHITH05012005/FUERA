@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, CheckCircle, HelpCircle } from "lucide-react";
 import { SERVICES_DATA } from "../data/servicesData";
 import PageLayout from "../components/PageLayout";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 
 export default function ServicePage() {
