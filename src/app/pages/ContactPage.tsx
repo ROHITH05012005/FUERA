@@ -247,7 +247,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Your name"
-                      className="w-full bg-[#18181c] border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-white/30 text-sm transition-colors"
+                      className="w-full bg-white border border-white/10 text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="name@company.com"
-                      className="w-full bg-[#18181c] border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-white/30 text-sm transition-colors"
+                      className="w-full bg-white border border-white/10 text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone number"
-                      className="w-full bg-[#18181c] border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-white/30 text-sm transition-colors"
+                      className="w-full bg-white border border-white/10 text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -291,7 +291,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Your company (optional)"
-                      className="w-full bg-[#18181c] border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-white/30 text-sm transition-colors"
+                      className="w-full bg-white border border-white/10 text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -332,7 +332,7 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     rows={4}
                     placeholder="Tell us about your project, target audience, and goals..."
-                    className="w-full bg-[#18181c] border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-white/30 text-sm transition-colors resize-none"
+                    className="w-full bg-white border border-white/10 text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors resize-none placeholder:text-gray-400"
                   />
                 </div>
 

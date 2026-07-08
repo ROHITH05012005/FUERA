@@ -1114,7 +1114,7 @@ function EnquiryForm({ onSubmit, inline = false }: { onSubmit?: () => void; inli
     setForm({ name: "", company: "", designation: "", email: "", phone: "", message: "", privacy: false });
   };
 
-  const inputCls = "w-full border border-border bg-[#f9fafb] text-sm text-foreground px-4 py-2.5 rounded-sm focus:outline-none focus:border-white/40 transition-colors placeholder:text-muted-foreground";
+  const inputCls = "w-full border border-border bg-[#f9fafb] text-sm text-black px-4 py-2.5 rounded-sm focus:outline-none focus:border-white/40 transition-colors placeholder:text-muted-foreground";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
