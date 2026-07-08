@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, Users, TrendingUp, Globe } from "lucide-react";
 import PageLayout from "../components/PageLayout";
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 const CLIENTS = [
   { name: "RetailX", sub: "E-Commerce", industry: "Retail", result: "3× lead increase in 60 days", desc: "FUERA designed and deployed a complete e-commerce strategy with Meta Ads and Google SEO, tripling qualified inbound leads within 2 months." },
@@ -34,6 +35,12 @@ const STATS = [
 ];
 
 export default function ClientsPage() {
+  useSEO({
+    title: "Clients & Badges | FUERA",
+    description: "See the businesses and brands that partner with FUERA for web development, paid ads, SEO, and social media growth.",
+    path: "/clients"
+  });
+
   const navigate = useNavigate();
   const [active, setActive] = useState<number | null>(null);
 

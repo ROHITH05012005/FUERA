@@ -1,59 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fuera.in.net/</loc>
+    <loc>https://www.fuera.in.net/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/clients</loc>
+    <loc>https://www.fuera.in.net/clients</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/case-studies</loc>
+    <loc>https://www.fuera.in.net/case-studies</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/team</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://fuera.in.net/careers</loc>
+    <loc>https://www.fuera.in.net/careers</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/website-development</loc>
+    <loc>https://www.fuera.in.net/services/website-development</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/social-media-marketing</loc>
+    <loc>https://www.fuera.in.net/services/social-media-marketing</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/performance-marketing</loc>
+    <loc>https://www.fuera.in.net/services/performance-marketing</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/meta-ads</loc>
+    <loc>https://www.fuera.in.net/services/meta-ads</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/google-ads</loc>
+    <loc>https://www.fuera.in.net/services/google-ads</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/google-seo</loc>
+    <loc>https://www.fuera.in.net/services/google-seo</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/branding</loc>
+    <loc>https://www.fuera.in.net/services/branding</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/review-scanner</loc>
+    <loc>https://www.fuera.in.net/services/review-scanner</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fuera.in.net/services/content-creation</loc>
+    <loc>https://www.fuera.in.net/services/content-creation</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

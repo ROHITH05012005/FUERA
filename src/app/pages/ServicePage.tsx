@@ -4,6 +4,7 @@ import { SERVICES_DATA } from "../data/servicesData";
 import PageLayout from "../components/PageLayout";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function ServicePage() {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -18,6 +19,12 @@ export default function ServicePage() {
 
   // Fallback / redirect if serviceId is invalid
   const service = serviceId ? SERVICES_DATA[serviceId] : null;
+
+  useSEO({
+    title: service ? `${service.title} | FUERA` : "Service Not Found | FUERA",
+    description: service ? service.subtitle : "The service page you are looking for does not exist.",
+    path: `/services/${serviceId || "not-found"}`
+  });
 
   if (!service) {
     return (

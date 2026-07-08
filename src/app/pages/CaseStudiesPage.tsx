@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, BarChart2, TrendingUp, Target, Star } from "lucide-react";
 import PageLayout from "../components/PageLayout";
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 const CASE_STUDIES = [
   {
@@ -110,6 +111,12 @@ const CASE_STUDIES = [
 ];
 
 export default function CaseStudiesPage() {
+  useSEO({
+    title: "Case Studies | FUERA",
+    description: "Read detailed client case studies and growth metrics demonstrating how FUERA drives leads and scales businesses online.",
+    path: "/case-studies"
+  });
+
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState<number | null>(0);
 

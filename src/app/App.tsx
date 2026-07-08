@@ -12,6 +12,7 @@ import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
+import { useSEO } from "./hooks/useSEO";
 
 const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
 
@@ -177,6 +178,12 @@ function OrangeBtn({ children, onClick, outline = false, sm = false }: any) {
 // ─── APP ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
+  useSEO({
+    title: "FUERA | Digital Marketing & Website Development Agency",
+    description: "FUERA helps businesses grow online with website development, SEO, social media marketing, branding, paid ads, content creation, and performance marketing services.",
+    path: "/"
+  });
+
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -938,7 +945,7 @@ export default function App() {
               <ContactRow icon={Mail} label="Email" value="fuera.solutions.23@gmail.com" href="mailto:fuera.solutions.23@gmail.com" />
               <ContactRow icon={MapPin} label="Address" value="Koramangala 5th Block, Bangalore – 560068" />
               <ContactRow icon={Instagram} label="Instagram" value="@fuera.official.23" href="https://instagram.com/fuera.official.23" />
-              <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://fuera.in.net" />
+              <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://www.fuera.in.net" />
               <div className="pt-4">
                 <img
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format"

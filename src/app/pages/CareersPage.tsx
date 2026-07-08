@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, MapPin, Clock, Zap, Users, Palette, Code, Share2, Search, BarChart2, Target, Megaphone, ScanSearch, FileText } from "lucide-react";
 import PageLayout from "../components/PageLayout";
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 const OPEN_ROLES = [
   {
@@ -117,6 +118,12 @@ const VALUES = [
 ];
 
 export default function CareersPage() {
+  useSEO({
+    title: "Careers | FUERA",
+    description: "Join FUERA and build a career in web development, social media marketing, performance ads, content creation, and search engine optimization.",
+    path: "/careers"
+  });
+
   const navigate = useNavigate();
   const [applied, setApplied] = useState<string | null>(null);
 
