@@ -260,26 +260,26 @@ export default function ServicePage() {
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Name</label>
                       <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white border border-white/10 text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                        className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Email</label>
                       <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white border border-white/10 text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                        className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Phone</label>
                     <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white border border-white/10 text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                      className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Message (Tell us about your project)</label>
                     <textarea rows={4} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder={`Tell us what you're looking to achieve with ${service.title}...`}
-                      className="w-full bg-white border border-white/10 text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors resize-none placeholder:text-gray-400" />
+                      className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors resize-none placeholder:text-gray-400" />
                   </div>
 
                   <button type="submit"

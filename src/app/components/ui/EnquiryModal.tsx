@@ -75,7 +75,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
   };
 
   const inputCls =
-    "w-full border border-white/10 bg-white text-sm text-black px-4 py-2.5 rounded-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400";
+    "w-full border border-white/10 bg-white text-sm !text-black px-4 py-2.5 rounded-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400";
 
   return (
     <AnimatePresence>
