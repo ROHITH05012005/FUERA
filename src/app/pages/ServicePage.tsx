@@ -5,6 +5,7 @@ import PageLayout from "../components/PageLayout";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
+import { WEB3FORMS_ACCESS_KEY } from "../helpers";
 
 export default function ServicePage() {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -41,14 +42,44 @@ export default function ServicePage() {
     );
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    }, 4000);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: service?.title,
+          message: formData.message,
+          subject: `New ${service?.title} Service Enquiry - FUERA`,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Something went wrong. Please try again or reach out directly via email.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -252,9 +283,10 @@ export default function ServicePage() {
                   </div>
 
                   <button type="submit"
-                    className="w-full bg-white text-black font-semibold py-4 rounded hover:bg-gray-100 transition-colors cursor-pointer"
+                    disabled={submitting}
+                    className="w-full bg-white text-black font-semibold py-4 rounded hover:bg-gray-100 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Send Enquiry for {service.title}
+                    {submitting ? "Sending..." : `Send Enquiry for ${service.title}`}
                   </button>
                 </motion.form>
               )}

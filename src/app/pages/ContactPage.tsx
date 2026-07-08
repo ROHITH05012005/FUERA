@@ -4,6 +4,7 @@ import { ArrowLeft, Phone, Mail, MapPin, Instagram, MessageCircle, Send, CheckCi
 import PageLayout from "../components/PageLayout";
 import { useSEO } from "../hooks/useSEO";
 import { motion, AnimatePresence } from "motion/react";
+import { WEB3FORMS_ACCESS_KEY } from "../helpers";
 
 export default function ContactPage() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export default function ContactPage() {
 
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const servicesList = [
     "Website Development",
@@ -46,14 +48,44 @@ export default function ContactPage() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-      setSelectedServices([]);
-    }, 4000);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          services: selectedServices.join(", "),
+          message: formData.message,
+          subject: "New Website Contact Enquiry - FUERA",
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+        setSelectedServices([]);
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Something went wrong. Please try again or reach out directly via email.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -307,10 +339,11 @@ export default function ContactPage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5"
+                    disabled={submitting}
+                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    Submit Enquiry <Send size={15} />
+                    {submitting ? "Sending..." : "Submit Enquiry"} <Send size={15} />
                   </button>
                 </div>
               </form>

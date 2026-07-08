@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Check } from "lucide-react";
+import { WEB3FORMS_ACCESS_KEY } from "../../helpers";
 
 interface EnquiryModalProps {
   open: boolean;
@@ -17,6 +18,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
     privacy: false
   });
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const set = (k: string) => (e: any) =>
     setForm(v => ({
@@ -24,21 +26,52 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
       [k]: e.target.type === "checkbox" ? e.target.checked : e.target.value
     }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setDone(true);
-    setTimeout(() => {
-      setDone(false);
-      onClose();
-    }, 2500);
-    setForm({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      message: "",
-      privacy: false
-    });
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          message: form.message,
+          subject: "New Quick Enquiry - FUERA",
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setDone(true);
+        setForm({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          message: "",
+          privacy: false
+        });
+        setTimeout(() => {
+          setDone(false);
+          onClose();
+        }, 3000);
+      } else {
+        alert("Something went wrong. Please try again or reach out directly via email.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputCls =
@@ -181,7 +214,8 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
               </div>
               <button
                 type="submit"
-                className={`w-full py-3.5 font-semibold text-sm transition-all rounded-sm ${
+                disabled={submitting}
+                className={`w-full py-3.5 font-semibold text-sm transition-all rounded-sm disabled:opacity-50 disabled:cursor-not-allowed ${
                   done
                     ? "bg-green-600 text-white"
                     : "bg-[#111111] hover:bg-[#2a2a2a] text-white border border-white/10"
@@ -192,6 +226,8 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                   <span className="flex items-center justify-center gap-2">
                     <Check size={16} /> Enquiry Sent! We will be in touch.
                   </span>
+                ) : submitting ? (
+                  "Sending..."
                 ) : (
                   "Submit My Query"
                 )}
