@@ -30,8 +30,8 @@ const NAV_ITEMS = [
   },
   { label: "About", href: "#about" },
   { label: "Packages", href: "#packages" },
-  { label: "Clients", href: "#clients" },
-  { label: "Contact", href: "#contact" },
+  { label: "Clients", href: "/clients" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const HERO_SLIDES = [
@@ -220,7 +220,11 @@ export default function App() {
   const handleNav = (href: string) => {
     setMenuOpen(false);
     setServicesOpen(false);
-    scrollTo(href);
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      scrollTo(href);
+    }
   };
 
   return (
@@ -999,15 +1003,13 @@ export default function App() {
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
               <ul className="space-y-2">
-                {NAV_ITEMS.filter(n => !n.children).map(n => (
-                  <li key={n.label}>
-                    <button onClick={() => scrollTo(n.href)}
-                      className="text-white/60 hover:text-white text-sm transition-colors text-left">{n.label}</button>
-                  </li>
-                ))}
+                <li><button onClick={() => scrollTo("#home")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Home</button></li>
+                <li><button onClick={() => scrollTo("#about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About</button></li>
+                <li><button onClick={() => scrollTo("#packages")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Packages</button></li>
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
-                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
                 <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
+                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
+                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Contact</button></li>
               </ul>
             </div>
             {/* Contact */}

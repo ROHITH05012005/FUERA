@@ -67,7 +67,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
     { label: "About", action: () => goHome("#about") },
     { label: "Packages", action: () => goHome("#packages") },
     { label: "Clients", action: () => navigate("/clients") },
-    { label: "Contact", action: () => goHome("#contact") },
+    { label: "Contact", action: () => navigate("/contact") },
   ];
 
   return (
@@ -222,9 +222,8 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
                 <li><button onClick={() => goHome("#about")} className="text-white/60 hover:text-white text-sm transition-colors">About</button></li>
                 <li><button onClick={() => goHome("#packages")} className="text-white/60 hover:text-white text-sm transition-colors">Packages</button></li>
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors">Clients</button></li>
-                <li><button onClick={() => navigate("/team")} className="text-white/60 hover:text-white text-sm transition-colors">Our Team</button></li>
                 <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors">Careers</button></li>
-                <li><button onClick={() => goHome("#contact")} className="text-white/60 hover:text-white text-sm transition-colors">Contact</button></li>
+                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors">Contact</button></li>
               </ul>
             </div>
             <div>
