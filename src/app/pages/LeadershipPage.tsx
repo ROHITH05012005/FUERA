@@ -4,6 +4,7 @@ import { ArrowLeft, Target, Shield, Zap, Mail, Linkedin } from "lucide-react";
 import PageLayout from "../components/PageLayout";
 import { useSEO } from "../hooks/useSEO";
 import founderImg from "@/imports/founder.png";
+import cofounderImg from "@/imports/cofounder.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -20,6 +21,7 @@ const EXECUTIVES = [
     name: "Niranjith M",
     role: "Co-Founder",
     initials: "NM",
+    image: cofounderImg,
     gradient: "from-purple-500 via-pink-600 to-rose-700",
     glow: "shadow-pink-500/20",
     bio: "Strategist shaping brand operations, partner networks, and product innovation roadmaps.",
