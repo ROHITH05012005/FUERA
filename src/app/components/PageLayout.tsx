@@ -256,7 +256,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
               <ul className="space-y-3 text-sm text-white/60">
                 <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
                 <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
-                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> Koramangala 5th Block, Bangalore – 560068</li>
+                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> #1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034</li>
               </ul>
             </div>
           </div>

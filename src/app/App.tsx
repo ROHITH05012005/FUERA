@@ -970,7 +970,7 @@ export default function App() {
             <div className="space-y-6">
               <ContactRow icon={Phone} label="Phone" value="9449658382 / 7899945862" href="tel:9449658382" />
               <ContactRow icon={Mail} label="Email" value="contact@fuera.in.net" href="mailto:contact@fuera.in.net" />
-              <ContactRow icon={MapPin} label="Address" value="Koramangala 5th Block, Bangalore – 560068" />
+              <ContactRow icon={MapPin} label="Address" value="#1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034" />
               <ContactRow icon={Instagram} label="Instagram" value="@fuera.official.23" href="https://instagram.com/fuera.official.23" />
               <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://www.fuera.in.net" />
               <div className="pt-4">
@@ -1042,7 +1042,7 @@ export default function App() {
               <ul className="space-y-3 text-sm text-white/60">
                 <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
                 <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
-                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> Koramangala 5th Block, Bangalore – 560068</li>
+                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> #1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034</li>
               </ul>
             </div>
           </div>

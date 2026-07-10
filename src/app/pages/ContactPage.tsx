@@ -170,8 +170,8 @@ export default function ContactPage() {
                     <h3 className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Office Location
                     </h3>
-                    <p className="text-white font-semibold text-sm">Koramangala 5th Block</p>
-                    <p className="text-white/60 text-xs mt-0.5">Bangalore, Karnataka – 560068</p>
+                    <p className="text-white font-semibold text-sm">#1, Mahayogi Vemana Road</p>
+                    <p className="text-white/60 text-xs mt-0.5">3rd Block, Koramangala, Bengaluru - 560034</p>
                   </div>
                 </div>
 
