@@ -91,8 +91,8 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
       <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="mailto:fuera.solutions.23@gmail.com" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Mail size={12} /> fuera.solutions.23@gmail.com
+            <a href="mailto:contact@fuera.in.net" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+              <Mail size={12} /> contact@fuera.in.net
             </a>
             <a href="tel:9449658382" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
               <Phone size={12} /> 9449658382 / 7899945862
@@ -254,7 +254,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h4>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> fuera.solutions.23@gmail.com</li>
+                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
                 <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
                 <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> Koramangala 5th Block, Bangalore – 560068</li>
               </ul>

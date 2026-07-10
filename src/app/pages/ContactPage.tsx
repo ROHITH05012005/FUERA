@@ -148,7 +148,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email Card */}
-                <a href="mailto:fuera.solutions.23@gmail.com" className="flex gap-4 p-5 bg-[#121215] border border-white/5 rounded-sm hover:border-white/10 transition-colors block">
+                <a href="mailto:contact@fuera.in.net" className="flex gap-4 p-5 bg-[#121215] border border-white/5 rounded-sm hover:border-white/10 transition-colors block">
                   <div className="w-10 h-10 rounded-sm bg-white/5 flex items-center justify-center text-white shrink-0">
                     <Mail size={18} />
                   </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     <h3 className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Email Us
                     </h3>
-                    <p className="text-white font-semibold text-sm hover:underline">fuera.solutions.23@gmail.com</p>
+                    <p className="text-white font-semibold text-sm hover:underline">contact@fuera.in.net</p>
                     <p className="text-white/60 text-xs mt-0.5">Quick response guaranteed</p>
                   </div>
                 </a>

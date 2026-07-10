@@ -132,7 +132,7 @@ const FAQS = [
   { q: "What does the Standard Package (₹14,999) include?", a: "The Standard package includes everything in Basic plus a custom design, SEO-friendly structure, Google SEO setup, Google Business Profile optimisation, CRUD operations, basic branding support, and WhatsApp or Instagram integration. Valuable customers receive 5% off." },
   { q: "What is in the Premium Package (₹28,999)?", a: "The Premium package is the complete growth solution — everything in Standard plus a fully custom website, custom domain (.com / .in), advanced Google SEO, Instagram Reels (2 per month), Review Scanner, Meta Ads or Google Ads, professional ad creation and video editing, and a monthly performance report. Valuable customers receive 5% off." },
   { q: "How long does it take to build a website?", a: "A standard website typically takes 7–14 business days from the time we receive your content and approvals. Premium custom builds may take 3–4 weeks. We keep you informed at every stage." },
-  { q: "How can I get started with FUERA?", a: "Simply reach out via our contact form, email fuera.solutions.23@gmail.com, or call 9449658382. We will schedule a free discovery call to recommend the best package for your business." },
+  { q: "How can I get started with FUERA?", a: "Simply reach out via our contact form, email contact@fuera.in.net, or call 9449658382. We will schedule a free discovery call to recommend the best package for your business." },
 ];
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
@@ -248,8 +248,8 @@ export default function App() {
       <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="mailto:fuera.solutions.23@gmail.com" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Mail size={12} /> fuera.solutions.23@gmail.com
+            <a href="mailto:contact@fuera.in.net" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+              <Mail size={12} /> contact@fuera.in.net
             </a>
             <a href="tel:9449658382" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
               <Phone size={12} /> 9449658382 / 7899945862
@@ -969,7 +969,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-14 max-w-5xl mx-auto">
             <div className="space-y-6">
               <ContactRow icon={Phone} label="Phone" value="9449658382 / 7899945862" href="tel:9449658382" />
-              <ContactRow icon={Mail} label="Email" value="fuera.solutions.23@gmail.com" href="mailto:fuera.solutions.23@gmail.com" />
+              <ContactRow icon={Mail} label="Email" value="contact@fuera.in.net" href="mailto:contact@fuera.in.net" />
               <ContactRow icon={MapPin} label="Address" value="Koramangala 5th Block, Bangalore – 560068" />
               <ContactRow icon={Instagram} label="Instagram" value="@fuera.official.23" href="https://instagram.com/fuera.official.23" />
               <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://www.fuera.in.net" />
@@ -1040,7 +1040,7 @@ export default function App() {
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h4>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> fuera.solutions.23@gmail.com</li>
+                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
                 <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
                 <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> Koramangala 5th Block, Bangalore – 560068</li>
               </ul>

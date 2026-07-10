@@ -244,7 +244,7 @@ export default function CareersPage() {
                       className="mt-5 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                       <p className="text-green-400 text-sm font-medium">
                         Thank you for your interest! Please send your CV to{" "}
-                        <a href="mailto:fuera.solutions.23@gmail.com" className="underline">fuera.solutions.23@gmail.com</a>{" "}
+                        <a href="mailto:contact@fuera.in.net" className="underline">contact@fuera.in.net</a>{" "}
                         with subject: <strong>{role.title} – Application</strong>
                       </p>
                     </motion.div>
@@ -263,7 +263,7 @@ export default function CareersPage() {
             Don't see a role that fits?
           </h2>
           <p className="text-white/60 mb-8">Send us your portfolio or CV anyway. We're always looking for exceptional talent.</p>
-          <a href="mailto:fuera.solutions.23@gmail.com?subject=Open Application – FUERA"
+          <a href="mailto:contact@fuera.in.net?subject=Open Application – FUERA"
             className="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5"
             style={{ fontFamily: "'Poppins', sans-serif" }}>
             Send Open Application <ArrowRight size={16} />
