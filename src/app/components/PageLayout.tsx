@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import {
   Menu, X, ChevronDown, ChevronUp,
-  Phone, Mail, MapPin, Instagram, Facebook, Linkedin, MessageCircle
+  Phone, Mail, MapPin, Instagram, Facebook, Linkedin, MessageCircle,
+  Sun, Moon
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
@@ -39,6 +40,20 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(t => (t === "dark" ? "light" : "dark"));
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -139,17 +154,26 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <button onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-2 font-semibold transition-all duration-200 px-5 py-2 text-sm bg-[#111111] border border-white/20 text-white hover:bg-[#2a2a2a] shadow-sm hover:shadow-md"
-              style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
-              Send Enquiry
+          <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
+              <button onClick={() => setModalOpen(true)}
+                className="inline-flex items-center gap-2 font-semibold transition-all duration-200 px-5 py-2 text-sm bg-[#111111] border border-white/20 text-white hover:bg-[#2a2a2a] shadow-sm hover:shadow-md"
+                style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
+                Send Enquiry
+              </button>
+            </div>
+
+            {/* Theme Toggle (Mobile & Desktop) */}
+            <button onClick={toggleTheme}
+              className="p-2 text-white/80 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center"
+              aria-label="Toggle theme">
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
-
-          <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
 
         {/* Mobile menu */}

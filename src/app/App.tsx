@@ -5,7 +5,7 @@ import {
   Instagram, Globe, Facebook, Linkedin, MessageCircle, Check,
   Share2, Target, BarChart2, Search, Code, Palette, TrendingUp,
   Video, Megaphone, Star, Shield, Users, Award, Zap, ChevronLeft, ChevronRight,
-  ScanSearch, FileText, Globe2, Rocket, Lock, Wifi
+  ScanSearch, FileText, Globe2, Rocket, Lock, Wifi, Sun, Moon
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
@@ -189,6 +189,20 @@ export default function App() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(t => (t === "dark" ? "light" : "dark"));
+  };
   const [heroSlide, setHeroSlide] = useState(0);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
@@ -299,13 +313,22 @@ export default function App() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <OrangeBtn onClick={() => setModalOpen(true)} sm>Send Enquiry</OrangeBtn>
-          </div>
+          <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
+              <OrangeBtn onClick={() => setModalOpen(true)} sm>Send Enquiry</OrangeBtn>
+            </div>
 
-          <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            {/* Theme Toggle (Mobile & Desktop) */}
+            <button onClick={toggleTheme}
+              className="p-2 text-white/80 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center"
+              aria-label="Toggle theme">
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
