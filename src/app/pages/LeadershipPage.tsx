@@ -134,19 +134,16 @@ export default function LeadershipPage() {
       {/* Executive Leadership Grid */}
       <section className="py-24 bg-[#0d0d0f]">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-16">
+          <div className="mb-12 text-left">
             <h2
-              className="text-white font-bold mb-4"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}
+              className="text-white font-bold leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.2rem)" }}
             >
-              Executive Leadership
+              Executive team
             </h2>
-            <p className="text-white/45 max-w-xl mx-auto text-sm">
-              The executive board shaping Fuera Solutions' products, client relations, and digital service lines.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             {EXECUTIVES.map((exec, idx) => (
               <motion.div
                 key={exec.name}
@@ -154,18 +151,15 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="group relative border border-white/5 rounded-2xl bg-[#111115] hover:border-white/20 hover:bg-[#15151b] transition-all duration-300 overflow-hidden shadow-xl"
+                className="group flex flex-col relative w-full"
               >
-                {/* Glowing Background Glow on Hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
-
-                {/* Full Frame Portrait Photo or gradient initial */}
-                <div className="relative h-96 overflow-hidden bg-white border-b border-white/5 flex items-center justify-center">
+                {/* Full Frame Portrait Photo with custom border-radius */}
+                <div className="overflow-hidden rounded-[2.2rem] aspect-[4/5] w-full bg-[#111115] border border-white/5 relative">
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div
@@ -176,37 +170,26 @@ export default function LeadershipPage() {
                   )}
                 </div>
 
-                <div className="p-6 relative z-10">
-                  <h3
-                    className="text-white text-xl font-bold mb-1"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {exec.name}
-                  </h3>
-                  <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-4">
-                    {exec.role}
-                  </p>
-                  <p className="text-white/60 text-sm leading-relaxed mb-6 min-h-[48px]">
-                    {exec.bio}
-                  </p>
-
-                  {/* Connect Icons */}
-                  <div className="flex gap-3 border-t border-white/5 pt-5 justify-start">
-                    <a
-                      href="#"
-                      className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-                      aria-label={`${exec.name}'s LinkedIn`}
+                {/* Name, role, and LinkedIn button underneath */}
+                <div className="mt-5 flex justify-between items-start w-full px-2">
+                  <div>
+                    <h3
+                      className="text-white text-xl font-bold font-sans tracking-tight"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                      <Linkedin size={15} />
-                    </a>
-                    <a
-                      href="mailto:fuera.solutions.23@gmail.com"
-                      className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-                      aria-label={`Email ${exec.name}`}
-                    >
-                      <Mail size={15} />
-                    </a>
+                      {exec.name}
+                    </h3>
+                    <p className="text-white/50 text-sm font-semibold mt-0.5">
+                      {exec.role}
+                    </p>
                   </div>
+                  <a
+                    href="#"
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-black font-sans shrink-0 hover:opacity-80 transition-all cursor-pointer"
+                    aria-label={`${exec.name}'s LinkedIn`}
+                  >
+                    in
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -217,19 +200,16 @@ export default function LeadershipPage() {
       {/* Other Leadership Team */}
       <section className="py-20 bg-[#0a0a0d] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-16">
+          <div className="mb-12 text-left">
             <h2
-              className="text-white font-bold mb-4"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)" }}
+              className="text-white font-bold leading-tight"
+              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}
             >
-              Leadership Team
+              Leadership team
             </h2>
-            <p className="text-white/45 max-w-xl mx-auto text-sm">
-              Our key leaders coordinating operations, delivery, and technology quality management.
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
             {TEAM_MEMBERS.map((member, idx) => (
               <motion.div
                 key={member.name}
@@ -237,10 +217,10 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="group border border-white/5 rounded-2xl bg-[#111115] hover:border-white/15 hover:bg-[#14141a] transition-all duration-300 overflow-hidden shadow-xl"
+                className="group flex flex-col relative w-full"
               >
-                {/* Full Frame Initial card header */}
-                <div className="relative h-48 overflow-hidden bg-zinc-900 border-b border-white/5">
+                {/* Full Frame Initial card header with custom border-radius */}
+                <div className="overflow-hidden rounded-[2rem] aspect-[4/5] w-full bg-[#111115] border border-white/5 relative">
                   <div
                     className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-3xl font-black font-mono transition-transform duration-500 group-hover:scale-105`}
                   >
@@ -248,11 +228,26 @@ export default function LeadershipPage() {
                   </div>
                 </div>
 
-                <div className="p-5 text-center">
-                  <h4 className="text-white font-semibold text-base mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    {member.name}
-                  </h4>
-                  <p className="text-white/40 text-xs uppercase tracking-wider">{member.role}</p>
+                {/* Name, role, and LinkedIn button underneath */}
+                <div className="mt-4 flex justify-between items-start w-full px-2">
+                  <div>
+                    <h4
+                      className="text-white text-lg font-bold font-sans tracking-tight"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {member.name}
+                    </h4>
+                    <p className="text-white/50 text-xs font-semibold mt-0.5">
+                      {member.role}
+                    </p>
+                  </div>
+                  <a
+                    href="#"
+                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-[10px] font-black font-sans shrink-0 hover:opacity-80 transition-all cursor-pointer"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    in
+                  </a>
                 </div>
               </motion.div>
             ))}
