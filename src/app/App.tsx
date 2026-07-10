@@ -28,7 +28,7 @@ const NAV_ITEMS = [
       "Branding", "Review Scanner", "Content Creation"
     ]
   },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Packages", href: "#packages" },
   { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
@@ -1004,7 +1004,8 @@ export default function App() {
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
               <ul className="space-y-2">
                 <li><button onClick={() => scrollTo("#home")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Home</button></li>
-                <li><button onClick={() => scrollTo("#about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About</button></li>
+                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About Us</button></li>
+                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Leadership Team</button></li>
                 <li><button onClick={() => scrollTo("#packages")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Packages</button></li>
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
                 <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>

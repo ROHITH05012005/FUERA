@@ -6,6 +6,7 @@ import CaseStudiesPage from "./app/pages/CaseStudiesPage.tsx";
 import CareersPage from "./app/pages/CareersPage.tsx";
 import ServicePage from "./app/pages/ServicePage.tsx";
 import ContactPage from "./app/pages/ContactPage.tsx";
+import LeadershipPage from "./app/pages/LeadershipPage.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -16,6 +17,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/case-studies" element={<CaseStudiesPage />} />
       <Route path="/careers" element={<CareersPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/leadership" element={<LeadershipPage />} />
+      <Route path="/about" element={<LeadershipPage />} />
       <Route path="/services/:serviceId" element={<ServicePage />} />
     </Routes>
   </BrowserRouter>

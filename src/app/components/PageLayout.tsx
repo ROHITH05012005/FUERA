@@ -64,7 +64,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   const NAV_ITEMS = [
     { label: "Home", action: () => goHome("#home") },
     { label: "Services", action: () => goHome("#services"), hasChildren: true },
-    { label: "About", action: () => goHome("#about") },
+    { label: "About", action: () => navigate("/about") },
     { label: "Packages", action: () => goHome("#packages") },
     { label: "Clients", action: () => navigate("/clients") },
     { label: "Contact", action: () => navigate("/contact") },
@@ -219,7 +219,8 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
               <ul className="space-y-2">
                 <li><button onClick={() => goHome("#home")} className="text-white/60 hover:text-white text-sm transition-colors">Home</button></li>
-                <li><button onClick={() => goHome("#about")} className="text-white/60 hover:text-white text-sm transition-colors">About</button></li>
+                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors">About Us</button></li>
+                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors">Leadership Team</button></li>
                 <li><button onClick={() => goHome("#packages")} className="text-white/60 hover:text-white text-sm transition-colors">Packages</button></li>
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors">Clients</button></li>
                 <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors">Careers</button></li>
