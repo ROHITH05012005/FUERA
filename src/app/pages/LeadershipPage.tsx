@@ -134,7 +134,7 @@ export default function LeadershipPage() {
       {/* Executive Leadership Grid */}
       <section className="py-24 bg-[#0d0d0f]">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="mb-12 text-left">
+          <div className="mb-16 text-center">
             <h2
               className="text-white font-bold leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.2rem)" }}
@@ -151,19 +151,19 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="group flex flex-col relative w-full"
+                className="group flex flex-col items-center text-center relative w-full"
               >
-                {/* Full Frame Portrait Photo with custom border-radius */}
-                <div className="overflow-hidden rounded-[2.2rem] aspect-[4/5] w-full bg-[#111115] border border-white/5 relative">
+                {/* Circular Portrait Photo */}
+                <div className="overflow-hidden rounded-full w-48 h-48 bg-white dark:bg-zinc-900 border-2 border-black/5 dark:border-white/10 relative shadow-lg transition-transform duration-500 group-hover:scale-105">
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top"
                     />
                   ) : (
                     <div
-                      className={`w-full h-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-5xl font-black font-mono transition-transform duration-500 group-hover:scale-105`}
+                      className={`w-full h-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-5xl font-black font-mono`}
                     >
                       {exec.initials}
                     </div>
@@ -171,25 +171,25 @@ export default function LeadershipPage() {
                 </div>
 
                 {/* Name, role, and LinkedIn button underneath */}
-                <div className="mt-5 flex justify-between items-start w-full px-2">
-                  <div>
+                <div className="mt-6 flex flex-col items-center w-full px-2">
+                  <div className="flex items-center gap-2">
                     <h3
                       className="text-white text-xl font-bold font-sans tracking-tight"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {exec.name}
                     </h3>
-                    <p className="text-white/50 text-sm font-semibold mt-0.5">
-                      {exec.role}
-                    </p>
+                    <a
+                      href="#"
+                      className="w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-[10px] font-black font-sans shrink-0 hover:opacity-85 transition-all cursor-pointer"
+                      aria-label={`${exec.name}'s LinkedIn`}
+                    >
+                      in
+                    </a>
                   </div>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-black font-sans shrink-0 hover:opacity-80 transition-all cursor-pointer"
-                    aria-label={`${exec.name}'s LinkedIn`}
-                  >
-                    in
-                  </a>
+                  <p className="text-white/50 text-sm font-semibold mt-1">
+                    {exec.role}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -200,7 +200,7 @@ export default function LeadershipPage() {
       {/* Other Leadership Team */}
       <section className="py-20 bg-[#0a0a0d] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="mb-12 text-left">
+          <div className="mb-16 text-center">
             <h2
               className="text-white font-bold leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}
@@ -217,37 +217,37 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="group flex flex-col relative w-full"
+                className="group flex flex-col items-center text-center relative w-full"
               >
-                {/* Full Frame Initial card header with custom border-radius */}
-                <div className="overflow-hidden rounded-[2rem] aspect-[4/5] w-full bg-[#111115] border border-white/5 relative">
+                {/* Circular Initial card header */}
+                <div className="overflow-hidden rounded-full w-40 h-40 bg-[#111115] border-2 border-white/5 relative shadow-md transition-transform duration-500 group-hover:scale-105">
                   <div
-                    className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-3xl font-black font-mono transition-transform duration-500 group-hover:scale-105`}
+                    className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-4xl font-black font-mono`}
                   >
                     {member.initials}
                   </div>
                 </div>
 
                 {/* Name, role, and LinkedIn button underneath */}
-                <div className="mt-4 flex justify-between items-start w-full px-2">
-                  <div>
+                <div className="mt-5 flex flex-col items-center w-full px-2">
+                  <div className="flex items-center gap-2">
                     <h4
                       className="text-white text-lg font-bold font-sans tracking-tight"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {member.name}
                     </h4>
-                    <p className="text-white/50 text-xs font-semibold mt-0.5">
-                      {member.role}
-                    </p>
+                    <a
+                      href="#"
+                      className="w-5.5 h-5.5 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-[9px] font-black font-sans shrink-0 hover:opacity-85 transition-all cursor-pointer"
+                      aria-label={`${member.name}'s LinkedIn`}
+                    >
+                      in
+                    </a>
                   </div>
-                  <a
-                    href="#"
-                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-[10px] font-black font-sans shrink-0 hover:opacity-80 transition-all cursor-pointer"
-                    aria-label={`${member.name}'s LinkedIn`}
-                  >
-                    in
-                  </a>
+                  <p className="text-white/50 text-xs font-semibold mt-0.5">
+                    {member.role}
+                  </p>
                 </div>
               </motion.div>
             ))}
