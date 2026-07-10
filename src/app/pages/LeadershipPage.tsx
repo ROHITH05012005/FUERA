@@ -160,12 +160,12 @@ export default function LeadershipPage() {
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
 
                 {/* Full Frame Portrait Photo or gradient initial */}
-                <div className="relative h-80 overflow-hidden bg-zinc-900 border-b border-white/5">
+                <div className="relative h-96 overflow-hidden bg-white border-b border-white/5 flex items-center justify-center">
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div
@@ -174,8 +174,6 @@ export default function LeadershipPage() {
                       {exec.initials}
                     </div>
                   )}
-                  {/* Vignette Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-85" />
                 </div>
 
                 <div className="p-6 relative z-10">
@@ -239,17 +237,23 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="group border border-white/5 rounded-xl bg-[#111115] hover:border-white/15 hover:bg-[#14141a] transition-all duration-300 p-6 flex flex-col items-center text-center"
+                className="group border border-white/5 rounded-2xl bg-[#111115] hover:border-white/15 hover:bg-[#14141a] transition-all duration-300 overflow-hidden shadow-xl"
               >
-                <div
-                  className={`w-14 h-14 rounded-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-lg font-black font-mono mb-4 transition-transform duration-300 group-hover:scale-105`}
-                >
-                  {member.initials}
+                {/* Full Frame Initial card header */}
+                <div className="relative h-48 overflow-hidden bg-zinc-900 border-b border-white/5">
+                  <div
+                    className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-3xl font-black font-mono transition-transform duration-500 group-hover:scale-105`}
+                  >
+                    {member.initials}
+                  </div>
                 </div>
-                <h4 className="text-white font-semibold text-base mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {member.name}
-                </h4>
-                <p className="text-white/40 text-xs uppercase tracking-wider">{member.role}</p>
+
+                <div className="p-5 text-center">
+                  <h4 className="text-white font-semibold text-base mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {member.name}
+                  </h4>
+                  <p className="text-white/40 text-xs uppercase tracking-wider">{member.role}</p>
+                </div>
               </motion.div>
             ))}
           </div>
