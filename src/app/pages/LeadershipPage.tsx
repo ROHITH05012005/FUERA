@@ -154,12 +154,12 @@ export default function LeadershipPage() {
                 className="group flex flex-col items-center text-center relative w-full"
               >
                 {/* Circular Portrait Photo */}
-                <div className="overflow-hidden rounded-full w-48 h-48 bg-white dark:bg-zinc-900 border-2 border-black/5 dark:border-white/10 relative shadow-lg transition-transform duration-500 group-hover:scale-105">
+                <div className="overflow-hidden rounded-full w-48 h-48 bg-white border-2 border-black/5 dark:border-white/10 relative shadow-lg transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-contain"
                     />
                   ) : (
                     <div
