@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ArrowLeft, Target, Shield, Zap, Mail, Linkedin } from "lucide-react";
 import PageLayout from "../components/PageLayout";
 import { useSEO } from "../hooks/useSEO";
+import founderImg from "@/imports/founder.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -10,6 +11,7 @@ const EXECUTIVES = [
     name: "R. Akash",
     role: "Founder",
     initials: "RA",
+    image: founderImg,
     gradient: "from-cyan-500 via-blue-600 to-indigo-700",
     glow: "shadow-blue-500/20",
     bio: "Visionary leader driving the core expansion and technical direction of Fuera Solutions.",
@@ -153,13 +155,21 @@ export default function LeadershipPage() {
                 {/* Glowing Background Glow on Hover */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
 
-                {/* Avatar Initial with gradient */}
+                {/* Avatar with image or gradient initial */}
                 <div className="flex justify-center mb-6">
-                  <div
-                    className={`w-24 h-24 rounded-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-3xl font-black font-mono shadow-lg ${exec.glow} transition-transform duration-300 group-hover:scale-105`}
-                  >
-                    {exec.initials}
-                  </div>
+                  {exec.image ? (
+                    <img
+                      src={exec.image}
+                      alt={exec.name}
+                      className={`w-24 h-24 rounded-full object-cover border-2 border-white/10 shadow-lg ${exec.glow} transition-transform duration-300 group-hover:scale-105`}
+                    />
+                  ) : (
+                    <div
+                      className={`w-24 h-24 rounded-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-3xl font-black font-mono shadow-lg ${exec.glow} transition-transform duration-300 group-hover:scale-105`}
+                    >
+                      {exec.initials}
+                    </div>
+                  )}
                 </div>
 
                 <div className="text-center relative z-10">
