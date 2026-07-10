@@ -155,14 +155,13 @@ export default function LeadershipPage() {
               >
                 {/* Circular Portrait Photo */}
                 <div 
-                  className="overflow-hidden rounded-full w-48 h-48 border-2 border-black/5 dark:border-white/10 relative shadow-lg transition-transform duration-500 group-hover:scale-105 flex items-center justify-center p-3"
-                  style={{ backgroundColor: "#ffffff" }}
+                  className="overflow-hidden rounded-full w-48 h-48 border-2 border-black/5 dark:border-white/10 relative shadow-lg transition-transform duration-500 group-hover:scale-105 flex items-center justify-center"
                 >
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div
