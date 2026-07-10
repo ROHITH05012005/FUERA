@@ -154,29 +154,31 @@ export default function LeadershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="group relative border border-white/5 rounded-2xl bg-[#111115] hover:border-white/20 hover:bg-[#15151b] transition-all duration-300 p-8 shadow-xl"
+                className="group relative border border-white/5 rounded-2xl bg-[#111115] hover:border-white/20 hover:bg-[#15151b] transition-all duration-300 overflow-hidden shadow-xl"
               >
                 {/* Glowing Background Glow on Hover */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
 
-                {/* Avatar with image or gradient initial */}
-                <div className="flex justify-center mb-6">
+                {/* Full Frame Portrait Photo or gradient initial */}
+                <div className="relative h-80 overflow-hidden bg-zinc-900 border-b border-white/5">
                   {exec.image ? (
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className={`w-24 h-24 rounded-full object-cover border-2 border-white/10 shadow-lg ${exec.glow} transition-transform duration-300 group-hover:scale-105`}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div
-                      className={`w-24 h-24 rounded-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-3xl font-black font-mono shadow-lg ${exec.glow} transition-transform duration-300 group-hover:scale-105`}
+                      className={`w-full h-full bg-gradient-to-tr ${exec.gradient} flex items-center justify-center text-white text-5xl font-black font-mono transition-transform duration-500 group-hover:scale-105`}
                     >
                       {exec.initials}
                     </div>
                   )}
+                  {/* Vignette Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-85" />
                 </div>
 
-                <div className="text-center relative z-10">
+                <div className="p-6 relative z-10">
                   <h3
                     className="text-white text-xl font-bold mb-1"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -191,7 +193,7 @@ export default function LeadershipPage() {
                   </p>
 
                   {/* Connect Icons */}
-                  <div className="flex justify-center gap-3 border-t border-white/5 pt-5">
+                  <div className="flex gap-3 border-t border-white/5 pt-5 justify-start">
                     <a
                       href="#"
                       className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
