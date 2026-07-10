@@ -27,7 +27,7 @@ function FueraLogo() {
     >
       <img src={fueraLogo} alt="" aria-hidden="true"
         style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0 }} />
-      <img src={fueraWordmark} alt="FUERA — Growth Powered by Strategy"
+      <img src={fueraWordmark} alt="FUERA — Powered by AK GROUPS"
         style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0, marginLeft: "-6px" }} />
     </div>
   );

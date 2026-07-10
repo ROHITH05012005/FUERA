@@ -158,7 +158,7 @@ function FueraLogo({ white = false }: { white?: boolean }) {
       {/* wordmark + tagline — black bg merges with eagle */}
       <img
         src={fueraWordmark}
-        alt="FUERA — Growth Powered by Strategy"
+        alt="FUERA — Powered by AK GROUPS"
         style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0, marginLeft: "-6px" }}
       />
     </div>
