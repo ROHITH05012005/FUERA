@@ -207,6 +207,163 @@ export default function App() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+    
+    // Calculate rotation angle (max 12 degrees)
+    const rotateX = -(mouseY / (height / 2)) * 12;
+    const rotateY = (mouseX / (width / 2)) * 12;
+    setTilt({ x: rotateX, y: rotateY });
+  };
+
+  const handleCardMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+
+  // 3D Canvas Particle Network Background
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    };
+    window.addEventListener("resize", handleResize);
+
+    // 3D Points definition
+    interface Point3D {
+      x: number;
+      y: number;
+      z: number;
+      px: number;
+      py: number;
+    }
+
+    const points: Point3D[] = [];
+    const numPoints = 85;
+    const fov = 250; // Perspective depth
+
+    for (let i = 0; i < numPoints; i++) {
+      points.push({
+        x: (Math.random() - 0.5) * 600,
+        y: (Math.random() - 0.5) * 600,
+        z: Math.random() * 600,
+        px: 0,
+        py: 0
+      });
+    }
+
+    let angleX = 0.0008;
+    let angleY = 0.0012;
+
+    // Mouse rotation interactive offset
+    let mouseX = 0;
+    let mouseY = 0;
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = (e.clientX - rect.left - width / 2) * 0.0004;
+      mouseY = (e.clientY - rect.top - height / 2) * 0.0004;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    const rotateX = (point: Point3D, angle: number) => {
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      const y1 = point.y * cos - point.z * sin;
+      const z1 = point.z * cos + point.y * sin;
+      point.y = y1;
+      point.z = z1;
+    };
+
+    const rotateY = (point: Point3D, angle: number) => {
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      const x1 = point.x * cos - point.z * sin;
+      const z1 = point.z * cos + point.x * sin;
+      point.x = x1;
+      point.z = z1;
+    };
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Rotate points
+      const currentAngleX = angleX + mouseY;
+      const currentAngleY = angleY + mouseX;
+
+      points.forEach(p => {
+        rotateX(p, currentAngleX);
+        rotateY(p, currentAngleY);
+
+        // Project to 2D
+        const scale = fov / (fov + p.z);
+        p.px = p.x * scale + width / 2;
+        p.py = p.y * scale + height / 2;
+      });
+
+      // Draw lines between close points
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < points.length; i++) {
+        const p1 = points[i];
+        if (p1.px < 0 || p1.px > width || p1.py < 0 || p1.py > height) continue;
+
+        for (let j = i + 1; j < points.length; j++) {
+          const p2 = points[j];
+          if (p2.px < 0 || p2.px > width || p2.py < 0 || p2.py > height) continue;
+
+          const dx = p1.px - p2.px;
+          const dy = p1.py - p2.py;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 110) {
+            const alpha = (1 - dist / 110) * 0.18;
+            ctx.strokeStyle = `rgba(232, 28, 46, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(p1.px, p1.py);
+            ctx.lineTo(p2.px, p2.py);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw points
+      points.forEach(p => {
+        if (p.px < 0 || p.px > width || p.py < 0 || p.py > height) return;
+        const scale = fov / (fov + p.z);
+        const radius = Math.max(0.5, scale * 1.8);
+        ctx.fillStyle = p.z < 0 ? "rgba(232, 28, 46, 0.75)" : "rgba(255, 255, 255, 0.35)";
+        ctx.beginPath();
+        ctx.arc(p.px, p.py, radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -354,61 +511,126 @@ export default function App() {
       </header>
       <EnquiryModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      {/* ── HERO SLIDER ── */}
-      <section id="home" className="relative h-[88vh] min-h-[520px] overflow-hidden">
+      {/* ── HERO SLIDER (3D Animation Integrated) ── */}
+      <section id="home" className="relative h-[92vh] min-h-[600px] overflow-hidden flex items-center bg-[#070709] border-b border-white/5">
+        {/* Background Canvas for 3D Particles */}
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-10" />
+
+        {/* Slide background image transitions */}
         {HERO_SLIDES.map((slide, i) => (
           <div key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ${i === heroSlide ? "opacity-100" : "opacity-0"}`}>
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroSlide ? "opacity-35" : "opacity-0"}`}>
             <img src={slide.img} alt={slide.heading} className="w-full h-full object-cover" />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,20,60,0.82) 0%, rgba(10,20,60,0.45) 60%, transparent 100%)" }} />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
           </div>
         ))}
-        <div className="relative h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div key={heroSlide}
-              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-2xl">
-              <span className="inline-block bg-[#111111] text-white text-xs font-semibold px-4 py-1.5 mb-4 uppercase tracking-widest"
-                style={{ fontFamily: "'Poppins', sans-serif" }}>
-                {HERO_SLIDES[heroSlide].tag}
-              </span>
-              <h1 className="text-white mb-5 leading-tight"
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
-                {HERO_SLIDES[heroSlide].heading}
-              </h1>
-              <p className="text-white/80 mb-8 text-base md:text-lg max-w-lg leading-relaxed">
-                {HERO_SLIDES[heroSlide].sub}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <OrangeBtn onClick={() => scrollTo("#services")}>
-                  Explore More <ArrowRight size={15} />
-                </OrangeBtn>
-                <button onClick={() => setModalOpen(true)}
-                  className="inline-flex items-center gap-2 border-2 border-white text-white text-sm font-semibold px-7 py-3 hover:bg-[#1a1a1e] hover:text-white transition-all"
-                  style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
-                  Get a Free Quote
-                </button>
+
+        <div className="relative h-full w-full max-w-7xl mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12 items-center z-20">
+          {/* Left Column: Rotating Slide Texts */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+            <AnimatePresence mode="wait">
+              <motion.div key={heroSlide}
+                initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-2xl">
+                <span className="inline-block bg-[#e81c2e]/10 border border-[#e81c2e]/30 text-[#e81c2e] text-xs font-semibold px-4 py-1.5 mb-4 uppercase tracking-widest rounded-full"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  {HERO_SLIDES[heroSlide].tag}
+                </span>
+                <h1 className="text-white mb-5 leading-tight font-extrabold"
+                  style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
+                  {HERO_SLIDES[heroSlide].heading}
+                </h1>
+                <p className="text-white/60 mb-8 text-base md:text-lg max-w-lg leading-relaxed">
+                  {HERO_SLIDES[heroSlide].sub}
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <OrangeBtn onClick={() => scrollTo("#services")}>
+                    Explore More <ArrowRight size={15} />
+                  </OrangeBtn>
+                  <button onClick={() => setModalOpen(true)}
+                    className="inline-flex items-center gap-2 border-2 border-white/20 text-white text-sm font-semibold px-7 py-3 hover:bg-white hover:text-black hover:border-white transition-all rounded-md cursor-pointer"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    Get a Free Quote
+                  </button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Right Column: 3D Perspective Tilt Card */}
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              onMouseMove={handleCardMouseMove}
+              onMouseLeave={handleCardMouseLeave}
+              className="relative w-full max-w-[390px] aspect-[4/5] rounded-[2rem] border border-white/10 bg-[#111115]/50 backdrop-blur-xl shadow-2xl p-8 flex flex-col justify-between transition-transform duration-200 ease-out select-none cursor-pointer"
+              style={{
+                transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+                transformStyle: "preserve-3d"
+              }}
+            >
+              {/* Parallax Layer 1: Floating background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#e81c2e]/10 to-transparent rounded-[2rem] pointer-events-none opacity-40" />
+
+              {/* Parallax Layer 2: Card Header */}
+              <div className="flex justify-between items-start" style={{ transform: "translateZ(35px)" }}>
+                <div>
+                  <span className="text-[#e81c2e] text-[10px] font-black uppercase tracking-widest">FUERA Engine</span>
+                  <h3 className="text-white text-lg font-bold mt-1" style={{ fontFamily: "'Poppins', sans-serif" }}>Growth Analytics</h3>
+                </div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+              </div>
+
+              {/* Parallax Layer 3: Main 3D Metric Display */}
+              <div className="my-auto py-4 text-center flex flex-col items-center justify-center" style={{ transform: "translateZ(65px)" }}>
+                <div className="relative inline-flex items-center justify-center p-6 bg-gradient-to-b from-white/5 to-transparent border border-white/5 rounded-full mb-4 w-28 h-28">
+                  {/* Rotating outer ring */}
+                  <div className="absolute inset-0 rounded-full border-t border-[#e81c2e] animate-spin" style={{ animationDuration: '4s' }} />
+                  <span className="text-white text-2xl font-black font-sans">+380%</span>
+                </div>
+                <p className="text-white/80 text-sm font-semibold">Average Lead Generation Boost</p>
+                <p className="text-white/40 text-xs mt-1">Real-time performance index</p>
+              </div>
+
+              {/* Parallax Layer 4: Floating Mini Badge */}
+              <div 
+                className="absolute top-1/4 -right-6 bg-black border border-white/10 rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-xl"
+                style={{ transform: "translateZ(85px)" }}
+              >
+                <Zap size={14} className="text-[#e81c2e] fill-[#e81c2e]" />
+                <span className="text-white text-[10px] font-bold uppercase tracking-wider">AI Optimized</span>
+              </div>
+
+              {/* Parallax Layer 5: Card Footer */}
+              <div className="flex justify-between items-center border-t border-white/5 pt-4" style={{ transform: "translateZ(45px)" }}>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#e81c2e]" />
+                  <span className="text-white/50 text-[10px] uppercase font-mono">Active Optimization</span>
+                </div>
+                <span className="text-white/30 text-[9px] uppercase font-mono">v4.1.2</span>
               </div>
             </motion.div>
-          </AnimatePresence>
+          </div>
         </div>
 
         {/* Slide dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {HERO_SLIDES.map((_, i) => (
             <button key={i} onClick={() => setHeroSlide(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#111111] w-8" : "bg-[#1a1a1e]/50"}`} />
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#e81c2e] w-8" : "bg-white/20"}`} />
           ))}
         </div>
 
         {/* Arrows */}
         <button onClick={() => setHeroSlide(s => (s - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e]/20 hover:bg-[#1a1a1e]/40 text-white flex items-center justify-center rounded-full transition-colors">
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
           <ChevronLeft size={20} />
         </button>
         <button onClick={() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e]/20 hover:bg-[#1a1a1e]/40 text-white flex items-center justify-center rounded-full transition-colors">
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
           <ChevronRight size={20} />
         </button>
       </section>
