@@ -5,6 +5,7 @@ import PageLayout from "../components/PageLayout";
 import { useSEO } from "../hooks/useSEO";
 import founderImg from "@/imports/founder.png";
 import cofounderImg from "@/imports/cofounder.png";
+import ceoImg from "@/imports/ceo.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -30,6 +31,7 @@ const EXECUTIVES = [
     name: "Rohith B",
     role: "Chief Executive Officer (CEO)",
     initials: "RB",
+    image: ceoImg,
     gradient: "from-amber-500 via-orange-600 to-red-700",
     glow: "shadow-orange-500/20",
     bio: "Leading execution, client relationships, and business development across all digital verticals.",
