@@ -68,7 +68,7 @@ const SERVICES = [
 ];
 
 const CLIENTS = [
-  { name: "Namma Sihii Mane", sub: "E-Commerce", logo: "/logos/sihii.png", url: "https://nammasihiisweets.netlify.app/" },
+  { name: "Namma Sihii Mane", sub: "E-Commerce", logo: "/logos/sihii.jpg", url: "https://nammasihiisweets.netlify.app/" },
   { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
   { name: "Emmaus Academy", sub: "Enterprise Software", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },
   { name: "Pulse Intelligence", sub: "B2B SaaS", logo: "/logos/pulse.png", url: "https://pulse-ai-engine.onrender.com/" },
