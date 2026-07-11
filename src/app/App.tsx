@@ -14,6 +14,7 @@ import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
 import { CASE_STUDIES } from "./data/caseStudiesData";
+import { BLOG_POSTS } from "./data/blogData";
 
 const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
 
@@ -32,6 +33,7 @@ const NAV_ITEMS = [
   { label: "About", href: "/about" },
   { label: "Packages", href: "#packages" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
   { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
@@ -1131,33 +1133,49 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── INSIGHTS ── */}
+      {/* ── LATEST FROM THE BLOG ── */}
       <section className="py-20 bg-[#1a1a1e]">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-12">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Explore
-            </p>
-            <h2 className="text-white font-bold"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Insights from FUERA
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Explore
+              </p>
+              <h2 className="text-white font-bold"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+                Latest from the Blog
+              </h2>
+            </div>
+            <button onClick={() => navigate("/blog")} className="text-white/70 hover:text-white text-sm font-semibold flex items-center gap-2 transition-colors">
+              View All Articles <ArrowRight size={16} />
+            </button>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {INSIGHTS.map(ins => (
-              <div key={ins.title}
-                className="border border-border rounded-sm p-6 hover:shadow-md hover:border-white/40 transition-all group cursor-pointer"
-                onClick={() => navigate(ins.route)}>
-                <div className="w-12 h-12 bg-[#1c1c20] group-hover:bg-[#111111] rounded-full flex items-center justify-center mb-4 transition-colors">
-                  <ins.icon size={20} className="text-white group-hover:text-white transition-colors" />
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+              <div key={post.id}
+                className="bg-[#111115] border border-white/10 rounded-sm overflow-hidden hover:border-white/30 transition-all flex flex-col cursor-pointer group"
+                onClick={() => navigate(`/blog/${post.slug}`)}>
+                
+                <div className="h-40 overflow-hidden relative">
+                  <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm z-10">
+                    {post.category}
+                  </div>
+                  <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <h3 className="text-white font-semibold mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>{ins.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{ins.desc}</p>
-                <button
-                  className="text-xs font-semibold text-white flex items-center gap-1 group-hover:gap-2 transition-all"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {ins.cta} <ArrowRight size={12} />
-                </button>
+                
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-[#c0c0c0] transition-colors" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {post.title}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                    {post.summary.length > 100 ? post.summary.slice(0, 100) + "..." : post.summary}
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-xs font-semibold text-white mt-auto group-hover:gap-3 transition-all" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    Read Article <ArrowRight size={14} />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -1300,6 +1318,7 @@ export default function App() {
                 <li><button onClick={() => scrollTo("#packages")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Packages</button></li>
                 <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
                 <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
+                <li><button onClick={() => navigate("/blog")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Blog</button></li>
                 <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
                 <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Contact</button></li>
               </ul>

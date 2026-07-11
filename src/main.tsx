@@ -9,6 +9,8 @@ import ContactPage from "./app/pages/ContactPage.tsx";
 import LeadershipPage from "./app/pages/LeadershipPage.tsx";
 import PrivacyPage from "./app/pages/PrivacyPage.tsx";
 import TermsPage from "./app/pages/TermsPage.tsx";
+import BlogListPage from "./app/pages/BlogListPage.tsx";
+import BlogPostPage from "./app/pages/BlogPostPage.tsx";
 import "./styles/index.css";
 
 // Initialize dark/light mode before React render
@@ -32,6 +34,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/services/:serviceId" element={<ServicePage />} />
+      <Route path="/blog" element={<BlogListPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
     </Routes>
   </BrowserRouter>
 );
