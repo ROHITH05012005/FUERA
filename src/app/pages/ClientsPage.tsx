@@ -6,26 +6,16 @@ import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 
 const CLIENTS = [
-  { name: "RetailX", sub: "E-Commerce", industry: "Retail", result: "3× lead increase in 60 days", desc: "FUERA designed and deployed a complete e-commerce strategy with Meta Ads and Google SEO, tripling qualified inbound leads within 2 months." },
-  { name: "HealthPro", sub: "Clinics", industry: "Healthcare", result: "2× patient enquiries", desc: "A mobile-first clinic website with WhatsApp integration and Google Ads campaign resulted in doubling monthly patient bookings." },
-  { name: "EduTech Ltd", sub: "Education", industry: "EdTech", result: "200% organic traffic growth", desc: "Strategic SEO and social media management helped EduTech double organic traffic and grow Instagram engagement by over 180%." },
-  { name: "FinServe", sub: "Finance", industry: "FinTech", result: "40% lower cost per lead", desc: "Performance marketing campaigns on Google and Meta were optimised to cut the cost per lead by 40% while maintaining lead quality." },
-  { name: "FoodChain", sub: "F&B Brand", industry: "Food & Beverage", result: "5× Instagram followers", desc: "Content creation and influencer strategy grew the brand's Instagram from 2K to 10K followers with consistent daily engagement." },
-  { name: "LegalEdge", sub: "Law Firm", industry: "Legal", result: "Top 3 Google ranking", desc: "Google SEO and Business Profile optimisation pushed LegalEdge to the top 3 search results for high-intent legal keywords in Bangalore." },
-  { name: "BuildRight", sub: "Real Estate", industry: "Real Estate", result: "₹2Cr+ leads generated", desc: "Google Ads and Meta Ads campaigns for residential projects generated over ₹2 crore worth of qualified real estate leads." },
-  { name: "StyleHub", sub: "Fashion", industry: "Fashion", result: "85% Instagram engagement lift", desc: "Reels strategy and branded content transformed StyleHub's social presence, with average engagement rising 85% month-over-month." },
-  { name: "GreenLeaf", sub: "Wellness", industry: "Wellness", result: "300% website traffic boost", desc: "A premium new website with SEO-first content strategy tripled GreenLeaf's organic website traffic within 90 days of launch." },
-  { name: "TechNova", sub: "SaaS", industry: "Technology", result: "4× demo bookings", desc: "LinkedIn Ads and Google Ads targeting decision-makers quadrupled monthly product demo bookings for this SaaS startup." },
-  { name: "CityLogix", sub: "Logistics", industry: "Logistics", result: "25% lower acquisition cost", desc: "Performance marketing and landing page optimisation reduced customer acquisition cost by 25% with higher conversion rates." },
-  { name: "PureFoods", sub: "Organic", industry: "FMCG", result: "10K+ online orders", desc: "E-commerce website + Meta Ads drove over 10,000 online orders in the first quarter after launch, exceeding all targets." },
-  { name: "CloudBase", sub: "IT Services", industry: "IT", result: "60 new B2B clients", desc: "LinkedIn outreach strategy and targeted Google Ads brought 60 new B2B clients onboard in a single quarter." },
-  { name: "MediaHouse", sub: "Publishing", industry: "Media", result: "1M+ content reach", desc: "Content creation and social distribution helped MediaHouse content reach over 1 million people across platforms in 6 months." },
-  { name: "FitLife", sub: "Fitness", industry: "Fitness", result: "2× gym memberships", desc: "Local SEO, Google Business Profile and Meta Ads doubled gym membership sign-ups within 45 days of campaign launch." },
-  { name: "BrandLab", sub: "Creative", industry: "Creative Agency", result: "Complete brand overhaul", desc: "Full brand identity redesign — logo, colour system, typography — followed by a premium website that tripled enquiry conversions." },
-  { name: "QuickDeals", sub: "Marketplace", industry: "Marketplace", result: "50K+ monthly visitors", desc: "SEO-optimised marketplace website + Google Shopping Ads drove 50,000+ unique monthly visitors within 4 months." },
-  { name: "Coders Acad", sub: "Training", industry: "Education", result: "3× course enrolments", desc: "Landing page redesign, Review Scanner setup and Google Ads tripled course enrolments for this coding bootcamp." },
-  { name: "ZuddhaHerbs", sub: "Ayurveda", industry: "Wellness", result: "₹50L+ revenue impact", desc: "A full-funnel D2C strategy — website, Meta Ads, content — generated over ₹50 lakh in attributable revenue in Year 1." },
-  { name: "CoreTech", sub: "Engineering", industry: "Engineering", result: "Pan-India visibility", desc: "SEO and Google Ads expansion strategy took CoreTech from a local player to a recognised brand across 12 Indian cities." },
+  { name: "Namma Sihii Mane", sub: "E-Commerce", industry: "Retail / Sweets", result: "Digital storefront", desc: "A modern digital storefront and e-commerce presence for a local sweets brand to expand their customer base.", logo: "/logos/sihii.png", url: "https://nammasihiisweets.netlify.app/" },
+  { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", industry: "Food & Beverage", result: "Local traffic driver", desc: "A complete brand website and digital presence designed specifically to drive local restaurant traffic and online orders.", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
+  { name: "Emmaus Academy", sub: "Enterprise Software", industry: "EdTech", result: "Custom institutional management", desc: "A custom-built Enterprise Resource Planning system designed to streamline academy operations and administration.", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },
+  { name: "Pulse Intelligence", sub: "B2B SaaS", industry: "Machine Learning", result: "Advanced intelligence", desc: "A modern artificial intelligence tool built to deliver advanced insights and data intelligence for modern businesses.", logo: "/logos/pulse.png", url: "https://pulse-ai-engine.onrender.com/" },
+  { name: "FinGuard Solutions", sub: "Risk Management", industry: "FinTech", result: "Comprehensive monitoring", desc: "Developed a comprehensive dashboard and monitoring system for analyzing financial risk and securing high-stakes data.", logo: "/logos/finguard.png", url: "https://finguard-fuera.vercel.app/" },
+  { name: "Nexus Telecom", sub: "Data Science", industry: "Telecommunications", result: "Predictive ML models", desc: "A data science and machine learning model built to analyze customer data trends and predict telecom user churn.", logo: "/logos/nexus.png", url: "https://nexus-telecom-fuera.onrender.com/" },
+  { name: "OutboundFlow", sub: "Marketing Tech", industry: "SaaS", result: "High-converting outbound", desc: "An automated marketing tool designed to generate high-converting outbound email campaigns and drive sales.", logo: "/logos/outboundflow.png", url: "https://outboundflow-fuera.vercel.app/" },
+  { name: "CoinWave", sub: "Crypto Dashboard", industry: "Web3 / Finance", result: "Live market data", desc: "A real-time cryptocurrency tracking dashboard featuring live market data, interactive charts, and a glassmorphic UI.", logo: "/logos/coinwave.jpg", url: "https://coinwave-fuera.vercel.app/" },
+  { name: "Zenith Tasks", sub: "Productivity App", industry: "SaaS", result: "Local persistence", desc: "A premium, minimalist daily task and habit tracker featuring interactive progress bars, micro-animations, and local storage.", logo: "/logos/zenith.jpg", url: "https://zenith-tasks-fuera.vercel.app/" },
+  { name: "Aira Conversational AI", sub: "Conversational AI", industry: "Customer Support AI", result: "Automated user support", desc: "An advanced enterprise chatbot built to automate customer support inquiries and provide intelligent conversational experiences.", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
 ];
 
 const STATS = [
@@ -97,27 +87,41 @@ export default function ClientsPage() {
                 transition={{ delay: (i % 4) * 0.08 }}
                 onClick={() => setActive(active === i ? null : i)}
                 className="group cursor-pointer border border-white/8 rounded-xl bg-[#111115] hover:border-white/25 hover:bg-[#161619] transition-all duration-300 p-6">
-                {/* Monogram */}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 shrink-0"
-                  style={{
-                    background: `hsl(${(i * 43 + 12) % 360}, 38%, 16%)`,
-                    border: `1.5px solid hsl(${(i * 43 + 12) % 360}, 42%, 28%)`,
-                    boxShadow: `0 0 16px hsl(${(i * 43 + 12) % 360}, 50%, 18%)`,
-                  }}>
-                  <span className="text-base font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: `hsl(${(i * 43 + 12) % 360}, 60%, 72%)` }}>
-                    {c.name.slice(0, 2).toUpperCase()}
-                  </span>
-                </div>
+                {/* Monogram or Logo */}
+                {(c as any).logo ? (
+                  <img
+                    src={(c as any).logo}
+                    alt={`${c.name} logo`}
+                    className="w-14 h-14 rounded-full mb-4 transition-transform duration-300 group-hover:scale-110 shrink-0 object-cover border border-white/10 shadow-lg bg-[#111115]"
+                  />
+                ) : (
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 shrink-0"
+                    style={{
+                      background: `hsl(${(i * 43 + 12) % 360}, 38%, 16%)`,
+                      border: `1.5px solid hsl(${(i * 43 + 12) % 360}, 42%, 28%)`,
+                      boxShadow: `0 0 16px hsl(${(i * 43 + 12) % 360}, 50%, 18%)`,
+                    }}>
+                    <span className="text-base font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: `hsl(${(i * 43 + 12) % 360}, 60%, 72%)` }}>
+                      {c.name.slice(0, 2).toUpperCase()}
+                    </span>
+                  </div>
+                )}
                 <p className="text-white font-semibold text-sm mb-0.5" style={{ fontFamily: "'Poppins', sans-serif" }}>{c.name}</p>
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-3">{c.sub}</p>
                 <div className="text-xs font-semibold text-white/60 bg-white/5 border border-white/8 rounded-full px-3 py-1 inline-block mb-3">
                   📈 {c.result}
                 </div>
                 {active === i && (
-                  <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}
-                    className="text-white/50 text-xs leading-relaxed mt-2">
-                    {c.desc}
-                  </motion.p>
+                  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}>
+                    <p className="text-white/50 text-xs leading-relaxed mt-2 mb-3">
+                      {c.desc}
+                    </p>
+                    <a href={(c as any).url} target="_blank" rel="noopener noreferrer" 
+                       onClick={(e) => e.stopPropagation()}
+                       className="inline-flex items-center gap-1.5 text-[10px] font-medium px-3 py-1.5 bg-white text-black hover:bg-white/90 rounded-sm transition-colors">
+                      Visit Website <ArrowRight size={10} />
+                    </a>
+                  </motion.div>
                 )}
                 <p className="text-white/30 text-[10px] mt-2 group-hover:text-white/50 transition-colors">
                   {active === i ? "Click to collapse ↑" : "Click to read more ↓"}

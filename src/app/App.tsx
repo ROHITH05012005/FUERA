@@ -68,26 +68,16 @@ const SERVICES = [
 ];
 
 const CLIENTS = [
-  { name: "RetailX", sub: "E-Commerce" },
-  { name: "HealthPro", sub: "Clinics" },
-  { name: "EduTech Ltd", sub: "Education" },
-  { name: "FinServe", sub: "Finance" },
-  { name: "FoodChain", sub: "F&B Brand" },
-  { name: "LegalEdge", sub: "Law Firm" },
-  { name: "BuildRight", sub: "Real Estate" },
-  { name: "StyleHub", sub: "Fashion" },
-  { name: "GreenLeaf", sub: "Wellness" },
-  { name: "TechNova", sub: "SaaS" },
-  { name: "CityLogix", sub: "Logistics" },
-  { name: "PureFoods", sub: "Organic" },
-  { name: "CloudBase", sub: "IT Services" },
-  { name: "MediaHouse", sub: "Publishing" },
-  { name: "FitLife", sub: "Fitness" },
-  { name: "BrandLab", sub: "Creative" },
-  { name: "QuickDeals", sub: "Marketplace" },
-  { name: "Coders Acad", sub: "Training" },
-  { name: "ZuddhaHerbs", sub: "Ayurveda" },
-  { name: "CoreTech", sub: "Engineering" },
+  { name: "Namma Sihii Mane", sub: "E-Commerce", logo: "/logos/sihii.png", url: "https://nammasihiisweets.netlify.app/" },
+  { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
+  { name: "Emmaus Academy", sub: "Enterprise Software", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },
+  { name: "Pulse Intelligence", sub: "B2B SaaS", logo: "/logos/pulse.png", url: "https://pulse-ai-engine.onrender.com/" },
+  { name: "FinGuard Solutions", sub: "Risk Management", logo: "/logos/finguard.png", url: "https://finguard-fuera.vercel.app/" },
+  { name: "Nexus Telecom", sub: "Data Science", logo: "/logos/nexus.png", url: "https://nexus-telecom-fuera.onrender.com/" },
+  { name: "OutboundFlow", sub: "Marketing Tech", logo: "/logos/outboundflow.png", url: "https://outboundflow-fuera.vercel.app/" },
+  { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.jpg", url: "https://coinwave-fuera.vercel.app/" },
+  { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.jpg", url: "https://zenith-tasks-fuera.vercel.app/" },
+  { name: "Aira Conversational AI", sub: "Conversational AI", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
 ];
 
 const DIFFERENTIATORS = [
@@ -945,33 +935,44 @@ export default function App() {
           <div className="border border-[rgba(255,255,255,0.08)] rounded-xl overflow-hidden">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5" style={{ borderCollapse: "collapse" }}>
               {CLIENTS.map((c, i) => (
-                <div
+                <a
                   key={i}
-                  className="group flex flex-col items-center justify-center gap-1.5 px-4 py-8 bg-[#111115] hover:bg-[#17171c] transition-colors duration-200 cursor-default"
+                  href={(c as any).url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center justify-center gap-1.5 px-4 py-8 bg-[#111115] hover:bg-[#17171c] transition-colors duration-200 cursor-pointer"
                   style={{
                     borderRight: (i + 1) % 5 !== 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
                     borderBottom: i < CLIENTS.length - 5 ? "1px solid rgba(255,255,255,0.06)" : "none",
                   }}
                 >
-                  {/* coloured monogram circle — mimics logo badge */}
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center mb-2 transition-transform duration-300 group-hover:scale-110 shrink-0"
-                    style={{
-                      background: `hsl(${(i * 43 + 12) % 360}, 38%, 16%)`,
-                      border: `1.5px solid hsl(${(i * 43 + 12) % 360}, 42%, 28%)`,
-                      boxShadow: `0 0 16px hsl(${(i * 43 + 12) % 360}, 50%, 18%)`,
-                    }}
-                  >
-                    <span
-                      className="text-base font-bold tracking-wide"
+                  {/* coloured monogram circle or logo badge */}
+                  {(c as any).logo ? (
+                    <img
+                      src={(c as any).logo}
+                      alt={`${c.name} logo`}
+                      className="w-14 h-14 rounded-full mb-2 transition-transform duration-300 group-hover:scale-110 shrink-0 object-cover border border-white/10 shadow-lg bg-[#111115]"
+                    />
+                  ) : (
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center mb-2 transition-transform duration-300 group-hover:scale-110 shrink-0"
                       style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        color: `hsl(${(i * 43 + 12) % 360}, 60%, 72%)`,
+                        background: `hsl(${(i * 43 + 12) % 360}, 38%, 16%)`,
+                        border: `1.5px solid hsl(${(i * 43 + 12) % 360}, 42%, 28%)`,
+                        boxShadow: `0 0 16px hsl(${(i * 43 + 12) % 360}, 50%, 18%)`,
                       }}
                     >
-                      {c.name.slice(0, 2).toUpperCase()}
-                    </span>
-                  </div>
+                      <span
+                        className="text-base font-bold tracking-wide"
+                        style={{
+                          fontFamily: "'Poppins', sans-serif",
+                          color: `hsl(${(i * 43 + 12) % 360}, 60%, 72%)`,
+                        }}
+                      >
+                        {c.name.slice(0, 2).toUpperCase()}
+                      </span>
+                    </div>
+                  )}
 
                   {/* name */}
                   <p
@@ -988,7 +989,7 @@ export default function App() {
                   >
                     {c.sub}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
