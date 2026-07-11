@@ -75,8 +75,8 @@ const CLIENTS = [
   { name: "FinGuard Solutions", sub: "Risk Management", logo: "/logos/finguard.png", url: "https://finguard-fuera.vercel.app/" },
   { name: "Nexus Telecom", sub: "Data Science", logo: "/logos/nexus.png", url: "https://nexus-telecom-fuera.onrender.com/" },
   { name: "OutboundFlow", sub: "Marketing Tech", logo: "/logos/outboundflow.png", url: "https://outboundflow-fuera.vercel.app/" },
-  { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.jpg", url: "https://coinwave-fuera.vercel.app/" },
-  { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.jpg", url: "https://zenith-tasks-fuera.vercel.app/" },
+  { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.svg", url: "https://coinwave-fuera.vercel.app/" },
+  { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.svg", url: "https://zenith-tasks-fuera.vercel.app/" },
   { name: "Aira Conversational AI", sub: "Conversational AI", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
 ];
 
