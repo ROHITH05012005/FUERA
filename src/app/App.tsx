@@ -13,6 +13,7 @@ import fueraWordmark from "@/imports/image-7.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
+import { CASE_STUDIES } from "./data/caseStudiesData";
 
 const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
 
@@ -30,6 +31,7 @@ const NAV_ITEMS = [
   },
   { label: "About", href: "/about" },
   { label: "Packages", href: "#packages" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
@@ -1082,6 +1084,49 @@ export default function App() {
               className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
               <ChevronRight size={18} />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED CASE STUDIES ── */}
+      <section className="py-20 bg-[#0d0d0f]">
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Proven Results
+              </p>
+              <h2 className="text-white font-bold"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+                Featured Case Studies
+              </h2>
+            </div>
+            <button onClick={() => navigate("/case-studies")} className="text-white/70 hover:text-white text-sm font-semibold flex items-center gap-2 transition-colors">
+              View All Case Studies <ArrowRight size={16} />
+            </button>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {CASE_STUDIES.slice(0, 3).map((cs, i) => (
+              <div key={i} className="bg-[#111115] border border-white/10 rounded-sm p-6 hover:border-white/30 transition-all flex flex-col h-full cursor-pointer group" onClick={() => navigate("/case-studies")}>
+                <div className="mb-4">
+                  <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm bg-white/5 text-white/70 border border-white/10 mb-4 inline-block">{cs.industry}</span>
+                  <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>{cs.client}</h3>
+                  <p className="text-white/40 text-xs">{cs.service}</p>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                  {cs.challenge.length > 100 ? cs.challenge.slice(0, 100) + "..." : cs.challenge}
+                </p>
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+                  {cs.results.slice(0, 2).map((r, j) => (
+                    <div key={j}>
+                      <p className="text-white font-bold text-lg mb-0.5" style={{ color: cs.color }}>{r.val}</p>
+                      <p className="text-white/40 text-[10px] uppercase tracking-wider font-semibold">{r.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
