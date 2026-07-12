@@ -7,6 +7,7 @@ import founderImg from "@/imports/founder.png";
 import cofounderImg from "@/imports/cofounder.png";
 import ceoImg from "@/imports/ceo.png";
 import manyaImg from "@/imports/manya.png";
+import manjunathaImg from "@/imports/manjunatha.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -42,7 +43,7 @@ const EXECUTIVES = [
 // Define Leadership Team members
 const TEAM_MEMBERS = [
   { name: "Manya H. R.", role: "Leadership Team", initials: "MH", gradient: "from-teal-400 to-emerald-600", image: manyaImg },
-  { name: "Manjunatha Reddy", role: "Leadership Team", initials: "MR", gradient: "from-violet-400 to-purple-600" },
+  { name: "Manjunatha Reddy", role: "Leadership Team", initials: "MR", gradient: "from-violet-400 to-purple-600", image: manjunathaImg },
   { name: "Deepthi", role: "Leadership Team", initials: "D", gradient: "from-fuchsia-400 to-pink-600" },
 ];
 
