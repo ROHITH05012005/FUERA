@@ -6,6 +6,7 @@ import { useSEO } from "../hooks/useSEO";
 import founderImg from "@/imports/founder.png";
 import cofounderImg from "@/imports/cofounder.png";
 import ceoImg from "@/imports/ceo.png";
+import manyaImg from "@/imports/manya.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -40,7 +41,7 @@ const EXECUTIVES = [
 
 // Define Leadership Team members
 const TEAM_MEMBERS = [
-  { name: "Manya H. R.", role: "Leadership Team", initials: "MH", gradient: "from-teal-400 to-emerald-600" },
+  { name: "Manya H. R.", role: "Leadership Team", initials: "MH", gradient: "from-teal-400 to-emerald-600", image: manyaImg },
   { name: "Manjunatha Reddy", role: "Leadership Team", initials: "MR", gradient: "from-violet-400 to-purple-600" },
   { name: "Deepthi", role: "Leadership Team", initials: "D", gradient: "from-fuchsia-400 to-pink-600" },
 ];
@@ -221,13 +222,21 @@ export default function LeadershipPage() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="group flex flex-col items-center text-center relative w-full"
               >
-                {/* Circular Initial card header */}
-                <div className="overflow-hidden rounded-full w-40 h-40 bg-[#111115] border-2 border-white/5 relative shadow-md transition-transform duration-500 group-hover:scale-105">
-                  <div
-                    className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-4xl font-black font-mono`}
-                  >
-                    {member.initials}
-                  </div>
+                {/* Circular Initial or Photo header */}
+                <div className="overflow-hidden rounded-full w-40 h-40 bg-[#111115] border-2 border-white/5 relative shadow-md transition-transform duration-500 group-hover:scale-105 flex items-center justify-center">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      className={`w-full h-full bg-gradient-to-tr ${member.gradient} flex items-center justify-center text-white text-4xl font-black font-mono`}
+                    >
+                      {member.initials}
+                    </div>
+                  )}
                 </div>
 
                 {/* Name, role, and LinkedIn button underneath */}
