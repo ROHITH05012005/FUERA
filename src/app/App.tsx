@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
+import carImg from "@/imports/car.jpg";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
 
@@ -365,8 +366,13 @@ export default function App() {
     };
   }, []);
 
+  const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+      setScrollY(window.scrollY);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -400,6 +406,28 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+      {/* Floating 3D Car Scroll Parallax Layer */}
+      <div 
+        className="fixed pointer-events-none z-10 transition-transform duration-300 ease-out select-none opacity-40 dark:opacity-20 hidden md:block"
+        style={{
+          right: `${-300 + (scrollY * 0.45)}px`,
+          bottom: `${15 + (scrollY * 0.05)}vh`,
+          width: "550px",
+          transform: `perspective(1000px) rotateY(-20deg) rotateX(10deg) scale(${1 + (scrollY * 0.0003)})`,
+          mixBlendMode: "lighten"
+        }}
+      >
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none" />
+          <img 
+            src={carImg} 
+            alt="Rolls-Royce Ghost" 
+            className="w-full object-contain rounded-3xl"
+          />
+        </div>
+      </div>
 
       {/* ── TOP BAR ── */}
       <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
