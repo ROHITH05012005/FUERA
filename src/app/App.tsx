@@ -1101,7 +1101,7 @@ export default function App() {
               className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
               <ChevronLeft size={18} />
             </button>
-            <button onClick={() => setTestimonialIdx(i => (i + 1) % TESTIMONIALS.length)}
+            <button aria-label="Next testimonial" onClick={() => setTestimonialIdx(i => (i + 1) % TESTIMONIALS.length)}
               className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
               <ChevronRight size={18} />
             </button>
