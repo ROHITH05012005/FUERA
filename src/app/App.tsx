@@ -407,9 +407,9 @@ export default function App() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors"><Instagram size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Facebook size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Linkedin size={13} /></a>
+            <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" aria-label="Visit our Instagram" className="hover:text-white/80 transition-colors"><Instagram size={13} /></a>
+            <a href="#" aria-label="Visit our Facebook" className="hover:text-white/80 transition-colors"><Facebook size={13} /></a>
+            <a href="#" aria-label="Visit our LinkedIn" className="hover:text-white/80 transition-colors"><Linkedin size={13} /></a>
             <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services" target="_blank" rel="noreferrer"
               className="flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white px-3 py-0.5 rounded-sm text-xs font-medium transition-colors">
               <MessageCircle size={11} /> WhatsApp
@@ -631,7 +631,7 @@ export default function App() {
         {/* Slide dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {HERO_SLIDES.map((_, i) => (
-            <button key={i} onClick={() => setHeroSlide(i)}
+            <button key={i} aria-label={`Go to slide ${i + 1}`} onClick={() => setHeroSlide(i)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#e81c2e] w-8" : "bg-white/20"}`} />
           ))}
         </div>
@@ -1303,14 +1303,14 @@ export default function App() {
                 FUERA helps businesses establish a powerful online presence and generate quality leads through strategy-first digital marketing.
               </p>
               <div className="flex gap-3 mt-5">
-                <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer"
+                <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" aria-label="Follow us on Instagram"
                   className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
                   <Instagram size={14} />
                 </a>
-                <a href="#" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
+                <a href="#" aria-label="Follow us on Facebook" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
                   <Facebook size={14} />
                 </a>
-                <a href="#" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
+                <a href="#" aria-label="Follow us on LinkedIn" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
                   <Linkedin size={14} />
                 </a>
               </div>
