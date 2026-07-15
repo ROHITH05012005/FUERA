@@ -65,6 +65,7 @@
       ]
     }
   </script>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format" />
   <style>
     html,
     body {
@@ -81,7 +82,17 @@
 
 <body>
 
-  <div id="root"></div>
+  <div id="root">
+    <!-- FCP Skeleton Loader -->
+    <div style="height: 100vh; width: 100vw; background: #070709; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <style>
+        @keyframes spin { 
+          to { transform: rotate(360deg); } 
+        }
+      </style>
+    </div>
+  </div>
   
   <!-- AGENTIC BROWSING FALLBACK (For AI Bots and Crawlers that don't execute JS) -->
   <noscript>
@@ -89,6 +100,18 @@
       <header>
         <h1>FUERA | Digital Marketing & Website Development Agency</h1>
         <p>Build, rank, and grow your business online with FUERA's website development, SEO, ads, branding, and content services.</p>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services/website-development">Website Development</a></li>
+            <li><a href="/services/google-seo">Google SEO</a></li>
+            <li><a href="/services/meta-ads">Meta Ads</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
       <section>
         <h2>Our Services</h2>
