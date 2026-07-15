@@ -420,6 +420,24 @@ export default function App() {
 
       {/* ── HEADER ── */}
       <header className={`sticky top-0 z-50 bg-black transition-shadow duration-300 ${scrolled ? "shadow-md" : "shadow-sm"} border-b border-white/5`}>
+        {/* AGENTIC BROWSING: SR-ONLY NAV MAP FOR MOBILE BOTS */}
+        <nav className="sr-only" aria-label="Main Navigation Fallback">
+          <ul>
+            {NAV_ITEMS.map(item => (
+              <li key={item.label}>
+                <a href={item.href}>{item.label}</a>
+                {item.children && (
+                  <ul>
+                    {item.children.map(child => (
+                      <li key={child}><a href={`/services/${slugify(child)}`}>{child}</a></li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        
         <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
           <FueraLogo />
 
@@ -476,7 +494,7 @@ export default function App() {
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <button aria-label="Toggle mobile menu" className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
+            <button aria-label="Toggle mobile menu" aria-expanded={menuOpen} aria-controls="mobile-menu" className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
@@ -485,7 +503,7 @@ export default function App() {
         {/* Mobile menu */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+            <motion.div id="mobile-menu" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
               className="lg:hidden overflow-hidden border-t border-white/5 bg-black">
               <div className="px-5 py-4 flex flex-col gap-1">
                 {NAV_ITEMS.map(item => (
@@ -738,7 +756,7 @@ export default function App() {
                     {/* Lazy-loaded background image */}
                     <img
                       src={s.img}
-                      alt=""
+                      alt={`${s.label} background`}
                       loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       style={{ opacity: 0.32 }}
