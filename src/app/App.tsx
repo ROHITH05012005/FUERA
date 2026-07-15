@@ -444,22 +444,22 @@ export default function App() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
                         {item.children.map(c => (
-                          <button key={c} onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
-                            className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
+                          <a key={c} href={`/services/${slugify(c)}`} onClick={(e) => { e.preventDefault(); setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
+                            className="block w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
                             style={{ fontFamily: "'Inter', sans-serif" }}>
                             {c}
-                          </button>
+                          </a>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               ) : (
-                <button key={item.label} onClick={() => handleNav(item.href)}
+                <a key={item.label} href={item.href} onClick={(e) => { e.preventDefault(); handleNav(item.href); }}
                   className="px-4 py-2 text-sm font-medium text-white hover:text-white transition-colors"
                   style={{ fontFamily: "'Poppins', sans-serif" }}>
                   {item.label}
-                </button>
+                </a>
               )
             ))}
           </nav>
@@ -489,11 +489,11 @@ export default function App() {
               className="lg:hidden overflow-hidden border-t border-white/5 bg-black">
               <div className="px-5 py-4 flex flex-col gap-1">
                 {NAV_ITEMS.map(item => (
-                  <button key={item.label} onClick={() => handleNav(item.href || "#")}
-                    className="text-left px-3 py-2.5 text-sm font-medium text-white hover:bg-secondary rounded-sm transition-colors"
+                  <a key={item.label} href={item.href || "#"} onClick={(e) => { e.preventDefault(); handleNav(item.href || "#"); }}
+                    className="block text-left px-3 py-2.5 text-sm font-medium text-white hover:bg-secondary rounded-sm transition-colors"
                     style={{ fontFamily: "'Poppins', sans-serif" }}>
                     {item.label}
-                  </button>
+                  </a>
                 ))}
                 <div className="pt-2">
                   <OrangeBtn onClick={() => { setMenuOpen(false); setModalOpen(true); }}>Send Enquiry</OrangeBtn>
