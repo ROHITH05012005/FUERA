@@ -111,13 +111,13 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
+                  <label htmlFor="modal-name"
                     className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Name *
                   </label>
-                  <input
+                  <input id="modal-name"
                     required
                     value={form.name}
                     onChange={set("name")}
@@ -126,13 +126,13 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                   />
                 </div>
                 <div>
-                  <label
+                  <label htmlFor="modal-company"
                     className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Company
                   </label>
-                  <input
+                  <input id="modal-company"
                     value={form.company}
                     onChange={set("company")}
                     className={inputCls}
@@ -142,13 +142,13 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
+                  <label htmlFor="modal-phone"
                     className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Phone *
                   </label>
-                  <input
+                  <input id="modal-phone"
                     required
                     value={form.phone}
                     onChange={set("phone")}
@@ -157,13 +157,13 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                   />
                 </div>
                 <div>
-                  <label
+                  <label htmlFor="modal-email"
                     className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Email *
                   </label>
-                  <input
+                  <input id="modal-email"
                     required
                     type="email"
                     value={form.email}
@@ -174,13 +174,13 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                 </div>
               </div>
               <div>
-                <label
+                <label htmlFor="modal-message"
                   className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Message
                 </label>
-                <textarea
+                <textarea id="modal-message"
                   rows={4}
                   value={form.message}
                   onChange={set("message")}

@@ -237,10 +237,10 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label htmlFor="contact-name" className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Name *
                     </label>
-                    <input
+                    <input id="contact-name"
                       type="text"
                       required
                       name="name"
@@ -251,10 +251,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label htmlFor="contact-email" className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Email Address *
                     </label>
-                    <input
+                    <input id="contact-email"
                       type="email"
                       required
                       name="email"
@@ -268,10 +268,10 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label htmlFor="contact-phone" className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Phone Number *
                     </label>
-                    <input
+                    <input id="contact-phone"
                       type="tel"
                       required
                       name="phone"
@@ -282,10 +282,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label htmlFor="contact-company" className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       Company Name
                     </label>
-                    <input
+                    <input id="contact-company"
                       type="text"
                       name="company"
                       value={formData.company}
@@ -322,10 +322,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <label htmlFor="contact-message" className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     Message *
                   </label>
-                  <textarea
+                  <textarea id="contact-message"
                     required
                     name="message"
                     value={formData.message}

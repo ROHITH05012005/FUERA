@@ -1424,27 +1424,27 @@ function EnquiryForm({ onSubmit, inline = false }: { onSubmit?: () => void; inli
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Name *</label>
-          <input required value={form.name} onChange={set("name")} className={inputCls} placeholder="Your name" />
+          <label htmlFor="enquiry-name" className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Name *</label>
+          <input id="enquiry-name" required value={form.name} onChange={set("name")} className={inputCls} placeholder="Your name" />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Company</label>
-          <input value={form.company} onChange={set("company")} className={inputCls} placeholder="Company name" />
+          <label htmlFor="enquiry-company" className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Company</label>
+          <input id="enquiry-company" value={form.company} onChange={set("company")} className={inputCls} placeholder="Company name" />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Phone *</label>
-          <input required value={form.phone} onChange={set("phone")} className={inputCls} placeholder="+91 XXXXX XXXXX" />
+          <label htmlFor="enquiry-phone" className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Phone *</label>
+          <input id="enquiry-phone" required value={form.phone} onChange={set("phone")} className={inputCls} placeholder="+91 XXXXX XXXXX" />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Email *</label>
-          <input required type="email" value={form.email} onChange={set("email")} className={inputCls} placeholder="you@email.com" />
+          <label htmlFor="enquiry-email" className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Email *</label>
+          <input id="enquiry-email" required type="email" value={form.email} onChange={set("email")} className={inputCls} placeholder="you@email.com" />
         </div>
       </div>
       <div>
-        <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Message</label>
-        <textarea rows={4} value={form.message} onChange={set("message")} className={`${inputCls} resize-none`} placeholder="Tell us about your project or goals..." />
+        <label htmlFor="enquiry-message" className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Message</label>
+        <textarea id="enquiry-message" rows={4} value={form.message} onChange={set("message")} className={`${inputCls} resize-none`} placeholder="Tell us about your project or goals..." />
       </div>
       <div className="flex items-start gap-2">
         <input type="checkbox" id="privacy" checked={form.privacy} onChange={set("privacy")} required

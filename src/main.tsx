@@ -1,17 +1,20 @@
+import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
-import App from "./app/App.tsx";
-import ClientsPage from "./app/pages/ClientsPage.tsx";
-import CaseStudiesPage from "./app/pages/CaseStudiesPage.tsx";
-import CareersPage from "./app/pages/CareersPage.tsx";
-import ServicePage from "./app/pages/ServicePage.tsx";
-import ContactPage from "./app/pages/ContactPage.tsx";
-import LeadershipPage from "./app/pages/LeadershipPage.tsx";
-import PrivacyPage from "./app/pages/PrivacyPage.tsx";
-import TermsPage from "./app/pages/TermsPage.tsx";
-import BlogListPage from "./app/pages/BlogListPage.tsx";
-import BlogPostPage from "./app/pages/BlogPostPage.tsx";
 import "./styles/index.css";
+
+// Lazy load all pages for better performance
+const App = React.lazy(() => import("./app/App.tsx"));
+const ClientsPage = React.lazy(() => import("./app/pages/ClientsPage.tsx"));
+const CaseStudiesPage = React.lazy(() => import("./app/pages/CaseStudiesPage.tsx"));
+const CareersPage = React.lazy(() => import("./app/pages/CareersPage.tsx"));
+const ServicePage = React.lazy(() => import("./app/pages/ServicePage.tsx"));
+const ContactPage = React.lazy(() => import("./app/pages/ContactPage.tsx"));
+const LeadershipPage = React.lazy(() => import("./app/pages/LeadershipPage.tsx"));
+const PrivacyPage = React.lazy(() => import("./app/pages/PrivacyPage.tsx"));
+const TermsPage = React.lazy(() => import("./app/pages/TermsPage.tsx"));
+const BlogListPage = React.lazy(() => import("./app/pages/BlogListPage.tsx"));
+const BlogPostPage = React.lazy(() => import("./app/pages/BlogPostPage.tsx"));
 
 // Initialize dark/light mode before React render
 const initialTheme = localStorage.getItem("theme") || "dark";
@@ -23,19 +26,21 @@ if (initialTheme === "dark") {
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/clients" element={<ClientsPage />} />
-      <Route path="/case-studies" element={<CaseStudiesPage />} />
-      <Route path="/careers" element={<CareersPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/leadership" element={<LeadershipPage />} />
-      <Route path="/about" element={<LeadershipPage />} />
-      <Route path="/privacy" element={<PrivacyPage />} />
-      <Route path="/terms" element={<TermsPage />} />
-      <Route path="/services/:serviceId" element={<ServicePage />} />
-      <Route path="/blog" element={<BlogListPage />} />
-      <Route path="/blog/:slug" element={<BlogPostPage />} />
-    </Routes>
+    <Suspense fallback={<div className="min-h-screen bg-black text-white flex items-center justify-center">Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/clients" element={<ClientsPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/about" element={<LeadershipPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/services/:serviceId" element={<ServicePage />} />
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+      </Routes>
+    </Suspense>
   </BrowserRouter>
 );
