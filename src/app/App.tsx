@@ -955,6 +955,7 @@ export default function App() {
                     <img
                       src={(c as any).logo}
                       alt={`${c.name} logo`}
+                      loading="lazy"
                       className="w-14 h-14 rounded-full mb-2 transition-transform duration-300 group-hover:scale-110 shrink-0 object-cover border border-white/10 shadow-lg bg-[#111115]"
                     />
                   ) : (
@@ -1161,7 +1162,7 @@ export default function App() {
                   <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm z-10">
                     {post.category}
                   </div>
-                  <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={post.coverImage} alt={post.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 
                 <div className="p-6 flex flex-col flex-1">
