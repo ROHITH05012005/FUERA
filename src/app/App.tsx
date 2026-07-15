@@ -532,7 +532,7 @@ export default function App() {
         {HERO_SLIDES.map((slide, i) => (
           <div key={i}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroSlide ? "opacity-35" : "opacity-0"}`}>
-            <img src={slide.img} alt={slide.heading} width="1400" height="700" className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
+            <img src={slide.img} alt={slide.heading} width="1400" height="700" className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
           </div>
         ))}
@@ -591,7 +591,7 @@ export default function App() {
               <div className="flex justify-between items-start" style={{ transform: "translateZ(35px)" }}>
                 <div>
                   <span className="text-[#e81c2e] text-[10px] font-black uppercase tracking-widest">FUERA Engine</span>
-                  <h3 className="text-white text-lg font-bold mt-1" style={{ fontFamily: "'Poppins', sans-serif" }}>Growth Analytics</h3>
+                  <h2 className="text-white text-lg font-bold mt-1" style={{ fontFamily: "'Poppins', sans-serif" }}>Growth Analytics</h2>
                 </div>
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
               </div>
@@ -604,7 +604,7 @@ export default function App() {
                   <span className="text-white text-2xl font-black font-sans">+380%</span>
                 </div>
                 <p className="text-white/80 text-sm font-semibold">Average Lead Generation Boost</p>
-                <p className="text-white/40 text-xs mt-1">Real-time performance index</p>
+                <p className="text-white/60 text-xs mt-1">Real-time performance index</p>
               </div>
 
               {/* Parallax Layer 4: Floating Mini Badge */}
@@ -622,7 +622,7 @@ export default function App() {
                   <div className="w-1.5 h-1.5 rounded-full bg-[#e81c2e]" />
                   <span className="text-white/50 text-[10px] uppercase font-mono">Active Optimization</span>
                 </div>
-                <span className="text-white/30 text-[9px] uppercase font-mono">v4.1.2</span>
+                <span className="text-white/60 text-[9px] uppercase font-mono">v4.1.2</span>
               </div>
             </motion.div>
           </div>
@@ -631,8 +631,9 @@ export default function App() {
         {/* Slide dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {HERO_SLIDES.map((_, i) => (
-            <button key={i} aria-label={`Go to slide ${i + 1}`} onClick={() => setHeroSlide(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#e81c2e] w-8" : "bg-white/20"}`} />
+            <button key={i} aria-label={`Go to slide ${i + 1}`} onClick={() => setHeroSlide(i)} className="p-3">
+              <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#e81c2e] w-8" : "bg-white/20"}`} />
+            </button>
           ))}
         </div>
 
@@ -661,10 +662,10 @@ export default function App() {
                 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}>
                 Innovative Digital Solutions<br />for the Growth Age
               </h2>
-              <p className="text-white/55 mb-4 leading-relaxed text-sm">
+              <p className="text-white/60 mb-4 leading-relaxed text-sm">
                 FUERA was founded with a single mission — help businesses establish a powerful online presence and generate quality leads. Based in Koramangala, Bangalore, we are a team of strategists, designers, marketers and developers who are passionate about growth.
               </p>
-              <p className="text-white/55 mb-8 leading-relaxed text-sm">
+              <p className="text-white/60 mb-8 leading-relaxed text-sm">
                 We work closely with startups and small businesses to understand their goals, craft data-backed strategies, and execute campaigns that deliver real, measurable results — from concept and branding to websites, digital advertising, and ongoing optimisation.
               </p>
               <OrangeBtn onClick={() => scrollTo("#packages")}>
@@ -789,7 +790,7 @@ export default function App() {
                         {s.label}
                       </h3>
                       <p
-                        className="text-white/55 group-hover:text-white/82 text-xs leading-relaxed transition-colors duration-300 line-clamp-3"
+                        className="text-white/60 group-hover:text-white/82 text-xs leading-relaxed transition-colors duration-300 line-clamp-3"
                         style={{ textShadow: "0 1px 8px rgba(0,0,0,1)" }}
                       >
                         {s.desc}
@@ -874,7 +875,7 @@ export default function App() {
                   ₹14,999
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs text-white/40 line-through">₹15,788</span>
+                  <span className="text-xs text-white/60 line-through">₹15,788</span>
                   <span className="text-[10px] bg-white/10 text-white/70 px-2 py-0.5 rounded-full font-semibold">5% OFF for Valuable Customers</span>
                 </div>
                 <p className="text-white/45 text-xs mt-2">Professional online presence, complete.</p>
@@ -911,7 +912,7 @@ export default function App() {
                   ₹28,999
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs text-white/40 line-through">₹30,525</span>
+                  <span className="text-xs text-white/60 line-through">₹30,525</span>
                   <span className="text-[10px] bg-white/10 text-white/70 px-2 py-0.5 rounded-full font-semibold">5% OFF for Valuable Customers</span>
                 </div>
                 <p className="text-white/45 text-xs mt-2">Complete digital growth solution.</p>
@@ -1009,7 +1010,7 @@ export default function App() {
 
                   {/* industry pill */}
                   <span
-                    className="text-[9px] font-medium uppercase tracking-widest text-white/30 group-hover:text-white transition-colors"
+                    className="text-[9px] font-medium uppercase tracking-widest text-white/60 group-hover:text-white transition-colors"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {c.sub}
@@ -1095,8 +1096,9 @@ export default function App() {
             </AnimatePresence>
             <div className="flex justify-center gap-3 mt-6">
               {TESTIMONIALS.map((_, i) => (
-                <button key={i} aria-label={`Go to testimonial ${i + 1}`} onClick={() => setTestimonialIdx(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === testimonialIdx ? "bg-[#111111] w-8" : "bg-[#d1d5db]"}`} />
+                <button key={i} aria-label={`Go to testimonial ${i + 1}`} onClick={() => setTestimonialIdx(i)} className="p-3">
+                  <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === testimonialIdx ? "bg-[#111111] w-8" : "bg-[#d1d5db]"}`} />
+                </button>
               ))}
             </div>
             <button aria-label="Previous testimonial" onClick={() => setTestimonialIdx(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
@@ -1135,7 +1137,7 @@ export default function App() {
                 <div className="mb-4">
                   <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm bg-white/5 text-white/70 border border-white/10 mb-4 inline-block">{cs.industry}</span>
                   <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>{cs.client}</h3>
-                  <p className="text-white/40 text-xs">{cs.service}</p>
+                  <p className="text-white/60 text-xs">{cs.service}</p>
                 </div>
                 <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
                   {cs.challenge.length > 100 ? cs.challenge.slice(0, 100) + "..." : cs.challenge}
@@ -1144,7 +1146,7 @@ export default function App() {
                   {cs.results.slice(0, 2).map((r, j) => (
                     <div key={j}>
                       <p className="text-white font-bold text-lg mb-0.5" style={{ color: cs.color }}>{r.val}</p>
-                      <p className="text-white/40 text-[10px] uppercase tracking-wider font-semibold">{r.label}</p>
+                      <p className="text-white/60 text-[10px] uppercase tracking-wider font-semibold">{r.label}</p>
                     </div>
                   ))}
                 </div>
@@ -1320,7 +1322,7 @@ export default function App() {
             </div>
             {/* Services */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Services</h4>
+              <h3 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Services</h3>
               <ul className="space-y-2">
                 {SERVICES.map(s => (
                   <li key={s.label}>
@@ -1332,7 +1334,7 @@ export default function App() {
             </div>
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
+              <h3 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h3>
               <ul className="space-y-2">
                 <li><button onClick={() => scrollTo("#home")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Home</button></li>
                 <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About Us</button></li>
@@ -1347,7 +1349,7 @@ export default function App() {
             </div>
             {/* Contact */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h4>
+              <h3 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h3>
               <ul className="space-y-3 text-sm text-white/60">
                 <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
                 <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
@@ -1355,7 +1357,7 @@ export default function App() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
             <p>© {new Date().getFullYear()} FUERA. All Rights Reserved.</p>
             <div className="flex gap-4">
               <button
