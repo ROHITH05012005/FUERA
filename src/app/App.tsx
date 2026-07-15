@@ -43,32 +43,32 @@ const HERO_SLIDES = [
     tag: "Your Digital Growth Partner",
     heading: "Solutions tailor-crafted to build, rank and grow your business online.",
     sub: "From strategy to execution — FUERA delivers measurable results for every rupee you invest.",
-    img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
   },
   {
     tag: "Full-Service Digital Agency",
     heading: "Full service from strategy to implementation — diverse expertise, one partner.",
     sub: "Websites, ads, SEO, branding and content — every digital need covered under one roof.",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
   },
   {
     tag: "Data-Driven Results",
     heading: "We dig deep into customer insights and data to define the best path forward.",
     sub: "Every campaign is backed by analytics, optimised continuously, and reported transparently.",
-    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=700&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
   },
 ];
 
 const SERVICES = [
-  { icon: Code,         label: "Website Development",     desc: "Premium, fast-loading, mobile-first websites built for performance, conversions and brand trust — free lifetime hosting included.",    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=480&h=360&fit=crop&auto=format" },
-  { icon: Share2,       label: "Social Media Marketing",  desc: "Grow brand presence across Instagram, Facebook & LinkedIn with engaging content and targeted campaigns that convert followers to customers.", img: "https://images.unsplash.com/photo-1622549037543-49cf1ca0babc?w=480&h=360&fit=crop&auto=format" },
-  { icon: Target,       label: "Performance Marketing",   desc: "Data-driven paid campaigns engineered for maximum ROI and conversion — every rupee tracked, optimised and reported.",                    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&h=360&fit=crop&auto=format" },
-  { icon: Megaphone,    label: "Meta Ads",                desc: "Facebook & Instagram ad funnels designed to reach your ideal audience and generate quality leads at the lowest possible cost.",           img: "https://images.unsplash.com/photo-1636114673156-052a83459fc1?w=480&h=360&fit=crop&auto=format" },
-  { icon: BarChart2,    label: "Google Ads",              desc: "Search, display and YouTube campaigns that put your brand in front of high-intent buyers exactly when they are ready to act.",            img: "https://images.unsplash.com/photo-1616499370260-485b3e5ed653?w=480&h=360&fit=crop&auto=format" },
-  { icon: Search,       label: "Google SEO",              desc: "On-page and off-page optimisation plus Google Business Profile setup to rank higher and drive consistent organic traffic.",                img: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=480&h=360&fit=crop&auto=format" },
-  { icon: Palette,      label: "Branding",                desc: "Visual identity, logo design and brand strategy that makes your business instantly recognisable and memorable to your audience.",          img: "https://images.unsplash.com/photo-1779261320306-8885b83599ff?w=480&h=360&fit=crop&auto=format" },
-  { icon: ScanSearch,   label: "Review Scanner",          desc: "Monitor, manage and respond to customer reviews across Google and social platforms to protect and strengthen your reputation.",             img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=480&h=360&fit=crop&auto=format" },
-  { icon: FileText,     label: "Content Creation",        desc: "Scroll-stopping reels, ad creatives, graphics and copy crafted to build authority and drive real engagement for your brand.",             img: "https://images.unsplash.com/photo-1625690303837-654c9666d2d0?w=480&h=360&fit=crop&auto=format" },
+  { icon: Code,         label: "Website Development",     desc: "Premium, fast-loading, mobile-first websites built for performance, conversions and brand trust — free lifetime hosting included.",    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: Share2,       label: "Social Media Marketing",  desc: "Grow brand presence across Instagram, Facebook & LinkedIn with engaging content and targeted campaigns that convert followers to customers.", img: "https://images.unsplash.com/photo-1622549037543-49cf1ca0babc?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: Target,       label: "Performance Marketing",   desc: "Data-driven paid campaigns engineered for maximum ROI and conversion — every rupee tracked, optimised and reported.",                    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: Megaphone,    label: "Meta Ads",                desc: "Facebook & Instagram ad funnels designed to reach your ideal audience and generate quality leads at the lowest possible cost.",           img: "https://images.unsplash.com/photo-1636114673156-052a83459fc1?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: BarChart2,    label: "Google Ads",              desc: "Search, display and YouTube campaigns that put your brand in front of high-intent buyers exactly when they are ready to act.",            img: "https://images.unsplash.com/photo-1616499370260-485b3e5ed653?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: Search,       label: "Google SEO",              desc: "On-page and off-page optimisation plus Google Business Profile setup to rank higher and drive consistent organic traffic.",                img: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: Palette,      label: "Branding",                desc: "Visual identity, logo design and brand strategy that makes your business instantly recognisable and memorable to your audience.",          img: "https://images.unsplash.com/photo-1779261320306-8885b83599ff?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: ScanSearch,   label: "Review Scanner",          desc: "Monitor, manage and respond to customer reviews across Google and social platforms to protect and strengthen your reputation.",             img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
+  { icon: FileText,     label: "Content Creation",        desc: "Scroll-stopping reels, ad creatives, graphics and copy crafted to build authority and drive real engagement for your brand.",             img: "https://images.unsplash.com/photo-1625690303837-654c9666d2d0?w=480&h=360&fit=crop&auto=format&q=70&fm=webp" },
 ];
 
 const CLIENTS = [
@@ -532,7 +532,7 @@ export default function App() {
         {HERO_SLIDES.map((slide, i) => (
           <div key={i}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroSlide ? "opacity-35" : "opacity-0"}`}>
-            <img src={slide.img} alt={slide.heading} className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
+            <img src={slide.img} alt={slide.heading} width="1400" height="700" className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
           </div>
         ))}
@@ -673,7 +673,8 @@ export default function App() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=700&h=500&fit=crop&auto=format"
+                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=700&h=500&fit=crop&auto=format&q=70&fm=webp"
+                width="700" height="500"
                 alt="FUERA team working on digital strategy"
                 className="w-full rounded-xl shadow-2xl object-cover"
                 style={{ aspectRatio: "4/3" }}
@@ -757,6 +758,7 @@ export default function App() {
                     <img
                       src={s.img}
                       alt={`${s.label} background`}
+                      width="480" height="360"
                       loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       style={{ opacity: 0.32 }}
@@ -1180,7 +1182,7 @@ export default function App() {
                   <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm z-10">
                     {post.category}
                   </div>
-                  <img src={post.coverImage} alt={post.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={post.coverImage} alt={post.title} width="600" height="400" loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 
                 <div className="p-6 flex flex-col flex-1">
@@ -1280,7 +1282,8 @@ export default function App() {
               <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://www.fuera.in.net" />
               <div className="pt-4">
                 <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format"
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format&q=70&fm=webp"
+                  width="600" height="280"
                   alt="FUERA digital agency workspace"
                   className="w-full rounded-sm object-cover shadow-sm"
                   loading="lazy"
