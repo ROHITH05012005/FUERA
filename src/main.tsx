@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
+import App from "./app/App.tsx";
 import "./styles/index.css";
 
-// Lazy load all pages for better performance
-const App = React.lazy(() => import("./app/App.tsx"));
+// Lazy load all OTHER pages for better performance, but eager load App (Homepage) for LCP/CLS
 const ClientsPage = React.lazy(() => import("./app/pages/ClientsPage.tsx"));
 const CaseStudiesPage = React.lazy(() => import("./app/pages/CaseStudiesPage.tsx"));
 const CareersPage = React.lazy(() => import("./app/pages/CareersPage.tsx"));
