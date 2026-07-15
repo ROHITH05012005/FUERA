@@ -393,7 +393,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <main className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── TOP BAR ── */}
       <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
@@ -476,7 +476,7 @@ export default function App() {
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
+            <button aria-label="Toggle mobile menu" className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
@@ -514,7 +514,7 @@ export default function App() {
         {HERO_SLIDES.map((slide, i) => (
           <div key={i}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroSlide ? "opacity-35" : "opacity-0"}`}>
-            <img src={slide.img} alt={slide.heading} className="w-full h-full object-cover" />
+            <img src={slide.img} alt={slide.heading} className="w-full h-full object-cover" loading={i === 0 ? "eager" : "lazy"} />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
           </div>
         ))}
@@ -619,11 +619,11 @@ export default function App() {
         </div>
 
         {/* Arrows */}
-        <button onClick={() => setHeroSlide(s => (s - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
+        <button aria-label="Previous slide" onClick={() => setHeroSlide(s => (s - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
           <ChevronLeft size={20} />
         </button>
-        <button onClick={() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length)}
+        <button aria-label="Next slide" onClick={() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length)}
           className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
           <ChevronRight size={20} />
         </button>
@@ -1074,11 +1074,11 @@ export default function App() {
             </AnimatePresence>
             <div className="flex justify-center gap-3 mt-6">
               {TESTIMONIALS.map((_, i) => (
-                <button key={i} onClick={() => setTestimonialIdx(i)}
+                <button key={i} aria-label={`Go to testimonial ${i + 1}`} onClick={() => setTestimonialIdx(i)}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === testimonialIdx ? "bg-[#111111] w-8" : "bg-[#d1d5db]"}`} />
               ))}
             </div>
-            <button onClick={() => setTestimonialIdx(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+            <button aria-label="Previous testimonial" onClick={() => setTestimonialIdx(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
               className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
               <ChevronLeft size={18} />
             </button>
@@ -1363,7 +1363,7 @@ export default function App() {
               className="bg-[#1a1a1e] rounded-sm shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
               <div className="flex items-center justify-between px-6 py-5 border-b border-border bg-[#111111]">
                 <h3 className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Send Us An Enquiry</h3>
-                <button onClick={() => setModalOpen(false)} className="text-white/60 hover:text-white transition-colors">
+                <button aria-label="Close modal" onClick={() => setModalOpen(false)} className="text-white/60 hover:text-white transition-colors">
                   <X size={20} />
                 </button>
               </div>
@@ -1378,10 +1378,11 @@ export default function App() {
       {/* WhatsApp FAB */}
       <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services"
         target="_blank" rel="noreferrer"
+        aria-label="Chat with us on WhatsApp"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
         <MessageCircle size={24} />
       </a>
-    </div>
+    </main>
   );
 }
 

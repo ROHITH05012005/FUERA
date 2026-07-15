@@ -29,22 +29,39 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "FUERA",
-      "url": "https://www.fuera.in.net/",
-      "logo": "https://www.fuera.in.net/favicon.png",
-      "description": "FUERA provides website development, SEO, social media marketing, performance marketing, branding, and content creation services.",
-      "email": "fuera.solutions.23@gmail.com",
-      "telephone": "+919449658382",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Koramangala 5th Block",
-        "addressLocality": "Bangalore",
-        "postalCode": "560068",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://instagram.com/fuera.official.23"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.fuera.in.net/#website",
+          "url": "https://www.fuera.in.net/",
+          "name": "FUERA",
+          "description": "Digital Marketing & Website Development Agency",
+          "publisher": {
+            "@id": "https://www.fuera.in.net/#organization"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.fuera.in.net/#organization",
+          "name": "FUERA",
+          "url": "https://www.fuera.in.net/",
+          "logo": "https://www.fuera.in.net/favicon.png",
+          "image": "https://www.fuera.in.net/og-image.png",
+          "description": "FUERA provides premium website development, SEO, social media marketing, performance marketing, branding, and content creation services.",
+          "email": "fuera.solutions.23@gmail.com",
+          "telephone": "+919449658382",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Koramangala 5th Block",
+            "addressLocality": "Bangalore",
+            "postalCode": "560068",
+            "addressCountry": "IN"
+          },
+          "priceRange": "$$",
+          "sameAs": [
+            "https://instagram.com/fuera.official.23"
+          ]
+        }
       ]
     }
   </script>

@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-
+import prerender from '@prerenderer/rollup-plugin'
+import PuppeteerRenderer from '@prerenderer/renderer-puppeteer'
 
 function figmaAssetResolver() {
   return {
@@ -20,18 +21,25 @@ export default defineConfig({
   base: '/',
   plugins: [
     figmaAssetResolver(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    prerender({
+      routes: [
+        '/', '/about', '/clients', '/case-studies', '/blog', '/contact', '/careers',
+        '/services/website-development', '/services/social-media-marketing', '/services/performance-marketing',
+        '/services/meta-ads', '/services/google-ads', '/services/google-seo',
+        '/services/branding', '/services/review-scanner', '/services/content-creation'
+      ],
+      renderer: new PuppeteerRenderer({
+        renderAfterTime: 2000,
+        inject: { prerendered: true }
+      })
+    })
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
   },
-
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
