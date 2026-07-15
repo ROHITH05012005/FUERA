@@ -8,8 +8,8 @@ import {
   ScanSearch, FileText, Globe2, Rocket, Lock, Wifi, Sun, Moon
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import fueraLogo from "@/imports/image-4.png";
-import fueraWordmark from "@/imports/image-7.png";
+import fueraLogo from "@/imports/image-4.webp";
+import fueraWordmark from "@/imports/image-7.webp";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
@@ -43,19 +43,19 @@ const HERO_SLIDES = [
     tag: "Your Digital Growth Partner",
     heading: "Solutions tailor-crafted to build, rank and grow your business online.",
     sub: "From strategy to execution — FUERA delivers measurable results for every rupee you invest.",
-    img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
+    img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1000&h=500&fit=crop&auto=format&q=70&fm=webp",
   },
   {
     tag: "Full-Service Digital Agency",
     heading: "Full service from strategy to implementation — diverse expertise, one partner.",
     sub: "Websites, ads, SEO, branding and content — every digital need covered under one roof.",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
+    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&h=500&fit=crop&auto=format&q=70&fm=webp",
   },
   {
     tag: "Data-Driven Results",
     heading: "We dig deep into customer insights and data to define the best path forward.",
     sub: "Every campaign is backed by analytics, optimised continuously, and reported transparently.",
-    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=700&fit=crop&auto=format&q=70&fm=webp",
+    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&h=500&fit=crop&auto=format&q=70&fm=webp",
   },
 ];
 
