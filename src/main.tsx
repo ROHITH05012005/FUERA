@@ -15,6 +15,7 @@ const PrivacyPage = React.lazy(() => import("./app/pages/PrivacyPage.tsx"));
 const TermsPage = React.lazy(() => import("./app/pages/TermsPage.tsx"));
 const BlogListPage = React.lazy(() => import("./app/pages/BlogListPage.tsx"));
 const BlogPostPage = React.lazy(() => import("./app/pages/BlogPostPage.tsx"));
+const SitemapPage = React.lazy(() => import("./app/pages/SitemapPage.tsx"));
 
 // Initialize dark/light mode before React render
 const initialTheme = localStorage.getItem("theme") || "dark";
@@ -37,6 +38,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/about" element={<LeadershipPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="/services/:serviceId" element={<ServicePage />} />
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />

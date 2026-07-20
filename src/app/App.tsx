@@ -1345,6 +1345,7 @@ export default function App() {
                 <li><button onClick={() => navigate("/blog")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Blog</button></li>
                 <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
                 <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Contact</button></li>
+                <li><button onClick={() => navigate("/sitemap")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Sitemap</button></li>
               </ul>
             </div>
             {/* Contact */}
@@ -1371,6 +1372,12 @@ export default function App() {
                 className="hover:text-white/70 transition-colors"
               >
                 Terms of Use
+              </button>
+              <button
+                onClick={() => navigate("/sitemap")}
+                className="hover:text-white/70 transition-colors"
+              >
+                Sitemap
               </button>
             </div>
           </div>

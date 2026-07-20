@@ -242,13 +242,16 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
               <ul className="space-y-2">
-                <li><button onClick={() => goHome("#home")} className="text-white/60 hover:text-white text-sm transition-colors">Home</button></li>
-                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors">About Us</button></li>
-                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors">Leadership Team</button></li>
-                <li><button onClick={() => goHome("#packages")} className="text-white/60 hover:text-white text-sm transition-colors">Packages</button></li>
-                <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors">Clients</button></li>
-                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors">Careers</button></li>
-                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors">Contact</button></li>
+                <li><button onClick={() => goHome("#home")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Home</button></li>
+                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About Us</button></li>
+                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Leadership Team</button></li>
+                <li><button onClick={() => goHome("#packages")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Packages</button></li>
+                <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
+                <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
+                <li><button onClick={() => navigate("/blog")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Blog</button></li>
+                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
+                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Contact</button></li>
+                <li><button onClick={() => navigate("/sitemap")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Sitemap</button></li>
               </ul>
             </div>
             <div>
@@ -263,10 +266,12 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
             <p>© {new Date().getFullYear()} FUERA. All Rights Reserved.</p>
             <div className="flex gap-4">
-              <button onClick={() => alert("Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this website will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties.")}
+              <button onClick={() => navigate("/privacy")}
                 className="hover:text-white/70 transition-colors">Privacy Policy</button>
-              <button onClick={() => alert("Terms of Use:\n\nBy using this website, you agree to comply with and be bound by the terms and conditions of FUERA. All services provided are subject to our client service agreements.")}
+              <button onClick={() => navigate("/terms")}
                 className="hover:text-white/70 transition-colors">Terms of Use</button>
+              <button onClick={() => navigate("/sitemap")}
+                className="hover:text-white/70 transition-colors">Sitemap</button>
             </div>
           </div>
         </div>

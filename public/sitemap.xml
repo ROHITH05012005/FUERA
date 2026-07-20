@@ -6,6 +6,26 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.fuera.in.net/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/leadership</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/careers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.fuera.in.net/clients</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16,24 +36,9 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fuera.in.net/careers</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/leadership</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.fuera.in.net/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.fuera.in.net/privacy</loc>
@@ -46,24 +51,9 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.fuera.in.net/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/blog/why-performance-marketing-beats-traditional-advertising</loc>
+    <loc>https://www.fuera.in.net/sitemap</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/blog/essential-seo-strategies-for-2026</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.fuera.in.net/blog/why-your-business-needs-a-custom-website</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.fuera.in.net/services/website-development</loc>
@@ -109,5 +99,20 @@
     <loc>https://www.fuera.in.net/services/content-creation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/blog/why-performance-marketing-beats-traditional-advertising</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/blog/essential-seo-strategies-for-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fuera.in.net/blog/why-your-business-needs-a-custom-website</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
