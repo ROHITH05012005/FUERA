@@ -55,6 +55,9 @@ export function useSEO({ title, description, path }: SEOProps) {
     updateMetaTag("og:title", title);
     updateMetaTag("og:description", description);
     updateMetaTag("og:url", fullUrl);
+    updateMetaTag("og:site_name", "FUERA");
+    updateMetaTag("application-name", "FUERA", false);
+    updateMetaTag("apple-mobile-web-app-title", "FUERA", false);
     updateMetaTag("twitter:title", title, false);
     updateMetaTag("twitter:description", description, false);
   }, [title, description, path]);
