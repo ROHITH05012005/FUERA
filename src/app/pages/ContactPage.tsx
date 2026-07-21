@@ -100,7 +100,7 @@ export default function ContactPage() {
             style={{ fontFamily: "'Poppins', sans-serif" }}>
             <ArrowLeft size={16} /> Back to Home
           </button>
-          
+
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Get In Touch
@@ -120,7 +120,7 @@ export default function ContactPage() {
       <section className="py-20 bg-[#0d0d0f]">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <div className="grid lg:grid-cols-12 gap-16">
-            
+
             {/* Info Cards Column (Left) */}
             <div className="lg:col-span-5 space-y-8">
               <div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       Phone & Call
                     </h3>
                     <p className="text-white font-semibold text-sm">+91 9449658382</p>
-                    <p className="text-white/60 text-xs mt-0.5">+91 7899945862</p>
+                    <p className="text-white/60 text-xs mt-0.5">+91 7892178478</p>
                   </div>
                 </div>
 
@@ -308,11 +308,10 @@ export default function ContactPage() {
                           key={idx}
                           type="button"
                           onClick={() => handleServiceToggle(service)}
-                          className={`text-left text-xs px-3.5 py-2.5 rounded-sm border transition-all ${
-                            isSelected
+                          className={`text-left text-xs px-3.5 py-2.5 rounded-sm border transition-all ${isSelected
                               ? "bg-white text-black border-white font-medium"
                               : "bg-[#18181c] text-white/60 border-white/5 hover:border-white/20"
-                          }`}
+                            }`}
                         >
                           {service}
                         </button>
