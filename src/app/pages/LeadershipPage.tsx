@@ -6,6 +6,7 @@ import { useSEO } from "../hooks/useSEO";
 import founderImg from "@/imports/founder.png";
 import cofounderImg from "@/imports/cofounder.png";
 import ceoImg from "@/imports/ceo.png";
+import mdImg from "@/imports/md.png";
 
 // Define Executive Leaders data
 const EXECUTIVES = [
@@ -36,12 +37,20 @@ const EXECUTIVES = [
     glow: "shadow-orange-500/20",
     bio: "Leading execution, client relationships, and business development across all digital verticals.",
   },
+  {
+    name: "Mohan Raj",
+    role: "Managing Director (MD)",
+    initials: "MR",
+    image: mdImg,
+    gradient: "from-emerald-500 via-teal-600 to-cyan-700",
+    glow: "shadow-teal-500/20",
+    bio: "Driving strategic initiatives, operational efficiency, and overall business management.",
+  },
 ];
 
 // Define Leadership Team members
 const TEAM_MEMBERS = [
   { name: "Manya H. R.", role: "Leadership Team", initials: "MH", gradient: "from-teal-400 to-emerald-600" },
-  { name: "Manjunatha Reddy", role: "Leadership Team", initials: "MR", gradient: "from-violet-400 to-purple-600" },
   { name: "Deepthi", role: "Leadership Team", initials: "D", gradient: "from-fuchsia-400 to-pink-600" },
 ];
 
@@ -143,7 +152,7 @@ export default function LeadershipPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
             {EXECUTIVES.map((exec, idx) => (
               <motion.div
                 key={exec.name}
@@ -211,7 +220,7 @@ export default function LeadershipPage() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-10 max-w-2xl mx-auto">
             {TEAM_MEMBERS.map((member, idx) => (
               <motion.div
                 key={member.name}
