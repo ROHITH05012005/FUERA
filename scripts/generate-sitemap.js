@@ -21,25 +21,62 @@ const ROUTES = [
   { path: "/sitemap", priority: "0.6", changefreq: "monthly" },
 ];
 
-const SERVICES = [
-  "website-development",
-  "social-media-marketing",
-  "performance-marketing",
-  "meta-ads",
-  "google-ads",
-  "google-seo",
-  "branding",
-  "review-scanner",
-  "content-creation",
-];
+// Dynamically read services and blog slugs from source files
+function getDynamicData() {
+  const servicesPath = path.resolve(__dirname, "../src/app/data/servicesData.ts");
+  const blogPath = path.resolve(__dirname, "../src/app/data/blogData.ts");
 
-const BLOG_SLUGS = [
-  "why-performance-marketing-beats-traditional-advertising",
-  "essential-seo-strategies-for-2026",
-  "why-your-business-needs-a-custom-website",
-];
+  let services = [];
+  let blogSlugs = [];
 
-function generateXml() {
+  try {
+    if (fs.existsSync(servicesPath)) {
+      const content = fs.readFileSync(servicesPath, "utf8");
+      // Match top-level keys in SERVICES_DATA record, e.g. "website-development": {
+      const serviceMatches = [...content.matchAll(/^\s*["']([^"']+)["']\s*:\s*\{/gm)];
+      services = serviceMatches.map(m => m[1]);
+    }
+  } catch (err) {
+    console.error("[SITEMAP GENERATOR] Warning: Could not read services data:", err.message);
+  }
+
+  try {
+    if (fs.existsSync(blogPath)) {
+      const content = fs.readFileSync(blogPath, "utf8");
+      // Match slug fields in BLOG_POSTS array, e.g. slug: "why-performance..."
+      const blogMatches = [...content.matchAll(/^\s*slug:\s*["']([^"']+)["']/gm)];
+      blogSlugs = blogMatches.map(m => m[1]);
+    }
+  } catch (err) {
+    console.error("[SITEMAP GENERATOR] Warning: Could not read blog data:", err.message);
+  }
+
+  // Fallback defaults if parsing fails entirely to avoid empty sitemaps
+  if (services.length === 0) {
+    services = [
+      "website-development",
+      "social-media-marketing",
+      "performance-marketing",
+      "meta-ads",
+      "google-ads",
+      "google-seo",
+      "branding",
+      "review-scanner",
+      "content-creation"
+    ];
+  }
+  if (blogSlugs.length === 0) {
+    blogSlugs = [
+      "why-performance-marketing-beats-traditional-advertising",
+      "essential-seo-strategies-for-2026",
+      "why-your-business-needs-a-custom-website"
+    ];
+  }
+
+  return { services, blogSlugs };
+}
+
+function generateXml(services, blogSlugs) {
   const urlBlocks = [];
 
   // Static routes
@@ -53,7 +90,7 @@ function generateXml() {
   }
 
   // Services
-  for (const service of SERVICES) {
+  for (const service of services) {
     urlBlocks.push(`  <url>
     <loc>${BASE_URL}/services/${service}</loc>
     <changefreq>monthly</changefreq>
@@ -62,7 +99,7 @@ function generateXml() {
   }
 
   // Blog posts
-  for (const slug of BLOG_SLUGS) {
+  for (const slug of blogSlugs) {
     urlBlocks.push(`  <url>
     <loc>${BASE_URL}/blog/${slug}</loc>
     <changefreq>monthly</changefreq>
@@ -77,7 +114,8 @@ ${urlBlocks.join("\n")}
 `;
 }
 
-const xmlContent = generateXml();
+const { services, blogSlugs } = getDynamicData();
+const xmlContent = generateXml(services, blogSlugs);
 const targetPath = path.resolve(__dirname, "../public/sitemap.xml");
 fs.writeFileSync(targetPath, xmlContent, "utf8");
-console.log(`[SITEMAP GENERATOR] Successfully generated sitemap with ${ROUTES.length + SERVICES.length + BLOG_SLUGS.length} URLs at public/sitemap.xml`);
+console.log(`[SITEMAP GENERATOR] Successfully generated dynamic sitemap with ${ROUTES.length + services.length + blogSlugs.length} URLs at public/sitemap.xml`);
