@@ -116,6 +116,6 @@ ${urlBlocks.join("\n")}
 
 const { services, blogSlugs } = getDynamicData();
 const xmlContent = generateXml(services, blogSlugs);
-const targetPath = path.resolve(__dirname, "../public/sitemap.xml");
+const targetPath = path.resolve(__dirname, "../public/sitemap_main.xml");
 fs.writeFileSync(targetPath, xmlContent, "utf8");
-console.log(`[SITEMAP GENERATOR] Successfully generated dynamic sitemap with ${ROUTES.length + services.length + blogSlugs.length} URLs at public/sitemap.xml`);
+console.log(`[SITEMAP GENERATOR] Successfully generated dynamic sitemap with ${ROUTES.length + services.length + blogSlugs.length} URLs at public/sitemap_main.xml`);
