@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 
 const CLIENTS = [
+  { name: "Aethorium", sub: "3D Printing", industry: "3D Printing & Fabrication", result: "Showcase & quote portal", desc: "A sleek showcase site and instant quoting portal for a professional 3D printing studio offering FDM, TPU, and laser engraving services.", logo: "/logos/aethorium.jpg", url: "https://aethorium.vercel.app/" },
   { name: "Namma Sihii Mane", sub: "E-Commerce", industry: "Retail / Sweets", result: "Digital storefront", desc: "A modern digital storefront and e-commerce presence for a local sweets brand to expand their customer base.", logo: "/logos/sihii.jpg", url: "https://nammasihiisweets.netlify.app/" },
   { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", industry: "Food & Beverage", result: "Local traffic driver", desc: "A complete brand website and digital presence designed specifically to drive local restaurant traffic and online orders.", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
   { name: "Emmaus Academy", sub: "Enterprise Software", industry: "EdTech", result: "Custom institutional management", desc: "A custom-built Enterprise Resource Planning system designed to streamline academy operations and administration.", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },

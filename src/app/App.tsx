@@ -72,6 +72,7 @@ const SERVICES = [
 ];
 
 const CLIENTS = [
+  { name: "Aethorium", sub: "3D Printing Studio", logo: "/logos/aethorium.jpg", url: "https://aethorium.vercel.app/" },
   { name: "Namma Sihii Mane", sub: "E-Commerce", logo: "/logos/sihii.jpg", url: "https://nammasihiisweets.netlify.app/" },
   { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
   { name: "Emmaus Academy", sub: "Enterprise Software", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },
