@@ -1,5 +1,22 @@
 export const CASE_STUDIES = [
   {
+    client: "Aethorium",
+    industry: "3D Printing & Fabrication",
+    service: "Web Design & Quoting Platform",
+    duration: "2 months",
+    color: "hsl(207, 100%, 62%)",
+    challenge: "Aethorium needed a premium, high-tech digital presence to showcase their precision 3D printing and laser engraving capabilities while streamlining custom quote requests for prospective clients.",
+    solution: "We built a futuristic, high-performance web platform featuring seamless dark mode styling, custom SVG vector tracing animations of their brand logo, and a direct interactive portal for users to request custom fabrication quotes.",
+    results: [
+      { label: "Inbound Leads", val: "+180%" },
+      { label: "Quote Turnaround", val: "−60%" },
+      { label: "User Session Time", val: "2.4x" },
+      { label: "Page Load Speed", val: "99/100" },
+    ],
+    quote: "FUERA built a website that perfectly mirrors our focus on precision and engineering. The instant quote requests have streamlined our pipeline and significantly increased customer inquiries.",
+    author: "Founder, Aethorium",
+  },
+  {
     client: "Namma Sihii Mane",
     industry: "E-Commerce",
     service: "E-Commerce Website + Performance Marketing",
