@@ -49,11 +49,11 @@ export default function ClientsPage() {
           </button>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Our Most Successful
+              Trusted by 50+ Brands
             </p>
             <h1 className="text-white font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
-              Collaborations & Clients
+              Our Clients
             </h1>
             <p className="text-white/55 max-w-2xl text-base leading-relaxed">
               We've partnered with 50+ businesses across industries — from startups to established brands — driving measurable digital growth with every engagement.
