@@ -945,7 +945,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── COLLABORATIONS GRID ── */}
+      {/* ── COLLABORATIONS / CLIENTS GRID ── */}
       <section id="clients" className="py-20 bg-[#0d0d0f]">
         <div className="max-w-6xl mx-auto px-5 md:px-10">
           <div className="text-center mb-12">
@@ -953,7 +953,7 @@ export default function App() {
               Our Most Successful
             </p>
             <h2 className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
-              Collaborations
+              Clients
             </h2>
           </div>
 
