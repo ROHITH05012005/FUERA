@@ -76,6 +76,7 @@ const CLIENTS = [
   { name: "Namma Sihii Mane", sub: "E-Commerce", logo: "/logos/sihii.jpg", url: "https://nammasihiisweets.netlify.app/" },
   { name: "Sri Raghavendra Vaibhava", sub: "F&B Brand", logo: "/logos/raghavendra.png", url: "https://sriraghavendravaibhava.vercel.app" },
   { name: "Emmaus Academy", sub: "Enterprise Software", logo: "/logos/emmaus.png", url: "https://emmaus-erp-fuera.onrender.com/" },
+  { name: "Kishore Nayak", sub: "AI TRAINER X FITNESS MODEL", logo: "/logos/hero-image.jpeg", url: "https://kishorenayak.in.net" },
   { name: "Pulse Intelligence", sub: "B2B SaaS", logo: "/logos/pulse.png", url: "https://pulse-ai-engine.onrender.com/" },
   { name: "FinGuard Solutions", sub: "Risk Management", logo: "/logos/finguard.png", url: "https://finguard-fuera.vercel.app/" },
   { name: "Nexus Telecom", sub: "Data Science", logo: "/logos/nexus.png", url: "https://nexus-telecom-fuera.onrender.com/" },
@@ -83,7 +84,6 @@ const CLIENTS = [
   { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.svg", url: "https://coinwave-fuera.vercel.app/" },
   { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.svg", url: "https://zenith-tasks-fuera.vercel.app/" },
   { name: "Aira Conversational AI", sub: "Conversational AI", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
-  { name: "Kishore Nayak", sub: "AI TRAINER X FITNESS MODEL", logo: "/logos/hero-image.jpeg", url: "https://kishorenayak.in.net" },
 ];
 
 const DIFFERENTIATORS = [
