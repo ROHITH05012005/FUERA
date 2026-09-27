@@ -83,7 +83,7 @@ const CLIENTS = [
   { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.svg", url: "https://coinwave-fuera.vercel.app/" },
   { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.svg", url: "https://zenith-tasks-fuera.vercel.app/" },
   { name: "Aira Conversational AI", sub: "Conversational AI", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
-  { name: "Kishore Nayak", sub: "Creative Director", logo: "/logos/kishorenayak.jpg", url: "https://kishorenayak.in.net" },
+  { name: "Kishore Nayak", sub: "AI TRAINER X FITNESS MODEL", logo: "/logos/hero-image.jpeg", url: "https://kishorenayak.in.net" },
 ];
 
 const DIFFERENTIATORS = [

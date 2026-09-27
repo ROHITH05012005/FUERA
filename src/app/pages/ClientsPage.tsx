@@ -17,7 +17,7 @@ const CLIENTS = [
   { name: "CoinWave", sub: "Crypto Dashboard", industry: "Web3 / Finance", result: "Live market data", desc: "A real-time cryptocurrency tracking dashboard featuring live market data, interactive charts, and a glassmorphic UI.", logo: "/logos/coinwave.svg", url: "https://coinwave-fuera.vercel.app/" },
   { name: "Zenith Tasks", sub: "Productivity App", industry: "SaaS", result: "Local persistence", desc: "A premium, minimalist daily task and habit tracker featuring interactive progress bars, micro-animations, and local storage.", logo: "/logos/zenith.svg", url: "https://zenith-tasks-fuera.vercel.app/" },
   { name: "Aira Conversational AI", sub: "Conversational AI", industry: "Customer Support AI", result: "Automated user support", desc: "An advanced enterprise chatbot built to automate customer support inquiries and provide intelligent conversational experiences.", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
-  { name: "Kishore Nayak", sub: "Creative Director", industry: "Fashion & Creative Direction", result: "Editorial portfolio & branding", desc: "An avant-garde personal brand and portfolio platform designed for an acclaimed Creative Director, Fashion Choreographer, and Runway Coach.", logo: "/logos/kishorenayak.jpg", url: "https://kishorenayak.in.net" },
+  { name: "Kishore Nayak", sub: "AI TRAINER X FITNESS MODEL", industry: "AI & Fitness", result: "Brand portfolio & showcase", desc: "A high-impact personal brand and portfolio platform designed for an AI Trainer and Fitness Model.", logo: "/logos/hero-image.jpeg", url: "https://kishorenayak.in.net" },
 ];
 
 const STATS = [
