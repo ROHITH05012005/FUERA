@@ -83,6 +83,7 @@ const CLIENTS = [
   { name: "CoinWave", sub: "Crypto Dashboard", logo: "/logos/coinwave.svg", url: "https://coinwave-fuera.vercel.app/" },
   { name: "Zenith Tasks", sub: "Productivity App", logo: "/logos/zenith.svg", url: "https://zenith-tasks-fuera.vercel.app/" },
   { name: "Aira Conversational AI", sub: "Conversational AI", logo: "/logos/aira.png", url: "https://aira-ai-fuera.streamlit.app/" },
+  { name: "Kishore Nayak", sub: "Creative Director", logo: "/logos/kishorenayak.jpg", url: "https://kishorenayak.in.net" },
 ];
 
 const DIFFERENTIATORS = [
@@ -959,7 +960,7 @@ export default function App() {
 
           {/* bordered table-grid matching image-3 layout */}
           <div className="border border-[rgba(255,255,255,0.08)] rounded-xl overflow-hidden">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5" style={{ borderCollapse: "collapse" }}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" style={{ borderCollapse: "collapse" }}>
               {CLIENTS.map((c, i) => (
                 <a
                   key={i}
@@ -968,8 +969,8 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="group flex flex-col items-center justify-center gap-1.5 px-4 py-8 bg-[#111115] hover:bg-[#17171c] transition-colors duration-200 cursor-pointer"
                   style={{
-                    borderRight: (i + 1) % 5 !== 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
-                    borderBottom: i < CLIENTS.length - 5 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                    borderRight: (i + 1) % 6 !== 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                    borderBottom: i < CLIENTS.length - 6 ? "1px solid rgba(255,255,255,0.06)" : "none",
                   }}
                 >
                   {/* coloured monogram circle or logo badge */}

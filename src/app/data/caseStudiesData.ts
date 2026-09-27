@@ -186,4 +186,21 @@ export const CASE_STUDIES = [
     quote: "The interactive website acts as our best salesperson, and the SEO traffic has brought us qualified enterprise leads consistently.",
     author: "VP of Sales, Aira Conversational AI",
   },
+  {
+    client: "Kishore Nayak",
+    industry: "Fashion & Creative Direction",
+    service: "Editorial Portfolio & Digital Presence",
+    duration: "1 month",
+    color: "hsl(340, 75%, 60%)",
+    challenge: "Kishore Nayak needed an avant-garde, high-performance portfolio to showcase his extensive work as a Creative Director, Fashion Choreographer, and Runway Coach while attracting luxury brand collaborations.",
+    solution: "We designed and developed a bespoke, editorial-grade web platform with fluid animations, dynamic galleries, optimized typography, and high-impact visual storytelling reflecting the luxury fashion industry.",
+    results: [
+      { label: "Brand Inquiries", val: "+240%" },
+      { label: "Engagement", val: "3.8x" },
+      { label: "Page Load Speed", val: "99/100" },
+      { label: "Global Reach", val: "15+ Countries" },
+    ],
+    quote: "FUERA captured the soul and visual grandeur of my runway work. The digital portfolio has opened doors to prestigious fashion weeks and luxury brand partnerships.",
+    author: "Creative Director & Choreographer, Kishore Nayak",
+  },
 ];
