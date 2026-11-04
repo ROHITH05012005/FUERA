@@ -113,8 +113,7 @@ export default function ServicePage() {
               {service.subtitle}
             </p>
             
-            <a href="#quote" className="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5"
-              style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <a href="#quote" className="inline-flex items-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-semibold text-sm px-8 py-4 rounded-full transition-all duration-200 red-glow hover:scale-[1.02] active:scale-[0.98]">
               Request a Quote <ArrowRight size={16} />
             </a>
           </motion.div>
@@ -258,35 +257,34 @@ export default function ServicePage() {
                 <motion.form initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Name</label>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Name *</label>
                       <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                        className="w-full bg-[#14141c] border border-white/10 text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e81c2e] transition-colors placeholder:text-white/40" />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Email</label>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Email *</label>
                       <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                        className="w-full bg-[#14141c] border border-white/10 text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e81c2e] transition-colors placeholder:text-white/40" />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Phone</label>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Phone *</label>
                     <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400" />
+                      className="w-full bg-[#14141c] border border-white/10 text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e81c2e] transition-colors placeholder:text-white/40" />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/50 mb-2">Message (Tell us about your project)</label>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">Message (Tell us about your project)</label>
                     <textarea rows={4} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder={`Tell us what you're looking to achieve with ${service.title}...`}
-                      className="w-full bg-white border border-white/10 !text-black rounded px-4 py-3 text-sm focus:outline-none focus:border-black/30 transition-colors resize-none placeholder:text-gray-400" />
+                      className="w-full bg-[#14141c] border border-white/10 text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e81c2e] transition-colors resize-none placeholder:text-white/40" />
                   </div>
 
                   <button type="submit"
                     disabled={submitting}
-                    className="w-full bg-white text-black font-semibold py-4 rounded hover:bg-gray-100 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    {submitting ? "Sending..." : `Send Enquiry for ${service.title}`}
+                    className="w-full bg-[#e81c2e] hover:bg-[#d01728] text-white font-bold py-4 rounded-full transition-all red-glow cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                    {submitting ? "Sending..." : `Send Enquiry for ${service.title}`} <ArrowRight size={16} />
                   </button>
                 </motion.form>
               )}

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FUERA | Enterprise Technology & Digital Solutions Company</title>
+  <meta name="description" content="FUERA architects custom enterprise web platforms, AI workflow engines, high-conversions performance systems, and modern digital identities for scaling companies." />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#e81c2e',
+              redHover: '#d01728',
+              darkBg: '#050508',
+              cardBg: '#0a0a0f',
+              cardHover: '#0e0e16',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050508;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+    .grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 4rem 4rem;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #ff3b4e 0%, #e81c2e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .red-glow {
+      box-shadow: 0 4px 25px rgba(232, 28, 46, 0.45);
+    }
+    .red-glow:hover {
+      box-shadow: 0 6px 35px rgba(232, 28, 46, 0.65);
+    }
+    .modal-backdrop {
+      backdrop-filter: blur(12px);
+    }
+    .text-chrome {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 50%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.8));
+    }
+    .text-crimson-glow {
+      background: linear-gradient(180deg, #FF4D5A 0%, #E81C2E 60%, #B30F1E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(232, 28, 46, 0.65));
+    }
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-[#050508] text-white antialiased selection:bg-[#e81c2e] selection:text-white">
+
+  <!-- Subtle Grid Pattern Background -->
+  <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+
+  <!-- Ambient Red Lighting Glows -->
+  <div class="fixed top-0 right-0 w-[600px] h-[600px] bg-[#e81c2e]/10 blur-[160px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-0 left-0 w-[600px] h-[600px] bg-[#e81c2e]/08 blur-[160px] pointer-events-none z-0"></div>
+
+  <!-- ── TOP CONTACT & SOCIAL BAR ── -->
+  <div class="relative z-50 bg-[#050508] border-b border-white/10 py-1.5 px-4 sm:px-8 text-xs text-white/70 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Subtle red laser stroke on far left -->
+      <div class="absolute top-0 left-0 w-36 h-[1px] bg-gradient-to-r from-[#e81c2e] to-transparent pointer-events-none"></div>
+
+      <!-- Left: Contact Info -->
+      <div class="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
+        <a href="mailto:contact@fuera.in.net" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <svg class="w-3.5 h-3.5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>contact@fuera.in.net</span>
+        </a>
+        <span class="text-white/20">|</span>
+        <div class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <a href="tel:9449658382" class="hover:text-white transition-colors">9449658382</a>
+          <span class="text-white/30">/</span>
+          <a href="tel:7899945862" class="hover:text-white transition-colors">7899945862</a>
+        </div>
+      </div>
+
+      <!-- Right: Social icons & WhatsApp pill button -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="Instagram">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="Facebook">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="LinkedIn">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://wa.me/919449658382" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#20ba59] text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(37,211,102,0.3)] hover:scale-105">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MAIN HEADER / NAVIGATION ── -->
+  <header id="header" class="sticky top-0 z-40 transition-all duration-300 bg-[#050508]/80 backdrop-blur-md border-b border-white/10 py-4">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between relative z-10">
+      
+      <!-- FUERA Logo -->
+      <a href="#home" class="flex items-center gap-2.5 group cursor-pointer select-none">
+        <img src="src/imports/image-4.png" alt="FUERA Emblem" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105" />
+        <div class="flex flex-col justify-center -space-y-0.5">
+          <span class="text-white font-black text-xl sm:text-2xl tracking-[0.16em] leading-tight">FUERA</span>
+          <span class="text-[9px] text-white/50 tracking-[0.18em] font-medium flex items-center gap-1">
+            <span class="text-[#e81c2e]">•</span> Build the Future <span class="text-[#e81c2e]">•</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <a href="#home" class="text-[#e81c2e] font-bold relative py-1">
+          Home
+          <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-[#e81c2e] rounded-full"></span>
+        </a>
+        <a href="#solutions" class="text-white/80 hover:text-white transition-colors py-1 flex items-center gap-1">
+          <span>Services</span>
+          <svg class="w-3.5 h-3.5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a href="#about" class="text-white/80 hover:text-white transition-colors py-1">About</a>
+        <a href="#packages" class="text-white/80 hover:text-white transition-colors py-1">Packages</a>
+        <a href="#featured-work" class="text-white/80 hover:text-white transition-colors py-1">Case Studies</a>
+        <a href="#featured-work" class="text-white/80 hover:text-white transition-colors py-1">Blog</a>
+        <a href="#clients" class="text-white/80 hover:text-white transition-colors py-1">Clients</a>
+        <a href="#contact" class="text-white/80 hover:text-white transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-3">
+        <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 bg-[#0d090d]/80 hover:bg-[#1a0f14] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full border border-[#e81c2e] shadow-[0_0_15px_rgba(232,28,46,0.3)] hover:shadow-[0_0_25px_rgba(232,28,46,0.55)] transition-all cursor-pointer group">
+          <span>Send Enquiry</span>
+          <svg class="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+
+        <button onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-white/5 border border-white/20 hover:border-[#e81c2e]/60 flex items-center justify-center text-white/70 hover:text-white transition-all shadow-sm cursor-pointer" aria-label="Toggle theme">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-white/80 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#09090e] border-b border-white/10 px-6 py-5">
+      <div class="flex flex-col gap-3 text-sm font-medium text-white/80">
+        <a href="#home" onclick="toggleMobileMenu()" class="py-2 text-[#e81c2e] font-bold">Home</a>
+        <a href="#solutions" onclick="toggleMobileMenu()" class="py-2 hover:text-white">Services</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="py-2 hover:text-white">About</a>
+        <a href="#packages" onclick="toggleMobileMenu()" class="py-2 hover:text-white">Packages</a>
+        <a href="#featured-work" onclick="toggleMobileMenu()" class="py-2 hover:text-white">Case Studies</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="py-2 hover:text-white">Contact</a>
+        <div class="pt-3 border-t border-white/10">
+          <button onclick="openModal(); toggleMobileMenu();" class="w-full bg-gradient-to-r from-[#ff283b] to-[#e81c2e] hover:from-[#ff3d4e] hover:to-[#d01728] text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(232,28,46,0.45)]">
+            <span>Send Enquiry</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO SECTION ── -->
+  <section id="home" class="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden border-b border-white/5 z-10">
+    
+    <!-- Ambient Red Glows -->
+    <div class="absolute top-1/4 right-0 w-[550px] h-[550px] bg-[#e81c2e]/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <div class="absolute top-1/2 left-0 w-[450px] h-[450px] bg-[#e81c2e]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+        
+        <!-- Left Column Copy & Action Buttons -->
+        <div class="lg:col-span-6 space-y-6 z-10">
+          
+          <!-- Digital Growth Partner Tag -->
+          <div class="flex items-center gap-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#150a0d] border border-[#e81c2e]/40 shadow-[0_0_18px_rgba(232,28,46,0.2)]">
+              <span class="w-2 h-2 rounded-full bg-[#e81c2e] shadow-[0_0_8px_#e81c2e] animate-pulse"></span>
+              <span class="text-xs font-semibold text-white/90 tracking-wide">Digital Growth Partner</span>
+            </div>
+            <span class="hidden sm:inline-block w-16 h-[1px] bg-gradient-to-r from-[#e81c2e]/60 to-transparent"></span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[58px] xl:text-[66px] font-black leading-[1.08] tracking-tight">
+            <span class="text-chrome">
+              Build the 
+            </span>
+            <span class="text-crimson-glow">
+              Future
+            </span>
+            <br />
+            <span class="text-chrome">
+              of Your Business
+            </span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-white/75 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+            FUERA delivers measurable results through innovative digital solutions, crafted for 
+            <span class="text-[#e81c2e] font-semibold">growth.</span>
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#solutions" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#ff283b] to-[#e81c2e] hover:from-[#ff3d4e] hover:to-[#d01728] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-all duration-200 shadow-[0_4px_25px_rgba(232,28,46,0.55)] hover:shadow-[0_6px_35px_rgba(232,28,46,0.8)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
+              <span>Explore Our Services</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+
+            <button onclick="openStoryModal()" class="inline-flex items-center gap-2.5 bg-black/40 hover:bg-white/10 text-white font-medium text-sm sm:text-base px-6 py-3.5 rounded-full border border-white/20 hover:border-white/50 transition-all duration-200 backdrop-blur-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]">
+              <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px]">
+                <svg class="w-2.5 h-2.5 fill-white translate-x-[0.5px]" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span>Watch Our Story</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: 3D Artwork (Planet, Orbit Ring, Monolith, Stat Cards) -->
+        <div class="lg:col-span-6 relative flex items-center justify-center">
+          <div class="relative w-full max-w-[620px] select-none group">
+            <img src="public/hero-3d-visual-seamless.png" alt="FUERA - Build The Future 3D Monolith & Planet" class="w-full h-auto object-contain filter drop-shadow-[0_15px_45px_rgba(232,28,46,0.3)] transition-transform duration-500 group-hover:scale-[1.01]" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mouse Scroll Down Indicator -->
+      <div class="flex flex-col items-center justify-center pt-8 pb-3">
+        <a href="#features-ribbon" class="flex flex-col items-center gap-1 group cursor-pointer" aria-label="Scroll to features">
+          <div class="w-5 h-9 rounded-full border border-white/25 bg-black/40 flex items-start justify-center p-1 shadow-md group-hover:border-[#e81c2e]/60 transition-colors">
+            <div class="w-1 h-2 bg-white/70 rounded-full animate-bounce mt-1"></div>
+          </div>
+          <svg class="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+
+      <!-- ── BOTTOM FLOATING FEATURE RIBBON (GLASS BAR) ── -->
+      <div id="features-ribbon" class="relative z-20 w-full mt-2">
+        <div class="bg-[#0b0b10]/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full py-4 px-6 md:px-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)] grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+          
+          <!-- Item 1: Fast & Reliable -->
+          <div class="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4 first:pt-0 first:pl-0">
+            <div class="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+              <svg class="w-5 h-5 fill-[#e81c2e]" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm sm:text-base leading-snug">Fast &amp; Reliable</div>
+              <div class="text-white/50 text-xs mt-0.5">On-Time Delivery</div>
+            </div>
+          </div>
+
+          <!-- Item 2: Strategic Solutions -->
+          <div class="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4">
+            <div class="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm sm:text-base leading-snug">Strategic Solutions</div>
+              <div class="text-white/50 text-xs mt-0.5">For Every Business</div>
+            </div>
+          </div>
+
+          <!-- Item 3: Data-Driven Growth -->
+          <div class="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4">
+            <div class="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm sm:text-base leading-snug">Data-Driven Growth</div>
+              <div class="text-white/50 text-xs mt-0.5">Real Business Impact</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Trusted Partner -->
+          <div class="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4 last:pr-0">
+            <div class="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm sm:text-base leading-snug">Trusted Partner</div>
+              <div class="text-white/50 text-xs mt-0.5">For Your Success</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CLIENT ECOSYSTEM ── -->
+  <section class="py-12 bg-[#08080d] border-b border-white/5 z-10 relative">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 text-center">
+      <p class="text-white/40 text-xs font-semibold uppercase tracking-[0.25em] mb-8">
+        TRUSTED BY FORWARD-THINKING ENTERPRISES & STARTUPS
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80 hover:opacity-100 transition-opacity">
+        <div class="flex items-center gap-2 font-bold text-sm tracking-wide text-white/80 hover:text-white">
+          <div class="w-6 h-6 rounded-full bg-[#e81c2e]/20 border border-[#e81c2e]/50 flex items-center justify-center text-[10px] text-[#e81c2e]">🪷</div>
+          <span>Sri Raghavendra Vaibhava</span>
+        </div>
+
+        <div class="font-extrabold text-sm tracking-widest text-white/80 hover:text-white">
+          A+N TRADERS
+        </div>
+
+        <div class="font-extrabold text-base tracking-[0.35em] text-white/80 hover:text-white">
+          E V E X
+        </div>
+
+        <div class="font-serif italic text-base text-white/80 hover:text-white">
+          Annapoorna Kitchen
+        </div>
+
+        <div class="flex items-center gap-1.5 font-black text-sm tracking-widest text-white/80 hover:text-white">
+          <span class="text-[#e81c2e]">✦</span> SKYNEX TECH
+        </div>
+
+        <div class="text-xs text-white/40 font-mono">
+          and more...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENTERPRISE CAPABILITIES ── -->
+  <section id="solutions" class="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+          <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">ENTERPRISE CAPABILITIES</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+          End-to-end technology solutions built for competitive advantage.
+        </h2>
+
+        <p class="text-white/60 text-base leading-relaxed">
+          We combine enterprise software engineering, AI workflow automation, data-first performance marketing, and high-impact design to scale modern companies.
+        </p>
+
+        <div>
+          <button onclick="openModal()" class="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white font-medium text-sm px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-200">
+            View All Capabilities →
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        
+        <!-- Card 1 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl p-7 hover:border-[#e81c2e]/50 hover:bg-[#0e0e16] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center text-[#e81c2e] group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <span class="text-[10px] bg-white/5 text-white/50 border border-white/10 px-2.5 py-1 rounded-full font-mono">Cloud & Frontend</span>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3 group-hover:text-[#e81c2e] transition-colors">Enterprise Web Engineering</h3>
+            <p class="text-white/60 text-sm leading-relaxed mb-6">Custom high-throughput web platforms, microservices architecture, and sub-second edge delivery built for scale.</p>
+          </div>
+          <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+            <span>Learn more</span> <span class="text-[#e81c2e]">→</span>
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl p-7 hover:border-[#e81c2e]/50 hover:bg-[#0e0e16] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center text-[#e81c2e] group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <span class="text-[10px] bg-white/5 text-white/50 border border-white/10 px-2.5 py-1 rounded-full font-mono">AI & Workflow</span>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3 group-hover:text-[#e81c2e] transition-colors">AI & Intelligent Automation</h3>
+            <p class="text-white/60 text-sm leading-relaxed mb-6">Custom AI workflows, automated CRM/ERP integrations, and WhatsApp multi-channel messaging engines to eliminate manual work.</p>
+          </div>
+          <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+            <span>Learn more</span> <span class="text-[#e81c2e]">→</span>
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl p-7 hover:border-[#e81c2e]/50 hover:bg-[#0e0e16] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center text-[#e81c2e] group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </div>
+              <span class="text-[10px] bg-white/5 text-white/50 border border-white/10 px-2.5 py-1 rounded-full font-mono">Analytics & Ads</span>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3 group-hover:text-[#e81c2e] transition-colors">Performance Growth Systems</h3>
+            <p class="text-white/60 text-sm leading-relaxed mb-6">Data-driven advertising, programmatic search campaigns, and conversion analytics pipelines engineered for enterprise ROI.</p>
+          </div>
+          <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+            <span>Learn more</span> <span class="text-[#e81c2e]">→</span>
+          </button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl p-7 hover:border-[#e81c2e]/50 hover:bg-[#0e0e16] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div class="w-12 h-12 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center text-[#e81c2e] group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+              </div>
+              <span class="text-[10px] bg-white/5 text-white/50 border border-white/10 px-2.5 py-1 rounded-full font-mono">Design Systems</span>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3 group-hover:text-[#e81c2e] transition-colors">Brand & Experience Design (DX)</h3>
+            <p class="text-white/60 text-sm leading-relaxed mb-6">Scalable design systems, corporate visual identity, and high-impact digital experiences that establish market authority.</p>
+          </div>
+          <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+            <span>Learn more</span> <span class="text-[#e81c2e]">→</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TECHNOLOGY STACK MATRIX ── -->
+  <section id="tech-stack" class="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-4">
+        <div class="flex items-center justify-center gap-2.5">
+          <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+          <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">TECHNOLOGY STACK</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white">Built on Modern Enterprise Software Infrastructure.</h2>
+        <p class="text-white/60 text-base">We leverage modern, type-safe, and battle-tested frameworks to ensure zero downtime and sub-second performance.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Frontend Engine</div>
+            <h3 class="text-white font-bold text-base mb-1">React & Next.js 15</h3>
+            <p class="text-white/50 text-xs leading-relaxed">Server-side rendering, sub-second load times & static generation.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Language</div>
+            <h3 class="text-white font-bold text-base mb-1">TypeScript</h3>
+            <p class="text-white/50 text-xs leading-relaxed">Type-safe robust codebase with zero runtime surprises.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Backend Microservices</div>
+            <h3 class="text-white font-bold text-base mb-1">Node.js & Python</h3>
+            <p class="text-white/50 text-xs leading-relaxed">High-concurrency microservices, GraphQL & REST APIs.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Cloud & Security</div>
+            <h3 class="text-white font-bold text-base mb-1">AWS & Cloudflare</h3>
+            <p class="text-white/50 text-xs leading-relaxed">Zero-trust SSL, DDoS protection, edge caching & 99.99% uptime.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Artificial Intelligence</div>
+            <h3 class="text-white font-bold text-base mb-1">OpenAI & AI APIs</h3>
+            <p class="text-white/50 text-xs leading-relaxed">Intelligent customer bots, predictive workflows & LLM tools.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+          </div>
+          <div>
+            <div class="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">Data Systems</div>
+            <h3 class="text-white font-bold text-base mb-1">PostgreSQL & Redis</h3>
+            <p class="text-white/50 text-xs leading-relaxed">Ultra-fast database caching and real-time event streaming.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ENGINEERED CASE STUDIES ── -->
+  <section id="case-studies" class="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+      
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+            <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">ENGINEERED CASE STUDIES</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">Solutions that deliver measurable outcomes.</h2>
+          <p class="text-white/60 text-base leading-relaxed max-w-2xl">A look at how we helped client partners transform their technology stack, improve conversions, and scale ops.</p>
+        </div>
+
+        <div class="lg:col-span-4 lg:text-right">
+          <button onclick="openModal()" class="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white font-medium text-sm px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-200">
+            Explore Case Studies →
+          </button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Case 1 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden hover:border-[#e81c2e]/40 transition-all duration-300 flex flex-col">
+          <div class="h-52 bg-gradient-to-br from-[#e81c2e]/30 to-[#0e0e14] p-6 flex flex-col justify-center items-center relative overflow-hidden border-b border-white/5">
+            <div class="text-center transform group-hover:scale-105 transition-transform duration-300">
+              <span class="text-2xl text-white font-extrabold tracking-wide block mb-1">Sri Raghavendra Vaibhava</span>
+              <span class="text-[10px] text-white/50 uppercase tracking-widest font-mono">Enterprise Hospitality Platform</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-white font-bold text-lg mb-2 group-hover:text-[#e81c2e] transition-colors">Sri Raghavendra Vaibhava</h3>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">Enterprise Web</span>
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">Local Search SEO</span>
+              </div>
+              <p class="text-white/50 text-xs leading-relaxed">High-conversions multi-location digital dining engine & local search system.</p>
+            </div>
+            <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+              <span>Read Architecture Case Study</span> <span class="text-[#e81c2e]">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden hover:border-[#e81c2e]/40 transition-all duration-300 flex flex-col">
+          <div class="h-52 bg-gradient-to-br from-[#0070f3]/30 to-[#0e0e14] p-6 flex flex-col justify-center items-center relative overflow-hidden border-b border-white/5">
+            <div class="text-center transform group-hover:scale-105 transition-transform duration-300">
+              <span class="text-2xl text-white font-extrabold tracking-wide block mb-1">EVEX Systems</span>
+              <span class="text-[10px] text-white/50 uppercase tracking-widest font-mono">Cross-Platform App & AI</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-white font-bold text-lg mb-2 group-hover:text-[#e81c2e] transition-colors">EVEX Systems</h3>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">Cross-Platform App</span>
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">AI Automation</span>
+              </div>
+              <p class="text-white/50 text-xs leading-relaxed">Enterprise mobile platform & automated multi-channel messaging pipeline.</p>
+            </div>
+            <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+              <span>Read Architecture Case Study</span> <span class="text-[#e81c2e]">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="group bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden hover:border-[#e81c2e]/40 transition-all duration-300 flex flex-col">
+          <div class="h-52 bg-gradient-to-br from-[#7928ca]/30 to-[#0e0e14] p-6 flex flex-col justify-center items-center relative overflow-hidden border-b border-white/5">
+            <div class="text-center transform group-hover:scale-105 transition-transform duration-300">
+              <span class="text-2xl text-white font-extrabold tracking-wide block mb-1">SKYNEX Tech</span>
+              <span class="text-[10px] text-white/50 uppercase tracking-widest font-mono">Brand & DX Architecture</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-white font-bold text-lg mb-2 group-hover:text-[#e81c2e] transition-colors">SKYNEX Tech</h3>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">Brand System</span>
+                <span class="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">Design Tokens</span>
+              </div>
+              <p class="text-white/50 text-xs leading-relaxed">Complete digital identity system, design tokens, and corporate positioning.</p>
+            </div>
+            <button onclick="openModal()" class="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 cursor-pointer">
+              <span>Read Architecture Case Study</span> <span class="text-[#e81c2e]">→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── THE ENGINEERING PROCESS ── -->
+  <section id="process" class="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+          <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">THE ENGINEERING PROCESS</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">A structured lifecycle for zero-friction deployment.</h2>
+        <p class="text-white/60 text-base leading-relaxed">We follow a rigorous agile engineering lifecycle to turn complex requirements into high-performing digital systems.</p>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-4 gap-4">
+        
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-bold text-sm mb-6 bg-[#050508]">01</div>
+            <h3 class="text-white font-bold text-base mb-2">Architecture & Discovery</h3>
+            <p class="text-white/60 text-xs leading-relaxed">We perform a thorough audit of your requirements, security specs, and growth objectives.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-bold text-sm mb-6 bg-[#050508]">02</div>
+            <h3 class="text-white font-bold text-base mb-2">System Design & Security</h3>
+            <p class="text-white/60 text-xs leading-relaxed">Our engineers craft high-fidelity design systems, zero-trust architectures, and API schemas.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-bold text-sm mb-6 bg-[#050508]">03</div>
+            <h3 class="text-white font-bold text-base mb-2">Engineering & QA</h3>
+            <p class="text-white/60 text-xs leading-relaxed">We write clean modular TypeScript code, set up CI/CD pipelines, and conduct security testing.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-bold text-sm mb-6 bg-[#050508]">04</div>
+            <h3 class="text-white font-bold text-base mb-2">Deployment & Scale</h3>
+            <p class="text-white/60 text-xs leading-relaxed">We deploy to continuous edge hosting, configure real-time telemetry, and drive growth.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ENGAGEMENT MODELS (PRICING PACKAGES) ── -->
+  <section id="packages" class="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+          <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">ENGAGEMENT MODELS</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">Flexible technology suites for every growth stage.</h2>
+        <p class="text-white/60 text-base leading-relaxed">Choose an engineering package aligned with your technical & marketing goals, or talk to us for a custom enterprise partnership.</p>
+      </div>
+
+      <div class="lg:col-span-8 grid sm:grid-cols-3 gap-5 items-stretch">
+        
+        <!-- Model 1 -->
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-1">Foundation Tech</h3>
+            <p class="text-white/50 text-xs mb-4 min-h-[32px]">For high-growth startups establishing modern web platforms.</p>
+            <div class="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+            <div class="text-2xl font-black text-white mb-6">₹5,999</div>
+          </div>
+          <button onclick="openModal()" class="w-full border border-white/20 hover:border-white text-white font-medium text-xs px-6 py-3 rounded-full hover:bg-white/10 transition-all cursor-pointer">
+            Select Foundation →
+          </button>
+        </div>
+
+        <!-- Model 2 (Recommended) -->
+        <div class="bg-[#0f0f18] border-2 border-[#e81c2e] rounded-2xl p-6 flex flex-col justify-between shadow-[0_0_35px_rgba(232,28,46,0.25)] relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#e81c2e] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">RECOMMENDED ENTERPRISE</div>
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e81c2e]/20 border border-[#e81c2e]/40 flex items-center justify-center text-[#e81c2e] mb-4 mt-1">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-1">Growth System</h3>
+            <p class="text-white/50 text-xs mb-4 min-h-[32px]">Full-stack web engine, advanced SEO, and lead automation.</p>
+            <div class="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+            <div class="text-2xl font-black text-white mb-6">₹14,999</div>
+          </div>
+          <button onclick="openModal()" class="w-full bg-[#e81c2e] hover:bg-[#d01728] text-white font-bold text-xs px-6 py-3 rounded-full transition-all red-glow cursor-pointer">
+            Select Growth Suite →
+          </button>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-1">Custom Enterprise</h3>
+            <p class="text-white/50 text-xs mb-4 min-h-[32px]">Dedicated cloud infra, performance ad engine & 24/7 SLA.</p>
+            <div class="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+            <div class="text-2xl font-black text-white mb-6">₹28,999</div>
+          </div>
+          <button onclick="openModal()" class="w-full border border-white/20 hover:border-white text-white font-medium text-xs px-6 py-3 rounded-full hover:bg-white/10 transition-all cursor-pointer">
+            Custom Architecture →
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA / FOOTER ── -->
+  <section class="py-24 bg-[#08080d] border-b border-white/5 relative overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-[2px] bg-[#e81c2e]"></span>
+          <span class="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]">REQUEST A PROPOSAL</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">Ready to architect your next digital advantage?</h2>
+        <p class="text-white/60 text-base sm:text-lg leading-relaxed max-w-lg">Talk to our technical architects. We respond with a detailed proposal within 24 hours.</p>
+
+        <div>
+          <button onclick="openModal()" class="inline-flex items-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-semibold text-sm px-6 py-3 rounded-full transition-all duration-200 red-glow hover:scale-[1.02] cursor-pointer">
+            Schedule Technical Call →
+          </button>
+        </div>
+      </div>
+
+      <!-- Contact Info Box -->
+      <div class="lg:col-span-5 bg-[#0a0a0f] border border-white/10 rounded-2xl p-8 space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-white/40 font-medium uppercase tracking-wider">Engineering Inquiries</div>
+              <a href="mailto:contact@fuera.in.net" class="text-white text-sm font-semibold hover:text-[#e81c2e]">contact@fuera.in.net</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-white/40 font-medium uppercase tracking-wider">Direct Phone</div>
+              <a href="tel:9449658382" class="text-white text-sm font-semibold hover:text-[#e81c2e]">+91 9449658382 / 7899945862</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs text-white/40 font-medium uppercase tracking-wider">Tech Hub HQ</div>
+              <div class="text-white text-sm font-semibold">Koramangala, Bengaluru, India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-[#030305] text-white py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10 pb-8">
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="bg-black p-1.5 rounded-lg flex items-center border border-white/15">
+          <img src="src/imports/image-4.png" alt="FUERA Emblem" class="h-9 w-auto object-contain shrink-0" />
+          <img src="src/imports/image-7.png" alt="FUERA — EXPLORE TOMORROW" class="h-9 w-auto object-contain shrink-0 -ml-1" />
+        </div>
+      </a>
+
+      <nav class="flex flex-wrap items-center gap-6 text-sm text-white/70">
+        <a href="#home" class="hover:text-white">Home</a>
+        <a href="#solutions" class="hover:text-white">Solutions</a>
+        <a href="#case-studies" class="hover:text-white">Case Studies</a>
+        <a href="#tech-stack" class="hover:text-white">Tech Stack</a>
+        <a href="#packages" class="hover:text-white">Engagement Models</a>
+      </nav>
+
+      <div class="text-xs text-white/40 font-mono">
+        © 2026 FUERA Technologies. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── PROPOSAL MODAL ── -->
+  <div id="proposalModal" class="hidden fixed inset-0 bg-black/80 modal-backdrop flex items-center justify-center z-[100] p-4">
+    <div class="bg-[#0b0b10] border border-white/15 rounded-2xl p-6 sm:p-8 w-full max-w-lg overflow-y-auto max-h-[95vh] shadow-[0_30px_70px_rgba(0,0,0,0.95)] relative">
+      <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-[#e81c2e] text-[10px] font-mono font-bold uppercase tracking-widest block mb-1">FUERA ENTERPRISE DISCOVERY</span>
+          <h2 class="text-white text-xl font-black">Request Technology Proposal</h2>
+        </div>
+        <button onclick="closeModal()" class="text-white/60 hover:text-white transition-colors p-1 cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="modalForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Full Name *</label>
+            <input required type="text" id="formName" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e]" placeholder="Jane Doe">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Company</label>
+            <input type="text" id="formCompany" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e]" placeholder="Acme Corp">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Phone *</label>
+            <input required type="text" id="formPhone" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e]" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Email *</label>
+            <input required type="email" id="formEmail" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e]" placeholder="you@company.com">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Capability Scope</label>
+          <select id="formScope" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e]">
+            <option value="Enterprise Web Engineering">Enterprise Web Engineering</option>
+            <option value="AI & Intelligent Automation">AI & Intelligent Automation</option>
+            <option value="Performance Growth Systems">Performance Growth Systems</option>
+            <option value="Brand Identity & DX">Brand Identity & DX</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">Requirements</label>
+          <textarea rows="3" id="formMsg" class="w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e] resize-none" placeholder="Describe your technical objectives..."></textarea>
+        </div>
+
+        <button type="submit" id="btnSubmit" class="w-full py-3.5 bg-[#e81c2e] hover:bg-[#d01728] text-white font-bold text-sm rounded-full transition-all red-glow cursor-pointer">
+          Submit Proposal Request →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactivity -->
+  <script>
+    function switchConsoleTab(tab) {
+      const codeTab = document.getElementById('tabCode');
+      const telemTab = document.getElementById('tabTelemetry');
+      const viewCode = document.getElementById('viewTerminal');
+      const viewTelem = document.getElementById('viewTelemetry');
+
+      if (tab === 'terminal') {
+        codeTab.className = "px-3 py-1 rounded-md transition-colors bg-[#e81c2e] text-white font-semibold cursor-pointer";
+        telemTab.className = "px-3 py-1 rounded-md transition-colors text-white/50 hover:text-white cursor-pointer";
+        viewCode.classList.remove('hidden');
+        viewTelem.classList.add('hidden');
+      } else {
+        telemTab.className = "px-3 py-1 rounded-md transition-colors bg-[#e81c2e] text-white font-semibold cursor-pointer";
+        codeTab.className = "px-3 py-1 rounded-md transition-colors text-white/50 hover:text-white cursor-pointer";
+        viewTelem.classList.remove('hidden');
+        viewCode.classList.add('hidden');
+      }
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openModal() {
+      document.getElementById('proposalModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('proposalModal').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnSubmit');
+      btn.innerText = "✓ Proposal Request Received!";
+      btn.className = "w-full py-3.5 bg-emerald-500 text-white font-bold text-sm rounded-full transition-all cursor-default";
+      
+      setTimeout(() => {
+        closeModal();
+        btn.innerText = "Submit Proposal Request →";
+        btn.className = "w-full py-3.5 bg-[#e81c2e] hover:bg-[#d01728] text-white font-bold text-sm rounded-full transition-all red-glow cursor-pointer";
+        document.getElementById('modalForm').reset();
+      }, 2500);
+    }
+
+    function openStoryModal() {
+      document.getElementById('storyModal').classList.remove('hidden');
+    }
+
+    function closeStoryModal() {
+      document.getElementById('storyModal').classList.add('hidden');
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
+
+  <!-- ── STORY MODAL ── -->
+  <div id="storyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeStoryModal()"></div>
+    <div class="relative z-10 w-full max-w-2xl bg-[#0a0a10] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden">
+      <button onclick="closeStoryModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors cursor-pointer">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#e81c2e]"></span>
+        <span class="text-xs uppercase font-bold tracking-widest text-[#e81c2e]">Our Story</span>
+      </div>
+
+      <h3 class="text-2xl sm:text-3xl font-black text-white mb-4">
+        Architecting the Future of Business with FUERA
+      </h3>
+
+      <div class="space-y-3 text-sm text-white/75 leading-relaxed">
+        <p>
+          At FUERA, we believe technology should be a competitive weapon, not a bottleneck. We engineer high-performance web platforms, intelligent automation workflows, and high-conversions performance engines designed to scale modern businesses.
+        </p>
+        <p>
+          From Bengaluru to global enterprises, our multidisciplinary team of software architects, AI engineers, and growth strategists have delivered over 250+ solutions with a 3x average growth multiple for our partners.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 my-6 pt-4 border-t border-white/10">
+        <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-[#e81c2e]">250+</div>
+          <div class="text-[10px] text-white/50">Projects Delivered</div>
+        </div>
+        <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-[#e81c2e]">3x</div>
+          <div class="text-[10px] text-white/50">Avg Growth</div>
+        </div>
+        <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-[#e81c2e]">100+</div>
+          <div class="text-[10px] text-white/50">Happy Clients</div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button onclick="closeStoryModal()" class="px-5 py-2.5 rounded-full border border-white/20 hover:border-white text-white text-xs font-semibold cursor-pointer">
+          Close
+        </button>
+        <button onclick="closeStoryModal(); openModal();" class="px-6 py-2.5 rounded-full bg-[#e81c2e] hover:bg-[#d01728] text-white text-xs font-bold cursor-pointer">
+          Start Your Project →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FLOATING WHATSAPP BUTTON ── -->
+  <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+building+and+scaling+my+business" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-13 h-13 bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center rounded-full shadow-[0_4px_25px_rgba(37,211,102,0.5)] transition-all hover:scale-110 active:scale-95 group" aria-label="Chat with FUERA on WhatsApp">
+    <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  </a>
+</body>
+</html>

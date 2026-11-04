@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Check } from "lucide-react";
+import { X, Check, ArrowRight } from "lucide-react";
 import { WEB3FORMS_ACCESS_KEY } from "../../helpers";
 
 interface EnquiryModalProps {
@@ -14,6 +14,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
     company: "",
     email: "",
     phone: "",
+    scope: "Enterprise Web Engineering",
     message: "",
     privacy: false
   });
@@ -43,8 +44,9 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
           email: form.email,
           phone: form.phone,
           company: form.company,
+          scope: form.scope,
           message: form.message,
-          subject: "New Quick Enquiry - FUERA",
+          subject: `FUERA Tech Inquiry - ${form.scope}`,
         }),
       });
 
@@ -56,6 +58,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
           company: "",
           email: "",
           phone: "",
+          scope: "Enterprise Web Engineering",
           message: "",
           privacy: false
         });
@@ -64,7 +67,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
           onClose();
         }, 3000);
       } else {
-        alert("Something went wrong. Please try again or reach out directly via email.");
+        alert("Something went wrong. Please try again or email contact@fuera.in.net directly.");
       }
     } catch (err) {
       console.error(err);
@@ -75,34 +78,35 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
   };
 
   const inputCls =
-    "w-full border border-white/10 bg-white text-sm !text-black px-4 py-2.5 rounded-sm focus:outline-none focus:border-black/30 transition-colors placeholder:text-gray-400";
+    "w-full border border-white/10 bg-[#14141c] text-sm text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-[#e81c2e] transition-colors placeholder:text-white/40";
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-[100] p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-[#111114] border border-white/20 rounded-xl p-6 w-full max-w-lg overflow-y-auto max-h-[95vh]"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
+            className="bg-[#0b0b10] border border-white/15 rounded-2xl p-6 sm:p-8 w-full max-w-lg overflow-y-auto max-h-[95vh] shadow-[0_30px_70px_rgba(0,0,0,0.95)]"
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
           >
-            <div className="flex justify-between items-center mb-5">
-              <h2
-                className="text-white text-lg font-bold"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                Send Enquiry
-              </h2>
+            <div className="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+              <div>
+                <span className="text-[#e81c2e] text-[10px] font-mono font-bold uppercase tracking-widest block mb-1">FUERA ENTERPRISE DISCOVERY</span>
+                <h2 className="text-white text-xl font-black">
+                  Request Technology Proposal
+                </h2>
+              </div>
               <button
                 onClick={onClose}
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-white/60 hover:text-white transition-colors p-1"
                 type="button"
+                aria-label="Close modal"
               >
                 <X size={20} />
               </button>
@@ -111,42 +115,34 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
-                    className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Name *
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                    Full Name *
                   </label>
                   <input
                     required
                     value={form.name}
                     onChange={set("name")}
                     className={inputCls}
-                    placeholder="Your name"
+                    placeholder="Jane Doe"
                   />
                 </div>
                 <div>
-                  <label
-                    className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Company
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                    Company / Entity
                   </label>
                   <input
                     value={form.company}
                     onChange={set("company")}
                     className={inputCls}
-                    placeholder="Company name"
+                    placeholder="Acme Corp"
                   />
                 </div>
               </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
-                    className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Phone *
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                    Phone Number *
                   </label>
                   <input
                     required
@@ -157,11 +153,8 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                   />
                 </div>
                 <div>
-                  <label
-                    className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    Email *
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                    Corporate Email *
                   </label>
                   <input
                     required
@@ -169,67 +162,74 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
                     value={form.email}
                     onChange={set("email")}
                     className={inputCls}
-                    placeholder="you@email.com"
+                    placeholder="you@company.com"
                   />
                 </div>
               </div>
+
               <div>
-                <label
-                  className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                  Project Scope / Capability Needed
+                </label>
+                <select
+                  value={form.scope}
+                  onChange={set("scope")}
+                  className={`${inputCls} cursor-pointer`}
                 >
-                  Message
+                  <option value="Enterprise Web Engineering" className="bg-[#0b0b10] text-white">Enterprise Web Engineering</option>
+                  <option value="AI & Intelligent Automation" className="bg-[#0b0b10] text-white">AI & Intelligent Automation</option>
+                  <option value="Performance Growth Systems" className="bg-[#0b0b10] text-white">Performance Growth Systems</option>
+                  <option value="Brand Identity & Experience Design" className="bg-[#0b0b10] text-white">Brand Identity & Experience Design</option>
+                  <option value="Custom Enterprise Transformation" className="bg-[#0b0b10] text-white">Custom Enterprise Transformation</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wide">
+                  Technical Requirements & Objectives
                 </label>
                 <textarea
-                  rows={4}
+                  rows={3}
                   value={form.message}
                   onChange={set("message")}
                   className={`${inputCls} resize-none`}
-                  placeholder="Tell us about your project or goals..."
+                  placeholder="Describe your platform goals, current tech stack, or scaling target..."
                 />
               </div>
-              <div className="flex items-start gap-2">
+
+              <div className="flex items-start gap-2 pt-1">
                 <input
                   type="checkbox"
                   id="modal-privacy"
                   checked={form.privacy}
                   onChange={set("privacy")}
                   required
-                  className="mt-0.5 w-4 h-4 accent-white"
+                  className="mt-0.5 w-4 h-4 accent-[#e81c2e]"
                 />
-                <label htmlFor="modal-privacy" className="text-xs text-[#a0a0ab]">
-                  I agree to the{" "}
-                  <span
-                    className="text-white underline cursor-pointer"
-                    onClick={() =>
-                      alert(
-                        "Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this form will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties."
-                      )
-                    }
-                  >
-                    Privacy Policy
-                  </span>{" "}
-                  and consent to FUERA contacting me.
+                <label htmlFor="modal-privacy" className="text-xs text-white/50 leading-tight">
+                  I agree to FUERA's privacy policy and consent to technical follow-up regarding this proposal request.
                 </label>
               </div>
+
               <button
                 type="submit"
                 disabled={submitting}
-                className={`w-full py-3.5 font-semibold text-sm transition-all rounded-sm disabled:opacity-50 disabled:cursor-not-allowed ${
+                className={`w-full py-3.5 font-bold text-sm transition-all rounded-full cursor-pointer flex items-center justify-center gap-2 ${
                   done
-                    ? "bg-green-600 text-white"
-                    : "bg-[#111111] hover:bg-[#2a2a2a] text-white border border-white/10"
+                    ? "bg-emerald-500 text-white"
+                    : "bg-[#e81c2e] hover:bg-[#d01728] text-white shadow-[0_4px_20px_rgba(232,28,46,0.5)]"
                 }`}
-                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {done ? (
                   <span className="flex items-center justify-center gap-2">
-                    <Check size={16} /> Enquiry Sent! We will be in touch.
+                    <Check size={16} /> Request Received! We'll reply within 24h.
                   </span>
                 ) : submitting ? (
-                  "Sending..."
+                  "Submitting Architecture Inquiry..."
                 ) : (
-                  "Submit My Query"
+                  <>
+                    <span>Submit Proposal Request</span> <ArrowRight size={16} />
+                  </>
                 )}
               </button>
             </form>

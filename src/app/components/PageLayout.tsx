@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import {
-  Menu, X, ChevronDown, ChevronUp,
-  Phone, Mail, MapPin, Instagram, Facebook, Linkedin, MessageCircle,
-  Sun, Moon
+  Menu, X, ChevronDown, ChevronUp, ArrowRight,
+  Phone, Mail, MapPin, Instagram, Facebook, Linkedin, MessageCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
@@ -22,14 +21,20 @@ function FueraLogo() {
   const navigate = useNavigate();
   return (
     <div
-      className="cursor-pointer shrink-0 flex items-center overflow-hidden"
-      style={{ background: "#000", borderRadius: "6px" }}
+      className="cursor-pointer shrink-0 flex items-center gap-2.5 group select-none"
       onClick={() => navigate("/")}
     >
-      <img src={fueraLogo} alt="" aria-hidden="true"
-        style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0 }} />
-      <img src={fueraWordmark} alt="FUERA — Powered by AK GROUPS"
-        style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0, marginLeft: "-6px" }} />
+      <img
+        src={fueraLogo}
+        alt="FUERA Emblem"
+        className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+      />
+      <div className="flex flex-col justify-center -space-y-0.5">
+        <span className="text-white font-black text-xl sm:text-2xl tracking-[0.16em] leading-tight">FUERA</span>
+        <span className="text-[9px] text-white/50 tracking-[0.18em] font-medium flex items-center gap-1">
+          <span className="text-[#e81c2e]">•</span> Build the Future <span className="text-[#e81c2e]">•</span>
+        </span>
+      </div>
     </div>
   );
 }
@@ -40,23 +45,13 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(t => (t === "dark" ? "light" : "dark"));
-  };
+    document.documentElement.classList.add("dark");
+  }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -65,7 +60,6 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
     setMenuOpen(false);
     setServicesOpen(false);
     navigate(hash ? `/#${hash.replace("#", "")}` : "/");
-    // After navigation, scroll to section
     setTimeout(() => {
       if (hash) {
         const el = document.querySelector(hash);
@@ -79,65 +73,84 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   const NAV_ITEMS = [
     { label: "Home", action: () => goHome("#home") },
     { label: "Services", action: () => goHome("#services"), hasChildren: true },
+    { label: "Work", action: () => goHome("#featured-work") },
     { label: "About", action: () => navigate("/about") },
-    { label: "Packages", action: () => goHome("#packages") },
-    { label: "Clients", action: () => navigate("/clients") },
+    { label: "Insights", action: () => goHome("#insights") },
     { label: "Contact", action: () => navigate("/contact") },
   ];
 
   return (
-    <div className="min-h-screen bg-[#0d0d0f] text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-      {/* Top bar */}
-      <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
+    <div className="min-h-screen bg-[#050508] text-white selection:bg-[#e81c2e] selection:text-white relative overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+      
+      {/* Grid Pattern Background */}
+      <div className="fixed inset-0 grid-pattern pointer-events-none z-0" />
+
+      {/* Ambient Red Spotlights */}
+      <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-[#e81c2e]/10 blur-[160px] pointer-events-none z-0" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-[#e81c2e]/08 blur-[160px] pointer-events-none z-0" />
+
+      {/* ── TOP CONTACT & SOCIAL BAR ── */}
+      <div className="relative z-50 bg-[#050508] border-b border-white/10 py-1.5 px-4 sm:px-8 text-xs text-white/70 overflow-hidden">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a href="mailto:contact@fuera.in.net" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Mail size={12} /> contact@fuera.in.net
+          <div className="absolute top-0 left-0 w-36 h-[1px] bg-gradient-to-r from-[#e81c2e] to-transparent pointer-events-none" />
+          <div className="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
+            <a href="mailto:contact@fuera.in.net" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Mail size={12} className="text-white/60" />
+              <span>contact@fuera.in.net</span>
             </a>
-            <a href="tel:9449658382" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Phone size={12} /> 9449658382 / 7899945862
-            </a>
+            <span className="text-white/20">|</span>
+            <div className="flex items-center gap-1.5">
+              <Phone size={12} className="text-white/60" />
+              <a href="tel:9449658382" className="hover:text-white transition-colors">9449658382</a>
+              <span className="text-white/30">/</span>
+              <a href="tel:7899945862" className="hover:text-white transition-colors">7899945862</a>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors"><Instagram size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Facebook size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Linkedin size={13} /></a>
-            <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services" target="_blank" rel="noreferrer"
-              className="flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white px-3 py-0.5 rounded-sm text-xs font-medium transition-colors">
-              <MessageCircle size={11} /> WhatsApp
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="Instagram">
+              <Instagram size={13} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="Facebook">
+              <Facebook size={13} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#e81c2e] transition-colors" aria-label="LinkedIn">
+              <Linkedin size={13} />
+            </a>
+            <a href="https://wa.me/919449658382" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#20ba59] text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(37,211,102,0.3)] hover:scale-105">
+              <MessageCircle size={12} fill="currentColor" />
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
       {/* Header */}
-      <header className={`sticky top-0 z-50 bg-black transition-shadow duration-300 ${scrolled ? "shadow-md" : "shadow-sm"} border-b border-white/5`}>
-        <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+      <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "bg-[#050508]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3" : "bg-[#050508] border-b border-white/5 py-4"}`}>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between">
           <FueraLogo />
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-7">
             {NAV_ITEMS.map(item => (
               item.hasChildren ? (
                 <div key={item.label} className="relative">
                   <button
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-white/80 transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                    className="flex items-center gap-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors py-1 cursor-pointer"
                     onClick={() => setServicesOpen(v => !v)}>
                     {item.label}
-                    {servicesOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                    {servicesOpen ? <ChevronUp size={14} className="text-[#e81c2e]" /> : <ChevronDown size={14} />}
                   </button>
                   <AnimatePresence>
                     {servicesOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 6 }}
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
+                        className="absolute top-full left-0 mt-3 w-60 bg-[#0c0c10] border border-white/10 shadow-2xl rounded-xl z-50 py-2 overflow-hidden">
                         {SERVICES_LIST.map(c => (
                           <button key={c} onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
-                            className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
-                            style={{ fontFamily: "'Inter', sans-serif" }}>
-                            {c}
+                            className="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:bg-[#e81c2e]/10 hover:text-white transition-colors flex items-center justify-between">
+                            <span>{c}</span>
+                            <ArrowRight size={12} className="text-[#e81c2e]" />
                           </button>
                         ))}
                       </motion.div>
@@ -146,32 +159,21 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
                 </div>
               ) : (
                 <button key={item.label} onClick={item.action}
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-white/80 transition-colors"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  className="text-sm font-medium text-white/80 hover:text-white transition-colors py-1 cursor-pointer">
                   {item.label}
                 </button>
               )
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center gap-3">
-              <button onClick={() => setModalOpen(true)}
-                className="inline-flex items-center gap-2 font-semibold transition-all duration-200 px-5 py-2 text-sm bg-[#111111] border border-white/20 text-white hover:bg-[#2a2a2a] shadow-sm hover:shadow-md"
-                style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
-                Send Enquiry
-              </button>
-            </div>
-
-            {/* Theme Toggle (Mobile & Desktop) */}
-            <button onClick={toggleTheme}
-              className="p-2 text-white/80 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center"
-              aria-label="Toggle theme">
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          <div className="flex items-center gap-4">
+            <button onClick={() => setModalOpen(true)}
+              className="hidden sm:inline-flex items-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-medium text-sm px-6 py-3 rounded-full transition-all duration-200 shadow-[0_4px_20px_rgba(232,28,46,0.4)] hover:scale-[1.02] cursor-pointer">
+              Start a Project <ArrowRight size={15} />
             </button>
 
-            <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            <button className="lg:hidden p-2 text-white/80 hover:text-white" onClick={() => setMenuOpen(v => !v)}>
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -180,20 +182,18 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
         <AnimatePresence>
           {menuOpen && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden border-t border-white/5 bg-black">
-              <div className="px-5 py-4 flex flex-col gap-1">
+              className="lg:hidden overflow-hidden bg-[#0a0a0d] border-b border-white/10 px-6 py-5">
+              <div className="flex flex-col gap-3">
                 {NAV_ITEMS.map(item => (
                   <button key={item.label} onClick={item.action}
-                    className="text-left px-3 py-2.5 text-sm font-medium text-white hover:bg-[#1c1c20] rounded-sm transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    className="text-left py-2 text-sm font-medium text-white/80 hover:text-white">
                     {item.label}
                   </button>
                 ))}
-                <div className="pt-2">
+                <div className="pt-3 border-t border-white/10">
                   <button onClick={() => { setMenuOpen(false); setModalOpen(true); }}
-                    className="inline-flex items-center gap-2 font-semibold transition-all duration-200 px-7 py-3 text-sm bg-[#111111] border border-white/20 text-white hover:bg-[#2a2a2a]"
-                    style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
-                    Send Enquiry
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-medium text-sm px-6 py-3 rounded-full transition-all">
+                    Start a Project <ArrowRight size={15} />
                   </button>
                 </div>
               </div>
@@ -208,66 +208,24 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="bg-[#070709] text-white pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            <div>
-              <FueraLogo />
-              <p className="text-white/60 text-sm mt-4 leading-relaxed">
-                FUERA helps businesses establish a powerful online presence and generate quality leads through strategy-first digital marketing.
-              </p>
-              <div className="flex gap-3 mt-5">
-                <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer"
-                  className="w-8 h-8 bg-white/5 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Instagram size={14} />
-                </a>
-                <a href="#" className="w-8 h-8 bg-white/5 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Facebook size={14} />
-                </a>
-                <a href="#" className="w-8 h-8 bg-white/5 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Linkedin size={14} />
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Services</h4>
-              <ul className="space-y-2">
-                {SERVICES_LIST.map(s => (
-                  <li key={s}>
-                    <button onClick={() => navigate(`/services/${slugify(s)}`)} className="text-white/60 hover:text-white text-sm transition-colors text-left">{s}</button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
-              <ul className="space-y-2">
-                <li><button onClick={() => goHome("#home")} className="text-white/60 hover:text-white text-sm transition-colors">Home</button></li>
-                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors">About Us</button></li>
-                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors">Leadership Team</button></li>
-                <li><button onClick={() => goHome("#packages")} className="text-white/60 hover:text-white text-sm transition-colors">Packages</button></li>
-                <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors">Clients</button></li>
-                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors">Careers</button></li>
-                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors">Contact</button></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h4>
-              <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
-                <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
-                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> #1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
-            <p>© {new Date().getFullYear()} FUERA. All Rights Reserved.</p>
-            <div className="flex gap-4">
-              <button onClick={() => alert("Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this website will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties.")}
-                className="hover:text-white/70 transition-colors">Privacy Policy</button>
-              <button onClick={() => alert("Terms of Use:\n\nBy using this website, you agree to comply with and be bound by the terms and conditions of FUERA. All services provided are subject to our client service agreements.")}
-                className="hover:text-white/70 transition-colors">Terms of Use</button>
-            </div>
+      <footer className="bg-[#040406] text-white py-12">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10 pb-8">
+          <FueraLogo />
+
+          <nav className="flex flex-wrap items-center gap-6 text-sm text-white/70">
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.label}
+                onClick={item.action}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="text-xs text-white/40 font-mono">
+            © {new Date().getFullYear()} FUERA. All rights reserved.
           </div>
         </div>
       </footer>
@@ -275,8 +233,9 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
       {/* WhatsApp FAB */}
       <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services"
         target="_blank" rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-        <MessageCircle size={24} />
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(16,185,129,0.4)] transition-all hover:scale-105"
+        aria-label="Contact on WhatsApp">
+        <MessageCircle size={26} />
       </a>
     </div>
   );

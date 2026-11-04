@@ -5,13 +5,14 @@ import {
   Instagram, Globe, Facebook, Linkedin, MessageCircle, Check,
   Share2, Target, BarChart2, Search, Code, Palette, TrendingUp,
   Video, Megaphone, Star, Shield, Users, Award, Zap, ChevronLeft, ChevronRight,
-  ScanSearch, FileText, Globe2, Rocket, Lock, Wifi, Sun, Moon
+  ScanSearch, FileText, Globe2, Rocket, Lock, Wifi, Sun, Moon, Layers, Layers3, Flame, ArrowUpRight, Cpu, Terminal, Database, Server, Activity, CheckCircle2,
+  Play, ShieldCheck, Handshake, Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
+import heroVisual from "@/imports/hero-3d-visual-seamless.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
-import carImg from "@/imports/car.jpg";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
 
@@ -22,166 +23,216 @@ const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
   {
-    label: "Services", href: "#services",
+    label: "Services", href: "#solutions",
     children: [
-      "Website Development", "Social Media Marketing", "Performance Marketing",
-      "Meta Ads", "Google Ads", "Google SEO",
-      "Branding", "Review Scanner", "Content Creation"
+      "Website Development", "Performance Marketing", "Meta & Google Ads",
+      "Search Engine Optimization", "Brand Identity & DX", "AI & Intelligent Automation",
+      "Review Scanner Engine", "Content & Media Systems"
     ]
   },
   { label: "About", href: "/about" },
   { label: "Packages", href: "#packages" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/case-studies" },
   { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
 
-const HERO_SLIDES = [
+const SOLUTIONS = [
   {
-    tag: "Your Digital Growth Partner",
-    heading: "Solutions tailor-crafted to build, rank and grow your business online.",
-    sub: "From strategy to execution — FUERA delivers measurable results for every rupee you invest.",
-    img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1400&h=700&fit=crop&auto=format",
+    icon: Code,
+    label: "Enterprise Web Engineering",
+    desc: "Custom high-throughput web platforms, microservices architecture, and sub-second edge delivery built for scale.",
+    link: "/services/website-development",
+    badge: "Cloud & Frontend"
   },
   {
-    tag: "Full-Service Digital Agency",
-    heading: "Full service from strategy to implementation — diverse expertise, one partner.",
-    sub: "Websites, ads, SEO, branding and content — every digital need covered under one roof.",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&h=700&fit=crop&auto=format",
+    icon: Zap,
+    label: "AI & Intelligent Automation",
+    desc: "Custom AI workflows, automated CRM/ERP integrations, and WhatsApp multi-channel messaging engines to eliminate manual work.",
+    link: "/services/review-scanner",
+    badge: "AI & Workflow"
   },
   {
-    tag: "Data-Driven Results",
-    heading: "We dig deep into customer insights and data to define the best path forward.",
-    sub: "Every campaign is backed by analytics, optimised continuously, and reported transparently.",
-    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=700&fit=crop&auto=format",
+    icon: BarChart2,
+    label: "Performance Growth Systems",
+    desc: "Data-driven advertising, programmatic search campaigns, and conversion analytics pipelines engineered for enterprise ROI.",
+    link: "/services/performance-marketing",
+    badge: "Analytics & Ads"
+  },
+  {
+    icon: Palette,
+    label: "Brand & Experience Design (DX)",
+    desc: "Scalable design systems, corporate visual identity, and high-impact digital experiences that establish market authority.",
+    link: "/services/branding",
+    badge: "Design Systems"
   },
 ];
 
-const SERVICES = [
-  { icon: Code,         label: "Website Development",     desc: "Premium, fast-loading, mobile-first websites built for performance, conversions and brand trust — free lifetime hosting included.",    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=480&h=360&fit=crop&auto=format" },
-  { icon: Share2,       label: "Social Media Marketing",  desc: "Grow brand presence across Instagram, Facebook & LinkedIn with engaging content and targeted campaigns that convert followers to customers.", img: "https://images.unsplash.com/photo-1622549037543-49cf1ca0babc?w=480&h=360&fit=crop&auto=format" },
-  { icon: Target,       label: "Performance Marketing",   desc: "Data-driven paid campaigns engineered for maximum ROI and conversion — every rupee tracked, optimised and reported.",                    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=480&h=360&fit=crop&auto=format" },
-  { icon: Megaphone,    label: "Meta Ads",                desc: "Facebook & Instagram ad funnels designed to reach your ideal audience and generate quality leads at the lowest possible cost.",           img: "https://images.unsplash.com/photo-1636114673156-052a83459fc1?w=480&h=360&fit=crop&auto=format" },
-  { icon: BarChart2,    label: "Google Ads",              desc: "Search, display and YouTube campaigns that put your brand in front of high-intent buyers exactly when they are ready to act.",            img: "https://images.unsplash.com/photo-1616499370260-485b3e5ed653?w=480&h=360&fit=crop&auto=format" },
-  { icon: Search,       label: "Google SEO",              desc: "On-page and off-page optimisation plus Google Business Profile setup to rank higher and drive consistent organic traffic.",                img: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=480&h=360&fit=crop&auto=format" },
-  { icon: Palette,      label: "Branding",                desc: "Visual identity, logo design and brand strategy that makes your business instantly recognisable and memorable to your audience.",          img: "https://images.unsplash.com/photo-1779261320306-8885b83599ff?w=480&h=360&fit=crop&auto=format" },
-  { icon: ScanSearch,   label: "Review Scanner",          desc: "Monitor, manage and respond to customer reviews across Google and social platforms to protect and strengthen your reputation.",             img: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=480&h=360&fit=crop&auto=format" },
-  { icon: FileText,     label: "Content Creation",        desc: "Scroll-stopping reels, ad creatives, graphics and copy crafted to build authority and drive real engagement for your brand.",             img: "https://images.unsplash.com/photo-1625690303837-654c9666d2d0?w=480&h=360&fit=crop&auto=format" },
+const TECH_STACK_ITEMS = [
+  { name: "React & Next.js", category: "Frontend Engine", desc: "Server-side rendering, sub-second load times & static generation.", icon: Code },
+  { name: "TypeScript", category: "Language", desc: "Type-safe robust codebase with zero runtime surprises.", icon: Terminal },
+  { name: "Node.js & Python", category: "Backend Microservices", desc: "High-concurrency microservices, GraphQL & REST APIs.", icon: Server },
+  { name: "AWS & Cloudflare", category: "Cloud & Security", desc: "Zero-trust SSL, DDoS protection, edge caching & 99.99% uptime.", icon: Shield },
+  { name: "OpenAI & AI APIs", category: "Artificial Intelligence", desc: "Intelligent customer bots, predictive workflows & LLM tools.", icon: Cpu },
+  { name: "PostgreSQL & Redis", category: "Data Systems", desc: "Ultra-fast database caching and real-time event streaming.", icon: Database },
 ];
 
-const CLIENTS = [
-  { name: "RetailX", sub: "E-Commerce" },
-  { name: "HealthPro", sub: "Clinics" },
-  { name: "EduTech Ltd", sub: "Education" },
-  { name: "FinServe", sub: "Finance" },
-  { name: "FoodChain", sub: "F&B Brand" },
-  { name: "LegalEdge", sub: "Law Firm" },
-  { name: "BuildRight", sub: "Real Estate" },
-  { name: "StyleHub", sub: "Fashion" },
-  { name: "GreenLeaf", sub: "Wellness" },
-  { name: "TechNova", sub: "SaaS" },
-  { name: "CityLogix", sub: "Logistics" },
-  { name: "PureFoods", sub: "Organic" },
-  { name: "CloudBase", sub: "IT Services" },
-  { name: "MediaHouse", sub: "Publishing" },
-  { name: "FitLife", sub: "Fitness" },
-  { name: "BrandLab", sub: "Creative" },
-  { name: "QuickDeals", sub: "Marketplace" },
-  { name: "Coders Acad", sub: "Training" },
-  { name: "ZuddhaHerbs", sub: "Ayurveda" },
-  { name: "CoreTech", sub: "Engineering" },
+const FEATURED_PROJECTS = [
+  {
+    title: "Sri Raghavendra Vaibhava",
+    tags: ["Enterprise Web", "Local Search SEO", "Brand System"],
+    link: "/case-studies",
+    type: "web",
+    accent: "from-[#e81c2e]/30 to-[#0e0e14]",
+    subText: "High-conversions multi-location digital dining engine & local search system."
+  },
+  {
+    title: "EVEX Systems",
+    tags: ["Cross-Platform App", "AI Automation", "Operations"],
+    link: "/case-studies",
+    type: "app",
+    accent: "from-[#0070f3]/30 to-[#0e0e14]",
+    subText: "Enterprise mobile platform & automated multi-channel messaging pipeline."
+  },
+  {
+    title: "SKYNEX Tech",
+    tags: ["Brand Engineering", "Design System", "Marketing"],
+    link: "/case-studies",
+    type: "brand",
+    accent: "from-[#7928ca]/30 to-[#0e0e14]",
+    subText: "Complete digital identity system, design tokens, and corporate positioning."
+  }
 ];
 
-const DIFFERENTIATORS = [
-  { icon: Globe2,  title: "Lifetime Hosting",         desc: "Every website we build comes with free lifetime hosting on Netlify or Vercel — no recurring server bills, ever." },
-  { icon: Zap,     title: "Fast & Secure Websites",   desc: "SSL-secured, lightning-fast websites built with best-in-class performance so customers trust and stay on your site." },
-  { icon: Wifi,    title: "Mobile Optimised",          desc: "Every pixel is designed mobile-first so your website looks and works perfectly on every screen size." },
-  { icon: Search,  title: "SEO Ready",                 desc: "All websites ship with an SEO-friendly structure and Google setup baked in — your rankings start climbing from day one." },
-  { icon: Rocket,  title: "Business Growth Solutions", desc: "From ads to reels to reputation management, we cover every channel your business needs to grow consistently online." },
-  { icon: Shield,  title: "Dedicated Support",         desc: "A real team that responds fast. We are always available to fix, update, and optimise everything we build for you." },
+const PROCESS_STEPS = [
+  {
+    number: "01",
+    title: "Architecture & Discovery",
+    desc: "We perform a thorough audit of your requirements, security specs, and growth objectives to design the technical blueprint."
+  },
+  {
+    number: "02",
+    title: "System Design & Security",
+    desc: "Our engineers craft high-fidelity UI/UX design systems, zero-trust data architectures, and API schemas."
+  },
+  {
+    number: "03",
+    title: "Engineering & QA",
+    desc: "We write clean, modular TypeScript code, set up automated CI/CD pipelines, and conduct rigorous load & security testing."
+  },
+  {
+    number: "04",
+    title: "Deployment & Scale",
+    desc: "We deploy to continuous edge hosting, configure real-time telemetry monitoring, and drive performance growth."
+  }
+];
+
+const METRICS = [
+  { value: "99.99%", label: "System Uptime Guarantee" },
+  { value: "50+", label: "Enterprise Systems Built" },
+  { value: "3.4x", label: "Avg Conversion Increase" },
+  { value: "10M+", label: "Monthly API Requests" }
 ];
 
 const TESTIMONIALS = [
   {
+    name: "Raghavendra Vaibhava",
+    role: "Managing Director, Hospitality Group",
+    text: "FUERA engineered our online ordering platform and local SEO infrastructure. Their technical precision, responsiveness, and clear communication set them apart from standard agencies.",
+    rating: 5
+  },
+  {
     name: "Rohan Mehta",
-    company: "RetailX Bangalore",
-    text: "Working with FUERA has been a game-changer for our retail brand. Their Google Ads strategy tripled our inbound enquiries within two months. Highly recommend the team.",
-    stars: 5,
+    role: "Head of Digital, RetailX",
+    text: "Partnering with FUERA transformed our tech infrastructure. Their performance marketing algorithms and custom React platform tripled our digital acquisition within 60 days.",
+    rating: 5
   },
   {
     name: "Priya Sharma",
-    company: "HealthPro Clinics",
-    text: "FUERA built our website and ran our Meta Ads. The leads we get now are genuinely qualified. The team is transparent, responsive and truly invested in our growth.",
-    stars: 5,
-  },
-  {
-    name: "Arjun Nair",
-    company: "EduTech Solutions",
-    text: "Since partnering with FUERA for SEO and social media, our organic traffic has doubled and our Instagram engagement is at an all-time high. Outstanding work.",
-    stars: 5,
-  },
-];
-
-const INSIGHTS = [
-  { icon: Users, title: "Clients", desc: "Our marketing and technology expertise has helped clients achieve consistent growth and strong online presence.", cta: "Know More", route: "/clients" },
-  { icon: Award, title: "Case Studies", desc: "Detailed breakdowns of how our clients have scaled their business using FUERA's digital strategies.", cta: "Know More", route: "/case-studies" },
-  { icon: Zap, title: "Careers", desc: "Join a forward-thinking team that values creativity, data, and impact. We are always looking for hungry talent.", cta: "Know More", route: "/careers" },
+    role: "Founder & CTO, HealthPro Clinics",
+    text: "FUERA built our HIPAA-compliant web app and automated CRM. The quality of leads and operational time saved has given us an unmatched competitive edge.",
+    rating: 5
+  }
 ];
 
 const FAQS = [
-  { q: "What services does FUERA offer?", a: "FUERA offers Website Development, Social Media Marketing, Performance Marketing, Meta Ads, Google Ads, Google SEO, Branding, Review Scanner, and Content Creation — everything your business needs to grow online." },
-  { q: "What is included in the Basic Package (₹5,999)?", a: "The Basic package includes a company website, free lifetime hosting on Netlify or Vercel, WhatsApp integration, mobile responsive design, SSL security, a contact form, and basic support." },
-  { q: "What does the Standard Package (₹14,999) include?", a: "The Standard package includes everything in Basic plus a custom design, SEO-friendly structure, Google SEO setup, Google Business Profile optimisation, CRUD operations, basic branding support, and WhatsApp or Instagram integration. Valuable customers receive 5% off." },
-  { q: "What is in the Premium Package (₹28,999)?", a: "The Premium package is the complete growth solution — everything in Standard plus a fully custom website, custom domain (.com / .in), advanced Google SEO, Instagram Reels (2 per month), Review Scanner, Meta Ads or Google Ads, professional ad creation and video editing, and a monthly performance report. Valuable customers receive 5% off." },
-  { q: "How long does it take to build a website?", a: "A standard website typically takes 7–14 business days from the time we receive your content and approvals. Premium custom builds may take 3–4 weeks. We keep you informed at every stage." },
-  { q: "How can I get started with FUERA?", a: "Simply reach out via our contact form, email contact@fuera.in.net, or call 9449658382. We will schedule a free discovery call to recommend the best package for your business." },
+  { q: "What technology solutions does FUERA architect?", a: "FUERA provides full-stack web app engineering, custom AI workflows, automated CRM/WhatsApp integrations, performance ad engines, technical SEO, brand identity design systems, and cloud infrastructure management." },
+  { q: "What is included in the Foundation Tech Package?", a: "The Foundation package includes a custom-engineered web platform built on React/Next.js, lifetime edge hosting on Netlify/Vercel, SSL security, contact API integration, mobile optimization, and basic maintenance support." },
+  { q: "What is in the Growth Tech System (Recommended)?", a: "The Growth System includes full custom web platform engineering, advanced Google & technical SEO, Google Business Profile optimization, lead management dashboard integration, custom automated workflows, and 5% preferred customer rate." },
+  { q: "What is the Custom Enterprise Partnership model?", a: "Our Enterprise tier offers complete end-to-end digital transformation — custom domain, enterprise cloud infrastructure, performance ad engines, dedicated developer pod access, custom AI model integration, and 24/7 SLA monitoring." },
+  { q: "How long does custom technology development take?", a: "Standard enterprise web platforms launch in 7–14 business days. Complex custom cloud apps or automation engines typically require 3–4 weeks with continuous sprint updates." },
+  { q: "How do we start a technical discovery call?", a: "Click 'Request Proposal' or email contact@fuera.in.net or call +91 9449658382. We will set up a technical discovery session to review your scope and provide a detailed architecture blueprint." }
 ];
 
-// ─── HELPERS ──────────────────────────────────────────────────────────────────
-
-
-
-// ─── COMPONENTS ───────────────────────────────────────────────────────────────
+// ─── LOGO & BUTTON COMPONENTS ──────────────────────────────────────────────────
 
 function FueraLogo({ white = false }: { white?: boolean }) {
   return (
     <div
-      className="cursor-pointer shrink-0 flex items-center overflow-hidden"
-      style={{ background: "#000", borderRadius: "6px", opacity: white ? 0.92 : 1 }}
+      className="cursor-pointer shrink-0 flex items-center gap-2.5 group select-none"
       onClick={() => scrollTo("#home")}
     >
-      {/* eagle icon */}
       <img
         src={fueraLogo}
-        alt=""
-        aria-hidden="true"
-        style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0 }}
+        alt="FUERA Emblem"
+        className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
       />
-      {/* wordmark + tagline — black bg merges with eagle */}
-      <img
-        src={fueraWordmark}
-        alt="FUERA — Powered by AK GROUPS"
-        style={{ height: "54px", width: "auto", objectFit: "contain", display: "block", flexShrink: 0, marginLeft: "-6px" }}
-      />
+      <div className="flex flex-col justify-center -space-y-0.5">
+        <span className="text-white font-black text-xl sm:text-2xl tracking-[0.16em] leading-tight">
+          FUERA
+        </span>
+        <span className="text-[9px] text-white/50 tracking-[0.18em] font-medium flex items-center gap-1">
+          <span className="text-[#e81c2e]">•</span> Build the Future <span className="text-[#e81c2e]">•</span>
+        </span>
+      </div>
     </div>
   );
 }
 
-function OrangeBtn({ children, onClick, outline = false, sm = false }: any) {
+function RedPillButton({ children, onClick, className = "" }: { children: React.ReactNode; onClick?: () => void; className?: string }) {
   return (
-    <button onClick={onClick}
-      className={`inline-flex items-center gap-2 font-semibold transition-all duration-200 ${sm ? "px-5 py-2 text-sm" : "px-7 py-3 text-sm"} ${outline ? "border-2 border-white/30 text-white hover:bg-white hover:text-black" : "bg-[#111111] border border-white/20 text-white hover:bg-[#2a2a2a] shadow-sm hover:shadow-md"}`}
-      style={{ fontFamily: "'Poppins', sans-serif", borderRadius: "4px" }}>
+    <button
+      onClick={onClick}
+      className={`inline-flex items-center justify-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-semibold text-sm px-6 py-3 rounded-full transition-all duration-200 shadow-[0_4px_25px_rgba(232,28,46,0.45)] hover:shadow-[0_6px_30px_rgba(232,28,46,0.65)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${className}`}
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
       {children}
     </button>
   );
 }
 
-// ─── APP ──────────────────────────────────────────────────────────────────────
+function OutlinePillButton({ children, onClick, className = "" }: { children: React.ReactNode; onClick?: () => void; className?: string }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-medium text-sm px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer ${className}`}
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function SectionTag({ text }: { text: string }) {
+  return (
+    <div className="flex items-center gap-2.5 mb-4">
+      <span className="w-5 h-[2px] bg-[#e81c2e]" />
+      <span className="text-[#e81c2e] text-xs font-bold uppercase tracking-[0.2em]" style={{ fontFamily: "'Inter', sans-serif" }}>
+        {text}
+      </span>
+    </div>
+  );
+}
+
+
+
+// ─── MAIN APP COMPONENT ───────────────────────────────────────────────────────
 
 export default function App() {
   useSEO({
-    title: "FUERA | Digital Marketing & Website Development Agency",
-    description: "FUERA helps businesses grow online with website development, SEO, social media marketing, branding, paid ads, content creation, and performance marketing services.",
+    title: "FUERA | Enterprise Technology & Digital Solutions Company",
+    description: "FUERA architects custom enterprise web platforms, AI workflow engines, high-conversions performance systems, and modern digital identities for scaling companies.",
     path: "/"
   });
 
@@ -190,200 +241,21 @@ export default function App() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(t => (t === "dark" ? "light" : "dark"));
-  };
-  const [heroSlide, setHeroSlide] = useState(0);
-  const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [storyModalOpen, setStoryModalOpen] = useState(false);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
+  const [faqOpenIdx, setFaqOpenIdx] = useState<number | null>(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
-  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left - width / 2;
-    const mouseY = e.clientY - rect.top - height / 2;
-    
-    // Calculate rotation angle (max 12 degrees)
-    const rotateX = -(mouseY / (height / 2)) * 12;
-    const rotateY = (mouseX / (width / 2)) * 12;
-    setTilt({ x: rotateX, y: rotateY });
-  };
-
-  const handleCardMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
-
-  // 3D Canvas Particle Network Background
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    };
-    window.addEventListener("resize", handleResize);
-
-    // 3D Points definition
-    interface Point3D {
-      x: number;
-      y: number;
-      z: number;
-      px: number;
-      py: number;
-    }
-
-    const points: Point3D[] = [];
-    const numPoints = 85;
-    const fov = 250; // Perspective depth
-
-    for (let i = 0; i < numPoints; i++) {
-      points.push({
-        x: (Math.random() - 0.5) * 600,
-        y: (Math.random() - 0.5) * 600,
-        z: Math.random() * 600,
-        px: 0,
-        py: 0
-      });
-    }
-
-    let angleX = 0.0008;
-    let angleY = 0.0012;
-
-    // Mouse rotation interactive offset
-    let mouseX = 0;
-    let mouseY = 0;
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = (e.clientX - rect.left - width / 2) * 0.0004;
-      mouseY = (e.clientY - rect.top - height / 2) * 0.0004;
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
-    const rotateX = (point: Point3D, angle: number) => {
-      const cos = Math.cos(angle);
-      const sin = Math.sin(angle);
-      const y1 = point.y * cos - point.z * sin;
-      const z1 = point.z * cos + point.y * sin;
-      point.y = y1;
-      point.z = z1;
-    };
-
-    const rotateY = (point: Point3D, angle: number) => {
-      const cos = Math.cos(angle);
-      const sin = Math.sin(angle);
-      const x1 = point.x * cos - point.z * sin;
-      const z1 = point.z * cos + point.x * sin;
-      point.x = x1;
-      point.z = z1;
-    };
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Rotate points
-      const currentAngleX = angleX + mouseY;
-      const currentAngleY = angleY + mouseX;
-
-      points.forEach(p => {
-        rotateX(p, currentAngleX);
-        rotateY(p, currentAngleY);
-
-        // Project to 2D
-        const scale = fov / (fov + p.z);
-        p.px = p.x * scale + width / 2;
-        p.py = p.y * scale + height / 2;
-      });
-
-      // Draw lines between close points
-      ctx.lineWidth = 0.5;
-      for (let i = 0; i < points.length; i++) {
-        const p1 = points[i];
-        if (p1.px < 0 || p1.px > width || p1.py < 0 || p1.py > height) continue;
-
-        for (let j = i + 1; j < points.length; j++) {
-          const p2 = points[j];
-          if (p2.px < 0 || p2.px > width || p2.py < 0 || p2.py > height) continue;
-
-          const dx = p1.px - p2.px;
-          const dy = p1.py - p2.py;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 110) {
-            const alpha = (1 - dist / 110) * 0.18;
-            ctx.strokeStyle = `rgba(232, 28, 46, ${alpha})`;
-            ctx.beginPath();
-            ctx.moveTo(p1.px, p1.py);
-            ctx.lineTo(p2.px, p2.py);
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw points
-      points.forEach(p => {
-        if (p.px < 0 || p.px > width || p.py < 0 || p.py > height) return;
-        const scale = fov / (fov + p.z);
-        const radius = Math.max(0.5, scale * 1.8);
-        ctx.fillStyle = p.z < 0 ? "rgba(232, 28, 46, 0.75)" : "rgba(255, 255, 255, 0.35)";
-        ctx.beginPath();
-        ctx.arc(p.px, p.py, radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
-    };
+    document.documentElement.classList.add("dark");
   }, []);
 
-  const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
-      setScrollY(window.scrollY);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Auto-advance hero
-  useEffect(() => {
-    const t = setInterval(() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length), 5000);
-    return () => clearInterval(t);
-  }, []);
-
-  // Close dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -405,83 +277,127 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-[#050508] text-white selection:bg-[#e81c2e] selection:text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
 
-      {/* Floating 3D Car Scroll Parallax Layer */}
-      <div 
-        className="fixed pointer-events-none z-10 transition-transform duration-300 ease-out select-none opacity-40 dark:opacity-20 hidden md:block"
-        style={{
-          right: `${-300 + (scrollY * 0.45)}px`,
-          bottom: `${15 + (scrollY * 0.05)}vh`,
-          width: "550px",
-          transform: `perspective(1000px) rotateY(-20deg) rotateX(10deg) scale(${1 + (scrollY * 0.0003)})`,
-          mixBlendMode: "lighten"
-        }}
-      >
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background pointer-events-none" />
-          <img 
-            src={carImg} 
-            alt="Rolls-Royce Ghost" 
-            className="w-full object-contain rounded-3xl"
-          />
-        </div>
-      </div>
+      {/* Grid Pattern Background overlay */}
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
-      {/* ── TOP BAR ── */}
-      <div className="bg-black text-white text-xs py-2 px-4 hidden md:block">
+      {/* Ambient Red Glows */}
+      <div className="fixed top-0 right-0 w-[550px] h-[550px] bg-[#e81c2e]/12 blur-[160px] pointer-events-none z-0" />
+      <div className="fixed bottom-0 left-0 w-[550px] h-[550px] bg-[#e81c2e]/08 blur-[160px] pointer-events-none z-0" />
+
+      {/* ── TOP CONTACT & SOCIAL BAR ── */}
+      <div className="relative z-50 bg-[#050508] border-b border-white/10 py-1.5 px-4 sm:px-8 text-xs text-white/70 overflow-hidden">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a href="mailto:contact@fuera.in.net" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Mail size={12} /> contact@fuera.in.net
+          
+          {/* Subtle red laser glow on far left */}
+          <div className="absolute top-0 left-0 w-36 h-[1px] bg-gradient-to-r from-[#e81c2e] to-transparent pointer-events-none" />
+
+          {/* Left: Contact Info */}
+          <div className="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
+            <a
+              href="mailto:contact@fuera.in.net"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
+            >
+              <Mail size={12} className="text-white/60" />
+              <span>contact@fuera.in.net</span>
             </a>
-            <a href="tel:9449658382" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-              <Phone size={12} /> 9449658382 / 7899945862
+            <span className="text-white/20">|</span>
+            <div className="flex items-center gap-1.5">
+              <Phone size={12} className="text-white/60" />
+              <a href="tel:9449658382" className="hover:text-white transition-colors">9449658382</a>
+              <span className="text-white/30">/</span>
+              <a href="tel:7899945862" className="hover:text-white transition-colors">7899945862</a>
+            </div>
+          </div>
+
+          {/* Right: Social icons & WhatsApp pill button */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a
+              href="https://instagram.com/fuera.official.23"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-[#e81c2e] transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={13} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-[#e81c2e] transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={13} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-[#e81c2e] transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={13} />
+            </a>
+            <a
+              href="https://wa.me/919449658382"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] hover:bg-[#20ba59] text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(37,211,102,0.3)] hover:scale-105"
+            >
+              <MessageCircle size={12} fill="currentColor" />
+              <span>WhatsApp</span>
             </a>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" className="hover:text-white/80 transition-colors"><Instagram size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Facebook size={13} /></a>
-            <a href="#" className="hover:text-white/80 transition-colors"><Linkedin size={13} /></a>
-            <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services" target="_blank" rel="noreferrer"
-              className="flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white px-3 py-0.5 rounded-sm text-xs font-medium transition-colors">
-              <MessageCircle size={11} /> WhatsApp
-            </a>
-          </div>
+
         </div>
       </div>
 
-      {/* ── HEADER ── */}
-      <header className={`sticky top-0 z-50 bg-black transition-shadow duration-300 ${scrolled ? "shadow-md" : "shadow-sm"} border-b border-white/5`}>
-        <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+      {/* ── MAIN NAVIGATION HEADER ── */}
+      <header
+        className={`sticky top-0 z-40 transition-all duration-300 ${
+          scrolled
+            ? "bg-[#050508]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3"
+            : "bg-[#050508]/70 backdrop-blur-sm py-4 border-b border-white/5"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between relative z-10">
           <FueraLogo />
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV_ITEMS.map(item => (
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-7">
+            {NAV_ITEMS.map((item) => (
               item.children ? (
                 <div key={item.label} className="relative" ref={dropdownRef}>
                   <button
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-white transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                    onClick={() => setServicesOpen(v => !v)}>
-                    {item.label}
-                    {servicesOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                    onClick={() => setServicesOpen(v => !v)}
+                    className="flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors py-1 cursor-pointer group"
+                  >
+                    <span>{item.label}</span>
+                    {servicesOpen ? (
+                      <ChevronUp size={14} className="text-[#e81c2e]" />
+                    ) : (
+                      <ChevronDown size={14} className="text-white/60 group-hover:text-white transition-colors" />
+                    )}
                   </button>
                   <AnimatePresence>
                     {servicesOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 6 }}
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 6 }}
+                        exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-56 bg-black border border-white/10 shadow-xl rounded-sm z-50 py-2">
+                        className="absolute top-full left-0 mt-3 w-64 bg-[#0a0a0f] border border-white/10 shadow-2xl rounded-xl z-50 py-2 overflow-hidden"
+                      >
                         {item.children.map(c => (
-                          <button key={c} onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
-                            className="w-full text-left px-5 py-2 text-sm text-[#c0c0c0] hover:bg-[#1c1c20] hover:text-white transition-colors"
-                            style={{ fontFamily: "'Inter', sans-serif" }}>
-                            {c}
+                          <button
+                            key={c}
+                            onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
+                            className="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:bg-[#e81c2e]/10 hover:text-white transition-colors flex items-center justify-between"
+                          >
+                            <span>{c}</span>
+                            <ArrowRight size={12} className="text-[#e81c2e]" />
                           </button>
                         ))}
                       </motion.div>
@@ -489,948 +405,926 @@ export default function App() {
                   </AnimatePresence>
                 </div>
               ) : (
-                <button key={item.label} onClick={() => handleNav(item.href)}
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-white transition-colors"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <button
+                  key={item.label}
+                  onClick={() => handleNav(item.href)}
+                  className={`text-sm font-medium transition-colors py-1 cursor-pointer relative ${
+                    item.label === "Home" ? "text-[#e81c2e] font-bold" : "text-white/80 hover:text-white"
+                  }`}
+                >
                   {item.label}
+                  {item.label === "Home" && (
+                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#e81c2e] rounded-full" />
+                  )}
                 </button>
               )
             ))}
           </nav>
 
+          {/* Right Header Controls: Send Enquiry & Sparkle/Theme */}
           <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center gap-3">
-              <OrangeBtn onClick={() => setModalOpen(true)} sm>Send Enquiry</OrangeBtn>
-            </div>
-
-            {/* Theme Toggle (Mobile & Desktop) */}
-            <button onClick={toggleTheme}
-              className="p-2 text-white/80 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center"
-              aria-label="Toggle theme">
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            <button
+              onClick={() => setModalOpen(true)}
+              className="hidden sm:inline-flex items-center gap-2 bg-[#0d090d]/80 hover:bg-[#1a0f14] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full border border-[#e81c2e] shadow-[0_0_15px_rgba(232,28,46,0.3)] hover:shadow-[0_0_25px_rgba(232,28,46,0.55)] transition-all cursor-pointer group"
+            >
+              <span>Send Enquiry</span>
+              <ArrowRight size={14} className="text-white group-hover:translate-x-0.5 transition-transform" />
             </button>
 
-            <button className="lg:hidden p-2 text-white" onClick={() => setMenuOpen(v => !v)}>
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            <button
+              onClick={() => {
+                const isDark = document.documentElement.classList.contains("dark");
+                if (isDark) {
+                  document.documentElement.classList.remove("dark");
+                  localStorage.setItem("theme", "light");
+                } else {
+                  document.documentElement.classList.add("dark");
+                  localStorage.setItem("theme", "dark");
+                }
+              }}
+              className="w-9 h-9 rounded-full bg-white/5 border border-white/20 hover:border-[#e81c2e]/60 flex items-center justify-center text-white/70 hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Toggle visual theme"
+            >
+              <Sun size={15} />
+            </button>
+
+            <button
+              className="lg:hidden p-2 text-white/80 hover:text-white"
+              onClick={() => setMenuOpen(v => !v)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Dropdown */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden border-t border-white/5 bg-black">
-              <div className="px-5 py-4 flex flex-col gap-1">
-                {NAV_ITEMS.map(item => (
-                  <button key={item.label} onClick={() => handleNav(item.href || "#")}
-                    className="text-left px-3 py-2.5 text-sm font-medium text-white hover:bg-secondary rounded-sm transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="lg:hidden overflow-hidden bg-[#09090e] border-b border-white/10 px-6 py-5 relative z-50"
+            >
+              <div className="flex flex-col gap-3">
+                {NAV_ITEMS.map((item) => (
+                  <button
+                    key={item.label}
+                    onClick={() => handleNav(item.href)}
+                    className="text-left py-2 text-sm font-medium text-white/80 hover:text-white"
+                  >
                     {item.label}
                   </button>
                 ))}
-                <div className="pt-2">
-                  <OrangeBtn onClick={() => { setMenuOpen(false); setModalOpen(true); }}>Send Enquiry</OrangeBtn>
+                <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+                  <button
+                    onClick={() => { setMenuOpen(false); setModalOpen(true); }}
+                    className="w-full bg-gradient-to-r from-[#ff283b] to-[#e81c2e] text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(232,28,46,0.45)]"
+                  >
+                    <span>Send Enquiry</span>
+                    <ArrowRight size={15} />
+                  </button>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
+
       <EnquiryModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      {/* ── HERO SLIDER (3D Animation Integrated) ── */}
-      <section id="home" className="relative h-[92vh] min-h-[600px] overflow-hidden flex items-center bg-[#070709] border-b border-white/5">
-        {/* Background Canvas for 3D Particles */}
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-10" />
+      {/* ── HERO SECTION ── */}
+      <section id="home" className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden border-b border-white/5 z-10">
+        
+        {/* Ambient Red Glows Matching the Visual */}
+        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-[#e81c2e]/20 rounded-full blur-[150px] pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-[#e81c2e]/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-        {/* Slide background image transitions */}
-        {HERO_SLIDES.map((slide, i) => (
-          <div key={i}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === heroSlide ? "opacity-35" : "opacity-0"}`}>
-            <img src={slide.img} alt={slide.heading} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
-          </div>
-        ))}
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+            
+            {/* Left Column Copy & Action Buttons */}
+            <div className="lg:col-span-6 space-y-6 z-10">
+              
+              {/* Digital Growth Partner Tag */}
+              <div className="flex items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#150a0d] border border-[#e81c2e]/40 shadow-[0_0_18px_rgba(232,28,46,0.2)]">
+                  <span className="w-2 h-2 rounded-full bg-[#e81c2e] shadow-[0_0_8px_#e81c2e] animate-pulse" />
+                  <span className="text-xs font-semibold text-white/90 tracking-wide">Digital Growth Partner</span>
+                </div>
+                <span className="hidden sm:inline-block w-16 h-[1px] bg-gradient-to-r from-[#e81c2e]/60 to-transparent" />
+              </div>
 
-        <div className="relative h-full w-full max-w-7xl mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12 items-center z-20">
-          {/* Left Column: Rotating Slide Texts */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
-            <AnimatePresence mode="wait">
-              <motion.div key={heroSlide}
-                initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-2xl">
-                <span className="inline-block bg-[#e81c2e]/10 border border-[#e81c2e]/30 text-[#e81c2e] text-xs font-semibold px-4 py-1.5 mb-4 uppercase tracking-widest rounded-full"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {HERO_SLIDES[heroSlide].tag}
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-[58px] xl:text-[66px] font-black leading-[1.08] tracking-tight">
+                <span className="bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                  Build the{" "}
                 </span>
-                <h1 className="text-white mb-5 leading-tight font-extrabold"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
-                  {HERO_SLIDES[heroSlide].heading}
-                </h1>
-                <p className="text-white/60 mb-8 text-base md:text-lg max-w-lg leading-relaxed">
-                  {HERO_SLIDES[heroSlide].sub}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <OrangeBtn onClick={() => scrollTo("#services")}>
-                    Explore More <ArrowRight size={15} />
-                  </OrangeBtn>
-                  <button onClick={() => setModalOpen(true)}
-                    className="inline-flex items-center gap-2 border-2 border-white/20 text-white text-sm font-semibold px-7 py-3 hover:bg-white hover:text-black hover:border-white transition-all rounded-md cursor-pointer"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Get a Free Quote
-                  </button>
-                </div>
+                <span className="bg-gradient-to-b from-[#ff4d5a] via-[#e81c2e] to-[#b30f1e] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(232,28,46,0.65)]">
+                  Future
+                </span>
+                <br />
+                <span className="bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                  of Your Business
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-white/75 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+                FUERA delivers measurable results through innovative digital solutions, crafted for{" "}
+                <span className="text-[#e81c2e] font-semibold">growth.</span>
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  onClick={() => scrollTo("#solutions")}
+                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#ff283b] to-[#e81c2e] hover:from-[#ff3d4e] hover:to-[#d01728] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-all duration-200 shadow-[0_4px_25px_rgba(232,28,46,0.55)] hover:shadow-[0_6px_35px_rgba(232,28,46,0.8)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  <span>Explore Our Services</span>
+                  <ArrowRight size={16} />
+                </button>
+
+                <button
+                  onClick={() => setStoryModalOpen(true)}
+                  className="inline-flex items-center gap-2.5 bg-black/40 hover:bg-white/10 text-white font-medium text-sm sm:text-base px-6 py-3.5 rounded-full border border-white/20 hover:border-white/50 transition-all duration-200 backdrop-blur-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px]">
+                    <Play size={10} className="fill-white translate-x-[0.5px]" />
+                  </span>
+                  <span>Watch Our Story</span>
+                </button>
+              </div>
+
+            </div>
+
+            {/* Right Column: 3D Artwork (Planet, Orbit Ring, Monolith, Stat Cards) */}
+            <div className="lg:col-span-6 relative flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative w-full max-w-[620px] select-none group"
+              >
+                <img
+                  src={heroVisual}
+                  alt="FUERA - Build The Future 3D Monolith & Planet"
+                  className="w-full h-auto object-contain filter drop-shadow-[0_15px_45px_rgba(232,28,46,0.3)] transition-transform duration-500 group-hover:scale-[1.01]"
+                />
               </motion.div>
-            </AnimatePresence>
+            </div>
+
           </div>
 
-          {/* Right Column: 3D Perspective Tilt Card */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              onMouseMove={handleCardMouseMove}
-              onMouseLeave={handleCardMouseLeave}
-              className="relative w-full max-w-[390px] aspect-[4/5] rounded-[2rem] border border-white/10 bg-[#111115]/50 backdrop-blur-xl shadow-2xl p-8 flex flex-col justify-between transition-transform duration-200 ease-out select-none cursor-pointer"
-              style={{
-                transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                transformStyle: "preserve-3d"
-              }}
+          {/* Mouse Scroll Down Indicator */}
+          <div className="flex flex-col items-center justify-center pt-8 pb-3">
+            <button
+              onClick={() => scrollTo("#features-ribbon")}
+              className="flex flex-col items-center gap-1 group cursor-pointer"
+              aria-label="Scroll to features"
             >
-              {/* Parallax Layer 1: Floating background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#e81c2e]/10 to-transparent rounded-[2rem] pointer-events-none opacity-40" />
+              <div className="w-5 h-9 rounded-full border border-white/25 bg-black/40 flex items-start justify-center p-1 shadow-md group-hover:border-[#e81c2e]/60 transition-colors">
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-1 h-2 bg-white/70 rounded-full"
+                />
+              </div>
+              <ChevronDown size={14} className="text-white/40 group-hover:text-white transition-colors animate-bounce" />
+            </button>
+          </div>
 
-              {/* Parallax Layer 2: Card Header */}
-              <div className="flex justify-between items-start" style={{ transform: "translateZ(35px)" }}>
+          {/* ── BOTTOM FLOATING FEATURE RIBBON (GLASS BAR) ── */}
+          <div id="features-ribbon" className="relative z-20 w-full mt-2">
+            <div className="bg-[#0b0b10]/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full py-4 px-6 md:px-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)] grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+              
+              {/* Item 1: Fast & Reliable */}
+              <div className="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4 first:pt-0 first:pl-0">
+                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+                  <Zap size={20} className="fill-[#e81c2e]" />
+                </div>
                 <div>
-                  <span className="text-[#e81c2e] text-[10px] font-black uppercase tracking-widest">FUERA Engine</span>
-                  <h3 className="text-white text-lg font-bold mt-1" style={{ fontFamily: "'Poppins', sans-serif" }}>Growth Analytics</h3>
+                  <div className="text-white font-bold text-sm sm:text-base leading-snug">Fast &amp; Reliable</div>
+                  <div className="text-white/50 text-xs mt-0.5">On-Time Delivery</div>
                 </div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
               </div>
 
-              {/* Parallax Layer 3: Main 3D Metric Display */}
-              <div className="my-auto py-4 text-center flex flex-col items-center justify-center" style={{ transform: "translateZ(65px)" }}>
-                <div className="relative inline-flex items-center justify-center p-6 bg-gradient-to-b from-white/5 to-transparent border border-white/5 rounded-full mb-4 w-28 h-28">
-                  {/* Rotating outer ring */}
-                  <div className="absolute inset-0 rounded-full border-t border-[#e81c2e] animate-spin" style={{ animationDuration: '4s' }} />
-                  <span className="text-white text-2xl font-black font-sans">+380%</span>
+              {/* Item 2: Strategic Solutions */}
+              <div className="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4">
+                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+                  <ShieldCheck size={20} />
                 </div>
-                <p className="text-white/80 text-sm font-semibold">Average Lead Generation Boost</p>
-                <p className="text-white/40 text-xs mt-1">Real-time performance index</p>
+                <div>
+                  <div className="text-white font-bold text-sm sm:text-base leading-snug">Strategic Solutions</div>
+                  <div className="text-white/50 text-xs mt-0.5">For Every Business</div>
+                </div>
               </div>
 
-              {/* Parallax Layer 4: Floating Mini Badge */}
-              <div 
-                className="absolute top-1/4 -right-6 bg-black border border-white/10 rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-xl"
-                style={{ transform: "translateZ(85px)" }}
+              {/* Item 3: Data-Driven Growth */}
+              <div className="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4">
+                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+                  <TrendingUp size={20} strokeWidth={2.5} />
+                </div>
+                <div>
+                  <div className="text-white font-bold text-sm sm:text-base leading-snug">Data-Driven Growth</div>
+                  <div className="text-white/50 text-xs mt-0.5">Real Business Impact</div>
+                </div>
+              </div>
+
+              {/* Item 4: Trusted Partner */}
+              <div className="flex items-center gap-3.5 pt-3 lg:pt-0 lg:px-4 last:pr-0">
+                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center shrink-0 text-[#e81c2e]">
+                  <Handshake size={20} />
+                </div>
+                <div>
+                  <div className="text-white font-bold text-sm sm:text-base leading-snug">Trusted Partner</div>
+                  <div className="text-white/50 text-xs mt-0.5">For Your Success</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── STORY MODAL ── */}
+      <AnimatePresence>
+        {storyModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              onClick={() => setStoryModalOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative z-10 w-full max-w-2xl bg-[#0a0a10] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden"
+            >
+              <button
+                onClick={() => setStoryModalOpen(false)}
+                className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors cursor-pointer"
               >
-                <Zap size={14} className="text-[#e81c2e] fill-[#e81c2e]" />
-                <span className="text-white text-[10px] font-bold uppercase tracking-wider">AI Optimized</span>
+                <X size={16} />
+              </button>
+
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#e81c2e]" />
+                <span className="text-xs uppercase font-bold tracking-widest text-[#e81c2e]">Our Story</span>
               </div>
 
-              {/* Parallax Layer 5: Card Footer */}
-              <div className="flex justify-between items-center border-t border-white/5 pt-4" style={{ transform: "translateZ(45px)" }}>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#e81c2e]" />
-                  <span className="text-white/50 text-[10px] uppercase font-mono">Active Optimization</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
+                Architecting the Future of Business with FUERA
+              </h3>
+
+              <div className="space-y-3 text-sm text-white/75 leading-relaxed">
+                <p>
+                  At FUERA, we believe technology should be a competitive weapon, not a bottleneck. We engineer high-performance web platforms, intelligent automation workflows, and high-conversions performance engines designed to scale modern businesses.
+                </p>
+                <p>
+                  From Bengaluru to global enterprises, our multidisciplinary team of software architects, AI engineers, and growth strategists have delivered over 250+ solutions with a 3x average growth multiple for our partners.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 my-6 pt-4 border-t border-white/10">
+                <div className="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+                  <div className="text-xl font-black text-[#e81c2e]">250+</div>
+                  <div className="text-[10px] text-white/50">Projects Delivered</div>
                 </div>
-                <span className="text-white/30 text-[9px] uppercase font-mono">v4.1.2</span>
+                <div className="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+                  <div className="text-xl font-black text-[#e81c2e]">3x</div>
+                  <div className="text-[10px] text-white/50">Avg Growth</div>
+                </div>
+                <div className="bg-white/5 p-3 rounded-xl border border-white/10 text-center">
+                  <div className="text-xl font-black text-[#e81c2e]">100+</div>
+                  <div className="text-[10px] text-white/50">Happy Clients</div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <OutlinePillButton onClick={() => setStoryModalOpen(false)}>
+                  Close
+                </OutlinePillButton>
+                <RedPillButton onClick={() => { setStoryModalOpen(false); setModalOpen(true); }}>
+                  Start Your Project <ArrowRight size={15} />
+                </RedPillButton>
               </div>
             </motion.div>
           </div>
-        </div>
+        )}
+      </AnimatePresence>
 
-        {/* Slide dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {HERO_SLIDES.map((_, i) => (
-            <button key={i} onClick={() => setHeroSlide(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === heroSlide ? "bg-[#e81c2e] w-8" : "bg-white/20"}`} />
-          ))}
-        </div>
+      {/* ── CLIENT ECOSYSTEM ── */}
+      <section className="py-12 bg-[#08080d] border-b border-white/5 z-10 relative">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 text-center">
+          <p className="text-white/40 text-xs font-semibold uppercase tracking-[0.25em] mb-8">
+            TRUSTED BY FORWARD-THINKING ENTERPRISES & STARTUPS
+          </p>
 
-        {/* Arrows */}
-        <button onClick={() => setHeroSlide(s => (s - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
-          <ChevronLeft size={20} />
-        </button>
-        <button onClick={() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/5 hover:bg-white/10 text-white flex items-center justify-center rounded-full transition-colors z-20">
-          <ChevronRight size={20} />
-        </button>
-      </section>
-
-      {/* ── ABOUT INTRO ── */}
-      <section id="about" className="py-20 bg-[#0d0d0f]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-
-          {/* top: text + image */}
-          <div className="grid md:grid-cols-2 gap-14 items-center mb-20">
-            <div>
-              <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                About FUERA
-              </p>
-              <h2 className="text-white font-bold leading-tight mb-5"
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}>
-                Innovative Digital Solutions<br />for the Growth Age
-              </h2>
-              <p className="text-white/55 mb-4 leading-relaxed text-sm">
-                FUERA was founded with a single mission — help businesses establish a powerful online presence and generate quality leads. Based in Koramangala, Bangalore, we are a team of strategists, designers, marketers and developers who are passionate about growth.
-              </p>
-              <p className="text-white/55 mb-8 leading-relaxed text-sm">
-                We work closely with startups and small businesses to understand their goals, craft data-backed strategies, and execute campaigns that deliver real, measurable results — from concept and branding to websites, digital advertising, and ongoing optimisation.
-              </p>
-              <OrangeBtn onClick={() => scrollTo("#packages")}>
-                View Our Packages <ArrowRight size={15} />
-              </OrangeBtn>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex items-center gap-2 font-bold text-sm tracking-wide text-white/80 hover:text-white">
+              <div className="w-6 h-6 rounded-full bg-[#e81c2e]/20 border border-[#e81c2e]/50 flex items-center justify-center text-[10px] text-[#e81c2e]">🪷</div>
+              <span>Sri Raghavendra Vaibhava</span>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=700&h=500&fit=crop&auto=format"
-                alt="FUERA team working on digital strategy"
-                className="w-full rounded-xl shadow-2xl object-cover"
-                style={{ aspectRatio: "4/3" }}
-                loading="lazy"
-              />
-              <div className="absolute -bottom-5 -left-5 bg-black border border-white/10 text-white p-5 rounded-lg shadow-xl">
-                <div className="text-3xl font-black" style={{ fontFamily: "'Poppins', sans-serif" }}>50+</div>
-                <div className="text-xs text-white/50 uppercase tracking-widest mt-0.5">Happy Clients</div>
-              </div>
-              <div className="absolute -top-5 -right-5 bg-black border border-white/10 text-white p-5 rounded-lg shadow-xl">
-                <div className="text-3xl font-black" style={{ fontFamily: "'Poppins', sans-serif" }}>100%</div>
-                <div className="text-xs text-white/50 uppercase tracking-widest mt-0.5">Premium Quality</div>
-              </div>
+
+            <div className="font-extrabold text-sm tracking-widest text-white/80 hover:text-white">
+              A+N TRADERS
+            </div>
+
+            <div className="font-extrabold text-base tracking-[0.35em] text-white/80 hover:text-white">
+              E V E X
+            </div>
+
+            <div className="font-serif italic text-base text-white/80 hover:text-white">
+              Annapoorna Kitchen
+            </div>
+
+            <div className="flex items-center gap-1.5 font-black text-sm tracking-widest text-white/80 hover:text-white">
+              <span className="text-[#e81c2e]">✦</span> SKYNEX TECH
+            </div>
+
+            <div className="text-xs text-white/40 font-mono">
+              and more...
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <section id="services" className="py-20 bg-[#1c1c20]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-14">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              What We Offer
-            </p>
-            <h2 className="text-white font-bold mb-3"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Explore Our Services
+      {/* ── ENTERPRISE CAPABILITIES / SOLUTIONS ── */}
+      <section id="solutions" className="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Solutions Header */}
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+            <SectionTag text="ENTERPRISE CAPABILITIES" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              End-to-end technology solutions built for competitive advantage.
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              End-to-end digital marketing services designed to put your business where your customers are searching, scrolling, and deciding.
+
+            <p className="text-white/60 text-base leading-relaxed">
+              We combine enterprise software engineering, AI workflow automation, data-first performance marketing, and high-impact design to scale modern companies.
+            </p>
+
+            <div>
+              <OutlinePillButton onClick={() => navigate("/services/website-development")}>
+                View All Capabilities <ArrowRight size={16} />
+              </OutlinePillButton>
+            </div>
+          </div>
+
+          {/* Right Column: 2x2 Solution Cards */}
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+            {SOLUTIONS.map((s) => (
+              <div
+                key={s.label}
+                className="group bg-[#0a0a0f] border border-white/10 rounded-2xl p-7 hover:border-[#e81c2e]/50 hover:bg-[#0e0e16] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-[#e81c2e]/10 border border-[#e81c2e]/30 flex items-center justify-center text-[#e81c2e] group-hover:scale-110 transition-transform">
+                      <s.icon size={22} />
+                    </div>
+                    <span className="text-[10px] bg-white/5 text-white/50 border border-white/10 px-2.5 py-1 rounded-full font-mono">
+                      {s.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-white font-bold text-lg mb-3 group-hover:text-[#e81c2e] transition-colors">
+                    {s.label}
+                  </h3>
+
+                  <p className="text-white/60 text-sm leading-relaxed mb-6">
+                    {s.desc}
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => navigate(s.link)}
+                  className="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 group-hover:gap-2.5 transition-all text-left cursor-pointer"
+                >
+                  <span>Learn more</span> <ArrowRight size={13} className="text-[#e81c2e]" />
+                </button>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── TECHNOLOGY STACK MATRIX ── */}
+      <section id="tech-stack" className="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+          
+          <div className="text-center max-w-2xl mx-auto space-y-4">
+            <SectionTag text="TECHNOLOGY STACK" />
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Built on Modern Enterprise Software Infrastructure.
+            </h2>
+            <p className="text-white/60 text-base">
+              We leverage modern, type-safe, and battle-tested frameworks to ensure zero downtime and lightning speed.
             </p>
           </div>
-          <style>{`
-            .service-3d {
-              perspective: 900px;
-            }
-            .service-3d-inner {
-              transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.45s ease;
-              transform-style: preserve-3d;
-              transform: rotateX(0deg) rotateY(0deg) translateZ(0);
-              box-shadow: 6px 10px 28px rgba(0,0,0,0.5), 0 2px 6px rgba(255,255,255,0.04);
-            }
-            .service-3d:hover .service-3d-inner {
-              transform: rotateX(-6deg) rotateY(6deg) translateZ(18px);
-              box-shadow: 18px 28px 52px rgba(0,0,0,0.6), 0 6px 18px rgba(255,255,255,0.06);
-            }
-            .service-3d-face {
-              backface-visibility: hidden;
-            }
-            .service-3d-inner::after {
-              content: '';
-              position: absolute;
-              inset: 0;
-              background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
-              pointer-events: none;
-              border-radius: inherit;
-              opacity: 0;
-              transition: opacity 0.35s;
-            }
-            .service-3d:hover .service-3d-inner::after {
-              opacity: 1;
-            }
-          `}</style>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {SERVICES.map((s) => (
-              <div key={s.label} className="service-3d cursor-default">
-                <div className="relative">
-                  {/* stacked depth layers */}
-                  <div className="absolute -bottom-2 -right-2 left-2 h-full rounded-xl bg-[#2a2a2e]" style={{ filter: "blur(3px)" }} />
-                  <div className="absolute -bottom-4 -right-4 left-4 h-full rounded-xl bg-[#1e1e22]" style={{ filter: "blur(5px)", opacity: 0.6 }} />
 
-                  <div
-                    className="service-3d-inner service-3d-face relative rounded-xl overflow-hidden border border-[rgba(255,255,255,0.09)] group"
-                    style={{
-                      minHeight: "268px",
-                      background: "#08080c",
-                    }}
-                  >
-                    {/* Lazy-loaded background image */}
-                    <img
-                      src={s.img}
-                      alt=""
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                      style={{ opacity: 0.32 }}
-                    />
-                    {/* dark desaturating overlay — photo reads as texture */}
-                    <div className="absolute inset-0" style={{ background: "rgba(8,8,12,0.68)" }} />
-                    {/* red diagonal tint */}
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 60%)" }} />
-                    {/* bottom vignette for text */}
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(8,8,12,0.5) 55%, rgba(8,8,12,0.96) 100%)" }} />
-                    {/* hover red glow */}
-                    <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 65%)" }} />
-                    {/* top shimmer */}
-                    <div className="absolute top-0 inset-x-0 h-px" style={{ background: "linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.2) 50%, transparent 90%)" }} />
-
-                    {/* content */}
-                    <div className="relative z-10 flex flex-col gap-3 p-6 h-full">
-                      <div
-                        className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
-                        style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", backdropFilter: "blur(8px)" }}
-                      >
-                        <s.icon size={19} className="text-white" />
-                      </div>
-                      <h3
-                        className="text-white font-semibold text-sm leading-snug mt-1"
-                        style={{ fontFamily: "'Poppins', sans-serif", textShadow: "0 2px 12px rgba(0,0,0,1)" }}
-                      >
-                        {s.label}
-                      </h3>
-                      <p
-                        className="text-white/55 group-hover:text-white/82 text-xs leading-relaxed transition-colors duration-300 line-clamp-3"
-                        style={{ textShadow: "0 1px 8px rgba(0,0,0,1)" }}
-                      >
-                        {s.desc}
-                      </p>
-                      <button
-                        onClick={() => navigate(`/services/${slugify(s.label)}`)}
-                        className="text-xs font-semibold text-white flex items-center gap-1 mt-auto group-hover:gap-2 transition-all duration-300 cursor-pointer"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
-                      >
-                        Explore More <ArrowRight size={12} />
-                      </button>
-                    </div>
-                  </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TECH_STACK_ITEMS.map((item) => (
+              <div key={item.name} className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e] shrink-0 mt-0.5">
+                  <item.icon size={20} />
+                </div>
+                <div>
+                  <div className="text-[10px] text-[#e81c2e] font-mono font-bold uppercase tracking-wider mb-1">{item.category}</div>
+                  <h3 className="text-white font-bold text-base mb-1">{item.name}</h3>
+                  <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ── PACKAGES ── */}
-      <section id="packages" className="py-20 bg-[#0d0d0f]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-14">
-            <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Transparent Pricing
-            </p>
-            <h2 className="text-white font-bold mb-3"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}>
-              Our Packages
-            </h2>
-            <p className="text-white/50 max-w-md mx-auto text-sm">
-              Simple, all-inclusive packages for every stage of growth. No hidden fees.
-            </p>
-          </div>
+      {/* ── FEATURED CASE STUDIES ── */}
+      <section id="featured-work" className="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+          
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-8 space-y-4">
+              <SectionTag text="ENGINEERED CASE STUDIES" />
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
-
-            {/* ── BASIC ── */}
-            <div className="flex flex-col border border-white/10 rounded-xl p-7 bg-[#111114] hover:border-white/20 transition-all duration-300">
-              <div className="mb-5">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-white/50 mb-4 block" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  🚀 Basic Package
-                </span>
-                <div className="text-white font-black leading-none mb-1" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "2.6rem" }}>
-                  ₹5,999
-                </div>
-                <p className="text-white/45 text-xs mt-2">Perfect for startups &amp; personal businesses</p>
-              </div>
-              <div className="h-px bg-white/8 mb-5" />
-              <ul className="space-y-2.5 flex-1 mb-7">
-                {[
-                  "Company Website",
-                  "Free Lifetime Hosting (Netlify/Vercel)",
-                  "WhatsApp Integration",
-                  "Mobile Responsive Design",
-                  "SSL Security",
-                  "Contact Form",
-                  "Basic Support",
-                ].map(f => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <Check size={13} className="text-white/60 mt-0.5 shrink-0" />{f}
-                  </li>
-                ))}
-              </ul>
-              <OrangeBtn outline onClick={() => setModalOpen(true)}>Get Started</OrangeBtn>
-            </div>
-
-            {/* ── STANDARD ── */}
-            <div className="flex flex-col border border-white/25 rounded-xl p-7 bg-[#161619] relative hover:border-white/40 transition-all duration-300 shadow-xl">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="bg-white text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  ⭐ Most Popular
-                </span>
-              </div>
-              <div className="mb-5 mt-1">
-                <span className="text-xs font-bold uppercase tracking-widest text-white/50 mb-4 block" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  ⭐ Standard Package
-                </span>
-                <div className="text-white font-black leading-none mb-1" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "2.6rem" }}>
-                  ₹14,999
-                </div>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs text-white/40 line-through">₹15,788</span>
-                  <span className="text-[10px] bg-white/10 text-white/70 px-2 py-0.5 rounded-full font-semibold">5% OFF for Valuable Customers</span>
-                </div>
-                <p className="text-white/45 text-xs mt-2">Professional online presence, complete.</p>
-              </div>
-              <div className="h-px bg-white/10 mb-5" />
-              <ul className="space-y-2.5 flex-1 mb-7">
-                {[
-                  "Company Website with Custom Design",
-                  "SEO-Friendly Structure",
-                  "Google SEO Setup",
-                  "Google Business Profile Optimization",
-                  "Free Lifetime Hosting (Netlify/Vercel)",
-                  "CRUD Operations",
-                  "Basic Branding Support",
-                  "WhatsApp or Instagram Integration",
-                  "Responsive Website",
-                  "Fast Loading Performance",
-                ].map(f => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <Check size={13} className="text-white/60 mt-0.5 shrink-0" />{f}
-                  </li>
-                ))}
-              </ul>
-              <OrangeBtn onClick={() => setModalOpen(true)}>Get Started <ArrowRight size={14} /></OrangeBtn>
-            </div>
-
-            {/* ── PREMIUM ── */}
-            <div className="flex flex-col border border-white/10 rounded-xl p-7 bg-[#111114] hover:border-white/20 transition-all duration-300">
-              <div className="mb-5">
-                <span className="text-xs font-bold uppercase tracking-widest text-white/50 mb-4 block" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  👑 Premium Package
-                </span>
-                <div className="text-white font-black leading-none mb-1" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "2.6rem" }}>
-                  ₹28,999
-                </div>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs text-white/40 line-through">₹30,525</span>
-                  <span className="text-[10px] bg-white/10 text-white/70 px-2 py-0.5 rounded-full font-semibold">5% OFF for Valuable Customers</span>
-                </div>
-                <p className="text-white/45 text-xs mt-2">Complete digital growth solution.</p>
-              </div>
-              <div className="h-px bg-white/8 mb-5" />
-              <ul className="space-y-2.5 flex-1 mb-7">
-                {[
-                  "Everything in Standard Package",
-                  "Premium & Fully Custom Website",
-                  "Custom Domain (.com / .in)",
-                  "Premium Hosting Setup",
-                  "Advanced Google SEO Optimization",
-                  "Instagram Reels (2 Reels)",
-                  "Review Scanner",
-                  "Meta Ads or Google Ads",
-                  "Professional Ad Creation & Video Editing",
-                  "Monthly Performance Report",
-                  "WhatsApp or Instagram Integration",
-                ].map(f => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <Check size={13} className="text-white/60 mt-0.5 shrink-0" />{f}
-                  </li>
-                ))}
-              </ul>
-              <OrangeBtn outline onClick={() => setModalOpen(true)}>Get Started</OrangeBtn>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── COLLABORATIONS GRID ── */}
-      <section id="clients" className="py-20 bg-[#0d0d0f]">
-        <div className="max-w-6xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-12">
-            <p className="text-white text-xs font-semibold uppercase tracking-[0.3em] mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Our Most Successful
-            </p>
-            <h2 className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
-              Collaborations
-            </h2>
-          </div>
-
-          {/* bordered table-grid matching image-3 layout */}
-          <div className="border border-[rgba(255,255,255,0.08)] rounded-xl overflow-hidden">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5" style={{ borderCollapse: "collapse" }}>
-              {CLIENTS.map((c, i) => (
-                <div
-                  key={i}
-                  className="group flex flex-col items-center justify-center gap-1.5 px-4 py-8 bg-[#111115] hover:bg-[#17171c] transition-colors duration-200 cursor-default"
-                  style={{
-                    borderRight: (i + 1) % 5 !== 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
-                    borderBottom: i < CLIENTS.length - 5 ? "1px solid rgba(255,255,255,0.06)" : "none",
-                  }}
-                >
-                  {/* coloured monogram circle — mimics logo badge */}
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center mb-2 transition-transform duration-300 group-hover:scale-110 shrink-0"
-                    style={{
-                      background: `hsl(${(i * 43 + 12) % 360}, 38%, 16%)`,
-                      border: `1.5px solid hsl(${(i * 43 + 12) % 360}, 42%, 28%)`,
-                      boxShadow: `0 0 16px hsl(${(i * 43 + 12) % 360}, 50%, 18%)`,
-                    }}
-                  >
-                    <span
-                      className="text-base font-bold tracking-wide"
-                      style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        color: `hsl(${(i * 43 + 12) % 360}, 60%, 72%)`,
-                      }}
-                    >
-                      {c.name.slice(0, 2).toUpperCase()}
-                    </span>
-                  </div>
-
-                  {/* name */}
-                  <p
-                    className="text-white/75 group-hover:text-white text-xs font-semibold text-center leading-tight transition-colors"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {c.name}
-                  </p>
-
-                  {/* industry pill */}
-                  <span
-                    className="text-[9px] font-medium uppercase tracking-widest text-white/30 group-hover:text-white transition-colors"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    {c.sub}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── DIFFERENTIATORS ── */}
-      <section className="py-20 bg-[#1c1c20]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Why Choose FUERA
-              </p>
-              <h2 className="text-white font-bold mb-5"
-                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3.5vw, 2.3rem)" }}>
-                What Makes Us Stand Out?
+              <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+                Solutions that deliver measurable outcomes.
               </h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                We are not just a digital agency — we are your growth partner. Here is what sets FUERA apart from the rest.
+
+              <p className="text-white/60 text-base leading-relaxed max-w-2xl">
+                A look at how we helped client partners transform their technology stack, improve conversions, and scale ops.
               </p>
-              <OrangeBtn onClick={() => setModalOpen(true)}>
-                Enquire Now <ArrowRight size={15} />
-              </OrangeBtn>
             </div>
-            <div className="grid gap-4">
-              {DIFFERENTIATORS.map((d, i) => (
-                <div key={d.title}
-                  className="flex items-start gap-4 bg-[#1a1a1e] border border-border p-5 rounded-sm hover:border-white/40 hover:shadow-sm transition-all group">
-                  <div className="w-10 h-10 bg-[#1c1c20] group-hover:bg-[#111111] rounded-full flex items-center justify-center shrink-0 transition-colors">
-                    <d.icon size={18} className="text-white group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "'Poppins', sans-serif" }}>{d.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{d.desc}</p>
-                  </div>
-                </div>
-              ))}
+
+            <div className="lg:col-span-4 lg:text-right">
+              <OutlinePillButton onClick={() => navigate("/case-studies")}>
+                Explore Case Studies <ArrowRight size={16} />
+              </OutlinePillButton>
             </div>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {FEATURED_PROJECTS.map((proj) => (
+              <div
+                key={proj.title}
+                className="group bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden hover:border-[#e81c2e]/40 transition-all duration-300 flex flex-col"
+              >
+                <div className={`h-52 bg-gradient-to-br ${proj.accent} p-6 flex flex-col justify-center items-center relative overflow-hidden border-b border-white/5`}>
+                  <div className="text-center transform group-hover:scale-105 transition-transform duration-300">
+                    <span className="text-2xl text-white font-extrabold tracking-wide block mb-1">{proj.title}</span>
+                    <span className="text-[10px] text-white/50 uppercase tracking-widest font-mono">Enterprise Solution</span>
+                  </div>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#e81c2e] transition-colors">
+                      {proj.title}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {proj.tags.map((t) => (
+                        <span key={t} className="text-[10px] bg-white/5 border border-white/10 text-white/70 px-2.5 py-1 rounded-full font-medium">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p className="text-white/50 text-xs leading-relaxed">
+                      {proj.subText}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => navigate(proj.link)}
+                    className="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1.5 group-hover:gap-2.5 transition-all text-left cursor-pointer"
+                  >
+                    <span>Read Architecture Case Study</span> <ArrowRight size={13} className="text-[#e81c2e]" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── ENGINEERING PROCESS ── */}
+      <section className="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+          
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+            <SectionTag text="THE ENGINEERING PROCESS" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              A structured lifecycle for zero-friction deployment.
+            </h2>
+
+            <p className="text-white/60 text-base leading-relaxed">
+              We follow a rigorous agile engineering lifecycle to turn complex requirements into high-performing digital systems.
+            </p>
+
+            <div>
+              <OutlinePillButton onClick={() => navigate("/about")}>
+                Learn About Our Methodology <ArrowRight size={16} />
+              </OutlinePillButton>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 grid sm:grid-cols-4 gap-4">
+            {PROCESS_STEPS.map((proc) => (
+              <div
+                key={proc.number}
+                className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-[#e81c2e]/40 transition-all duration-300 flex flex-col justify-between space-y-4"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-bold text-sm mb-6 bg-[#050508]">
+                    {proc.number}
+                  </div>
+
+                  <h3 className="text-white font-bold text-base mb-2">
+                    {proc.title}
+                  </h3>
+
+                  <p className="text-white/60 text-xs leading-relaxed">
+                    {proc.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── IMPACT METRICS ── */}
+      <section className="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div className="lg:col-span-5 space-y-6">
+            <SectionTag text="ENGINEERED FOR SCALE" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              Proven benchmarks &amp; system reliability.
+            </h2>
+
+            <p className="text-white/60 text-base leading-relaxed">
+              Our codebases and marketing infrastructures are engineered for high throughput and continuous growth.
+            </p>
+
+            <div>
+              <OutlinePillButton onClick={() => navigate("/case-studies")}>
+                View Benchmarks <ArrowRight size={16} />
+              </OutlinePillButton>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
+            {METRICS.map((m) => (
+              <div key={m.label} className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors">
+                <div className="text-3xl sm:text-4xl font-black text-white mb-2 tracking-tight">
+                  {m.value}
+                </div>
+                <div className="text-xs text-white/50 font-medium">
+                  {m.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── ENGAGEMENT MODELS (PACKAGES) ── */}
+      <section id="packages" className="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+          
+          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+            <SectionTag text="ENGAGEMENT MODELS" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              Flexible technology suites for every growth stage.
+            </h2>
+
+            <p className="text-white/60 text-base leading-relaxed">
+              Choose an engineering package aligned with your technical &amp; marketing goals, or talk to us for a custom enterprise partnership.
+            </p>
+
+            <div>
+              <OutlinePillButton onClick={() => setModalOpen(true)}>
+                Discuss Custom SLA <ArrowRight size={16} />
+              </OutlinePillButton>
+            </div>
+          </div>
+
+          <div className="lg:col-span-8 grid sm:grid-cols-3 gap-5 items-stretch">
+            
+            {/* Model 1: Foundation Tech */}
+            <div className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
+                  <Rocket size={18} />
+                </div>
+
+                <h3 className="text-white font-bold text-lg mb-1">Foundation Tech</h3>
+                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
+                  For high-growth startups establishing modern web platforms.
+                </p>
+
+                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+                <div className="text-2xl font-black text-white mb-6">₹5,999</div>
+              </div>
+
+              <OutlinePillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
+                Select Foundation <ArrowRight size={14} />
+              </OutlinePillButton>
+            </div>
+
+            {/* Model 2: Growth Tech Suite (Recommended) */}
+            <div className="bg-[#0f0f18] border-2 border-[#e81c2e] rounded-2xl p-6 flex flex-col justify-between shadow-[0_0_35px_rgba(232,28,46,0.25)] relative">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#e81c2e] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                RECOMMENDED ENTERPRISE
+              </div>
+
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/20 border border-[#e81c2e]/40 flex items-center justify-center text-[#e81c2e] mb-4 mt-1">
+                  <BarChart2 size={18} />
+                </div>
+
+                <h3 className="text-white font-bold text-lg mb-1">Growth System</h3>
+                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
+                  Full-stack web engine, advanced SEO, and lead automation.
+                </p>
+
+                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+                <div className="text-2xl font-black text-white mb-6">₹14,999</div>
+              </div>
+
+              <RedPillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
+                Select Growth Suite <ArrowRight size={14} />
+              </RedPillButton>
+            </div>
+
+            {/* Model 3: Enterprise Custom */}
+            <div className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
+                  <Shield size={18} />
+                </div>
+
+                <h3 className="text-white font-bold text-lg mb-1">Custom Enterprise</h3>
+                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
+                  Dedicated cloud infra, performance ad engine &amp; 24/7 SLA.
+                </p>
+
+                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
+                <div className="text-2xl font-black text-white mb-6">₹28,999</div>
+              </div>
+
+              <OutlinePillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
+                Custom Architecture <ArrowRight size={14} />
+              </OutlinePillButton>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-20 bg-[#1c1c20]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-12">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Social Proof
-            </p>
-            <h2 className="text-white font-bold mb-2"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Voice of Our Customers.
+      <section className="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div className="lg:col-span-5 space-y-6">
+            <SectionTag text="EXECUTIVE ENDORSEMENTS" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              Trusted by leaders across industries.
             </h2>
-            <p className="text-muted-foreground">{"Don't just take our word for it — see what our clients say."}</p>
           </div>
-          <div className="relative max-w-3xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div key={testimonialIdx}
-                initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.35 }}
-                className="bg-[#1a1a1e] border border-border rounded-sm p-8 md:p-10 shadow-sm">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: TESTIMONIALS[testimonialIdx].stars }).map((_, i) => (
-                    <Star key={i} size={16} className="text-white" fill="#ffffff" />
-                  ))}
+
+          <div className="lg:col-span-7">
+            <div className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-8 sm:p-10 relative space-y-6">
+              <div className="text-6xl text-[#e81c2e] font-serif leading-none select-none font-bold">
+                “
+              </div>
+
+              <p className="text-white/85 text-base sm:text-lg leading-relaxed font-normal">
+                "{TESTIMONIALS[testimonialIdx].text}"
+              </p>
+
+              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#e81c2e]/20 border border-[#e81c2e]/40 flex items-center justify-center text-white font-bold text-sm">
+                    {TESTIMONIALS[testimonialIdx].name[0]}
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm">{TESTIMONIALS[testimonialIdx].name}</div>
+                    <div className="text-white/50 text-xs">{TESTIMONIALS[testimonialIdx].role}</div>
+                  </div>
                 </div>
-                <p className="text-[#c0c0c0] text-base leading-relaxed mb-6 italic">
-                  "{TESTIMONIALS[testimonialIdx].text}"
-                </p>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setTestimonialIdx(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+                    className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors cursor-pointer"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button
+                    onClick={() => setTestimonialIdx(i => (i + 1) % TESTIMONIALS.length)}
+                    className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors cursor-pointer"
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── FREQUENTLY ASKED QUESTIONS ── */}
+      <section className="py-24 bg-[#050508] border-b border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
+          
+          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+            <SectionTag text="FREQUENTLY ASKED QUESTIONS" />
+
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              Technical Clarity &amp; Platform Architecture
+            </h2>
+
+            <p className="text-white/60 text-base leading-relaxed">
+              Have questions about engineering scope, tech stack integration, SLAs, or security specs? We have answers.
+            </p>
+
+            <div>
+              <RedPillButton onClick={() => setModalOpen(true)}>
+                Ask a Technical Question <ArrowRight size={16} />
+              </RedPillButton>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 space-y-4">
+            {FAQS.map((faq, idx) => {
+              const isOpen = faqOpenIdx === idx;
+              return (
+                <div
+                  key={faq.q}
+                  className="bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden transition-all duration-200"
+                >
+                  <button
+                    onClick={() => setFaqOpenIdx(isOpen ? null : idx)}
+                    className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-base text-white hover:text-[#e81c2e] transition-colors cursor-pointer"
+                  >
+                    <span>{faq.q}</span>
+                    <div className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 bg-[#e81c2e] border-[#e81c2e] text-white" : "text-white/60"}`}>
+                      <ChevronDown size={16} />
+                    </div>
+                  </button>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 pt-0 text-sm text-white/65 leading-relaxed border-t border-white/5 pt-4">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── CALL TO ACTION ── */}
+      <section className="py-24 bg-[#08080d] border-b border-white/5 relative overflow-hidden z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div className="lg:col-span-7 space-y-6">
+            <SectionTag text="REQUEST A PROPOSAL" />
+
+            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight">
+              Ready to architect your next digital advantage?
+            </h2>
+
+            <p className="text-white/60 text-base sm:text-lg leading-relaxed max-w-lg">
+              Talk to our technical architects. We respond with a detailed technical discovery proposal within 24 hours.
+            </p>
+
+            <div>
+              <RedPillButton onClick={() => setModalOpen(true)}>
+                Schedule Technical Call <ArrowRight size={16} />
+              </RedPillButton>
+            </div>
+          </div>
+
+          {/* Contact Box */}
+          <div className="lg:col-span-5 bg-[#0a0a0f] border border-white/10 rounded-2xl p-8 space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+                  <Mail size={18} />
+                </div>
                 <div>
-                  <p className="font-semibold text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    {TESTIMONIALS[testimonialIdx].name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{TESTIMONIALS[testimonialIdx].company}</p>
+                  <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Engineering Inquiries</div>
+                  <a href="mailto:contact@fuera.in.net" className="text-white text-sm font-semibold hover:text-[#e81c2e] transition-colors">
+                    contact@fuera.in.net
+                  </a>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-            <div className="flex justify-center gap-3 mt-6">
-              {TESTIMONIALS.map((_, i) => (
-                <button key={i} onClick={() => setTestimonialIdx(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === testimonialIdx ? "bg-[#111111] w-8" : "bg-[#d1d5db]"}`} />
-              ))}
-            </div>
-            <button onClick={() => setTestimonialIdx(i => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-              className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
-              <ChevronLeft size={18} />
-            </button>
-            <button onClick={() => setTestimonialIdx(i => (i + 1) % TESTIMONIALS.length)}
-              className="absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1a1e] border border-border shadow hover:bg-[#111111] hover:text-white text-white flex items-center justify-center rounded-full transition-colors hidden md:flex">
-              <ChevronRight size={18} />
-            </button>
-          </div>
-        </div>
-      </section>
+              </div>
 
-      {/* ── INSIGHTS ── */}
-      <section className="py-20 bg-[#1a1a1e]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-12">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Explore
-            </p>
-            <h2 className="text-white font-bold"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Insights from FUERA
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {INSIGHTS.map(ins => (
-              <div key={ins.title}
-                className="border border-border rounded-sm p-6 hover:shadow-md hover:border-white/40 transition-all group cursor-pointer"
-                onClick={() => navigate(ins.route)}>
-                <div className="w-12 h-12 bg-[#1c1c20] group-hover:bg-[#111111] rounded-full flex items-center justify-center mb-4 transition-colors">
-                  <ins.icon size={20} className="text-white group-hover:text-white transition-colors" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+                  <Phone size={18} />
                 </div>
-                <h3 className="text-white font-semibold mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>{ins.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{ins.desc}</p>
-                <button
-                  className="text-xs font-semibold text-white flex items-center gap-1 group-hover:gap-2 transition-all"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  {ins.cta} <ArrowRight size={12} />
-                </button>
+                <div>
+                  <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Direct Phone</div>
+                  <a href="tel:9449658382" className="text-white text-sm font-semibold hover:text-[#e81c2e] transition-colors">
+                    +91 9449658382 / 7899945862
+                  </a>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ── FAQ ── */}
-      <section className="py-20 bg-[#1c1c20]">
-        <div className="max-w-3xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-12">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Got Questions?
-            </p>
-            <h2 className="text-white font-bold"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Discover everything you need to know — FAQs
-            </h2>
-          </div>
-          <div className="space-y-3">
-            {FAQS.map((faq, i) => (
-              <div key={i} className="border border-border bg-[#1a1a1e] rounded-sm overflow-hidden">
-                <button
-                  className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left text-sm font-semibold text-white hover:bg-[#1c1c20] transition-colors"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                  onClick={() => setFaqOpen(faqOpen === i ? null : i)}>
-                  {faq.q}
-                  {faqOpen === i ? <ChevronUp size={16} className="shrink-0 text-white" /> : <ChevronDown size={16} className="shrink-0 text-muted-foreground" />}
-                </button>
-                <AnimatePresence>
-                  {faqOpen === i && (
-                    <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }}
-                      transition={{ duration: 0.2 }} className="overflow-hidden">
-                      <p className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed border-t border-border pt-3">
-                        {faq.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA BANNER ── */}
-      <section className="py-20 bg-[#111111] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-10"
-          style={{ backgroundImage: "radial-gradient(circle at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)" }} />
-        <div className="relative max-w-4xl mx-auto px-5 md:px-10 text-center">
-          <h2 className="text-white font-bold mb-4"
-            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-white/90 text-base mb-8 max-w-2xl mx-auto leading-relaxed">
-            It is time to grow your brand online with data-driven marketing, premium websites, and strategies that actually work.
-          </p>
-          <button onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-black font-semibold px-9 py-4 rounded-sm text-base transition-all hover:shadow-lg hover:-translate-y-0.5"
-            style={{ fontFamily: "'Poppins', sans-serif" }}>
-            Get Started <ArrowRight size={16} />
-          </button>
-        </div>
-      </section>
-
-      {/* ── CONTACT ── */}
-      <section id="contact" className="py-20 bg-[#1a1a1e]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="text-center mb-14">
-            <p className="text-white text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Reach Out
-            </p>
-            <h2 className="text-white font-bold"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
-              Contact Us
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-14 max-w-5xl mx-auto">
-            <div className="space-y-6">
-              <ContactRow icon={Phone} label="Phone" value="9449658382 / 7899945862" href="tel:9449658382" />
-              <ContactRow icon={Mail} label="Email" value="contact@fuera.in.net" href="mailto:contact@fuera.in.net" />
-              <ContactRow icon={MapPin} label="Address" value="#1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034" />
-              <ContactRow icon={Instagram} label="Instagram" value="@fuera.official.23" href="https://instagram.com/fuera.official.23" />
-              <ContactRow icon={Globe} label="Website" value="www.fuera.in.net" href="https://www.fuera.in.net" />
-              <div className="pt-4">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop&auto=format"
-                  alt="FUERA digital agency workspace"
-                  className="w-full rounded-sm object-cover shadow-sm"
-                  loading="lazy"
-                />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#e81c2e]">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Tech Hub Headquarters</div>
+                  <div className="text-white text-sm font-semibold">Koramangala, Bengaluru, India</div>
+                </div>
               </div>
             </div>
-            <EnquiryForm inline />
+
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/60">
+              <span>Connect With Engineering</span>
+              <div className="flex items-center gap-3 text-white">
+                <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer" className="hover:text-[#e81c2e] transition-colors"><Instagram size={16} /></a>
+                <a href="#" className="hover:text-[#e81c2e] transition-colors"><Facebook size={16} /></a>
+                <a href="#" className="hover:text-[#e81c2e] transition-colors"><Linkedin size={16} /></a>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#070709] text-white pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            {/* Brand */}
-            <div>
-              <FueraLogo white />
-              <p className="text-white/60 text-sm mt-4 leading-relaxed">
-                FUERA helps businesses establish a powerful online presence and generate quality leads through strategy-first digital marketing.
-              </p>
-              <div className="flex gap-3 mt-5">
-                <a href="https://instagram.com/fuera.official.23" target="_blank" rel="noreferrer"
-                  className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Instagram size={14} />
-                </a>
-                <a href="#" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Facebook size={14} />
-                </a>
-                <a href="#" className="w-8 h-8 bg-[#1a1a1e]/10 hover:bg-[#111111] flex items-center justify-center rounded-full transition-colors">
-                  <Linkedin size={14} />
-                </a>
-              </div>
-            </div>
-            {/* Services */}
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Services</h4>
-              <ul className="space-y-2">
-                {SERVICES.map(s => (
-                  <li key={s.label}>
-                    <button onClick={() => navigate(`/services/${slugify(s.label)}`)}
-                      className="text-white/60 hover:text-white text-sm transition-colors text-left">{s.label}</button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Quick Links</h4>
-              <ul className="space-y-2">
-                <li><button onClick={() => scrollTo("#home")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Home</button></li>
-                <li><button onClick={() => navigate("/about")} className="text-white/60 hover:text-white text-sm transition-colors text-left">About Us</button></li>
-                <li><button onClick={() => navigate("/leadership")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Leadership Team</button></li>
-                <li><button onClick={() => scrollTo("#packages")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Packages</button></li>
-                <li><button onClick={() => navigate("/clients")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Clients</button></li>
-                <li><button onClick={() => navigate("/case-studies")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Case Studies</button></li>
-                <li><button onClick={() => navigate("/careers")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Careers</button></li>
-                <li><button onClick={() => navigate("/contact")} className="text-white/60 hover:text-white text-sm transition-colors text-left">Contact</button></li>
-              </ul>
-            </div>
-            {/* Contact */}
-            <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-widest text-white/90" style={{ fontFamily: "'Poppins', sans-serif" }}>Contact</h4>
-              <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2"><Mail size={13} className="mt-0.5 shrink-0 text-white" /> contact@fuera.in.net</li>
-                <li className="flex items-start gap-2"><Phone size={13} className="mt-0.5 shrink-0 text-white" /> 9449658382 / 7899945862</li>
-                <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 shrink-0 text-white" /> #1, Mahayogi Vemana Road, 3rd Block, Koramangala, Bengaluru - 560034</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
-            <p>© {new Date().getFullYear()} FUERA. All Rights Reserved.</p>
-            <div className="flex gap-4">
+      <footer className="bg-[#030305] text-white py-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10 pb-8">
+          <FueraLogo white />
+
+          <nav className="flex flex-wrap items-center gap-6 text-sm text-white/70">
+            {NAV_ITEMS.map((item) => (
               <button
-                onClick={() => navigate("/privacy")}
-                className="hover:text-white/70 transition-colors"
+                key={item.label}
+                onClick={() => handleNav(item.href)}
+                className="hover:text-white transition-colors cursor-pointer"
               >
-                Privacy Policy
+                {item.label}
               </button>
-              <button
-                onClick={() => navigate("/terms")}
-                className="hover:text-white/70 transition-colors"
-              >
-                Terms of Use
-              </button>
-            </div>
+            ))}
+          </nav>
+
+          <div className="text-xs text-white/40 font-mono">
+            © {new Date().getFullYear()} FUERA Technologies. All rights reserved.
           </div>
         </div>
       </footer>
 
-      {/* ── ENQUIRY MODAL ── */}
-      <AnimatePresence>
-        {modalOpen && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-            onClick={e => { if (e.target === e.currentTarget) setModalOpen(false); }}>
-            <motion.div initial={{ scale: 0.92, opacity: 0, y: 20 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: 0.92, opacity: 0, y: 20 }}
-              className="bg-[#1a1a1e] rounded-sm shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
-              <div className="flex items-center justify-between px-6 py-5 border-b border-border bg-[#111111]">
-                <h3 className="text-white font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Send Us An Enquiry</h3>
-                <button onClick={() => setModalOpen(false)} className="text-white/60 hover:text-white transition-colors">
-                  <X size={20} />
-                </button>
-              </div>
-              <div className="p-6">
-                <EnquiryForm onSubmit={() => setModalOpen(false)} />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* WhatsApp FAB */}
-      <a href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+services"
-        target="_blank" rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-        <MessageCircle size={24} />
+      {/* Floating WhatsApp FAB */}
+      <a
+        href="https://wa.me/919449658382?text=Hi+FUERA%2C+I%27m+interested+in+your+enterprise+technology+solutions"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center rounded-full shadow-[0_4px_25px_rgba(16,185,129,0.5)] transition-all hover:scale-105"
+        aria-label="Contact Technical Team on WhatsApp"
+      >
+        <MessageCircle size={26} />
       </a>
+
     </div>
-  );
-}
-
-// ─── SMALL COMPONENTS ─────────────────────────────────────────────────────────
-
-function ContactRow({ icon: Icon, label, value, href }: any) {
-  return (
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 bg-[#1c1c20] border border-border rounded-full flex items-center justify-center shrink-0">
-        <Icon size={16} className="text-white" />
-      </div>
-      <div>
-        <p className="text-xs text-muted-foreground font-medium uppercase tracking-widest mb-0.5" style={{ fontFamily: "'Poppins', sans-serif" }}>{label}</p>
-        {href ? (
-          <a href={href} target="_blank" rel="noreferrer" className="text-sm text-white hover:text-white transition-colors font-medium">{value}</a>
-        ) : (
-          <p className="text-sm text-white font-medium">{value}</p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function EnquiryForm({ onSubmit, inline = false }: { onSubmit?: () => void; inline?: boolean }) {
-  const [form, setForm] = useState({ name: "", company: "", designation: "", email: "", phone: "", message: "", privacy: false });
-  const [done, setDone] = useState(false);
-  const set = (k: string) => (e: any) => setForm(v => ({ ...v, [k]: e.target.type === "checkbox" ? e.target.checked : e.target.value }));
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setDone(true);
-    setTimeout(() => { setDone(false); onSubmit?.(); }, 3000);
-    setForm({ name: "", company: "", designation: "", email: "", phone: "", message: "", privacy: false });
-  };
-
-  const inputCls = "w-full border border-border bg-[#f9fafb] text-sm !text-black px-4 py-2.5 rounded-sm focus:outline-none focus:border-white/40 transition-colors placeholder:text-muted-foreground";
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Name *</label>
-          <input required value={form.name} onChange={set("name")} className={inputCls} placeholder="Your name" />
-        </div>
-        <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Company</label>
-          <input value={form.company} onChange={set("company")} className={inputCls} placeholder="Company name" />
-        </div>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Phone *</label>
-          <input required value={form.phone} onChange={set("phone")} className={inputCls} placeholder="+91 XXXXX XXXXX" />
-        </div>
-        <div>
-          <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Email *</label>
-          <input required type="email" value={form.email} onChange={set("email")} className={inputCls} placeholder="you@email.com" />
-        </div>
-      </div>
-      <div>
-        <label className="block text-xs font-semibold text-[#c0c0c0] mb-1.5 uppercase tracking-wide" style={{ fontFamily: "'Poppins', sans-serif" }}>Message</label>
-        <textarea rows={4} value={form.message} onChange={set("message")} className={`${inputCls} resize-none`} placeholder="Tell us about your project or goals..." />
-      </div>
-      <div className="flex items-start gap-2">
-        <input type="checkbox" id="privacy" checked={form.privacy} onChange={set("privacy")} required
-          className="mt-0.5 w-4 h-4 accent-white" />
-        <label htmlFor="privacy" className="text-xs text-muted-foreground">
-          I agree to the{" "}
-          <span
-            className="text-white underline cursor-pointer"
-            onClick={() =>
-              alert(
-                "Privacy Policy:\n\nFUERA is committed to protecting your personal information. Any data submitted through this form will only be used to contact you regarding your business inquiry. We do not sell or share your data with third parties."
-              )
-            }
-          >
-            Privacy Policy
-          </span>{" "}
-          and consent to FUERA contacting me.
-        </label>
-      </div>
-      <button type="submit"
-        className={`w-full py-3.5 font-semibold text-sm transition-all rounded-sm ${done ? "bg-green-500 text-white" : "bg-[#111111] hover:bg-[#2a2a2a] text-white"}`}
-        style={{ fontFamily: "'Poppins', sans-serif" }}>
-        {done ? "Enquiry Sent! We will be in touch shortly." : "Submit My Query"}
-      </button>
-    </form>
   );
 }

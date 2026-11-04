@@ -237,7 +237,7 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label className="block text-xs font-semibold text-white/70 mb-2 uppercase tracking-wider">
                       Name *
                     </label>
                     <input
@@ -247,11 +247,11 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Your name"
-                      className="w-full bg-white border border-white/10 !text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
+                      className="w-full bg-[#14141c] border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#e81c2e] text-sm transition-colors placeholder:text-white/40"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label className="block text-xs font-semibold text-white/70 mb-2 uppercase tracking-wider">
                       Email Address *
                     </label>
                     <input
@@ -261,14 +261,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="name@company.com"
-                      className="w-full bg-white border border-white/10 !text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
+                      className="w-full bg-[#14141c] border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#e81c2e] text-sm transition-colors placeholder:text-white/40"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label className="block text-xs font-semibold text-white/70 mb-2 uppercase tracking-wider">
                       Phone Number *
                     </label>
                     <input
@@ -278,11 +278,11 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone number"
-                      className="w-full bg-white border border-white/10 !text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
+                      className="w-full bg-[#14141c] border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#e81c2e] text-sm transition-colors placeholder:text-white/40"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <label className="block text-xs font-semibold text-white/70 mb-2 uppercase tracking-wider">
                       Company Name
                     </label>
                     <input
@@ -291,13 +291,13 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Your company (optional)"
-                      className="w-full bg-white border border-white/10 !text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors placeholder:text-gray-400"
+                      className="w-full bg-[#14141c] border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#e81c2e] text-sm transition-colors placeholder:text-white/40"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#c0c0c0] mb-3 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <label className="block text-xs font-semibold text-white/70 mb-3 uppercase tracking-wider">
                     Services Needed
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -308,10 +308,10 @@ export default function ContactPage() {
                           key={idx}
                           type="button"
                           onClick={() => handleServiceToggle(service)}
-                          className={`text-left text-xs px-3.5 py-2.5 rounded-sm border transition-all ${
+                          className={`text-left text-xs px-3.5 py-2.5 rounded-lg border transition-all cursor-pointer ${
                             isSelected
-                              ? "bg-white text-black border-white font-medium"
-                              : "bg-[#18181c] text-white/60 border-white/5 hover:border-white/20"
+                              ? "bg-[#e81c2e] text-white border-[#e81c2e] font-semibold shadow-[0_0_15px_rgba(232,28,46,0.35)]"
+                              : "bg-[#14141c] text-white/60 border-white/10 hover:border-white/30 hover:text-white"
                           }`}
                         >
                           {service}
@@ -322,7 +322,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#c0c0c0] mb-2 uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <label className="block text-xs font-semibold text-white/70 mb-2 uppercase tracking-wider">
                     Message *
                   </label>
                   <textarea
@@ -332,7 +332,7 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     rows={4}
                     placeholder="Tell us about your project, target audience, and goals..."
-                    className="w-full bg-white border border-white/10 !text-black px-4 py-3 rounded-sm focus:outline-none focus:border-black/30 text-sm transition-colors resize-none placeholder:text-gray-400"
+                    className="w-full bg-[#14141c] border border-white/10 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#e81c2e] text-sm transition-colors resize-none placeholder:text-white/40"
                   />
                 </div>
 
@@ -340,8 +340,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-sm hover:bg-gray-100 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#e81c2e] hover:bg-[#d01728] text-white font-bold text-sm px-8 py-4 rounded-full transition-all duration-200 red-glow hover:scale-[1.02] active:scale-[0.98] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Sending..." : "Submit Enquiry"} <Send size={15} />
                   </button>
