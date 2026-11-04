@@ -11,7 +11,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
-import heroVisual from "@/imports/hero-3d-visual-seamless.png";
+import fueraHeroLogo from "@/imports/fuera-hero-logo.png";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
@@ -560,19 +560,29 @@ export default function App() {
 
             </div>
 
-            {/* Right Column: 3D Artwork (Planet, Orbit Ring, Monolith, Stat Cards) */}
-            <div className="lg:col-span-6 relative flex items-center justify-center">
+            {/* Right Column: Official FUERA 3D Emblem Logo */}
+            <div className="lg:col-span-6 relative flex items-center justify-center py-4 lg:py-8">
+              {/* Backlight Red Ambient Halo Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[440px] h-[440px] bg-[#e81c2e]/25 rounded-full blur-[130px] pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] h-[260px] bg-[#ff3b4e]/20 rounded-full blur-[70px] pointer-events-none" />
+
               <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.92, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative w-full max-w-[620px] select-none group"
+                className="relative w-full max-w-[500px] select-none flex items-center justify-center"
               >
-                <img
-                  src={heroVisual}
-                  alt="FUERA - Build The Future 3D Monolith & Planet"
-                  className="w-full h-auto object-contain filter drop-shadow-[0_15px_45px_rgba(232,28,46,0.3)] transition-transform duration-500 group-hover:scale-[1.01]"
-                />
+                <motion.div
+                  animate={{ y: [-8, 8, -8] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative group cursor-pointer"
+                >
+                  <img
+                    src={fueraHeroLogo}
+                    alt="FUERA Official 3D Eagle Emblem"
+                    className="w-full h-auto max-h-[460px] object-contain filter drop-shadow-[0_20px_50px_rgba(232,28,46,0.4)] transition-all duration-500 group-hover:scale-[1.03] group-hover:drop-shadow-[0_25px_65px_rgba(232,28,46,0.65)]"
+                  />
+                </motion.div>
               </motion.div>
             </div>
 
