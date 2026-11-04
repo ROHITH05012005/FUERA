@@ -60,7 +60,7 @@ export default function TermsPage() {
                 1. Acceptance of Terms
               </h2>
               <p className="text-white/60 text-sm leading-relaxed">
-                By visiting our website or ordering our development packages (Basic, Standard, Premium), you agree to be bound by these Terms & Conditions. If you do not agree, please do not access or use our services.
+                By visiting our website or engaging our development and digital engineering services, you agree to be bound by these Terms & Conditions. If you do not agree, please do not access or use our services.
               </p>
             </motion.div>
 
@@ -81,7 +81,7 @@ export default function TermsPage() {
               </p>
               <ul className="list-disc pl-5 space-y-2 text-white/50 text-sm">
                 <li><strong>Delivery timelines:</strong> Vary by service package selected. Standard sites take 7–14 days.</li>
-                <li><strong>Hosting dependencies:</strong> Netlify/Vercel standard packages utilize free-tier cloud hosting lines unless custom hosting packages are subscribed.</li>
+                <li><strong>Hosting dependencies:</strong> Netlify/Vercel deployments utilize cloud hosting tiers unless custom dedicated cloud infrastructure is provisioned.</li>
                 <li><strong>Subcontracting:</strong> FUERA retains rights to deploy internal coordinators or developers to manage campaign objectives.</li>
               </ul>
             </motion.div>

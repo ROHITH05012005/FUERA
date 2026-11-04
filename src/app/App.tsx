@@ -31,7 +31,6 @@ const NAV_ITEMS = [
     ]
   },
   { label: "About", href: "/about" },
-  { label: "Packages", href: "#packages" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/case-studies" },
   { label: "Clients", href: "/clients" },
@@ -80,12 +79,12 @@ const TECH_STACK_ITEMS = [
 
 const FEATURED_PROJECTS = [
   {
-    title: "Sri Raghavendra Vaibhava",
-    tags: ["Enterprise Web", "Local Search SEO", "Brand System"],
+    title: "RetailX Platform",
+    tags: ["E-Commerce Web", "Performance Ads", "Growth Engine"],
     link: "/case-studies",
     type: "web",
     accent: "from-[#e81c2e]/30 to-[#0e0e14]",
-    subText: "High-conversions multi-location digital dining engine & local search system."
+    subText: "High-throughput e-commerce platform, multi-channel ad system & conversion optimization pipeline."
   },
   {
     title: "EVEX Systems",
@@ -137,9 +136,9 @@ const METRICS = [
 
 const TESTIMONIALS = [
   {
-    name: "Raghavendra Vaibhava",
-    role: "Managing Director, Hospitality Group",
-    text: "FUERA engineered our online ordering platform and local SEO infrastructure. Their technical precision, responsiveness, and clear communication set them apart from standard agencies.",
+    name: "Arjun Nair",
+    role: "Chief Technology Officer, EduTech Solutions",
+    text: "Partnering with FUERA gave us a massive competitive edge. Their engineering expertise, scalable architecture, and technical SEO doubled our digital acquisition and traffic.",
     rating: 5
   },
   {
@@ -158,9 +157,9 @@ const TESTIMONIALS = [
 
 const FAQS = [
   { q: "What technology solutions does FUERA architect?", a: "FUERA provides full-stack web app engineering, custom AI workflows, automated CRM/WhatsApp integrations, performance ad engines, technical SEO, brand identity design systems, and cloud infrastructure management." },
-  { q: "What is included in the Foundation Tech Package?", a: "The Foundation package includes a custom-engineered web platform built on React/Next.js, lifetime edge hosting on Netlify/Vercel, SSL security, contact API integration, mobile optimization, and basic maintenance support." },
-  { q: "What is in the Growth Tech System (Recommended)?", a: "The Growth System includes full custom web platform engineering, advanced Google & technical SEO, Google Business Profile optimization, lead management dashboard integration, custom automated workflows, and 5% preferred customer rate." },
-  { q: "What is the Custom Enterprise Partnership model?", a: "Our Enterprise tier offers complete end-to-end digital transformation — custom domain, enterprise cloud infrastructure, performance ad engines, dedicated developer pod access, custom AI model integration, and 24/7 SLA monitoring." },
+  { q: "What is FUERA's engineering and delivery process?", a: "We begin with architectural discovery and systems auditing, design technical specs and high-fidelity UI/UX, build modular scalable code with automated testing, and deploy to continuous edge hosting with real-time telemetry." },
+  { q: "How does FUERA ensure sub-second performance and 99.99% uptime?", a: "We engineer applications using modern frameworks like React and Next.js, deploy edge CDN microservices on AWS and Cloudflare, implement zero-trust security protocols, and configure Redis caching layers." },
+  { q: "Can FUERA integrate custom AI workflows and API automation into existing tools?", a: "Yes. We design and deploy custom OpenAI model workflows, automated CRM/ERP integrations, webhook pipelines, and multi-channel messaging engines that seamlessly plug into your current infrastructure." },
   { q: "How long does custom technology development take?", a: "Standard enterprise web platforms launch in 7–14 business days. Complex custom cloud apps or automation engines typically require 3–4 weeks with continuous sprint updates." },
   { q: "How do we start a technical discovery call?", a: "Click 'Request Proposal' or email contact@fuera.in.net or call +91 9449658382. We will set up a technical discovery session to review your scope and provide a detailed architecture blueprint." }
 ];
@@ -738,9 +737,8 @@ export default function App() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80 hover:opacity-100 transition-opacity">
-            <div className="flex items-center gap-2 font-bold text-sm tracking-wide text-white/80 hover:text-white">
-              <div className="w-6 h-6 rounded-full bg-[#e81c2e]/20 border border-[#e81c2e]/50 flex items-center justify-center text-[10px] text-[#e81c2e]">🪷</div>
-              <span>Sri Raghavendra Vaibhava</span>
+            <div className="font-extrabold text-sm tracking-widest text-white/80 hover:text-white">
+              RETAILX
             </div>
 
             <div className="font-extrabold text-sm tracking-widest text-white/80 hover:text-white">
@@ -751,8 +749,8 @@ export default function App() {
               E V E X
             </div>
 
-            <div className="font-serif italic text-base text-white/80 hover:text-white">
-              Annapoorna Kitchen
+            <div className="font-extrabold text-sm tracking-widest text-white/80 hover:text-white">
+              HEALTHPRO CLINICS
             </div>
 
             <div className="flex items-center gap-1.5 font-black text-sm tracking-widest text-white/80 hover:text-white">
@@ -1011,102 +1009,6 @@ export default function App() {
                 </div>
               </div>
             ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── ENGAGEMENT MODELS (PACKAGES) ── */}
-      <section id="packages" className="py-24 bg-[#08080d] border-b border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-start">
-          
-          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
-            <SectionTag text="ENGAGEMENT MODELS" />
-
-            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
-              Flexible technology suites for every growth stage.
-            </h2>
-
-            <p className="text-white/60 text-base leading-relaxed">
-              Choose an engineering package aligned with your technical &amp; marketing goals, or talk to us for a custom enterprise partnership.
-            </p>
-
-            <div>
-              <OutlinePillButton onClick={() => setModalOpen(true)}>
-                Discuss Custom SLA <ArrowRight size={16} />
-              </OutlinePillButton>
-            </div>
-          </div>
-
-          <div className="lg:col-span-8 grid sm:grid-cols-3 gap-5 items-stretch">
-            
-            {/* Model 1: Foundation Tech */}
-            <div className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
-                  <Rocket size={18} />
-                </div>
-
-                <h3 className="text-white font-bold text-lg mb-1">Foundation Tech</h3>
-                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
-                  For high-growth startups establishing modern web platforms.
-                </p>
-
-                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
-                <div className="text-2xl font-black text-white mb-6">₹5,999</div>
-              </div>
-
-              <OutlinePillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
-                Select Foundation <ArrowRight size={14} />
-              </OutlinePillButton>
-            </div>
-
-            {/* Model 2: Growth Tech Suite (Recommended) */}
-            <div className="bg-[#0f0f18] border-2 border-[#e81c2e] rounded-2xl p-6 flex flex-col justify-between shadow-[0_0_35px_rgba(232,28,46,0.25)] relative">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#e81c2e] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                RECOMMENDED ENTERPRISE
-              </div>
-
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#e81c2e]/20 border border-[#e81c2e]/40 flex items-center justify-center text-[#e81c2e] mb-4 mt-1">
-                  <BarChart2 size={18} />
-                </div>
-
-                <h3 className="text-white font-bold text-lg mb-1">Growth System</h3>
-                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
-                  Full-stack web engine, advanced SEO, and lead automation.
-                </p>
-
-                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
-                <div className="text-2xl font-black text-white mb-6">₹14,999</div>
-              </div>
-
-              <RedPillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
-                Select Growth Suite <ArrowRight size={14} />
-              </RedPillButton>
-            </div>
-
-            {/* Model 3: Enterprise Custom */}
-            <div className="bg-[#0a0a0f] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-4">
-                  <Shield size={18} />
-                </div>
-
-                <h3 className="text-white font-bold text-lg mb-1">Custom Enterprise</h3>
-                <p className="text-white/50 text-xs mb-4 min-h-[32px]">
-                  Dedicated cloud infra, performance ad engine &amp; 24/7 SLA.
-                </p>
-
-                <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Starting at</div>
-                <div className="text-2xl font-black text-white mb-6">₹28,999</div>
-              </div>
-
-              <OutlinePillButton onClick={() => setModalOpen(true)} className="w-full text-xs">
-                Custom Architecture <ArrowRight size={14} />
-              </OutlinePillButton>
-            </div>
-
           </div>
 
         </div>
