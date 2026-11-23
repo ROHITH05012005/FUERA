@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
 import fueraHeroLogo from "@/imports/fuera-hero-logo.png";
+import heroWhiteConcept from "@/imports/hero-white-concept-2x.jpg";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
@@ -22,18 +23,19 @@ const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-");
 
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
+  { label: "About", href: "/about" },
   {
-    label: "Services", href: "#solutions",
+    label: "Branches",
+    href: "#solutions",
     children: [
-      "Website Development", "Performance Marketing", "Meta & Google Ads",
-      "Search Engine Optimization", "Brand Identity & DX", "AI & Intelligent Automation",
-      "Review Scanner Engine", "Content & Media Systems"
+      "01 Tech Solutions",
+      "02 Digital Marketing",
+      "Website Development",
+      "AI & Intelligent Automation",
+      "Performance Marketing",
+      "Brand & Experience Design"
     ]
   },
-  { label: "About", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Blog", href: "/case-studies" },
-  { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -166,7 +168,7 @@ const FAQS = [
 
 // ─── LOGO & BUTTON COMPONENTS ──────────────────────────────────────────────────
 
-function FueraLogo({ white = false }: { white?: boolean }) {
+function FueraLogo({ white = false, darkText = false }: { white?: boolean; darkText?: boolean }) {
   return (
     <div
       className="cursor-pointer shrink-0 flex items-center gap-2.5 group select-none"
@@ -178,10 +180,10 @@ function FueraLogo({ white = false }: { white?: boolean }) {
         className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
       />
       <div className="flex flex-col justify-center -space-y-0.5">
-        <span className="text-white font-black text-xl sm:text-2xl tracking-[0.16em] leading-tight">
+        <span className={`font-black text-xl sm:text-2xl tracking-[0.16em] leading-tight ${darkText ? "text-neutral-900" : "text-white"}`}>
           FUERA
         </span>
-        <span className="text-[9px] text-white/50 tracking-[0.18em] font-medium flex items-center gap-1">
+        <span className={`text-[9px] tracking-[0.18em] font-medium flex items-center gap-1 ${darkText ? "text-neutral-600" : "text-white/50"}`}>
           <span className="text-[#e81c2e]">•</span> Build the Future <span className="text-[#e81c2e]">•</span>
         </span>
       </div>
@@ -285,99 +287,31 @@ export default function App() {
       <div className="fixed top-0 right-0 w-[550px] h-[550px] bg-[#e81c2e]/12 blur-[160px] pointer-events-none z-0" />
       <div className="fixed bottom-0 left-0 w-[550px] h-[550px] bg-[#e81c2e]/08 blur-[160px] pointer-events-none z-0" />
 
-      {/* ── TOP CONTACT & SOCIAL BAR ── */}
-      <div className="relative z-50 bg-[#050508] border-b border-white/10 py-1.5 px-4 sm:px-8 text-xs text-white/70 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          
-          {/* Subtle red laser glow on far left */}
-          <div className="absolute top-0 left-0 w-36 h-[1px] bg-gradient-to-r from-[#e81c2e] to-transparent pointer-events-none" />
-
-          {/* Left: Contact Info */}
-          <div className="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
-            <a
-              href="mailto:contact@fuera.in.net"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Mail size={12} className="text-white/60" />
-              <span>contact@fuera.in.net</span>
-            </a>
-            <span className="text-white/20">|</span>
-            <div className="flex items-center gap-1.5">
-              <Phone size={12} className="text-white/60" />
-              <a href="tel:9449658382" className="hover:text-white transition-colors">9449658382</a>
-              <span className="text-white/30">/</span>
-              <a href="tel:7899945862" className="hover:text-white transition-colors">7899945862</a>
-            </div>
-          </div>
-
-          {/* Right: Social icons & WhatsApp pill button */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            <a
-              href="https://instagram.com/fuera.official.23"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#e81c2e] transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram size={13} />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#e81c2e] transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook size={13} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#e81c2e] transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={13} />
-            </a>
-            <a
-              href="https://wa.me/919449658382"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba59] text-white text-[11px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(37,211,102,0.3)] hover:scale-105"
-            >
-              <MessageCircle size={12} fill="currentColor" />
-              <span>WhatsApp</span>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      {/* ── MAIN NAVIGATION HEADER ── */}
+      {/* ── MAIN NAVIGATION HEADER (LIGHT SCI-FI THEME) ── */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#050508]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3"
-            : "bg-[#050508]/70 backdrop-blur-sm py-4 border-b border-white/5"
+            ? "bg-[#ebe9ec]/95 backdrop-blur-md border-b border-black/10 shadow-lg py-3"
+            : "bg-[#ebe9ec]/85 backdrop-blur-sm py-4 border-b border-black/5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between relative z-10">
-          <FueraLogo />
+          <FueraLogo darkText={true} />
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               item.children ? (
                 <div key={item.label} className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setServicesOpen(v => !v)}
-                    className="flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors py-1 cursor-pointer group"
+                    className="flex items-center gap-1 text-sm font-semibold text-neutral-800 hover:text-[#e81c2e] transition-colors py-1 cursor-pointer group"
                   >
                     <span>{item.label}</span>
                     {servicesOpen ? (
                       <ChevronUp size={14} className="text-[#e81c2e]" />
                     ) : (
-                      <ChevronDown size={14} className="text-white/60 group-hover:text-white transition-colors" />
+                      <ChevronDown size={14} className="text-neutral-500 group-hover:text-[#e81c2e] transition-colors" />
                     )}
                   </button>
                   <AnimatePresence>
@@ -387,13 +321,13 @@ export default function App() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-3 w-64 bg-[#0a0a0f] border border-white/10 shadow-2xl rounded-xl z-50 py-2 overflow-hidden"
+                        className="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl border border-black/10 shadow-2xl rounded-xl z-50 py-2 overflow-hidden"
                       >
                         {item.children.map(c => (
                           <button
                             key={c}
-                            onClick={() => { setServicesOpen(false); navigate(`/services/${slugify(c)}`); }}
-                            className="w-full text-left px-4 py-2.5 text-xs text-white/70 hover:bg-[#e81c2e]/10 hover:text-white transition-colors flex items-center justify-between"
+                            onClick={() => { setServicesOpen(false); scrollTo("#solutions"); }}
+                            className="w-full text-left px-4 py-2.5 text-xs font-medium text-neutral-700 hover:bg-[#e81c2e]/10 hover:text-[#e81c2e] transition-colors flex items-center justify-between"
                           >
                             <span>{c}</span>
                             <ArrowRight size={12} className="text-[#e81c2e]" />
@@ -407,8 +341,8 @@ export default function App() {
                 <button
                   key={item.label}
                   onClick={() => handleNav(item.href)}
-                  className={`text-sm font-medium transition-colors py-1 cursor-pointer relative ${
-                    item.label === "Home" ? "text-[#e81c2e] font-bold" : "text-white/80 hover:text-white"
+                  className={`text-sm font-semibold transition-colors py-1 cursor-pointer relative ${
+                    item.label === "Home" ? "text-[#e81c2e]" : "text-neutral-800 hover:text-[#e81c2e]"
                   }`}
                 >
                   {item.label}
@@ -420,35 +354,18 @@ export default function App() {
             ))}
           </nav>
 
-          {/* Right Header Controls: Send Enquiry & Sparkle/Theme */}
+          {/* Right Header Button: Get in Touch → */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setModalOpen(true)}
-              className="hidden sm:inline-flex items-center gap-2 bg-[#0d090d]/80 hover:bg-[#1a0f14] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full border border-[#e81c2e] shadow-[0_0_15px_rgba(232,28,46,0.3)] hover:shadow-[0_0_25px_rgba(232,28,46,0.55)] transition-all cursor-pointer group"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#ff283b] to-[#c81020] hover:from-[#ff3d4e] hover:to-[#b30f1e] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(232,28,46,0.45)] hover:shadow-[0_0_28px_rgba(232,28,46,0.7)] hover:scale-105 active:scale-95 transition-all cursor-pointer group"
             >
-              <span>Send Enquiry</span>
+              <span>Get in Touch</span>
               <ArrowRight size={14} className="text-white group-hover:translate-x-0.5 transition-transform" />
             </button>
 
             <button
-              onClick={() => {
-                const isDark = document.documentElement.classList.contains("dark");
-                if (isDark) {
-                  document.documentElement.classList.remove("dark");
-                  localStorage.setItem("theme", "light");
-                } else {
-                  document.documentElement.classList.add("dark");
-                  localStorage.setItem("theme", "dark");
-                }
-              }}
-              className="w-9 h-9 rounded-full bg-white/5 border border-white/20 hover:border-[#e81c2e]/60 flex items-center justify-center text-white/70 hover:text-white transition-all shadow-sm cursor-pointer"
-              aria-label="Toggle visual theme"
-            >
-              <Sun size={15} />
-            </button>
-
-            <button
-              className="lg:hidden p-2 text-white/80 hover:text-white"
+              className="lg:hidden p-2 text-neutral-800 hover:text-[#e81c2e]"
               onClick={() => setMenuOpen(v => !v)}
               aria-label="Toggle menu"
             >
@@ -464,24 +381,24 @@ export default function App() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden bg-[#09090e] border-b border-white/10 px-6 py-5 relative z-50"
+              className="lg:hidden overflow-hidden bg-[#f4f3f5] border-b border-black/10 px-6 py-5 relative z-50 shadow-xl"
             >
               <div className="flex flex-col gap-3">
                 {NAV_ITEMS.map((item) => (
                   <button
                     key={item.label}
                     onClick={() => handleNav(item.href)}
-                    className="text-left py-2 text-sm font-medium text-white/80 hover:text-white"
+                    className="text-left py-2 text-sm font-semibold text-neutral-800 hover:text-[#e81c2e]"
                   >
                     {item.label}
                   </button>
                 ))}
-                <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+                <div className="pt-3 border-t border-black/10 flex flex-col gap-2">
                   <button
                     onClick={() => { setMenuOpen(false); setModalOpen(true); }}
                     className="w-full bg-gradient-to-r from-[#ff283b] to-[#e81c2e] text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 shadow-[0_4px_25px_rgba(232,28,46,0.45)]"
                   >
-                    <span>Send Enquiry</span>
+                    <span>Get in Touch</span>
                     <ArrowRight size={15} />
                   </button>
                 </div>
@@ -493,120 +410,133 @@ export default function App() {
 
       <EnquiryModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      {/* ── HERO SECTION ── */}
-      <section id="home" className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden border-b border-white/5 z-10">
-        
-        {/* Ambient Red Glows Matching the Visual */}
-        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-[#e81c2e]/20 rounded-full blur-[150px] pointer-events-none z-0" />
-        <div className="absolute top-1/2 left-0 w-[450px] h-[450px] bg-[#e81c2e]/10 rounded-full blur-[140px] pointer-events-none z-0" />
+      {/* ── HERO SECTION (1ST PAGE) ── */}
+      <section
+        id="home"
+        className="relative w-full min-h-[calc(100vh-76px)] flex flex-col justify-between overflow-hidden bg-[#ebe9ec]"
+      >
+        {/* Ambient Red Glows for depth */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#e81c2e]/12 rounded-full blur-[160px] pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-[#ff283b]/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
+        {/* Main Hero Visual Container */}
+        <div className="relative w-full max-w-[1920px] mx-auto flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-3 lg:py-4 z-10">
           
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+          {/* 16:9 Artwork Stage with Hotspots */}
+          <div className="relative w-full aspect-[2048/1148] max-h-[82vh] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-white/60 bg-[#ebe9ec]">
             
-            {/* Left Column Copy & Action Buttons */}
-            <div className="lg:col-span-6 space-y-6 z-10">
-              
-              {/* Digital Growth Partner Tag */}
-              <div className="flex items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#150a0d] border border-[#e81c2e]/40 shadow-[0_0_18px_rgba(232,28,46,0.2)]">
-                  <span className="w-2 h-2 rounded-full bg-[#e81c2e] shadow-[0_0_8px_#e81c2e] animate-pulse" />
-                  <span className="text-xs font-semibold text-white/90 tracking-wide">Digital Growth Partner</span>
-                </div>
-                <span className="hidden sm:inline-block w-16 h-[1px] bg-gradient-to-r from-[#e81c2e]/60 to-transparent" />
-              </div>
+            {/* Background Visual Render */}
+            <img
+              src={heroWhiteConcept}
+              alt="FUERA - Build the Future of Your Business (Two Branches · One Fuera)"
+              className="w-full h-full object-cover object-center select-none"
+            />
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[58px] xl:text-[66px] font-black leading-[1.08] tracking-tight">
-                <span className="bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-                  Build the{" "}
-                </span>
-                <span className="bg-gradient-to-b from-[#ff4d5a] via-[#e81c2e] to-[#b30f1e] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(232,28,46,0.65)]">
-                  Future
-                </span>
-                <br />
-                <span className="bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-                  of Your Business
-                </span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-white/75 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-                FUERA delivers measurable results through innovative digital solutions, crafted for{" "}
-                <span className="text-[#e81c2e] font-semibold">growth.</span>
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <button
-                  onClick={() => scrollTo("#solutions")}
-                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#ff283b] to-[#e81c2e] hover:from-[#ff3d4e] hover:to-[#d01728] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-all duration-200 shadow-[0_4px_25px_rgba(232,28,46,0.55)] hover:shadow-[0_6px_35px_rgba(232,28,46,0.8)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-                >
-                  <span>Explore Our Services</span>
-                  <ArrowRight size={16} />
-                </button>
-
-                <button
-                  onClick={() => setStoryModalOpen(true)}
-                  className="inline-flex items-center gap-2.5 bg-black/40 hover:bg-white/10 text-white font-medium text-sm sm:text-base px-6 py-3.5 rounded-full border border-white/20 hover:border-white/50 transition-all duration-200 backdrop-blur-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px]">
-                    <Play size={10} className="fill-white translate-x-[0.5px]" />
-                  </span>
-                  <span>Watch Our Story</span>
-                </button>
-              </div>
-
-            </div>
-
-            {/* Right Column: Official FUERA 3D Emblem Logo */}
-            <div className="lg:col-span-6 relative flex items-center justify-center py-4 lg:py-8">
-              {/* Backlight Red Ambient Halo Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[440px] h-[440px] bg-[#e81c2e]/25 rounded-full blur-[130px] pointer-events-none" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] h-[260px] bg-[#ff3b4e]/20 rounded-full blur-[70px] pointer-events-none" />
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="relative w-full max-w-[500px] select-none flex items-center justify-center"
-              >
-                <motion.div
-                  animate={{ y: [-8, 8, -8] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative group cursor-pointer"
-                >
-                  <img
-                    src={fueraHeroLogo}
-                    alt="FUERA Official 3D Eagle Emblem"
-                    className="w-full h-auto max-h-[460px] object-contain filter drop-shadow-[0_20px_50px_rgba(232,28,46,0.4)] transition-all duration-500 group-hover:scale-[1.03] group-hover:drop-shadow-[0_25px_65px_rgba(232,28,46,0.65)]"
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-
-          </div>
-
-          {/* Mouse Scroll Down Indicator */}
-          <div className="flex flex-col items-center justify-center pt-8 pb-3">
-            <button
-              onClick={() => scrollTo("#features-ribbon")}
-              className="flex flex-col items-center gap-1 group cursor-pointer"
-              aria-label="Scroll to features"
+            {/* Hotspot 01: FUERA Tech Solutions (Left Card) */}
+            <div
+              onClick={() => scrollTo("#solutions")}
+              className="absolute left-[7.2%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl cursor-pointer group transition-all duration-300 border border-transparent hover:border-[#e81c2e]/50 hover:shadow-[0_0_35px_rgba(232,28,46,0.35)] hover:bg-[#e81c2e]/[0.03]"
+              title="Explore FUERA Tech Solutions"
             >
-              <div className="w-5 h-9 rounded-full border border-white/25 bg-black/40 flex items-start justify-center p-1 shadow-md group-hover:border-[#e81c2e]/60 transition-colors">
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-1 h-2 bg-white/70 rounded-full"
-                />
+              {/* Interactive hover glow & pulse on button */}
+              <div className="absolute left-[11%] bottom-[12%] w-9 h-9 rounded-full bg-transparent group-hover:bg-[#e81c2e]/20 transition-all flex items-center justify-center">
+                <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_15px_#e81c2e] transition-all">
+                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
               </div>
-              <ChevronDown size={14} className="text-white/40 group-hover:text-white transition-colors animate-bounce" />
-            </button>
+            </div>
+
+            {/* Hotspot 02: FUERA Digital Marketing (Right Card) */}
+            <div
+              onClick={() => scrollTo("#solutions")}
+              className="absolute left-[66%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl cursor-pointer group transition-all duration-300 border border-transparent hover:border-[#e81c2e]/50 hover:shadow-[0_0_35px_rgba(232,28,46,0.35)] hover:bg-[#e81c2e]/[0.03]"
+              title="Explore FUERA Digital Marketing"
+            >
+              {/* Interactive hover glow & pulse on button */}
+              <div className="absolute left-[6%] bottom-[12%] w-9 h-9 rounded-full bg-transparent group-hover:bg-[#e81c2e]/20 transition-all flex items-center justify-center">
+                <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_15px_#e81c2e] transition-all">
+                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+            </div>
+
+            {/* Subtle central animated laser pulse indicator */}
+            <div className="absolute left-1/2 top-[46%] -translate-x-1/2 pointer-events-none">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e81c2e] opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#e81c2e]" />
+              </span>
+            </div>
+
           </div>
 
-          {/* ── BOTTOM FLOATING FEATURE RIBBON (GLASS BAR) ── */}
-          <div id="features-ribbon" className="relative z-20 w-full mt-2">
+          {/* Mobile-Friendly Responsive Cards (Visible on screens < 1024px for crystal-clear readability & tap targets) */}
+          <div className="lg:hidden w-full grid sm:grid-cols-2 gap-4 mt-4">
+            {/* Mobile Card 01 */}
+            <div
+              onClick={() => scrollTo("#solutions")}
+              className="bg-white/90 backdrop-blur-md border border-red-500/20 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all"
+            >
+              <div>
+                <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest font-bold">01 Branch</span>
+                <h3 className="text-base font-bold text-neutral-900 mt-0.5">
+                  FUERA <span className="text-[#e81c2e]">Tech Solutions</span>
+                </h3>
+                <p className="text-xs text-neutral-600 mt-1">Innovate. Develop. Transform.</p>
+              </div>
+              <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 ml-3">
+                <ArrowRight size={15} />
+              </div>
+            </div>
+
+            {/* Mobile Card 02 */}
+            <div
+              onClick={() => scrollTo("#solutions")}
+              className="bg-white/90 backdrop-blur-md border border-red-500/20 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all"
+            >
+              <div>
+                <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest font-bold">02 Branch</span>
+                <h3 className="text-base font-bold text-neutral-900 mt-0.5">
+                  FUERA <span className="text-[#e81c2e]">Digital Marketing</span>
+                </h3>
+                <p className="text-xs text-neutral-600 mt-1">Strategize. Create. Grow.</p>
+              </div>
+              <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 ml-3">
+                <ArrowRight size={15} />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ── BOTTOM META BAR (HERO SUB-FOOTER) ── */}
+        <div className="relative z-10 w-full border-t border-black/[0.08] bg-[#ebe9ec]/90 backdrop-blur-sm py-3 px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-medium">
+            <div className="text-neutral-500 font-mono tracking-wider">
+              © 2026 FUERA · FUTURE ERA
+            </div>
+
+            <div className="text-neutral-800 font-bold tracking-[0.25em] uppercase flex items-center gap-2">
+              <span>TWO BRANCHES</span>
+              <span className="text-[#e81c2e]">✦</span>
+              <span>ONE FUERA</span>
+            </div>
+
+            <div className="text-neutral-500 font-mono tracking-wider flex items-center gap-1.5">
+              <span>Powered by Innovation</span>
+              <span className="text-[#e81c2e]">✦</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Smooth Visual Bridge to subsequent dark content */}
+        <div className="w-full h-12 bg-gradient-to-b from-[#ebe9ec] to-[#08080d]" />
+      </section>
+
+      {/* ── BOTTOM FLOATING FEATURE RIBBON (GLASS BAR) ── */}
+      <section className="relative z-20 w-full bg-[#08080d] py-6 px-5 md:px-8 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div id="features-ribbon" className="relative z-20 w-full">
             <div className="bg-[#0b0b10]/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full py-4 px-6 md:px-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)] grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
               
               {/* Item 1: Fast & Reliable */}
@@ -655,7 +585,6 @@ export default function App() {
 
             </div>
           </div>
-
         </div>
       </section>
 
