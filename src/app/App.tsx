@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "motion/react";
 import fueraLogo from "@/imports/image-4.png";
 import fueraWordmark from "@/imports/image-7.png";
 import fueraHeroLogo from "@/imports/fuera-hero-logo.png";
-import heroWhiteConcept from "@/imports/hero-white-concept-2x.jpg";
+import heroCanvasClean from "@/imports/hero-canvas-clean.jpg";
 import EnquiryModal from "./components/ui/EnquiryModal";
 import { scrollTo } from "./helpers";
 import { useSEO } from "./hooks/useSEO";
@@ -422,69 +422,124 @@ export default function App() {
         {/* Main Hero Visual Container */}
         <div className="relative w-full max-w-[1920px] mx-auto flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-3 lg:py-4 z-10">
           
-          {/* 16:9 Artwork Stage with Hotspots */}
+          {/* 16:9 Artwork Stage with Real HTML Typography & Glass Cards */}
           <div className="relative w-full aspect-[2048/1148] max-h-[82vh] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-white/60 bg-[#ebe9ec]">
             
-            {/* Background Visual Render */}
+            {/* Pristine 3D CGI Canvas (Eagle, Island, Orbit Rings, Laptop, Megaphone) */}
             <img
-              src={heroWhiteConcept}
-              alt="FUERA - Build the Future of Your Business (Two Branches · One Fuera)"
+              src={heroCanvasClean}
+              alt="FUERA - Build the Future of Your Business"
               className="w-full h-full object-cover object-center select-none"
             />
 
-            {/* Hotspot 01: FUERA Tech Solutions (Left Card) */}
+            {/* ── CENTRAL BRANDING OVERLAY (REAL HTML & CSS) ── */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-[34%] w-full max-w-2xl px-4 flex flex-col items-center justify-center pointer-events-none select-none">
+              {/* Sci-Fi FUERA Logotype */}
+              <div className="flex items-center justify-center gap-1 sm:gap-2 tracking-[0.2em] font-black text-3xl sm:text-5xl lg:text-[54px] text-neutral-950 drop-shadow-[0_2px_15px_rgba(255,255,255,0.9)]">
+                <span>FU</span>
+                <span className="relative inline-flex items-center justify-center">
+                  <span>E</span>
+                  {/* Glowing Red middle bar of E */}
+                  <span className="absolute top-[48%] left-[16%] w-[68%] h-[3px] sm:h-[4px] lg:h-[5px] bg-[#e81c2e] rounded-sm shadow-[0_0_12px_#e81c2e]" />
+                </span>
+                <span>RA</span>
+              </div>
+
+              {/* Slogan with Red Future */}
+              <p className="mt-1 sm:mt-2 text-[9px] sm:text-[11px] lg:text-xs font-extrabold tracking-[0.32em] text-neutral-900 uppercase text-center drop-shadow-[0_1px_8px_rgba(255,255,255,0.8)]">
+                BUILD THE <span className="text-[#e81c2e] font-black drop-shadow-[0_0_12px_rgba(232,28,46,0.6)]">FUTURE</span> OF YOUR BUSINESS
+              </p>
+
+              {/* Vertical Laser Guide pointing to the silhouette figure */}
+              <div className="flex flex-col items-center mt-1.5 sm:mt-2.5">
+                <div className="w-[1.5px] h-5 sm:h-8 bg-gradient-to-b from-[#e81c2e] via-[#ff283b] to-transparent shadow-[0_0_8px_#e81c2e]" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-[#e81c2e] shadow-[0_0_10px_#e81c2e] -mt-0.5" />
+              </div>
+            </div>
+
+            {/* ── CARD 01: REAL HTML GLASS CARD (DESKTOP) ── */}
             <div
               onClick={() => scrollTo("#solutions")}
-              className="absolute left-[7.2%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl cursor-pointer group transition-all duration-300 border border-transparent hover:border-[#e81c2e]/50 hover:shadow-[0_0_35px_rgba(232,28,46,0.35)] hover:bg-[#e81c2e]/[0.03]"
+              className="hidden lg:flex absolute left-[7.2%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl p-5 xl:p-6 bg-white/45 backdrop-blur-md border border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(232,28,46,0.3)] hover:border-[#e81c2e]/60 transition-all duration-300 group cursor-pointer flex-col justify-between overflow-hidden"
               title="Explore FUERA Tech Solutions"
             >
-              {/* Interactive hover glow & pulse on button */}
-              <div className="absolute left-[11%] bottom-[12%] w-9 h-9 rounded-full bg-transparent group-hover:bg-[#e81c2e]/20 transition-all flex items-center justify-center">
-                <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_15px_#e81c2e] transition-all">
-                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+              {/* Glowing Red Corner Brackets */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#e81c2e] rounded-tl-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#e81c2e] rounded-bl-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#e81c2e] rounded-tr-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#e81c2e] rounded-br-sm shadow-[0_0_8px_#e81c2e]" />
+
+              <div className="z-10 max-w-[65%]">
+                <span className="font-mono text-xs font-bold text-neutral-500 tracking-widest block mb-0.5">
+                  01
+                </span>
+                <h3 className="text-lg xl:text-xl font-black text-neutral-950 leading-tight">
+                  FUERA<br />
+                  <span className="text-[#e81c2e]">Tech</span> Solutions
+                </h3>
+                <p className="text-[11px] xl:text-xs text-neutral-700 font-semibold tracking-wide mt-1 leading-snug">
+                  Innovate. Develop. Transform.
+                </p>
+              </div>
+
+              {/* Real Circle Button */}
+              <div className="z-10 mt-auto">
+                <div className="w-9 h-9 rounded-full bg-neutral-950 text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_18px_#e81c2e] transition-all duration-300">
+                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
             </div>
 
-            {/* Hotspot 02: FUERA Digital Marketing (Right Card) */}
+            {/* ── CARD 02: REAL HTML GLASS CARD (DESKTOP) ── */}
             <div
               onClick={() => scrollTo("#solutions")}
-              className="absolute left-[66%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl cursor-pointer group transition-all duration-300 border border-transparent hover:border-[#e81c2e]/50 hover:shadow-[0_0_35px_rgba(232,28,46,0.35)] hover:bg-[#e81c2e]/[0.03]"
+              className="hidden lg:flex absolute left-[66%] top-[43.5%] w-[27%] h-[34.5%] rounded-2xl md:rounded-3xl p-5 xl:p-6 bg-white/45 backdrop-blur-md border border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(232,28,46,0.3)] hover:border-[#e81c2e]/60 transition-all duration-300 group cursor-pointer flex-col justify-between overflow-hidden"
               title="Explore FUERA Digital Marketing"
             >
-              {/* Interactive hover glow & pulse on button */}
-              <div className="absolute left-[6%] bottom-[12%] w-9 h-9 rounded-full bg-transparent group-hover:bg-[#e81c2e]/20 transition-all flex items-center justify-center">
-                <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_15px_#e81c2e] transition-all">
-                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+              {/* Glowing Red Corner Brackets */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#e81c2e] rounded-tl-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#e81c2e] rounded-bl-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#e81c2e] rounded-tr-sm shadow-[0_0_8px_#e81c2e]" />
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#e81c2e] rounded-br-sm shadow-[0_0_8px_#e81c2e]" />
+
+              <div className="z-10 max-w-[65%]">
+                <span className="font-mono text-xs font-bold text-neutral-500 tracking-widest block mb-0.5">
+                  02
+                </span>
+                <h3 className="text-lg xl:text-xl font-black text-neutral-950 leading-tight">
+                  FUERA<br />
+                  <span className="text-[#e81c2e]">Digital</span> Marketing
+                </h3>
+                <p className="text-[11px] xl:text-xs text-neutral-700 font-semibold tracking-wide mt-1 leading-snug">
+                  Strategize. Create. Grow.
+                </p>
+              </div>
+
+              {/* Real Circle Button */}
+              <div className="z-10 mt-auto">
+                <div className="w-9 h-9 rounded-full bg-neutral-950 text-white flex items-center justify-center group-hover:bg-[#e81c2e] group-hover:scale-110 group-hover:shadow-[0_0_18px_#e81c2e] transition-all duration-300">
+                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
-            </div>
-
-            {/* Subtle central animated laser pulse indicator */}
-            <div className="absolute left-1/2 top-[46%] -translate-x-1/2 pointer-events-none">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e81c2e] opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#e81c2e]" />
-              </span>
             </div>
 
           </div>
 
-          {/* Mobile-Friendly Responsive Cards (Visible on screens < 1024px for crystal-clear readability & tap targets) */}
-          <div className="lg:hidden w-full grid sm:grid-cols-2 gap-4 mt-4">
+          {/* ── RESPONSIVE REAL HTML CARDS (MOBILE & TABLET) ── */}
+          <div className="lg:hidden w-full grid sm:grid-cols-2 gap-4 mt-5">
             {/* Mobile Card 01 */}
             <div
               onClick={() => scrollTo("#solutions")}
-              className="bg-white/90 backdrop-blur-md border border-red-500/20 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all"
+              className="bg-white/85 backdrop-blur-md border border-neutral-300/80 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all group"
             >
               <div>
                 <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest font-bold">01 Branch</span>
-                <h3 className="text-base font-bold text-neutral-900 mt-0.5">
+                <h3 className="text-base font-black text-neutral-950 mt-0.5">
                   FUERA <span className="text-[#e81c2e]">Tech Solutions</span>
                 </h3>
-                <p className="text-xs text-neutral-600 mt-1">Innovate. Develop. Transform.</p>
+                <p className="text-xs text-neutral-600 mt-0.5 font-medium">Innovate. Develop. Transform.</p>
               </div>
-              <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 ml-3">
+              <div className="w-9 h-9 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 ml-3 group-hover:bg-[#e81c2e] transition-colors">
                 <ArrowRight size={15} />
               </div>
             </div>
@@ -492,16 +547,16 @@ export default function App() {
             {/* Mobile Card 02 */}
             <div
               onClick={() => scrollTo("#solutions")}
-              className="bg-white/90 backdrop-blur-md border border-red-500/20 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all"
+              className="bg-white/85 backdrop-blur-md border border-neutral-300/80 rounded-2xl p-5 shadow-lg flex items-center justify-between cursor-pointer hover:border-[#e81c2e] transition-all group"
             >
               <div>
                 <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest font-bold">02 Branch</span>
-                <h3 className="text-base font-bold text-neutral-900 mt-0.5">
+                <h3 className="text-base font-black text-neutral-950 mt-0.5">
                   FUERA <span className="text-[#e81c2e]">Digital Marketing</span>
                 </h3>
-                <p className="text-xs text-neutral-600 mt-1">Strategize. Create. Grow.</p>
+                <p className="text-xs text-neutral-600 mt-0.5 font-medium">Strategize. Create. Grow.</p>
               </div>
-              <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 ml-3">
+              <div className="w-9 h-9 rounded-full bg-neutral-950 text-white flex items-center justify-center shrink-0 ml-3 group-hover:bg-[#e81c2e] transition-colors">
                 <ArrowRight size={15} />
               </div>
             </div>
