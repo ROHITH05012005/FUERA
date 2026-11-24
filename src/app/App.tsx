@@ -6,7 +6,7 @@ import {
   Cpu, Code, BarChart2, Eye, Compass, Layers, Coffee, Laptop, Heart, Calendar, Clock, Lock
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import broLogo from "@/imports/bro-logo.png";
+import fueraLogo from "@/imports/fuera-logo.png";
 import { useSEO } from "./hooks/useSEO";
 
 // ─── TYPES & DATA ─────────────────────────────────────────────────────────────
@@ -51,9 +51,9 @@ const TICKER_ROW_2 = [
 
 const VENTURES = [
   {
-    name: "Bro.Game",
+    name: "FUERA Cloud Gaming",
     badge: "Cloud Gaming • Official NVIDIA Partner",
-    desc: "Official partner with NVIDIA GeForce NOW, the first cloud gaming platform in Thailand. Transforming how people play games with ultra-low latency edge streaming across devices.",
+    desc: "Official partner with NVIDIA GeForce NOW, the first cloud gaming platform in the region. Transforming how people play games with ultra-low latency edge streaming across devices.",
     url: "https://www.bro.game/",
     tag: "Gaming & AI",
     color: "from-emerald-500/10 to-transparent",
@@ -189,7 +189,7 @@ const CAREER_OPENINGS = [
     title: "Senior Backend Engineer (Node.js)",
     level: "Senior",
     exp: "4-6 Years",
-    location: "Bangkok (On-Site)",
+    location: "Bangalore (On-Site)",
     department: "Engineering",
     compensation: "Competitive",
   },
@@ -197,7 +197,7 @@ const CAREER_OPENINGS = [
     title: "Senior Frontend Developer (React)",
     level: "Senior",
     exp: "4-6 Years",
-    location: "Bangkok (On-Site)",
+    location: "Bangalore (Hybrid)",
     department: "Engineering",
     compensation: "Competitive",
   },
@@ -205,39 +205,39 @@ const CAREER_OPENINGS = [
     title: "Quality Assurance Engineer (Software Tester)",
     level: "Associate",
     exp: "2-4 Years",
-    location: "Bangkok",
+    location: "Bangalore (On-Site)",
     department: "QA & Reliability",
     compensation: "Competitive",
   },
   {
-    title: "Growth Marketing Manager (Online / Gaming)",
+    title: "Growth Marketing Manager (Tech & Media)",
     level: "Senior",
     exp: "3-5 Years",
-    location: "Bangkok",
+    location: "Bangalore / Remote",
     department: "Marketing",
-    compensation: "30K - 45K",
+    compensation: "Competitive",
   },
   {
-    title: "IT Operations Engineer",
+    title: "IT Operations & Cloud DevOps Engineer",
     level: "Mid-Level",
     exp: "2-4 Years",
-    location: "Bangkok (On-Site)",
+    location: "Bangalore (On-Site)",
     department: "Infrastructure",
     compensation: "Competitive",
   },
   {
-    title: "Online Customer Service (Game Industry)",
+    title: "Technical Client Solutions Specialist",
     level: "Associate",
     exp: "1-3 Years",
-    location: "Bangkok",
+    location: "Bangalore (Hybrid)",
     department: "Customer Experience",
-    compensation: "20K - 35K",
+    compensation: "Competitive",
   },
   {
-    title: "Copywriter & Content Creator",
+    title: "Copywriter & Technical Content Creator",
     level: "Associate",
     exp: "1-3 Years",
-    location: "Bangkok",
+    location: "Bangalore / Remote",
     department: "Brand & Content",
     compensation: "Competitive",
   },
@@ -271,12 +271,12 @@ const VENDORS_LIST = [
   },
 ];
 
-// ─── MAIN BRO.TECHNOLOGY COMPONENT ──────────────────────────────────────────
+// ─── MAIN FUERA TECH SOLUTIONS COMPONENT ──────────────────────────────────────
 
 export default function App() {
   useSEO({
-    title: "bro.technology | Impactful Technologies to Reshape Industries",
-    description: "At Bro.technologies, we integrate cutting-edge technologies to shape and revolutionize industries.",
+    title: "FUERA Tech Solutions | Impactful Technologies to Reshape Industries",
+    description: "At FUERA Tech Solutions, we integrate cutting-edge technologies to shape and revolutionize industries.",
     path: "/"
   });
 
@@ -319,10 +319,10 @@ export default function App() {
             className="flex items-center gap-3 cursor-pointer select-none group"
           >
             <div className="w-9 h-9 rounded-xl bg-white shadow-sm border border-slate-200/80 p-1.5 flex items-center justify-center transition-transform group-hover:scale-105">
-              <img src={broLogo} alt="bro.technology" className="w-full h-full object-contain" />
+              <img src={fueraLogo} alt="FUERA Tech Solutions" className="w-full h-full object-contain" />
             </div>
             <span className="font-bold text-xl tracking-tight text-[#0F172A] font-mono">
-              bro.technology
+              FUERA Tech Solutions
             </span>
           </a>
 
@@ -457,7 +457,7 @@ export default function App() {
 
           {/* Subtext */}
           <p className="text-slate-600 text-base sm:text-xl font-normal max-w-2xl leading-relaxed mb-10">
-            At Bro.technologies, we integrate cutting-edge technologies to shape and revolutionize industries.
+            At FUERA Tech Solutions, we integrate cutting-edge technologies to shape and revolutionize industries.
           </p>
 
           {/* Archimedes Lever Philosophy Quote Card */}
@@ -511,7 +511,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── FILTER TABS BAR (SIGNATURE BRO.TECHNOLOGY UI) ── */}
+      {/* ── FILTER TABS BAR (SIGNATURE FILTER CATEGORIES UI) ── */}
       <section id="cards-section" className="sticky top-18 z-30 bg-[#F2F5F9]/95 backdrop-blur-md py-4 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none no-scrollbar">
@@ -858,7 +858,7 @@ export default function App() {
               <div className="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs divide-y divide-slate-100">
                 <div className="pb-4">
                   <h3 className="text-xl font-bold text-slate-900">Open Positions</h3>
-                  <p className="text-xs text-slate-500 mt-0.5">Ready to make an impact? Explore our current openings and join our team in Bangkok.</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Ready to make an impact? Explore our current openings and join our team in Bangalore, India.</p>
                 </div>
 
                 {CAREER_OPENINGS.map((job) => (
@@ -931,7 +931,7 @@ export default function App() {
                     Vendors We Work With
                   </h2>
                   <p className="text-slate-600 text-sm mt-1">
-                    bro.technology is seeking exceptional vendors to join our growing network. If you're passionate about technology and providing high-quality products or services, we invite you to connect.
+                    FUERA Tech Solutions is seeking exceptional vendors to join our growing network. If you're passionate about technology and providing high-quality products or services, we invite you to connect.
                   </p>
                 </div>
                 <span className="text-xs text-slate-500 font-mono">06 // Vendors</span>
@@ -1013,7 +1013,7 @@ export default function App() {
                     <span>Shaping Tomorrow with AI</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
-                    Partner with bro.technology
+                    Partner with FUERA Tech Solutions
                   </h3>
                   <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     Submit your information to receive our mutual NDA and access our audited financial statements and growth roadmap to explore exciting investment opportunities in Southeast Asia’s AI revolution.
@@ -1058,12 +1058,12 @@ export default function App() {
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-slate-100 p-1 flex items-center justify-center">
-                  <img src={broLogo} alt="bro.technology" className="w-full h-full object-contain" />
+                  <img src={fueraLogo} alt="FUERA Tech Solutions" className="w-full h-full object-contain" />
                 </div>
-                <span className="font-bold text-xl font-mono text-[#0F172A]">bro.technology</span>
+                <span className="font-bold text-xl font-mono text-[#0F172A]">FUERA Tech Solutions</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed max-w-sm">
-                14/2 Phahon Yothin 29 Alley, Khwaeng Chatuchak, Chatuchak, Bangkok 10900
+                Koramangala 5th Block, Bangalore, Karnataka 560068 &amp; Global
               </p>
               <p className="text-xs text-slate-500 leading-relaxed">
                 Empowering businesses with AI deployment, cloud infrastructure, and impactful technologies.
@@ -1078,7 +1078,7 @@ export default function App() {
               <ul className="space-y-2.5 text-xs text-slate-600">
                 <li>
                   <a href="https://www.bro.game/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                    bro.game (NVIDIA)
+                    FUERA Cloud Gaming (NVIDIA)
                   </a>
                 </li>
                 <li>
@@ -1150,9 +1150,9 @@ export default function App() {
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <div>© 2025 bro.technology. All rights reserved.</div>
+            <div>© 2026 FUERA Tech Solutions. All rights reserved.</div>
             <div className="flex items-center gap-6">
-              <span>Bangkok, Thailand</span>
+              <span>Bangalore, India</span>
               <span>•</span>
               <span>Privacy &amp; Terms</span>
             </div>
@@ -1190,7 +1190,7 @@ export default function App() {
                   Get in Touch
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-2">Contact bro.technology</h3>
+              <h3 className="text-2xl font-black text-slate-900 mb-2">Contact FUERA Tech Solutions</h3>
               <p className="text-xs text-slate-600 mb-6">
                 Tell us about your organization or inquiry and our team will get in touch.
               </p>
@@ -1237,7 +1237,7 @@ export default function App() {
                     <label className="text-xs font-semibold text-slate-700 block mb-1">Message / Project Goal</label>
                     <textarea
                       rows={3}
-                      placeholder="How can bro.technology help you?"
+                      placeholder="How can FUERA Tech Solutions help you?"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#0099ff] resize-none"
                     ></textarea>
                   </div>
@@ -1283,7 +1283,7 @@ export default function App() {
               </span>
               <h3 className="text-xl font-black text-slate-900 mb-1">{activeJobModal}</h3>
               <p className="text-xs text-slate-500 mb-5">
-                Join our team at Brothers Pictures / bro.technology in Bangkok, Thailand.
+                Join our team at FUERA Tech Solutions in Bangalore, India.
               </p>
 
               <form
@@ -1361,7 +1361,7 @@ export default function App() {
               </span>
               <h3 className="text-xl font-black text-slate-900 mb-1">Join Our Vendor Network</h3>
               <p className="text-xs text-slate-500 mb-5">
-                Register your company to provide services, hardware, or software to bro.technology.
+                Register your company to provide services, hardware, or software to FUERA Tech Solutions.
               </p>
 
               <form
@@ -1427,7 +1427,7 @@ export default function App() {
               <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0099ff] font-bold mb-2 inline-block">
                 Investor Portal
               </span>
-              <h3 className="text-xl font-black text-slate-900 mb-1">Partner with bro.technology</h3>
+              <h3 className="text-xl font-black text-slate-900 mb-1">Partner with FUERA Tech Solutions</h3>
               <p className="text-xs text-slate-500 mb-5">
                 Submit your information to receive our mutual NDA and access our financial statements.
               </p>
