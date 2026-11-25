@@ -7,6 +7,7 @@ import CareersPage from "./app/pages/CareersPage.tsx";
 import ServicePage from "./app/pages/ServicePage.tsx";
 import ContactPage from "./app/pages/ContactPage.tsx";
 import LeadershipPage from "./app/pages/LeadershipPage.tsx";
+import DigitalMarketingPage from "./app/pages/DigitalMarketingPage.tsx";
 import PrivacyPage from "./app/pages/PrivacyPage.tsx";
 import TermsPage from "./app/pages/TermsPage.tsx";
 import "./styles/index.css";
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/leadership" element={<LeadershipPage />} />
       <Route path="/about" element={<LeadershipPage />} />
+      <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/services/:serviceId" element={<ServicePage />} />

@@ -423,16 +423,12 @@ export default function App() {
             </button>
             <button
               onClick={() => {
-                setActiveDept("marketing");
-                scrollTo("digital-marketing");
+                navigate("/digital-marketing");
               }}
-              className={`px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 cursor-pointer ${
-                activeDept === "marketing"
-                  ? "bg-[#E6002A] text-white font-bold shadow-xs"
-                  : "text-[#121214]/60 hover:text-[#121214]"
-              }`}
+              className="px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5 cursor-pointer text-[#121214]/70 hover:text-[#E6002A] hover:bg-[#121214]/5"
+              title="Open FUERA Digital Marketing Experience"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E6002A]" />
               02 Digital Marketing
             </button>
           </nav>
@@ -504,16 +500,16 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => {
-                    setActiveDept("marketing");
-                    scrollTo("digital-marketing");
+                    setMobileMenuOpen(false);
+                    navigate("/digital-marketing");
                   }}
-                  className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#121214]/8 text-left font-bold text-sm"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#121214]/8 text-left font-bold text-sm hover:border-[#E6002A]/40 transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#E6002A]" />
-                    02 FUERA Digital Marketing
+                    02 FUERA Digital Marketing (Interactive Studio)
                   </span>
-                  <ArrowRight size={14} />
+                  <ArrowRight size={14} className="text-[#E6002A]" />
                 </button>
               </div>
 
@@ -686,8 +682,7 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ y: -4 }}
               onClick={() => {
-                setActiveDept("marketing");
-                scrollTo("digital-marketing");
+                navigate("/digital-marketing");
               }}
               className="group relative bg-white border border-[#121214]/10 hover:border-[#E6002A]/40 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden"
             >
@@ -929,6 +924,31 @@ export default function App() {
             <p className="text-sm text-[#121214]/70 max-w-md leading-relaxed">
               We engineer scalable customer acquisition systems that blend algorithmic performance ads, dominant local search rankings, and creative content that captures and holds attention.
             </p>
+          </div>
+
+          {/* Interactive Creative Reel & Shutter Theme Showcase Banner */}
+          <div className="mb-14 p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#2c2d1e] via-[#3a3c26] to-[#121214] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl border border-white/10 relative overflow-hidden group">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-[#E6002A]" />
+                <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#E6002A]">
+                  DEDICATED DIGITAL MARKETING EXPERIENCE
+                </span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Explore the FUERA Shutter Roll &amp; Cinematic Studio
+              </h3>
+              <p className="text-xs sm:text-sm text-white/75 max-w-xl leading-relaxed">
+                Experience our custom scroll-driven film camera showcase featuring analog color stocks, viral short-form creative frameworks, and full-funnel campaign production.
+              </p>
+            </div>
+            <button
+              onClick={() => navigate("/digital-marketing")}
+              className="relative z-10 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#E6002A] hover:bg-[#CC0025] text-white text-xs font-bold tracking-wider uppercase shadow-xl transition-all hover:scale-105 shrink-0 cursor-pointer"
+            >
+              <span>Launch Studio Experience</span>
+              <ArrowRight size={14} />
+            </button>
           </div>
 
           {/* Marketing Services Grid */}
@@ -1379,6 +1399,15 @@ export default function App() {
                 02 Digital Marketing
               </h4>
               <ul className="space-y-2 text-xs text-[#121214]/70">
+                <li>
+                  <button
+                    onClick={() => navigate("/digital-marketing")}
+                    className="font-bold text-[#E6002A] hover:underline flex items-center gap-1 cursor-pointer text-left"
+                  >
+                    <span>★ Interactive Studio Reel</span>
+                    <ArrowRight size={11} />
+                  </button>
+                </li>
                 <li><button onClick={() => scrollTo("digital-marketing")} className="hover:text-[#E6002A]">Google SEO &amp; Local Maps</button></li>
                 <li><button onClick={() => scrollTo("digital-marketing")} className="hover:text-[#E6002A]">Performance Ads (Meta &amp; Google)</button></li>
                 <li><button onClick={() => scrollTo("digital-marketing")} className="hover:text-[#E6002A]">Brand Design Systems</button></li>
