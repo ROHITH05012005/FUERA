@@ -38,12 +38,28 @@ const EXECUTIVES = [
     glow: "shadow-orange-500/20",
     bio: "Leading execution, client relationships, and business development across all digital verticals.",
   },
+  {
+    name: "Manya H. R.",
+    role: "President",
+    initials: "MH",
+    image: manyaImg,
+    gradient: "from-teal-400 to-emerald-600",
+    glow: "shadow-emerald-500/20",
+    bio: "Spearheading organizational vision, corporate governance, and high-level strategy across both FUERA departments.",
+  },
+  {
+    name: "Manjunatha Reddy",
+    role: "Chief Operating Officer (COO)",
+    initials: "MR",
+    image: manjunathaImg,
+    gradient: "from-violet-400 to-purple-600",
+    glow: "shadow-purple-500/20",
+    bio: "Overseeing day-to-day operations, delivery infrastructure, and operational excellence across technology and digital verticals.",
+  },
 ];
 
 // Define Leadership Team members
 const TEAM_MEMBERS = [
-  { name: "Manya H. R.", role: "Leadership Team", initials: "MH", gradient: "from-teal-400 to-emerald-600", image: manyaImg },
-  { name: "Manjunatha Reddy", role: "Leadership Team", initials: "MR", gradient: "from-violet-400 to-purple-600", image: manjunathaImg },
   { name: "Deepthi", role: "Leadership Team", initials: "D", gradient: "from-fuchsia-400 to-pink-600" },
 ];
 

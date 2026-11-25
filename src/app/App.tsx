@@ -247,17 +247,17 @@ const LEADERSHIP = [
   },
   {
     name: "Manya H. R.",
-    role: "Leadership Team",
-    title: "Operations & Strategy",
+    role: "President",
+    title: "Executive Leadership",
     image: manyaImg,
-    bio: "Spearheading organizational workflows, project delivery, and cross-department collaboration.",
+    bio: "Spearheading organizational vision, corporate governance, and high-level strategy across both FUERA departments.",
   },
   {
     name: "Manjunatha Reddy",
-    role: "Leadership Team",
-    title: "Client Success",
+    role: "Chief Operating Officer (COO)",
+    title: "Executive Leadership",
     image: manjunathaImg,
-    bio: "Ensuring flawless execution and sustained client growth across technology and digital verticals.",
+    bio: "Overseeing day-to-day operations, delivery infrastructure, and operational excellence across technology and digital verticals.",
   },
 ];
 
