@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FUERA Tech Solutions | Impactful Technologies to Reshape Industries</title>
-  <meta name="description" content="At FUERA Tech Solutions, we integrate cutting-edge technologies to shape and revolutionize industries." />
+  <title>FUERA | Tech Solutions &amp; Digital Marketing — Bangalore</title>
+  <meta name="description" content="FUERA operates across two specialized departments: FUERA Tech Solutions (custom web applications, software, high-speed platforms) and FUERA Digital Marketing (Google SEO, Meta Ads, branding, creative growth)." />
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Poppins, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
             brand: {
-              bg: '#F2F5F9',
-              dark: '#0F172A',
-              blue: '#0099ff',
+              red: '#E6002A',
+              redHover: '#CC0025',
+              bgWarm: '#FAF9F6',
+              bgSurface: '#F4F3EE',
+              charcoal: '#121214',
             }
           }
         }
@@ -36,1128 +39,1133 @@
 
   <style>
     body {
-      background-color: #F2F5F9;
-      color: #0F172A;
+      background-color: #FAF9F6;
+      color: #121214;
       font-family: 'Inter', sans-serif;
     }
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Poppins', sans-serif;
     }
-    @keyframes marquee-reverse {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0%); }
+    ::selection {
+      background-color: #E6002A;
+      color: #ffffff;
     }
-    .animate-marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 35s linear infinite;
+    /* Subtle opening animation styles */
+    #introOverlay {
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .animate-marquee-reverse {
-      display: flex;
-      width: max-content;
-      animation: marquee-reverse 40s linear infinite;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Hide scrollbar for category tabs */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    #introOverlay.hide {
+      opacity: 0;
+      transform: scale(1.02);
+      pointer-events: none;
     }
   </style>
 </head>
-<body class="bg-[#F2F5F9] text-[#0F172A] antialiased selection:bg-[#0F172A] selection:text-white">
 
-  <!-- ── NAVIGATION HEADER ── -->
-  <header class="sticky top-0 z-40 bg-[#F2F5F9]/85 backdrop-blur-md border-b border-slate-200/60 transition-all duration-200">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-18 flex items-center justify-between">
-      
-      <!-- Logo -->
-      <a href="#top" class="flex items-center gap-3 cursor-pointer select-none group">
-        <div class="w-9 h-9 rounded-xl bg-white shadow-sm border border-slate-200/80 p-1.5 flex items-center justify-center transition-transform group-hover:scale-105">
-          <img src="public/fuera-logo.png" alt="FUERA Tech Solutions" class="w-full h-full object-contain" />
+<body class="min-h-screen bg-[#FAF9F6] text-[#121214] antialiased selection:bg-[#E6002A] selection:text-white">
+
+  <!-- ── 1. ANIMATED OPENING SEQUENCE ── -->
+  <div id="introOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#FAF9F6] text-[#121214] overflow-hidden select-none">
+    <!-- Corner markers -->
+    <div class="absolute top-6 left-6 text-[10px] font-mono tracking-[0.25em] text-[#121214]/40 uppercase flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A] animate-pulse"></span>
+      FUERA // 01 TECH • 02 MARKETING
+    </div>
+    <div class="absolute top-6 right-6 text-[10px] font-mono tracking-[0.25em] text-[#121214]/40 uppercase hidden sm:block">
+      BANGALORE [HQ] • 12.9352° N, 77.6245° E
+    </div>
+    <div class="absolute bottom-6 left-6 text-[10px] font-mono tracking-[0.2em] text-[#121214]/35 uppercase">
+      BRAND ARCHITECTURE 2026
+    </div>
+
+    <!-- Centerpiece Content Box -->
+    <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-xl">
+      <!-- Emblem Reveal -->
+      <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center mb-6">
+        <div class="absolute inset-0 rounded-full bg-[#E6002A]/20 blur-xl animate-pulse"></div>
+        <div class="absolute -inset-2 border border-[#E6002A]/30 rounded-2xl"></div>
+        <img src="public/fuera-eagle-emblem.png" alt="FUERA Emblem" class="w-full h-full object-contain filter drop-shadow-sm" />
+      </div>
+
+      <!-- Typographic reveal: FUERA -->
+      <div class="overflow-hidden mb-2">
+        <h1 class="text-4xl sm:text-5xl font-black tracking-[0.28em] text-[#121214] uppercase pl-[0.28em]" style="font-family: 'Poppins', sans-serif;">
+          FUERA
+        </h1>
+      </div>
+
+      <!-- Department duality subtitle reveal -->
+      <div class="overflow-hidden flex flex-col items-center">
+        <div class="flex items-center gap-3 text-xs sm:text-sm font-medium tracking-[0.2em] text-[#121214]/75 uppercase mt-1">
+          <span>Tech Solutions</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A]"></span>
+          <span>Digital Marketing</span>
         </div>
-        <span class="font-bold text-xl tracking-tight text-[#0F172A] font-mono">
-          FUERA Tech Solutions
-        </span>
-      </a>
+        <div class="text-[11px] font-mono tracking-[0.35em] text-[#121214]/40 uppercase mt-3">
+          TWO BRANCHES • ONE FUERA
+        </div>
+      </div>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
-        <button onclick="filterCategory('our-story')" class="hover:text-black transition-colors cursor-pointer">
-          Our Story
-        </button>
-        <button onclick="filterCategory('what-we-do')" class="hover:text-black transition-colors cursor-pointer">
-          What We Do
-        </button>
-        <button onclick="filterCategory('culture')" class="hover:text-black transition-colors cursor-pointer">
-          Culture
-        </button>
-        <button onclick="filterCategory('tools-tech')" class="hover:text-black transition-colors cursor-pointer">
-          Tools &amp; Tech
-        </button>
-        <button onclick="filterCategory('careers')" class="hover:text-black transition-colors cursor-pointer">
-          Careers
-        </button>
-        <button onclick="filterCategory('vendors')" class="hover:text-black transition-colors cursor-pointer">
-          Vendors
-        </button>
-        <button onclick="filterCategory('investors')" class="hover:text-black transition-colors cursor-pointer">
-          Investors
-        </button>
-      </nav>
-
-      <!-- Right Header Action -->
-      <div class="flex items-center gap-3">
-        <button
-          onclick="openModal('contactModal')"
-          class="hidden sm:inline-flex items-center gap-2 bg-[#0F172A] hover:bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all cursor-pointer"
-        >
-          <span>Get in Touch</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-
-        <button
-          onclick="toggleMobileMenu()"
-          class="lg:hidden p-2 text-slate-700 hover:text-black"
-          aria-label="Toggle Menu"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+      <!-- Progress bar -->
+      <div class="w-48 h-[2px] bg-[#121214]/10 rounded-full mt-8 overflow-hidden">
+        <div id="introProgress" class="h-full bg-[#E6002A] w-0 transition-all duration-[2400ms] ease-out"></div>
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#F2F5F9] border-b border-slate-200 px-6 py-5 shadow-lg">
-      <div class="flex flex-col gap-3 text-sm font-semibold text-slate-800">
-        <button onclick="filterCategory('our-story'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Our Story
-        </button>
-        <button onclick="filterCategory('what-we-do'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          What We Do
-        </button>
-        <button onclick="filterCategory('culture'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Culture
-        </button>
-        <button onclick="filterCategory('tools-tech'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Tools &amp; Tech
-        </button>
-        <button onclick="filterCategory('careers'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Careers
-        </button>
-        <button onclick="filterCategory('vendors'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Vendors
-        </button>
-        <button onclick="filterCategory('investors'); toggleMobileMenu();" class="text-left py-2 hover:text-[#0099ff]">
-          Investor Relations
-        </button>
-        <div class="pt-3 border-t border-slate-200">
-          <button
-            onclick="openModal('contactModal'); toggleMobileMenu();"
-            class="w-full bg-[#0F172A] text-white py-3 rounded-full font-bold flex items-center justify-center gap-2"
-          >
-            <span>Get in Touch</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </button>
-        </div>
+    <!-- Skip Button -->
+    <button onclick="dismissIntro()" class="absolute bottom-6 right-6 text-[11px] font-mono tracking-[0.18em] text-[#121214]/50 hover:text-[#E6002A] uppercase transition-colors flex items-center gap-1.5 cursor-pointer">
+      <span>Skip Intro</span>
+      <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#121214]/5 border border-[#121214]/10">ESC</span>
+    </button>
+  </div>
+
+  <!-- ── 2. TOP METADATA BAR & NAVBAR ── -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#121214]/8 transition-all">
+    <!-- Meta Bar -->
+    <div class="hidden lg:flex items-center justify-between px-8 py-1.5 text-[10px] font-mono tracking-[0.2em] text-[#121214]/50 border-b border-[#121214]/5 bg-[#F4F3EE]/60">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 font-bold text-[#E6002A]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A] animate-pulse"></span>
+          FUERA TWO-DEPARTMENT ARCHITECTURE
+        </span>
+        <span>•</span>
+        <span>BANGALORE HQ: KORAMANGALA 5TH BLOCK</span>
       </div>
+      <div class="flex items-center gap-6">
+        <button onclick="replayIntro()" class="hover:text-[#E6002A] flex items-center gap-1 cursor-pointer transition-colors">
+          <span>↺ REPLAY INTRO</span>
+        </button>
+        <span>•</span>
+        <a href="tel:+919449658382" class="hover:text-[#E6002A] transition-colors">+91 94496 58382</a>
+        <span>•</span>
+        <a href="mailto:fuera.solutions.23@gmail.com" class="hover:text-[#E6002A] transition-colors">fuera.solutions.23@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-6">
+      <!-- Logo Lockup -->
+      <a href="#top" class="flex items-center gap-3.5 group cursor-pointer select-none">
+        <div class="w-10 h-10 rounded-xl bg-white border border-[#121214]/10 p-1 shadow-xs flex items-center justify-center transition-transform group-hover:scale-105">
+          <img src="public/fuera-logo.png" alt="FUERA Emblem" class="w-full h-full object-contain" />
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5 leading-none">
+            <span class="font-black text-2xl tracking-[0.2em] text-[#121214]" style="font-family: 'Poppins', sans-serif;">
+              FUERA
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A]"></span>
+          </div>
+          <span class="text-[9px] font-mono tracking-[0.22em] text-[#121214]/50 uppercase mt-0.5">
+            TECH SOLUTIONS &amp; DIGITAL MARKETING
+          </span>
+        </div>
+      </a>
+
+      <!-- Department Quick Tabs -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#EFECE6] p-1 rounded-full border border-[#121214]/5 text-xs font-medium">
+        <a href="#departments-section" class="px-4 py-1.5 rounded-full bg-white text-[#121214] font-bold shadow-xs transition-all">
+          Unified Brand
+        </a>
+        <a href="#tech-solutions" class="px-4 py-1.5 rounded-full text-[#121214]/60 hover:text-[#121214] flex items-center gap-1.5 transition-all">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A]"></span>
+          01 Tech Solutions
+        </a>
+        <a href="#digital-marketing" class="px-4 py-1.5 rounded-full text-[#121214]/60 hover:text-[#121214] flex items-center gap-1.5 transition-all">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A]"></span>
+          02 Digital Marketing
+        </a>
+      </nav>
+
+      <!-- Right Action Links -->
+      <div class="hidden lg:flex items-center gap-5 text-xs font-semibold">
+        <a href="#synergy-matrix" class="text-[#121214]/70 hover:text-[#E6002A] transition-colors">Synergy</a>
+        <a href="#case-studies" class="text-[#121214]/70 hover:text-[#E6002A] transition-colors">Case Studies</a>
+        <a href="#leadership" class="text-[#121214]/70 hover:text-[#E6002A] transition-colors">Leadership</a>
+        <button onclick="openEnquiryModal('Both Departments (Full Spectrum Integration)')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#121214] hover:bg-[#E6002A] text-white text-xs font-bold tracking-wider uppercase transition-all shadow-xs cursor-pointer group">
+          <span>Consultation</span>
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-white border border-[#121214]/10 flex items-center justify-center text-[#121214] cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-[#121214]/8 bg-[#FAF9F6] px-6 py-6 space-y-4">
+      <div class="flex flex-col gap-2">
+        <span class="text-[10px] font-mono tracking-widest text-[#121214]/40 uppercase">Departments</span>
+        <a href="#tech-solutions" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#121214]/8 text-left font-bold text-sm">
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#E6002A]"></span>
+            01 FUERA Tech Solutions
+          </span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#digital-marketing" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#121214]/8 text-left font-bold text-sm">
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#E6002A]"></span>
+            02 FUERA Digital Marketing
+          </span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="pt-2 flex flex-col gap-2 text-sm font-semibold text-[#121214]/75">
+        <a href="#synergy-matrix" onclick="toggleMobileMenu()" class="text-left py-1 hover:text-[#E6002A]">Synergy Matrix</a>
+        <a href="#case-studies" onclick="toggleMobileMenu()" class="text-left py-1 hover:text-[#E6002A]">Verified Case Studies</a>
+        <a href="#leadership" onclick="toggleMobileMenu()" class="text-left py-1 hover:text-[#E6002A]">Executive Leadership Team</a>
+        <a href="#contact-section" onclick="toggleMobileMenu()" class="text-left py-1 hover:text-[#E6002A]">Bangalore HQ &amp; Contact</a>
+      </div>
+
+      <button onclick="toggleMobileMenu(); openEnquiryModal('Both Departments (Full Spectrum Integration)');" class="w-full py-3.5 rounded-xl bg-[#E6002A] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+        <span>Request Project Consultation</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
     </div>
   </header>
 
-  <!-- ── HERO SECTION ── -->
-  <section id="top" class="relative pt-12 sm:pt-16 pb-12 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center">
+  <!-- ── 3. HERO: DUAL-DEPARTMENT DIGITAL EXPERIENCE ── -->
+  <section id="top" class="relative pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10 text-center flex flex-col items-center">
       
       <!-- Eyebrow Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200/90 shadow-2xs mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span class="text-[11px] font-mono font-bold tracking-[0.25em] text-slate-700 uppercase">
-          DEPLOY
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#121214]/10 shadow-xs mb-8">
+        <span class="w-2 h-2 rounded-full bg-[#E6002A] animate-pulse"></span>
+        <span class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#121214] uppercase">
+          TWO BRANCHES • ONE FUERA
         </span>
+        <span class="text-[#121214]/30">•</span>
+        <span class="text-[11px] font-mono text-[#121214]/60">BANGALORE, INDIA</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-[#0F172A] tracking-tight leading-[1.06] max-w-4xl mb-6 uppercase">
-        IMPACTFUL TECHNOLOGIES TO RESHAPE INDUSTRIES
+      <!-- Editorial Headline -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-[#121214] tracking-tight leading-[1.05] max-w-5xl mb-6 uppercase" style="font-family: 'Poppins', sans-serif;">
+        BUILD THE <span class="text-[#E6002A]">FUTURE</span> OF YOUR BUSINESS.
       </h1>
 
-      <!-- Subtext -->
-      <p class="text-slate-600 text-base sm:text-xl font-normal max-w-2xl leading-relaxed mb-10">
-        At FUERA Tech Solutions, we integrate cutting-edge technologies to shape and revolutionize industries.
+      <!-- Editorial Subtitle -->
+      <p class="text-base sm:text-xl text-[#121214]/70 font-normal max-w-3xl leading-relaxed mb-12">
+        FUERA operates across two dedicated departments under a unified standard of excellence — precision technology engineering and data-driven creative growth.
       </p>
 
-      <!-- Archimedes Lever Philosophy Quote Card -->
-      <div class="w-full max-w-3xl bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-xs text-left mb-12 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1.5 h-full bg-[#0099ff]"></div>
-        <div class="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#0099ff] mb-2.5">
-          <span>Philosophy</span>
-          <span>•</span>
-          <span>The Archimedes Lever</span>
+      <!-- Dual Department Hero Showcase Cards -->
+      <div id="departments-section" class="w-full grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl text-left mb-16">
+        
+        <!-- Card 01 — FUERA Tech Solutions -->
+        <a href="#tech-solutions" class="group relative bg-white border border-[#121214]/10 hover:border-[#121214]/30 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-[#121214]"></div>
+
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#E6002A]"></span>
+                <span class="text-[10px] font-mono font-bold tracking-[0.25em] text-[#121214]/60 uppercase">
+                  DEPARTMENT 01
+                </span>
+              </div>
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#F4F3EE] text-[#121214]">
+                ENGINEERING
+              </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h2 class="text-2xl sm:text-3xl font-black text-[#121214] mb-1.5 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+                  FUERA Tech Solutions
+                </h2>
+                <p class="text-xs font-mono font-bold tracking-wider text-[#E6002A] uppercase mb-4">
+                  Innovate. Develop. Transform.
+                </p>
+              </div>
+              <div class="w-20 h-20 shrink-0 flex items-center justify-center p-1 bg-[#F9F8F6] rounded-2xl border border-[#121214]/5 group-hover:scale-105 transition-transform">
+                <img src="public/card-laptop.png" alt="FUERA Tech Solutions" class="w-full h-full object-contain" />
+              </div>
+            </div>
+
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Specialized engineering of custom web applications, React/Next.js architectures, modern digital storefronts, and sub-second business platforms.
+            </p>
+
+            <div class="grid grid-cols-2 gap-2 text-xs font-medium text-[#121214]/80 mb-6">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Custom Web Engines</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Clean TypeScript Code</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Sub-Second Load Time</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Full Security &amp; SLAs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-[#121214]/8 flex items-center justify-between text-xs font-bold text-[#121214]">
+            <span class="flex items-center gap-1.5 group-hover:text-[#E6002A] transition-colors">
+              <span>Explore Tech Solutions</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+            <span class="font-mono text-[#121214]/40 text-[11px]">01 // TECH</span>
+          </div>
+        </a>
+
+        <!-- Card 02 — FUERA Digital Marketing -->
+        <a href="#digital-marketing" class="group relative bg-white border border-[#121214]/10 hover:border-[#E6002A]/40 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-[#E6002A]"></div>
+
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#E6002A]"></span>
+                <span class="text-[10px] font-mono font-bold tracking-[0.25em] text-[#121214]/60 uppercase">
+                  DEPARTMENT 02
+                </span>
+              </div>
+              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#FFEBEF] text-[#E6002A]">
+                CREATIVE &amp; GROWTH
+              </span>
+            </div>
+
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h2 class="text-2xl sm:text-3xl font-black text-[#121214] mb-1.5 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+                  FUERA Digital Marketing
+                </h2>
+                <p class="text-xs font-mono font-bold tracking-wider text-[#E6002A] uppercase mb-4">
+                  Strategize. Create. Grow.
+                </p>
+              </div>
+              <div class="w-20 h-20 shrink-0 flex items-center justify-center p-1 bg-[#F9F8F6] rounded-2xl border border-[#121214]/5 group-hover:scale-105 transition-transform">
+                <img src="public/card-megaphone.png" alt="FUERA Digital Marketing" class="w-full h-full object-contain" />
+              </div>
+            </div>
+
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Targeted performance marketing, Google &amp; Local SEO dominance, high-impact short-form video creation, and measurable full-funnel customer acquisition.
+            </p>
+
+            <div class="grid grid-cols-2 gap-2 text-xs font-medium text-[#121214]/80 mb-6">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Google SEO Dominance</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Meta &amp; Google Ads (ROAS)</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Viral Reels &amp; Content</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="text-[#E6002A] font-bold">✓</span>
+                <span>Review &amp; Brand Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-[#121214]/8 flex items-center justify-between text-xs font-bold text-[#121214]">
+            <span class="flex items-center gap-1.5 group-hover:text-[#E6002A] transition-colors">
+              <span>Explore Digital Marketing</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+            <span class="font-mono text-[#121214]/40 text-[11px]">02 // GROWTH</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="w-full max-w-5xl bg-white border border-[#121214]/8 rounded-2xl p-6 sm:p-8 shadow-2xs grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-black text-[#121214] tracking-tight" style="font-family: 'Poppins', sans-serif;">50+</div>
+          <div class="text-xs font-bold text-[#121214] uppercase tracking-wider">Verified Partner Brands</div>
+          <div class="text-[11px] text-[#121214]/50">Startups &amp; Enterprises</div>
         </div>
-        <p class="text-sm sm:text-base text-slate-700 leading-relaxed italic font-serif">
-          “As Archimedes once said, with a lever long enough and a stable fulcrum, he can move the world. We believe in the power of technology to act as a lever for positive change. We leverage AI to create solutions that improve lives and build a better future.”
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-black text-[#121214] tracking-tight" style="font-family: 'Poppins', sans-serif;">3×</div>
+          <div class="text-xs font-bold text-[#121214] uppercase tracking-wider">Average Growth Impact</div>
+          <div class="text-[11px] text-[#121214]/50">Measurable Lead Velocity</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-black text-[#121214] tracking-tight" style="font-family: 'Poppins', sans-serif;">12+</div>
+          <div class="text-xs font-bold text-[#121214] uppercase tracking-wider">Cities Across India</div>
+          <div class="text-[11px] text-[#121214]/50">Bangalore HQ &amp; Regional Reach</div>
+        </div>
+        <div class="space-y-1">
+          <div class="text-3xl sm:text-4xl font-black text-[#121214] tracking-tight" style="font-family: 'Poppins', sans-serif;">100%</div>
+          <div class="text-xs font-bold text-[#121214] uppercase tracking-wider">In-House Execution</div>
+          <div class="text-[11px] text-[#121214]/50">Zero Outsourcing • Strict SLAs</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 4. DEPARTMENT 01: FUERA TECH SOLUTIONS ── -->
+  <section id="tech-solutions" class="py-20 sm:py-28 bg-[#F4F3EE]/60 border-t border-[#121214]/8 relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#121214]"></span>
+            <span class="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#121214]">
+              DEPARTMENT 01 // DIGITAL TECHNOLOGY SOLUTIONS
+            </span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#121214] tracking-tight max-w-2xl" style="font-family: 'Poppins', sans-serif;">
+            High-Performance Web &amp; Software Engineering.
+          </h2>
+        </div>
+        <p class="text-sm text-[#121214]/70 max-w-md leading-relaxed">
+          We architect digital platforms built for scale, lightning-fast execution, and seamless user experiences. No templates, no bloated codebases — only custom, production-grade systems.
         </p>
       </div>
 
-      <!-- ── INFINITE MARQUEE TICKER ── -->
-      <div class="w-full overflow-hidden relative py-2">
-        
-        <!-- Ticker Row 1 -->
-        <div class="overflow-hidden select-none mb-3 py-1">
-          <div class="animate-marquee gap-3 flex">
-            <!-- Row 1 Pills -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Google Drive</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Slack</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Figma</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Asana</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Google Ads</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Facebook Ads</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Adobe Creative Cloud</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>SpaceX</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Nvidia</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>OpenAI ChatGPT</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Google Gemini</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>GitHub</div>
-            <!-- Duplicate for smooth infinite loop -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Google Drive</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Slack</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Figma</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Asana</div>
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <!-- Service 1 -->
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs hover:border-[#121214]/25 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#121214] group-hover:bg-[#121214] group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <span class="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-[#F4F3EE] text-[#121214]">&lt;1.5s Load Speed</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#121214] mb-3 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+              High-Performance Website Development
+            </h3>
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Custom-crafted web solutions built with modern frameworks (React, Vite, Next.js). Engineered for sub-second load times, mobile-first responsiveness, and structured SEO architecture.
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-[#121214]/80">
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> React &amp; Next.js Modern Architecture</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Sub-second Core Web Vitals optimization</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Semantic HTML5 &amp; JSON-LD Rich Schema</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#121214]/6 flex items-center justify-between">
+            <button onclick="openEnquiryModal('Department 01 — FUERA Tech Solutions')" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#121214] hover:text-[#E6002A] transition-colors cursor-pointer">
+              <span>Request Engineering Scope</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <span class="text-[10px] font-mono text-[#121214]/40">SLA GUARANTEED</span>
           </div>
         </div>
 
-        <!-- Ticker Row 2 -->
-        <div class="overflow-hidden select-none py-1">
-          <div class="animate-marquee-reverse gap-3 flex">
-            <!-- Row 2 Pills -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Notion</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Airtable</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Canva</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>DocuSign</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Miro</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>SCB Anywhere</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Webflow</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Fireflies.ai</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Stripe</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Discord</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Amazon AWS</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>HubSpot</div>
-            <!-- Duplicate for loop -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Notion</div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 text-xs font-medium text-slate-700 shadow-2xs shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Airtable</div>
+        <!-- Service 2 -->
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs hover:border-[#121214]/25 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#121214] group-hover:bg-[#121214] group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+              </div>
+              <span class="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-[#F4F3EE] text-[#121214]">100% Custom Engineered</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#121214] mb-3 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+              Custom Web Applications &amp; Software
+            </h3>
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Tailored business applications, interactive portals, and software engines designed to streamline customer workflows, internal operations, and revenue generation.
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-[#121214]/80">
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Custom business logic &amp; workflow automation</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Robust REST &amp; GraphQL API integrations</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Enterprise security &amp; access control</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#121214]/6 flex items-center justify-between">
+            <button onclick="openEnquiryModal('Department 01 — FUERA Tech Solutions')" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#121214] hover:text-[#E6002A] transition-colors cursor-pointer">
+              <span>Request Engineering Scope</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <span class="text-[10px] font-mono text-[#121214]/40">SLA GUARANTEED</span>
           </div>
         </div>
+      </div>
 
+      <!-- Tech Case Studies -->
+      <div class="bg-white border border-[#121214]/8 rounded-3xl p-8 sm:p-10 shadow-xs">
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#121214]/8">
+          <div>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#E6002A] block mb-1">PROVEN CLIENT WORK</span>
+            <h3 class="text-xl sm:text-2xl font-black text-[#121214]">Tech Solutions Case Studies</h3>
+          </div>
+          <span class="text-xs font-mono text-[#121214]/50">3 VERIFIED CASE STUDIES</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">RetailX</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">E-Commerce</span>
+              </div>
+              <div class="text-2xl font-black text-[#121214] mb-3" style="font-family: 'Poppins', sans-serif;">3× Inbound Leads</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Re-engineered frontend using modern React architecture, sub-second caching, and streamlined mobile checkout.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">&lt;1.2s Load Speed</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">+180% Organic Reach</span>
+            </div>
+          </div>
+
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">HealthPro Clinics</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">Healthcare</span>
+              </div>
+              <div class="text-2xl font-black text-[#121214] mb-3" style="font-family: 'Poppins', sans-serif;">2× Patient Enquiries</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Engineered a lightning-fast clinic web app with one-tap WhatsApp API booking and automated doctor calendars.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">120+ Monthly Leads</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">&lt;1.5s Speed</span>
+            </div>
+          </div>
+
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">CoreTech Engineering</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">Industrial Tech</span>
+              </div>
+              <div class="text-2xl font-black text-[#121214] mb-3" style="font-family: 'Poppins', sans-serif;">Pan-India Expansion</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Built a headless web platform with dynamic parametric filtering and instant PDF specification generation.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">12 Major Cities</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">Zero Latency</span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── FILTER TABS BAR ── -->
-  <section id="cards-section" class="sticky top-18 z-30 bg-[#F2F5F9]/95 backdrop-blur-md py-4 border-b border-slate-200/60">
+  <!-- ── 5. DEPARTMENT 02: FUERA DIGITAL MARKETING ── -->
+  <section id="digital-marketing" class="py-20 sm:py-28 bg-[#FAF9F6] border-t border-[#121214]/8 relative">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar" id="tabButtons">
-        <button onclick="filterCategory('all')" id="tab-all" class="category-btn active px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-[#0F172A] text-white shadow-xs cursor-pointer">
-          All
-        </button>
-        <button onclick="filterCategory('our-story')" id="tab-our-story" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Our Story
-        </button>
-        <button onclick="filterCategory('vision')" id="tab-vision" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Vision
-        </button>
-        <button onclick="filterCategory('tools-tech')" id="tab-tools-tech" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Tools &amp; Technology
-        </button>
-        <button onclick="filterCategory('culture')" id="tab-culture" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Culture
-        </button>
-        <button onclick="filterCategory('what-we-do')" id="tab-what-we-do" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          What We Do
-        </button>
-        <button onclick="filterCategory('careers')" id="tab-careers" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Careers
-        </button>
-        <button onclick="filterCategory('vendors')" id="tab-vendors" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Vendors
-        </button>
-        <button onclick="filterCategory('investors')" id="tab-investors" class="category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer">
-          Investor Relations
-        </button>
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#E6002A]"></span>
+            <span class="text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#E6002A]">
+              DEPARTMENT 02 // CREATIVE &amp; GROWTH MARKETING
+            </span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#121214] tracking-tight max-w-2xl" style="font-family: 'Poppins', sans-serif;">
+            Data-Driven Growth, SEO &amp; Visual Storytelling.
+          </h2>
+        </div>
+        <p class="text-sm text-[#121214]/70 max-w-md leading-relaxed">
+          We engineer scalable customer acquisition systems that blend algorithmic performance ads, dominant local search rankings, and creative content that captures and holds attention.
+        </p>
       </div>
+
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <!-- Service 1 -->
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs hover:border-[#E6002A]/30 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#E6002A] group-hover:bg-[#E6002A] group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              </div>
+              <span class="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-[#FFEBEF] text-[#E6002A]">Top 3 Google Rankings</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#121214] mb-3 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+              Google Search Engine Optimization (SEO)
+            </h3>
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Comprehensive on-page, off-page, and technical SEO designed to secure top 3 Google positions for high-intent business keywords and dominant Bangalore local map packs.
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-[#121214]/80">
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> High-intent keyword mapping &amp; search clustering</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Google Business Profile local map pack dominance</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Authority content architecture &amp; link equity</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#121214]/6 flex items-center justify-between">
+            <button onclick="openEnquiryModal('Department 02 — FUERA Digital Marketing')" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#121214] hover:text-[#E6002A] transition-colors cursor-pointer">
+              <span>Request Growth Strategy</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <span class="text-[10px] font-mono text-[#121214]/40">VERIFIED ATTRIBUTION</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs hover:border-[#E6002A]/30 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#E6002A] group-hover:bg-[#E6002A] group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+              </div>
+              <span class="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-[#FFEBEF] text-[#E6002A]">40%+ Lower Cost Per Lead</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-[#121214] mb-3 group-hover:text-[#E6002A] transition-colors" style="font-family: 'Poppins', sans-serif;">
+              Performance Marketing (Meta &amp; Google Ads)
+            </h3>
+            <p class="text-sm text-[#121214]/70 leading-relaxed mb-6">
+              Data-driven paid advertising across Google Search, YouTube, Instagram, and Facebook. Continuous A/B split-testing that maximizes Return On Ad Spend (ROAS).
+            </p>
+            <ul class="space-y-2 mb-6 text-xs text-[#121214]/80">
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Precision geo-targeting &amp; custom audience cohorts</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> High-converting landing page click attribution</li>
+              <li class="flex items-center gap-2"><span class="text-[#E6002A] font-bold">✓</span> Weekly analytics dashboards &amp; transparent ROAS</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-[#121214]/6 flex items-center justify-between">
+            <button onclick="openEnquiryModal('Department 02 — FUERA Digital Marketing')" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#121214] hover:text-[#E6002A] transition-colors cursor-pointer">
+              <span>Request Growth Strategy</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <span class="text-[10px] font-mono text-[#121214]/40">VERIFIED ATTRIBUTION</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing Case Studies -->
+      <div class="bg-white border border-[#121214]/8 rounded-3xl p-8 sm:p-10 shadow-xs">
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#121214]/8">
+          <div>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#E6002A] block mb-1">PROVEN CLIENT WORK</span>
+            <h3 class="text-xl sm:text-2xl font-black text-[#121214]">Digital Marketing Case Studies</h3>
+          </div>
+          <span class="text-xs font-mono text-[#121214]/50">3 VERIFIED CASE STUDIES</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">ZuddhaHerbs</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">Ayurveda / D2C</span>
+              </div>
+              <div class="text-2xl font-black text-[#E6002A] mb-3" style="font-family: 'Poppins', sans-serif;">₹50L+ Revenue Impact</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Deployed a full-funnel digital growth strategy: performance Meta Ads, educational video Reels, and customer retention.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">8,000+ Orders</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">500K+ Reach</span>
+            </div>
+          </div>
+
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">BuildRight Real Estate</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">Property</span>
+              </div>
+              <div class="text-2xl font-black text-[#E6002A] mb-3" style="font-family: 'Poppins', sans-serif;">₹2Cr+ Qualified Leads</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Restructured Google Search with high-intent property buyer keywords and geo-fenced Meta luxury lead forms.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">85+ Leads/mo</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">−40% Cost/Lead</span>
+            </div>
+          </div>
+
+          <div class="bg-[#FAF9F6] border border-[#121214]/6 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-bold text-[#121214]">EduTech Solutions</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white border border-[#121214]/10 text-[#121214]/70">Education</span>
+              </div>
+              <div class="text-2xl font-black text-[#E6002A] mb-3" style="font-family: 'Poppins', sans-serif;">3× Enrolments</div>
+              <p class="text-xs text-[#121214]/70 leading-relaxed mb-4">
+                Executed technical on-page Google SEO alongside a daily student-centric short-form Reels campaign.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#121214]/6">
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">2K → 11K Followers</span>
+              <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white border border-[#121214]/8">+200% SEO Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── CARDS BENTO GRID ── -->
-  <section class="py-12 max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="space-y-16" id="bentoContainer">
+  <!-- ── 6. SYNERGY MATRIX ── -->
+  <section id="synergy-matrix" class="py-20 sm:py-24 bg-[#F4F3EE]/80 border-t border-[#121214]/8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#E6002A] uppercase block mb-3">
+          THE FULL-SPECTRUM ADVANTAGE
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#121214] tracking-tight mb-4 uppercase" style="font-family: 'Poppins', sans-serif;">
+          How Tech &amp; Marketing Multiply Each Other.
+        </h2>
+        <p class="text-sm sm:text-base text-[#121214]/70 leading-relaxed">
+          Most businesses lose revenue because their web development team and marketing agency work in separate silos. At FUERA, code and creative are engineered together from day one.
+        </p>
+      </div>
 
-      <!-- ── SECTION: OUR STORY & VISION ── -->
-      <div id="sec-our-story" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">FOUNDATION</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Our Story &amp; Vision</h2>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">01 // Purpose</span>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#E6002A] mb-5 font-bold">⚡</div>
+          <h3 class="text-lg font-bold text-[#121214] mb-2" style="font-family: 'Poppins', sans-serif;">Speed Lowers Ad Cost (PPC)</h3>
+          <p class="text-xs text-[#121214]/70 leading-relaxed">
+            When FUERA Tech builds a sub-second web platform, Google and Meta assign higher Quality Scores to your ads — slashing your Cost Per Click (CPC) and boosting landing page conversion.
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- Mission -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0099ff] mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-              </div>
-              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">MISSION</span>
-              <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">Empowering Real-World Impact</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                To develop and deploy cutting-edge technology that empowers individuals, businesses, and communities to overcome real-world problems and thrive.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-[#0099ff]">
-              <span>Humanity-first innovation</span>
-            </div>
-          </div>
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#E6002A] mb-5 font-bold">🔍</div>
+          <h3 class="text-lg font-bold text-[#121214] mb-2" style="font-family: 'Poppins', sans-serif;">Clean Code Accelerates SEO</h3>
+          <p class="text-xs text-[#121214]/70 leading-relaxed">
+            Our developers write semantic HTML5 and JSON-LD schema right alongside our marketing SEO strategists, ensuring Google crawl bots index and rank your pages in record time.
+          </p>
+        </div>
 
-          <!-- Vision -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-              </div>
-              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">VISION</span>
-              <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">Leading Force in AI Solutions</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Provide the people access to the world’s impactful technology which tie into the belief that compassion and invention mindset is humanity’s greatest ability. To be the leading force in AI-powered solutions transforming how we address global needs.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-purple-600">
-              <span>Compassion + Invention</span>
-            </div>
-          </div>
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-[#121214]/10 flex items-center justify-center text-[#E6002A] mb-5 font-bold">🎨</div>
+          <h3 class="text-lg font-bold text-[#121214] mb-2" style="font-family: 'Poppins', sans-serif;">Brand Cohesion Builds Trust</h3>
+          <p class="text-xs text-[#121214]/70 leading-relaxed">
+            Every customer touchpoint — from social Reels and Google Search to the live website checkout — feels unified, premium, and trustworthy, maximizing client lifetime value.
+          </p>
+        </div>
+      </div>
 
-          <!-- New Era -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between md:col-span-2 lg:col-span-1">
-            <div>
-              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    </div>
+  </section>
+
+  <!-- ── 7. VERIFIED EXECUTIVE LEADERSHIP ── -->
+  <section id="leadership" class="py-20 sm:py-28 bg-white border-t border-[#121214]/8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#E6002A] block mb-2">
+            WHO WE ARE // PROVEN LEADERSHIP
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black text-[#121214] tracking-tight" style="font-family: 'Poppins', sans-serif;">
+            Executive Leadership Team.
+          </h2>
+        </div>
+        <p class="text-sm text-[#121214]/70 max-w-md leading-relaxed">
+          Meet the executive leadership driving FUERA's technological innovation, web development standards, and creative digital marketing strategies.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- R. Akash -->
+        <div class="bg-[#FAF9F6] border border-[#121214]/8 rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-full aspect-square rounded-2xl bg-white border border-[#121214]/8 overflow-hidden mb-6 flex items-center justify-center relative">
+              <img src="public/founder.png" alt="R. Akash" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[10px] font-mono font-bold border border-[#121214]/10">
+                Executive Leadership
               </div>
-              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">NEW ERA</span>
-              <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">Reshaping Industries with AI</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                We cultivate an agile, high-velocity technological ecosystem. By combining proprietary AI agents, scalable cloud platforms, and fearless strategy, we unlock exponential efficiency for modern operations.
-              </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
-              <span>Scalable architecture</span>
+            <h3 class="text-xl font-bold text-[#121214] mb-1" style="font-family: 'Poppins', sans-serif;">R. Akash</h3>
+            <p class="text-xs font-mono font-semibold text-[#E6002A] uppercase mb-3">Founder</p>
+            <p class="text-xs text-[#121214]/70 leading-relaxed">
+              Visionary leader driving the core expansion and technical direction of FUERA.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-[#121214]/6 flex items-center justify-between text-[11px] text-[#121214]/40 font-mono">
+            <span>BANGALORE HQ</span>
+            <span>FUERA EXECUTIVE</span>
+          </div>
+        </div>
+
+        <!-- Niranjith M -->
+        <div class="bg-[#FAF9F6] border border-[#121214]/8 rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-full aspect-square rounded-2xl bg-white border border-[#121214]/8 overflow-hidden mb-6 flex items-center justify-center relative">
+              <img src="public/cofounder.png" alt="Niranjith M" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[10px] font-mono font-bold border border-[#121214]/10">
+                Executive Leadership
+              </div>
             </div>
+            <h3 class="text-xl font-bold text-[#121214] mb-1" style="font-family: 'Poppins', sans-serif;">Niranjith M</h3>
+            <p class="text-xs font-mono font-semibold text-[#E6002A] uppercase mb-3">Co-Founder</p>
+            <p class="text-xs text-[#121214]/70 leading-relaxed">
+              Strategist shaping brand operations, partner networks, and product innovation roadmaps.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-[#121214]/6 flex items-center justify-between text-[11px] text-[#121214]/40 font-mono">
+            <span>BANGALORE HQ</span>
+            <span>FUERA EXECUTIVE</span>
+          </div>
+        </div>
+
+        <!-- Rohith B -->
+        <div class="bg-[#FAF9F6] border border-[#121214]/8 rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-full aspect-square rounded-2xl bg-white border border-[#121214]/8 overflow-hidden mb-6 flex items-center justify-center relative">
+              <img src="public/ceo.png" alt="Rohith B" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[10px] font-mono font-bold border border-[#121214]/10">
+                Executive Leadership
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-[#121214] mb-1" style="font-family: 'Poppins', sans-serif;">Rohith B</h3>
+            <p class="text-xs font-mono font-semibold text-[#E6002A] uppercase mb-3">Chief Executive Officer (CEO)</p>
+            <p class="text-xs text-[#121214]/70 leading-relaxed">
+              Leading execution, client relationships, and business development across all digital verticals.
+            </p>
+          </div>
+          <div class="pt-4 mt-6 border-t border-[#121214]/6 flex items-center justify-between text-[11px] text-[#121214]/40 font-mono">
+            <span>BANGALORE HQ</span>
+            <span>FUERA EXECUTIVE</span>
           </div>
         </div>
       </div>
 
-      <!-- ── SECTION: WHAT WE DO (VENTURES) ── -->
-      <div id="sec-what-we-do" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
+    </div>
+  </section>
+
+  <!-- ── 8. CLIENT ENDORSEMENTS ── -->
+  <section id="testimonials" class="py-20 bg-[#F4F3EE]/60 border-t border-[#121214]/8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-[#E6002A] block mb-2">
+          CLIENT TESTIMONIALS
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black text-[#121214]" style="font-family: 'Poppins', sans-serif;">
+          Trusted by Ambitious Brands.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs flex flex-col justify-between">
           <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">PORTFOLIO &amp; VENTURES</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">What We Do</h2>
+            <div class="flex items-center gap-1 text-[#E6002A] mb-5">★★★★★</div>
+            <p class="text-sm sm:text-base text-[#121214]/80 leading-relaxed italic mb-6">
+              "Working with FUERA has been a game-changer for our retail brand. Their Google Ads strategy and high-speed web rebuild tripled our inbound enquiries within two months."
+            </p>
           </div>
-          <span class="text-xs text-slate-500 font-mono">02 // Impact Ecosystem</span>
+          <div class="pt-4 border-t border-[#121214]/8 flex items-center justify-between">
+            <div>
+              <div class="text-sm font-bold text-[#121214]">Rohan Mehta</div>
+              <div class="text-xs text-[#121214]/50">RetailX Bangalore</div>
+            </div>
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#FAF9F6] border border-[#121214]/8 text-[#121214]/70">Tech &amp; Marketing Integration</span>
+          </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- FUERA Cloud Gaming -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold border bg-emerald-50 text-emerald-700 border-emerald-200">
-                  Cloud Gaming • Official NVIDIA Partner
-                </span>
-                <span class="text-xs font-mono text-slate-400 font-bold uppercase">Gaming &amp; AI</span>
-              </div>
-              <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#0099ff] transition-colors">FUERA Cloud Gaming</h3>
-              <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                Official partner with NVIDIA GeForce NOW, the first cloud gaming platform in the region. Transforming how people play games with ultra-low latency edge streaming across devices.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <a href="https://www.bro.game/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0099ff] hover:underline">
-                <span>Visit Platform</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              </a>
-              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#0099ff] group-hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-            </div>
+        <div class="bg-white border border-[#121214]/8 rounded-3xl p-7 sm:p-9 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-[#E6002A] mb-5">★★★★★</div>
+            <p class="text-sm sm:text-base text-[#121214]/80 leading-relaxed italic mb-6">
+              "FUERA built our clinic website and ran our Meta Ads. The leads we get now are genuinely qualified and booking rates have surged. The team is transparent and truly invested."
+            </p>
           </div>
-
-          <!-- Sciam -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
+          <div class="pt-4 border-t border-[#121214]/8 flex items-center justify-between">
             <div>
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold border bg-blue-50 text-blue-700 border-blue-200">
-                  EdTech • Interactive 3D Platform
-                </span>
-                <span class="text-xs font-mono text-slate-400 font-bold uppercase">Education</span>
-              </div>
-              <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#0099ff] transition-colors">Sciam</h3>
-              <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                Making science accessible to all: an online educational platform that brings interactive 3D science simulations and experiential digital learning to every child.
-              </p>
+              <div class="text-sm font-bold text-[#121214]">Priya Sharma</div>
+              <div class="text-xs text-[#121214]/50">HealthPro Clinics</div>
             </div>
-            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <a href="https://sciam.nsm.or.th/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0099ff] hover:underline">
-                <span>Visit Platform</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              </a>
-              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#0099ff] group-hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lawyer.io -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold border bg-purple-50 text-purple-700 border-purple-200">
-                  LegalTech • Debt Litigation Automation
-                </span>
-                <span class="text-xs font-mono text-slate-400 font-bold uppercase">Legal Automation</span>
-              </div>
-              <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#0099ff] transition-colors">Lawyer.io</h3>
-              <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                The future of debt litigation. Scalable. Efficient. Profitable. Streamlining complex legal proceedings, document automation, and case management with intelligent data workflows.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
-                <span>Internal Deployment</span>
-              </span>
-              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#0099ff] group-hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Deus.space -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between group">
-            <div>
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold border bg-amber-50 text-amber-700 border-amber-200">
-                  Disaster Tech • Early Warning Works
-                </span>
-                <span class="text-xs font-mono text-slate-400 font-bold uppercase">Disaster Tech</span>
-              </div>
-              <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#0099ff] transition-colors">Deus.space</h3>
-              <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                Delivering faster, more accurate disaster alerts. Bypassing bureaucracy to provide real-time community emergency warnings when seconds count. Invest in preparedness.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
-                <span>Internal Deployment</span>
-              </span>
-              <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-[#0099ff] group-hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </div>
-            </div>
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#FAF9F6] border border-[#121214]/8 text-[#121214]/70">Tech Solutions</span>
           </div>
         </div>
       </div>
 
-      <!-- ── SECTION: CULTURE ── -->
-      <div id="sec-culture" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">OUR CORE PRINCIPLES</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Culture &amp; Work Ethos</h2>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">03 // Mindset</span>
-        </div>
+    </div>
+  </section>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- Truth Seeker -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Data First</span>
-                <span class="text-emerald-500">✓</span>
+  <!-- ── 9. BANGALORE HQ & CONSULTATION CONTACT ── -->
+  <section id="contact-section" class="py-20 sm:py-28 bg-white border-t border-[#121214]/8 relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      
+      <div class="bg-[#121214] text-white rounded-3xl p-8 sm:p-14 overflow-hidden relative shadow-xl">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#E6002A]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#E6002A] text-xs font-mono font-bold tracking-wider">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A] animate-ping"></span>
+              INITIATE A NEW PROJECT
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight uppercase" style="font-family: 'Poppins', sans-serif;">
+              Ready to Build the Future of Your Business?
+            </h2>
+
+            <p class="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
+              Whether you require Department 01 (Tech Solutions), Department 02 (Digital Marketing), or an integrated full-funnel strategy, our team responds with a detailed scope and execution plan within 24 hours.
+            </p>
+
+            <div class="pt-2 grid sm:grid-cols-2 gap-4 text-xs text-white/80 font-mono">
+              <div class="flex items-center gap-2">
+                <span class="text-[#E6002A]">📍</span>
+                <span>Koramangala 5th Block, Bangalore 560068</span>
               </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">Truth Seeker</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                We believe in diving deep into data and insights to uncover truths about our work. Our process here is to seek the truth, then make a decision based on what we know.
-              </p>
-            </div>
-          </div>
-
-          <!-- Direct & Kind -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Communication</span>
-                <span class="text-emerald-500">✓</span>
+              <div class="flex items-center gap-2">
+                <span class="text-[#E6002A]">📞</span>
+                <span>+91 94496 58382</span>
               </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">Direct &amp; Kind</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Honesty and kindness go hand-in-hand here. We value direct communication delivered with respect, transparency, and consideration for one another.
-              </p>
-            </div>
-          </div>
-
-          <!-- Backup Plans -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Resilience</span>
-                <span class="text-emerald-500">✓</span>
+              <div class="flex items-center gap-2">
+                <span class="text-[#E6002A]">✉️</span>
+                <span>fuera.solutions.23@gmail.com</span>
               </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">Backup Plans</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                With a proactive mindset, we always have a Plan B (and sometimes even C, D, and E). As everything can go wrong at any time, readiness is our superpower.
-              </p>
-            </div>
-          </div>
-
-          <!-- Value Time -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Efficiency</span>
-                <span class="text-emerald-500">✓</span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">Value Time</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                We optimise our workflows and respect each other's time, ensuring maximum efficiency, minimal bureaucracy, and high productivity in everything we do.
-              </p>
-            </div>
-          </div>
-
-          <!-- No Toxic -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Culture &amp; Care</span>
-                <span class="text-emerald-500">✓</span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">No Toxic</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Zero tolerance for toxicity. Our culture prioritises positivity, safety, and inclusivity. We actively discourage toxic behaviours, whether verbal or mental.
-              </p>
-            </div>
-          </div>
-
-          <!-- Tech - Obsessed -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600">Innovation</span>
-                <span class="text-emerald-500">✓</span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2.5">Tech - Obsessed</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                We integrate all the technology available to work smart. All modern automation, generative AI, and SaaS infrastructure are actively harnessed here!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── SECTION: TOOLS & TECH ── -->
-      <div id="sec-tools-tech" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">INTEGRATED SOFTWARE STACKS</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Tools &amp; Technology</h2>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">04 // Infrastructure</span>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- Card 1: Productivity -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">Operations</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Productivity &amp; Collaboration</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Connect, collaborate, and stay organized seamlessly across teams.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Google Workspace</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Slack</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Asana</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Notion</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Miro</span>
-            </div>
-          </div>
-
-          <!-- Card 2: AI & Automation -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">AI &amp; LLM</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">AI and Automation</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Harness the power of AI to streamline tasks, analyze massive data, and boost execution speed.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">ChatGPT</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Fireflies.ai</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Google Gemini</span>
-            </div>
-          </div>
-
-          <!-- Card 3: Marketing & CRM -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">Growth</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Marketing &amp; CRM</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Manage all customer acquisition channels, programmatic campaigns, and lifecycle relationships.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">HubSpot</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Google Ads</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Meta Ads</span>
-            </div>
-          </div>
-
-          <!-- Card 4: Design & Creative -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">Creative</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Design &amp; Creative</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Unleash creativity with world-class design systems, UI/UX tools, and multimedia production.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Adobe Creative Cloud</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Canva</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Figma</span>
-            </div>
-          </div>
-
-          <!-- Card 5: Data Management -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">Data Infra</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Data Management</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Organize and leverage data with flexible, reliable, and high-performance database infrastructure.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Airtable</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Amazon AWS</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Google Drive</span>
-            </div>
-          </div>
-
-          <!-- Card 6: Finance & Operations -->
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-3">FinTech</span>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Finance &amp; Operations</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">Streamline payments, enterprise billing, event transactions, and automated financial accounting.</p>
-            </div>
-            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Stripe</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">SCB Anywhere</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">AccRevo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── SECTION: CAREERS & BENEFITS ── -->
-      <div id="sec-careers" class="category-section space-y-8">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">WORK WITH US</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Careers &amp; Benefits</h2>
-            <p class="text-slate-600 text-sm mt-1">Enjoy working with us in a supportive environment where you can thrive and enjoy varieties of benefits from day one.</p>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">05 // Talent</span>
-        </div>
-
-        <!-- Benefits Cards -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs">
-            <div class="w-8 h-8 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-2.5 font-bold">♥</div>
-            <div class="font-bold text-xs text-slate-900">HEALTH INSURANCE</div>
-            <div class="text-[11px] text-slate-500 mt-1 leading-snug">Full health coverage benefits after probationary period.</div>
-          </div>
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs">
-            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-500 flex items-center justify-center mb-2.5 font-bold">💻</div>
-            <div class="font-bold text-xs text-slate-900">FULLY EQUIPPED</div>
-            <div class="text-[11px] text-slate-500 mt-1 leading-snug">Modern M-series MacBook &amp; modern devices for every position.</div>
-          </div>
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs">
-            <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-500 flex items-center justify-center mb-2.5 font-bold">⏰</div>
-            <div class="font-bold text-xs text-slate-900">WORK YOUR WAY</div>
-            <div class="text-[11px] text-slate-500 mt-1 leading-snug">Flexible hours, hybrid options, and generous holiday policy.</div>
-          </div>
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs">
-            <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-500 flex items-center justify-center mb-2.5 font-bold">⚡</div>
-            <div class="font-bold text-xs text-slate-900">STARTER BENEFIT</div>
-            <div class="text-[11px] text-slate-500 mt-1 leading-snug">Welcome starter kit including desk gear and essentials.</div>
-          </div>
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs sm:col-span-2 lg:col-span-1">
-            <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center mb-2.5 font-bold">☕</div>
-            <div class="font-bold text-xs text-slate-900">SNACKS &amp; COFFEE</div>
-            <div class="text-[11px] text-slate-500 mt-1 leading-snug">Barista-grade coffee, snacks bar, and free drinks all day.</div>
-          </div>
-        </div>
-
-        <!-- Open Positions -->
-        <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xs divide-y divide-slate-100">
-          <div class="pb-4">
-            <h3 class="text-xl font-bold text-slate-900">Open Positions</h3>
-            <p class="text-xs text-slate-500 mt-0.5">Ready to make an impact? Explore our current openings and join our team in Bangalore, India.</p>
-          </div>
-
-          <!-- Position 1 -->
-          <div class="py-4.5 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">Engineering</span>
-                <span class="text-xs text-slate-400">•</span>
-                <span class="text-xs text-slate-500">Bangalore (On-Site)</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0099ff] transition-colors">Senior Backend Engineer (Node.js)</h4>
-              <div class="flex items-center gap-3 mt-1 text-xs text-slate-500">
-                <span>Level: Senior</span><span>•</span><span>Experience: 4-6 Years</span>
+              <div class="flex items-center gap-2">
+                <span class="text-[#E6002A]">📸</span>
+                <span>@fuera.official.23</span>
               </div>
             </div>
-            <button onclick="openJobModal('Senior Backend Engineer (Node.js)')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-100 hover:bg-[#0F172A] text-slate-800 hover:text-white text-xs font-semibold transition-all cursor-pointer self-start sm:self-center shrink-0">
-              <span>Apply Now</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
           </div>
 
-          <!-- Position 2 -->
-          <div class="py-4.5 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">Engineering</span>
-                <span class="text-xs text-slate-400">•</span>
-                <span class="text-xs text-slate-500">Bangalore (On-Site)</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0099ff] transition-colors">Senior Frontend Developer (React)</h4>
-              <div class="flex items-center gap-3 mt-1 text-xs text-slate-500">
-                <span>Level: Senior</span><span>•</span><span>Experience: 4-6 Years</span>
-              </div>
-            </div>
-            <button onclick="openJobModal('Senior Frontend Developer (React)')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-100 hover:bg-[#0F172A] text-slate-800 hover:text-white text-xs font-semibold transition-all cursor-pointer self-start sm:self-center shrink-0">
-              <span>Apply Now</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-          </div>
+          <div class="lg:col-span-5 bg-white/5 border border-white/10 p-6 sm:p-8 rounded-2xl backdrop-blur-sm space-y-4">
+            <h3 class="text-xl font-bold text-white mb-1">Schedule a Consultation</h3>
+            <p class="text-xs text-white/60 mb-4">Select the department suited to your immediate goals:</p>
 
-          <!-- Position 3 -->
-          <div class="py-4.5 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600">Marketing</span>
-                <span class="text-xs text-slate-400">•</span>
-                <span class="text-xs text-slate-500">Bangalore / Remote</span>
-              </div>
-              <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0099ff] transition-colors">Growth Marketing Manager (Gaming Industry)</h4>
-              <div class="flex items-center gap-3 mt-1 text-xs text-slate-500">
-                <span>Level: Senior</span><span>•</span><span>Compensation: 30K - 45K</span>
-              </div>
-            </div>
-            <button onclick="openJobModal('Growth Marketing Manager')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-100 hover:bg-[#0F172A] text-slate-800 hover:text-white text-xs font-semibold transition-all cursor-pointer self-start sm:self-center shrink-0">
-              <span>Apply Now</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-
-          <!-- General Application -->
-          <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/80 -mx-6 -mb-6 sm:-mx-8 sm:-mb-8 p-6 sm:p-8 rounded-b-2xl md:rounded-b-3xl">
-            <div>
-              <h4 class="text-base font-bold text-slate-900">Not the right role?</h4>
-              <p class="text-xs text-slate-600 mt-0.5">Leave your resume with us and we will be in touch as soon as the opportunity opens up!</p>
-            </div>
-            <button onclick="openJobModal('General Application / Open Resume')" class="px-5 py-2.5 rounded-full bg-[#0F172A] hover:bg-black text-white text-xs font-bold transition-all cursor-pointer shrink-0">
-              Leave Your Resume
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── SECTION: VENDORS ── -->
-      <div id="sec-vendors" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">COLLABORATION NETWORK</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Vendors We Work With</h2>
-            <p class="text-slate-600 text-sm mt-1">FUERA Tech Solutions is seeking exceptional vendors to join our growing network.</p>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">06 // Vendors</span>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Data Center &amp; Colocation</span>
-              <h3 class="text-xl font-black text-slate-900 mb-2.5">Telehouse</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Data center owned by KDDI company. Leading provider of global data center services, specializing in secure, reliable colocation solutions.</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">FinTech Infrastructure</span>
-              <h3 class="text-xl font-black text-slate-900 mb-2.5">Blockfint</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">White-label digital banking solutions, offering a customizable fintech platform to simplify access to capital and redefine modern finance.</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Telecom &amp; Cloud</span>
-              <h3 class="text-xl font-black text-slate-900 mb-2.5">True Corporate</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Major telecommunications provider in Thailand, delivering mobile, high-speed fiber broadband, and enterprise digital solutions.</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">IT Infrastructure</span>
-              <h3 class="text-xl font-black text-slate-900 mb-2.5">Throughwave</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Leading IT infrastructure and network engineering company in Southeast Asia, connecting world-class networking &amp; security.</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-sm transition-all flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Digital Transformation</span>
-              <h3 class="text-xl font-black text-slate-900 mb-2.5">Hatari NEXT</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Comprehensive suite of end-to-end digital solutions encompassing conceptual systems design, software development, and management.</p>
-            </div>
-          </div>
-
-          <!-- Action Card -->
-          <div class="bg-gradient-to-br from-slate-900 to-black text-white rounded-2xl md:rounded-3xl p-6 sm:p-7 shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">PARTNER PORTAL</span>
-              <h3 class="text-xl font-bold mb-2">Join Our Vendor Network</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mb-6">Submit your bidding proposal or submit your invoices through our streamlined vendor onboarding workflow.</p>
-            </div>
             <div class="space-y-2">
-              <button onclick="openModal('vendorModal')" class="w-full py-2.5 px-4 rounded-xl bg-white text-slate-900 font-bold text-xs hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
-                <span>Submit Vendor Form</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button onclick="openEnquiryModal('Department 01 — FUERA Tech Solutions')" class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#121214] font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-between cursor-pointer">
+                <span>01 // Tech Solutions Only</span>
+                <span>→</span>
+              </button>
+
+              <button onclick="openEnquiryModal('Department 02 — FUERA Digital Marketing')" class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white text-white hover:text-[#121214] font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-between cursor-pointer">
+                <span>02 // Digital Marketing Only</span>
+                <span>→</span>
+              </button>
+
+              <button onclick="openEnquiryModal('Both Departments (Full Spectrum Integration)')" class="w-full py-3.5 px-4 rounded-xl bg-[#E6002A] hover:bg-[#d00025] text-white font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-between cursor-pointer shadow-sm">
+                <span>Both Departments (Full Spectrum)</span>
+                <span>→</span>
               </button>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ── SECTION: INVESTOR RELATIONS ── -->
-      <div id="sec-investors" class="category-section space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#0099ff] block mb-1">CAPITAL &amp; GROWTH</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Investor Relations</h2>
-          </div>
-          <span class="text-xs text-slate-500 font-mono">07 // Investors</span>
-        </div>
-
-        <div class="bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl p-6 sm:p-10 shadow-2xs grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7 space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#0099ff] text-xs font-bold border border-blue-100">
-              <span>Shaping Tomorrow with AI</span>
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">Partner with FUERA Tech Solutions</h3>
-            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Submit your information to receive our mutual NDA and access our audited financial statements and growth roadmap to explore exciting investment opportunities in Southeast Asia’s AI revolution.
-            </p>
-          </div>
-          <div class="lg:col-span-5 bg-[#F2F5F9] p-6 rounded-2xl border border-slate-200/80">
-            <button onclick="openModal('investorModal')" class="w-full py-3.5 bg-[#0F172A] hover:bg-black text-white font-bold text-sm rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
-              <span>Request NDA &amp; Financials</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
-            <p class="text-[11px] text-slate-500 text-center mt-3">Formal credentials verified within 24 business hours.</p>
-          </div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer class="bg-white border-t border-slate-200/80 pt-16 pb-12 mt-20">
+  <!-- ── 10. EDITORIAL FOOTER ── -->
+  <footer class="bg-white border-t border-[#121214]/8 pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-100">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#121214]/8">
         
         <div class="lg:col-span-2 space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-slate-100 p-1 flex items-center justify-center">
-              <img src="public/fuera-logo.png" alt="FUERA Tech Solutions" class="w-full h-full object-contain" />
+            <div class="w-9 h-9 rounded-xl bg-[#FAF9F6] border border-[#121214]/10 p-1 flex items-center justify-center">
+              <img src="public/fuera-logo.png" alt="FUERA" class="w-full h-full object-contain" />
             </div>
-            <span class="font-bold text-xl font-mono text-[#0F172A]">FUERA Tech Solutions</span>
+            <div class="flex flex-col">
+              <span class="font-black text-xl tracking-[0.18em] text-[#121214]" style="font-family: 'Poppins', sans-serif;">FUERA</span>
+              <span class="text-[9px] font-mono tracking-widest text-[#121214]/50 uppercase">TWO BRANCHES • ONE FUERA</span>
+            </div>
           </div>
-          <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
-            Koramangala 5th Block, Bangalore, Karnataka 560068 &amp; Global
+
+          <p class="text-xs text-[#121214]/70 leading-relaxed max-w-sm">
+            Koramangala 5th Block, Bangalore, Karnataka 560068, India
           </p>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Empowering businesses with AI deployment, cloud infrastructure, and impactful technologies.
+          <p class="text-xs text-[#121214]/60 leading-relaxed">
+            Operating with two specialized departments: FUERA Tech Solutions (digital software &amp; web architecture) and FUERA Digital Marketing (SEO, performance ads &amp; branding).
           </p>
         </div>
 
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900 mb-4 font-mono">What We Do</h4>
-          <ul class="space-y-2.5 text-xs text-slate-600">
-            <li><a href="https://www.bro.game/" target="_blank" rel="noopener noreferrer" class="hover:text-black">FUERA Cloud Gaming (NVIDIA)</a></li>
-            <li><a href="https://sciam.nsm.or.th/" target="_blank" rel="noopener noreferrer" class="hover:text-black">sciam</a></li>
-            <li><button onclick="filterCategory('what-we-do')" class="hover:text-black">lawyer.io</button></li>
-            <li><button onclick="filterCategory('what-we-do')" class="hover:text-black">deus.space</button></li>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#121214] mb-4 font-mono flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#121214]"></span>
+            01 Tech Solutions
+          </h4>
+          <ul class="space-y-2 text-xs text-[#121214]/70">
+            <li><a href="#tech-solutions" class="hover:text-[#E6002A]">Website Development</a></li>
+            <li><a href="#tech-solutions" class="hover:text-[#E6002A]">Custom Web Software</a></li>
+            <li><a href="#tech-solutions" class="hover:text-[#E6002A]">E-Commerce Engines</a></li>
+            <li><a href="#tech-solutions" class="hover:text-[#E6002A]">Speed &amp; Core Web Vitals</a></li>
+            <li><a href="#tech-solutions" class="hover:text-[#E6002A]">API &amp; Cloud Infra</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900 mb-4 font-mono">Join Us</h4>
-          <ul class="space-y-2.5 text-xs text-slate-600">
-            <li><button onclick="filterCategory('careers')" class="hover:text-black">Careers</button></li>
-            <li><button onclick="filterCategory('careers')" class="hover:text-black">Benefits</button></li>
-            <li><button onclick="filterCategory('culture')" class="hover:text-black">Culture</button></li>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#121214] mb-4 font-mono flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E6002A]"></span>
+            02 Digital Marketing
+          </h4>
+          <ul class="space-y-2 text-xs text-[#121214]/70">
+            <li><a href="#digital-marketing" class="hover:text-[#E6002A]">Google SEO &amp; Local Maps</a></li>
+            <li><a href="#digital-marketing" class="hover:text-[#E6002A]">Performance Ads (Meta &amp; Google)</a></li>
+            <li><a href="#digital-marketing" class="hover:text-[#E6002A]">Brand Design Systems</a></li>
+            <li><a href="#digital-marketing" class="hover:text-[#E6002A]">Content &amp; Viral Reels</a></li>
+            <li><a href="#digital-marketing" class="hover:text-[#E6002A]">Review Scanner</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900 mb-4 font-mono">Partners</h4>
-          <ul class="space-y-2.5 text-xs text-slate-600">
-            <li><button onclick="filterCategory('vendors')" class="hover:text-black">Current vendors</button></li>
-            <li><button onclick="openModal('vendorModal')" class="hover:text-black">Vendor Registration</button></li>
-            <li><button onclick="filterCategory('investors')" class="hover:text-black">Investor Relations</button></li>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-[#121214] mb-4 font-mono">Company</h4>
+          <ul class="space-y-2 text-xs text-[#121214]/70">
+            <li><a href="#leadership" class="hover:text-[#E6002A]">Executive Leadership</a></li>
+            <li><a href="#synergy-matrix" class="hover:text-[#E6002A]">Synergy Matrix</a></li>
+            <li><a href="tel:+919449658382" class="hover:text-[#E6002A]">+91 94496 58382</a></li>
+            <li><a href="mailto:fuera.solutions.23@gmail.com" class="hover:text-[#E6002A]">Direct Email</a></li>
           </ul>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#121214]/50">
         <div>© 2026 FUERA Tech Solutions. All rights reserved.</div>
         <div class="flex items-center gap-6">
-          <span>Bangalore, India</span>
+          <span>Bangalore, Karnataka 560068</span>
           <span>•</span>
-          <span>Privacy &amp; Terms</span>
+          <button onclick="replayIntro()" class="hover:text-[#E6002A] transition-colors">
+            Replay Brand Intro
+          </button>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- ── MODAL: CONTACT ── -->
-  <div id="contactModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal('contactModal')"></div>
-    <div class="relative z-10 w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200">
-      <button onclick="closeModal('contactModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-black">✕</button>
-      <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0099ff] font-bold mb-2 inline-block">Get in Touch</span>
-      <h3 class="text-xl font-black text-slate-900 mb-1">Contact FUERA Tech Solutions</h3>
-      <p class="text-xs text-slate-500 mb-5">Tell us about your organization or inquiry and our team will get in touch.</p>
-      <form onsubmit="handleContactSubmit(event)" class="space-y-3.5">
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Name *</label>
-          <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Email *</label>
-          <input required type="email" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Message</label>
-          <textarea rows="3" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff] resize-none"></textarea>
-        </div>
-        <button type="submit" class="w-full py-3 bg-[#0F172A] hover:bg-black text-white font-bold text-xs rounded-xl transition-all cursor-pointer">Send Message</button>
-      </form>
-    </div>
-  </div>
+  <!-- ── 11. INTERACTIVE CONSULTATION MODAL ── -->
+  <div id="enquiryModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-[#121214]/60 backdrop-blur-sm" onclick="closeEnquiryModal()"></div>
+    <div class="relative z-10 w-full max-w-lg bg-[#FAF9F6] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#121214]/10 text-left">
+      <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white border border-[#121214]/10 hover:bg-[#121214] hover:text-white flex items-center justify-center text-[#121214] transition-colors cursor-pointer">✕</button>
 
-  <!-- ── MODAL: JOB APPLICATION ── -->
-  <div id="jobModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal('jobModal')"></div>
-    <div class="relative z-10 w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200">
-      <button onclick="closeModal('jobModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-black">✕</button>
-      <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0099ff] font-bold mb-2 inline-block">Application</span>
-      <h3 id="jobModalTitle" class="text-xl font-black text-slate-900 mb-1">Position</h3>
-      <p class="text-xs text-slate-500 mb-5">Join our team at FUERA Tech Solutions in Bangalore, India.</p>
-      <form onsubmit="handleJobSubmit(event)" class="space-y-3.5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2 h-2 rounded-full bg-[#E6002A]"></span>
+        <span class="text-xs uppercase font-mono font-bold tracking-wider text-[#E6002A]">Direct Project Inquiry</span>
+      </div>
+      <h3 class="text-2xl font-black text-[#121214] mb-1" style="font-family: 'Poppins', sans-serif;">Start Your Engagement</h3>
+      <p class="text-xs text-[#121214]/70 mb-5">Our Bangalore team will review your requirements and provide an engineering &amp; growth proposal within 24 hours.</p>
+
+      <form onsubmit="handleEnquirySubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="text-xs font-semibold text-[#121214] block mb-1">Target Department *</label>
+          <select id="modalDeptSelect" class="w-full px-4 py-2.5 rounded-xl border border-[#121214]/15 bg-white text-xs font-medium focus:outline-none focus:border-[#E6002A]">
+            <option value="Both Departments (Full Spectrum Integration)">Both Departments (Tech + Marketing Integration)</option>
+            <option value="Department 01 — FUERA Tech Solutions">Department 01 — FUERA Tech Solutions (Web &amp; Software)</option>
+            <option value="Department 02 — FUERA Digital Marketing">Department 02 — FUERA Digital Marketing (SEO &amp; Ads)</option>
+          </select>
+        </div>
+
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="text-xs font-semibold text-slate-700 block mb-1">First Name *</label>
-            <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
+            <label class="text-xs font-semibold text-[#121214] block mb-1">Your Name *</label>
+            <input required type="text" placeholder="e.g. Rohith" class="w-full px-3.5 py-2 rounded-xl border border-[#121214]/15 bg-white text-xs focus:outline-none focus:border-[#E6002A]"/>
           </div>
           <div>
-            <label class="text-xs font-semibold text-slate-700 block mb-1">Last Name *</label>
-            <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
+            <label class="text-xs font-semibold text-[#121214] block mb-1">Phone / WhatsApp *</label>
+            <input required type="tel" placeholder="+91 94496 58382" class="w-full px-3.5 py-2 rounded-xl border border-[#121214]/15 bg-white text-xs focus:outline-none focus:border-[#E6002A]"/>
           </div>
         </div>
+
         <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Email *</label>
-          <input required type="email" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
+          <label class="text-xs font-semibold text-[#121214] block mb-1">Corporate Email *</label>
+          <input required type="email" placeholder="name@company.com" class="w-full px-3.5 py-2 rounded-xl border border-[#121214]/15 bg-white text-xs focus:outline-none focus:border-[#E6002A]"/>
         </div>
+
         <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Telephone *</label>
-          <input required type="tel" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
+          <label class="text-xs font-semibold text-[#121214] block mb-1">Project Goals &amp; Scope *</label>
+          <textarea required rows="3" placeholder="Outline your website, software, or digital marketing objectives..." class="w-full px-3.5 py-2 rounded-xl border border-[#121214]/15 bg-white text-xs focus:outline-none focus:border-[#E6002A] resize-none"></textarea>
         </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Portfolio / LinkedIn</label>
-          <input type="url" placeholder="https://..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <button type="submit" class="w-full py-3 bg-[#0F172A] hover:bg-black text-white font-bold text-xs rounded-xl transition-all cursor-pointer">Submit Application</button>
+
+        <button type="submit" class="w-full py-3 bg-[#121214] hover:bg-[#E6002A] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-xs">
+          Send Project Inquiry
+        </button>
       </form>
     </div>
   </div>
 
-  <!-- ── MODAL: VENDOR PORTAL ── -->
-  <div id="vendorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal('vendorModal')"></div>
-    <div class="relative z-10 w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200">
-      <button onclick="closeModal('vendorModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-black">✕</button>
-      <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-bold mb-2 inline-block">Vendor Registration</span>
-      <h3 class="text-xl font-black text-slate-900 mb-1">Join Our Vendor Network</h3>
-      <p class="text-xs text-slate-500 mb-5">Register your company to provide services, hardware, or software to FUERA Tech Solutions.</p>
-      <form onsubmit="handleVendorSubmit(event)" class="space-y-3.5">
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Company Name *</label>
-          <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Contact Name *</label>
-          <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Email *</label>
-          <input required type="email" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Telephone *</label>
-          <input required type="tel" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <button type="submit" class="w-full py-3 bg-[#0F172A] hover:bg-black text-white font-bold text-xs rounded-xl transition-all cursor-pointer">Submit Vendor Application</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ── MODAL: INVESTOR PORTAL ── -->
-  <div id="investorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal('investorModal')"></div>
-    <div class="relative z-10 w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200">
-      <button onclick="closeModal('investorModal')" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-black">✕</button>
-      <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0099ff] font-bold mb-2 inline-block">Investor Portal</span>
-      <h3 class="text-xl font-black text-slate-900 mb-1">Partner with FUERA Tech Solutions</h3>
-      <p class="text-xs text-slate-500 mb-5">Submit your information to receive our mutual NDA and access our financial statements.</p>
-      <form onsubmit="handleInvestorSubmit(event)" class="space-y-3.5">
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Company / Fund Name *</label>
-          <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Contact Name *</label>
-          <input required type="text" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Corporate Email *</label>
-          <input required type="email" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-slate-700 block mb-1">Telephone *</label>
-          <input required type="tel" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#0099ff]"/>
-        </div>
-        <button type="submit" class="w-full py-3 bg-[#0F172A] hover:bg-black text-white font-bold text-xs rounded-xl transition-all cursor-pointer">Submit NDA Request</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- JavaScript Interactivity -->
+  <!-- JavaScript for Interactions -->
   <script>
+    // Intro sequence controller
+    function dismissIntro() {
+      const overlay = document.getElementById('introOverlay');
+      if (overlay) {
+        overlay.classList.add('hide');
+        sessionStorage.setItem('fuera_intro_shown', 'true');
+      }
+    }
+
+    function replayIntro() {
+      const overlay = document.getElementById('introOverlay');
+      if (overlay) {
+        overlay.classList.remove('hide');
+        const progress = document.getElementById('introProgress');
+        if (progress) {
+          progress.style.width = '0%';
+          setTimeout(() => { progress.style.width = '100%'; }, 50);
+        }
+        setTimeout(dismissIntro, 2900);
+      }
+    }
+
+    // Auto-progress intro on first visit
+    window.addEventListener('DOMContentLoaded', () => {
+      const alreadyShown = sessionStorage.getItem('fuera_intro_shown');
+      const progress = document.getElementById('introProgress');
+      if (alreadyShown) {
+        dismissIntro();
+      } else {
+        if (progress) {
+          setTimeout(() => { progress.style.width = '100%'; }, 100);
+        }
+        setTimeout(dismissIntro, 2900);
+      }
+    });
+
+    // Keyboard ESC listener
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') dismissIntro();
+    });
+
+    // Mobile menu toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
     }
 
-    function filterCategory(catId) {
-      // Update tab active state
-      const buttons = document.querySelectorAll('.category-btn');
-      buttons.forEach(btn => {
-        btn.className = "category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 hover:text-black border border-slate-200/80 cursor-pointer";
-      });
-      const activeBtn = document.getElementById('tab-' + catId);
-      if (activeBtn) {
-        activeBtn.className = "category-btn active px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-[#0F172A] text-white shadow-xs cursor-pointer";
+    // Modal controls
+    function openEnquiryModal(dept) {
+      const modal = document.getElementById('enquiryModal');
+      const select = document.getElementById('modalDeptSelect');
+      if (select && dept) {
+        select.value = dept;
       }
-
-      // Show / hide sections
-      const sections = {
-        'our-story': 'sec-our-story',
-        'vision': 'sec-our-story',
-        'what-we-do': 'sec-what-we-do',
-        'culture': 'sec-culture',
-        'tools-tech': 'sec-tools-tech',
-        'careers': 'sec-careers',
-        'vendors': 'sec-vendors',
-        'investors': 'sec-investors'
-      };
-
-      const allSecElements = document.querySelectorAll('.category-section');
-
-      if (catId === 'all') {
-        allSecElements.forEach(s => s.classList.remove('hidden'));
-      } else {
-        allSecElements.forEach(s => s.classList.add('hidden'));
-        const targetId = sections[catId];
-        if (targetId) {
-          const el = document.getElementById(targetId);
-          if (el) el.classList.remove('hidden');
-        }
-      }
-
-      // Smooth scroll to cards container
-      const cardsSec = document.getElementById('cards-section');
-      if (cardsSec) {
-        cardsSec.scrollIntoView({ behavior: 'smooth' });
-      }
+      modal.classList.remove('hidden');
     }
 
-    function openModal(modalId) {
-      const m = document.getElementById(modalId);
-      if (m) m.classList.remove('hidden');
+    function closeEnquiryModal() {
+      const modal = document.getElementById('enquiryModal');
+      modal.classList.add('hidden');
     }
 
-    function closeModal(modalId) {
-      const m = document.getElementById(modalId);
-      if (m) m.classList.add('hidden');
-    }
-
-    function openJobModal(title) {
-      document.getElementById('jobModalTitle').innerText = title;
-      openModal('jobModal');
-    }
-
-    function handleContactSubmit(e) {
+    function handleEnquirySubmit(e) {
       e.preventDefault();
-      alert('Message received! FUERA Tech Solutions team will respond promptly.');
-      closeModal('contactModal');
-    }
-
-    function handleJobSubmit(e) {
-      e.preventDefault();
-      alert('Application received! Our talent team in Bangalore will review your profile.');
-      closeModal('jobModal');
-    }
-
-    function handleVendorSubmit(e) {
-      e.preventDefault();
-      alert('Vendor application received! Our procurement team will review your submission.');
-      closeModal('vendorModal');
-    }
-
-    function handleInvestorSubmit(e) {
-      e.preventDefault();
-      alert('Investor NDA request received! Credentials will be verified within 24 hours.');
-      closeModal('investorModal');
+      alert('Thank you! The FUERA team in Bangalore has received your project inquiry and will contact you promptly.');
+      closeEnquiryModal();
     }
   </script>
+
 </body>
 </html>

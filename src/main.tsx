@@ -11,13 +11,9 @@ import PrivacyPage from "./app/pages/PrivacyPage.tsx";
 import TermsPage from "./app/pages/TermsPage.tsx";
 import "./styles/index.css";
 
-// Initialize dark/light mode before React render
-const initialTheme = localStorage.getItem("theme") || "dark";
-if (initialTheme === "dark") {
-  document.documentElement.classList.add("dark");
-} else {
-  document.documentElement.classList.remove("dark");
-}
+// Enforce warm white clean aesthetic
+document.documentElement.classList.remove("dark");
+localStorage.setItem("theme", "light");
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>

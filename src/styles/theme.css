@@ -2,52 +2,52 @@
 
 :root {
   --font-size: 16px;
-  --background: #050508;
-  --foreground: #ffffff;
-  --card: #0a0a0f;
-  --card-foreground: #ffffff;
-  --popover: #0a0a0f;
-  --popover-foreground: #ffffff;
-  --primary: #e81c2e;
-  --primary-hover: #d01728;
-  --primary-foreground: #ffffff;
-  --secondary: #101018;
-  --secondary-foreground: #ffffff;
-  --muted: #101018;
-  --muted-foreground: rgba(255, 255, 255, 0.6);
-  --accent: #e81c2e;
-  --accent-foreground: #ffffff;
-  --destructive: #e81c2e;
-  --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: #14141c;
-  --input-background: #14141c;
-  --switch-background: #101018;
+  --background: #FAF9F6;
+  --foreground: #121214;
+  --card: #FFFFFF;
+  --card-foreground: #121214;
+  --popover: #FFFFFF;
+  --popover-foreground: #121214;
+  --primary: #E6002A;
+  --primary-hover: #CC0025;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1EFEB;
+  --secondary-foreground: #121214;
+  --muted: #F1EFEB;
+  --muted-foreground: #6B6B73;
+  --accent: #E6002A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E6002A;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(18, 18, 20, 0.08);
+  --input: #FFFFFF;
+  --input-background: #FFFFFF;
+  --switch-background: #E8E6E1;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #e81c2e;
+  --ring: #E6002A;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: #050508;
-  --foreground: #ffffff;
-  --card: #0a0a0f;
-  --card-foreground: #ffffff;
-  --popover: #0a0a0f;
-  --popover-foreground: #ffffff;
-  --primary: #e81c2e;
-  --primary-hover: #d01728;
-  --primary-foreground: #ffffff;
-  --secondary: #101018;
-  --secondary-foreground: #ffffff;
-  --muted: #101018;
-  --muted-foreground: rgba(255, 255, 255, 0.6);
-  --accent: #e81c2e;
-  --accent-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: #14141c;
-  --ring: #e81c2e;
+  --background: #FAF9F6;
+  --foreground: #121214;
+  --card: #FFFFFF;
+  --card-foreground: #121214;
+  --popover: #FFFFFF;
+  --popover-foreground: #121214;
+  --primary: #E6002A;
+  --primary-hover: #CC0025;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1EFEB;
+  --secondary-foreground: #121214;
+  --muted: #F1EFEB;
+  --muted-foreground: #6B6B73;
+  --accent: #E6002A;
+  --accent-foreground: #FFFFFF;
+  --border: rgba(18, 18, 20, 0.08);
+  --input: #FFFFFF;
+  --ring: #E6002A;
 }
 
 /* ── FUERA UTILITY CLASSES ── */
